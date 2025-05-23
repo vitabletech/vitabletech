@@ -1,0 +1,13 @@
+{
+  "name": "vitabletech",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/main.css --minify",
+    "dev": "tailwindcss -i ./css/input.css -o ./css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23"
+  }
+}
