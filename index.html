@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitableTech - Open Source Solutions & Enterprise Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./tailwind.config.js"></script>
+    <link rel="stylesheet" href="./css/style.css"></link>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="mr-2">
+                            <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                                <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                                <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                                <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                                <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                                <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+
+                        <div class="logo-text text-2xl">
+                            <div>
+                                <span class="text-primary">Vitable</span><span class="text-secondary">Tech</span>
+                            </div>
+                            <div class="text-secondary text-sm">Open Source Innovation</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="#clients" class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="#projects" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="#clients" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 md:py-28">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Businesses Through Open Source Innovation</h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">VitableTech creates powerful open source solutions and provides enterprise services to help businesses thrive in the digital world.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#projects" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-center">Explore Projects</a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition-colors text-center">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Large Logo for Hero Section -->
+                            <circle cx="200" cy="200" r="180" fill="#3B82F6" fill-opacity="0.1" stroke="white" stroke-width="2"/>
+                            <circle cx="200" cy="200" r="140" fill="#3B82F6" fill-opacity="0.2" stroke="white" stroke-width="2"/>
+                            <circle cx="200" cy="200" r="100" fill="#3B82F6" fill-opacity="0.3" stroke="white" stroke-width="2"/>
+                            <circle cx="200" cy="200" r="60" fill="white"/>
+                            <circle cx="200" cy="200" r="30" fill="#3B82F6"/>
+                            
+                            <!-- Tech elements -->
+                            <path d="M320 120L290 150M80 320L110 290" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M80 80L110 110M320 320L290 290" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            
+                            <!-- Code brackets -->
+                            <path d="M150 100L120 200L150 300" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M250 100L280 200L250 300" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Pulse rings -->
+                            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="1" stroke-dasharray="10 5">
+                                <animate attributeName="r" from="160" to="190" dur="3s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center" style=" display: none; ">
+                            <div class="text-4xl font-bold">
+                                <span class="text-white">Vitable</span><span class="text-white">Tech</span>
+                            </div>
+                            <div class="text-white text-sm mt-2">Open Source Innovation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About VitableTech</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Founded in 2018 in Gwalior, Madhya Pradesh, India, VitableTech is dedicated to creating innovative digital solutions that empower businesses and individuals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Open Source Community</h3>
+                    <p class="text-gray-600">We develop free, open-source products that anyone can use and contribute to. Our mission is to make quality software accessible to everyone.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Enterprise Services</h3>
+                    <p class="text-gray-600">Through enterprise.vitabletech.in, we provide professional development services for businesses needing custom solutions and dedicated support.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Community Driven</h3>
+                    <p class="text-gray-600">Our open source work is supported by donations from the community, allowing us to continue creating valuable tools for everyone.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-50 rounded-xl p-8 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="text-gray-600 mb-6">At VitableTech, we believe in the power of technology to transform businesses. Our dual approach of open source development and enterprise services allows us to serve a wide range of needs while contributing to the global tech community.</p>
+                        <p class="text-gray-600">Since 2018, we've been building tools that help businesses streamline operations, enhance productivity, and create better user experiences.</p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-6 rounded-lg shadow text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">5+</div>
+                                <div class="text-gray-600">Years Experience</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">10+</div>
+                                <div class="text-gray-600">Open Source Projects</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                                <div class="text-gray-600">Contributors</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">100+</div>
+                                <div class="text-gray-600">Happy Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer a range of services to help businesses grow and succeed in the digital landscape.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Custom Software Development</h3>
+                    <p class="text-gray-600 mb-4">Tailored software solutions designed to meet your specific business needs and challenges.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Web Applications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Mobile Applications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Desktop Software</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">Beautiful, intuitive interfaces that enhance user experience and drive engagement.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>User Research</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Wireframing & Prototyping</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Visual Design</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-4">Responsive, high-performance websites and web applications that drive results.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Frontend Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Backend Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>E-commerce Solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Mobile App Development</h3>
+                    <p class="text-gray-600 mb-4">Native and cross-platform mobile applications for iOS and Android.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>iOS Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Android Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Cross-platform Solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">DevOps & Cloud Services</h3>
+                    <p class="text-gray-600 mb-4">Streamline your development process and optimize infrastructure.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>CI/CD Implementation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Cloud Migration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Infrastructure Management</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-md service-card">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Maintenance & Support</h3>
+                    <p class="text-gray-600 mb-4">Ongoing support and maintenance to keep your systems running smoothly.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Technical Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Regular Updates</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            <span>Performance Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Open Source Projects</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our free, open-source tools designed to help businesses and developers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/vitabletech/plannerbuddy-mobileapp/refs/heads/main/app/assets/icon.png" alt="Planner Buddy Logo" loading="lazy" width="50%"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3"> Planner Buddy</h3>
+                        <p class="text-gray-600 mb-4">An event management platform that helps users oversee event details, manage guest lists, track gifts, and generate reports.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://github.com/vitabletech/plannerbuddy-mobileapp" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Event Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                        <img src="https://snippetmaster.vitabletech.in/images/snippetmaster.webp" alt="Snippet Master Logo" loading="lazy" width="50%"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Snippet Master</h3>
+                        <p class="text-gray-600 mb-4">A Visual Studio Code extension that provides custom code snippets for multiple programming languages to enhance productivity.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://github.com/vitabletech/SnippetMaster" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Developer Tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">General-JS-Toolkit</h3>
+                        <p class="text-gray-600 mb-4">A JavaScript library offering a collection of general-purpose functions for various programming tasks.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://github.com/vitabletech/general-js-toolkit" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <i class="fab fa-github mr-2"></i> View on GitHub
+                            </a>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">JavaScript Library</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://github.com/vitabletech" target="_blank" class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition-colors">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Clients</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We've had the pleasure of working with amazing clients across various industries.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Flamingo DigiPrint</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Calibrated Diamonds</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Swiftal Logistics</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Rakshak</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Our Karigar</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
+                    <div class="font-bold text-lg text-gray-700">Brilliant Concepts</div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-bold mb-8">What Our Clients Say</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"VitableTech delivered an exceptional e-commerce platform that has significantly increased our online sales. Their team was professional, responsive, and truly understood our business needs."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-gray-700 font-semibold">FD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Flamingo DigiPrint</h4>
+                            <p class="text-gray-500 text-sm">E-commerce Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Working with VitableTech has been a game-changer for our logistics operations. Their custom software solution has streamlined our processes and improved efficiency across the board."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-gray-700 font-semibold">SL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Swiftal Logistics</h4>
+                            <p class="text-gray-500 text-sm">Logistics Company</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"The team at VitableTech created a beautiful, user-friendly website for our business that perfectly captures our brand identity. We've seen a significant increase in customer engagement since launch."</p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="text-gray-700 font-semibold">BC</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Brilliant Concepts</h4>
+                            <p class="text-gray-500 text-sm">Marketing Agency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Have a project in mind or want to learn more about our services? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Location</h4>
+                                <p class="text-gray-600">Gwalior, Madhya Pradesh, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <a href="mailto:info@vitabletech.in" class="text-primary hover:text-secondary transition-colors">info@vitabletech.in</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <a href="tel:+919009410973" class="text-primary hover:text-secondary transition-colors">+91 9009 410 973</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fab fa-whatsapp text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">WhatsApp</h4>
+                                <a href="https://wa.me/919009410973" target="_blank" class="text-primary hover:text-secondary transition-colors">+91 9009 410 973</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a target="_blank" href="https://github.com/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/company/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a target="_blank" href="https://x.com/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a target="_blank" href="https://www.youtube.com/@vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition-colors">Send Message</button>
+                        </div>
+                    </form>
+                    
+                    <div id="formSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
+                        Thank you for your message! We'll get back to you soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 md:py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">Let's work together to bring your ideas to life with our expertise in software development and design.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white text-primary font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">Contact Us</a>
+                <a href="https://github.com/vitabletech" target="_blank" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors">Explore Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">VitableTech</h3>
+                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise solutions since 2018.</p>
+                    <div class="flex space-x-4">
+                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a target="_blank" href="https://x.com/vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#clients" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors">info@vitabletech.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <a href="tel:+919009410973" class="hover:text-white transition-colors">+91 9009 410 973</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2"></i>
+                            <a href="https://wa.me/919009410973" target="_blank" class="hover:text-white transition-colors">+91 9009 410 973</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-300">&copy; 2018 VitableTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/mobile_menu_toogle.js"></script>
+    <script src="./js/custom_script.js"></script>
+</body>
+</html>

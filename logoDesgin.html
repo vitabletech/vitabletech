@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .logo-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-icon {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .color-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .color-option:hover {
+            transform: translateY(-5px);
+        }
+        
+        .selected {
+            border: 3px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Logo Design</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <!-- Logo Preview -->
+            <div class="flex flex-col items-center justify-center">
+                <div id="logoContainer" class="logo-container bg-gradient-to-r from-blue-500 to-indigo-600 p-12 rounded-xl shadow-lg flex items-center justify-center mb-6">
+                    <div class="flex items-center">
+                        <svg id="logoSvg" width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon mr-3">
+                            <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                            <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                            <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                            <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                            <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <div class="text-3xl font-bold text-white">
+                            <span id="logoText1">Tech</span><span id="logoText2">Vision</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center text-gray-600">
+                    <p>A modern, professional logo for your tech company</p>
+                </div>
+            </div>
+            
+            <!-- Logo Customization -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Customize Your Logo</h2>
+                
+                <!-- Company Name -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Company Name</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">First Part</label>
+                            <input type="text" id="firstNameInput" value="Tech" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Second Part</label>
+                            <input type="text" id="secondNameInput" value="Vision" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Color Schemes -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Color Scheme</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="color-option selected p-2 rounded-lg" data-primary="#3B82F6" data-secondary="#1E40AF">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                            <p class="text-center text-sm mt-1">Blue</p>
+                        </div>
+                        <div class="color-option p-2 rounded-lg" data-primary="#10B981" data-secondary="#047857">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-emerald-500 to-green-700"></div>
+                            <p class="text-center text-sm mt-1">Green</p>
+                        </div>
+                        <div class="color-option p-2 rounded-lg" data-primary="#8B5CF6" data-secondary="#6D28D9">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-violet-500 to-purple-700"></div>
+                            <p class="text-center text-sm mt-1">Purple</p>
+                        </div>
+                        <div class="color-option p-2 rounded-lg" data-primary="#EC4899" data-secondary="#BE185D">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-pink-500 to-rose-700"></div>
+                            <p class="text-center text-sm mt-1">Pink</p>
+                        </div>
+                        <div class="color-option p-2 rounded-lg" data-primary="#F59E0B" data-secondary="#B45309">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-amber-500 to-yellow-700"></div>
+                            <p class="text-center text-sm mt-1">Amber</p>
+                        </div>
+                        <div class="color-option p-2 rounded-lg" data-primary="#EF4444" data-secondary="#B91C1C">
+                            <div class="h-12 rounded-md bg-gradient-to-r from-red-500 to-red-700"></div>
+                            <p class="text-center text-sm mt-1">Red</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo Style -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Logo Style</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <button id="style1" class="bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-lg text-gray-800 font-medium active">Concentric</button>
+                        <button id="style2" class="bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-lg text-gray-800 font-medium">Hexagon</button>
+                        <button id="style3" class="bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-lg text-gray-800 font-medium">Abstract</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logo Variations -->
+        <h2 class="text-xl font-semibold mb-4">Logo Variations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Light Background -->
+            <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                <div class="flex items-center justify-center mb-4">
+                    <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                        <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                        <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                        <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                    </svg>
+                    <div class="text-xl font-bold ml-2">
+                        <span class="text-blue-500">Tech</span><span class="text-indigo-700">Vision</span>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-600">Light Background</p>
+            </div>
+            
+            <!-- Dark Background -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow">
+                <div class="flex items-center justify-center mb-4">
+                    <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                        <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="#1F2937"/>
+                        <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                        <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                    </svg>
+                    <div class="text-xl font-bold ml-2">
+                        <span class="text-blue-400">Tech</span><span class="text-white">Vision</span>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-300">Dark Background</p>
+            </div>
+            
+            <!-- Icon Only -->
+            <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 rounded-xl shadow">
+                <div class="flex items-center justify-center mb-4">
+                    <svg width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                        <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                        <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                        <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                        <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <p class="text-center text-sm text-white">Icon Only</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-xl font-semibold mb-4">Logo Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Business Card -->
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
+                    <div class="flex items-center">
+                        <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                            <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                            <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                            <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                        </svg>
+                        <div class="text-2xl font-bold ml-2 text-white">
+                            <span>Tech</span><span>Vision</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6">
+                    <h3 class="font-bold text-lg mb-1">John Smith</h3>
+                    <p class="text-gray-600 text-sm mb-4">Chief Technology Officer</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span>john@techvision.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>123 Tech Street, San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Header -->
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <div class="bg-white border-b border-gray-200 p-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <svg width="30" height="30" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                                <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                                <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                                <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                            </svg>
+                            <div class="text-xl font-bold ml-2">
+                                <span class="text-blue-500">Tech</span><span class="text-indigo-700">Vision</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex space-x-4 text-sm">
+                            <a href="#" class="text-gray-600 hover:text-blue-500">Home</a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">Services</a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">About</a>
+                            <a href="#" class="text-gray-600 hover:text-blue-500">Contact</a>
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm">Get Started</button>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-2">Innovative Solutions for Your Business</h2>
+                    <p class="opacity-80">Transforming ideas into powerful digital experiences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Logo customization functionality
+        const firstNameInput = document.getElementById('firstNameInput');
+        const secondNameInput = document.getElementById('secondNameInput');
+        const logoText1 = document.getElementById('logoText1');
+        const logoText2 = document.getElementById('logoText2');
+        const logoSvg = document.getElementById('logoSvg');
+        const logoContainer = document.getElementById('logoContainer');
+        const colorOptions = document.querySelectorAll('.color-option');
+        const style1Button = document.getElementById('style1');
+        const style2Button = document.getElementById('style2');
+        const style3Button = document.getElementById('style3');
+        
+        // Update company name
+        firstNameInput.addEventListener('input', function() {
+            logoText1.textContent = this.value;
+        });
+        
+        secondNameInput.addEventListener('input', function() {
+            logoText2.textContent = this.value;
+        });
+        
+        // Color scheme selection
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Get color values
+                const primaryColor = this.getAttribute('data-primary');
+                const secondaryColor = this.getAttribute('data-secondary');
+                
+                // Update logo colors
+                updateLogoColors(primaryColor, secondaryColor);
+                
+                // Update container background
+                logoContainer.style.background = `linear-gradient(to right, ${primaryColor}, ${secondaryColor})`;
+            });
+        });
+        
+        // Logo style selection
+        style1Button.addEventListener('click', function() {
+            setActiveButton(this);
+            logoSvg.innerHTML = `
+                <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
+                <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
+                <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
+                <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
+                <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+            `;
+            
+            // Update colors based on current selection
+            const selectedOption = document.querySelector('.color-option.selected');
+            updateLogoColors(selectedOption.getAttribute('data-primary'), selectedOption.getAttribute('data-secondary'));
+        });
+        
+        style2Button.addEventListener('click', function() {
+            setActiveButton(this);
+            logoSvg.innerHTML = `
+                <path d="M40 0L75.3 20V60L40 80L4.7 60V20L40 0Z" fill="#3B82F6"/>
+                <path d="M40 10L65.3 25V55L40 70L14.7 55V25L40 10Z" fill="white"/>
+                <path d="M40 20L55.3 30V50L40 60L24.7 50V30L40 20Z" fill="#3B82F6"/>
+                <path d="M40 30L45.3 35V45L40 50L34.7 45V35L40 30Z" fill="white"/>
+                <path d="M10 20L20 30M70 60L60 50" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                <path d="M10 60L20 50M70 20L60 30" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+            `;
+            
+            // Update colors based on current selection
+            const selectedOption = document.querySelector('.color-option.selected');
+            updateLogoColors(selectedOption.getAttribute('data-primary'), selectedOption.getAttribute('data-secondary'));
+        });
+        
+        style3Button.addEventListener('click', function() {
+            setActiveButton(this);
+            logoSvg.innerHTML = `
+                <path d="M20 10C20 4.47715 24.4772 0 30 0H50C55.5228 0 60 4.47715 60 10V70C60 75.5228 55.5228 80 50 80H30C24.4772 80 20 75.5228 20 70V10Z" fill="#3B82F6"/>
+                <path d="M0 30C0 24.4772 4.47715 20 10 20H70C75.5228 20 80 24.4772 80 30V50C80 55.5228 75.5228 60 70 60H10C4.47715 60 0 55.5228 0 50V30Z" fill="#3B82F6"/>
+                <circle cx="40" cy="40" r="20" fill="white"/>
+                <circle cx="40" cy="40" r="10" fill="#3B82F6"/>
+                <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+                <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+            `;
+            
+            // Update colors based on current selection
+            const selectedOption = document.querySelector('.color-option.selected');
+            updateLogoColors(selectedOption.getAttribute('data-primary'), selectedOption.getAttribute('data-secondary'));
+        });
+        
+        // Helper functions
+        function setActiveButton(button) {
+            // Remove active class from all buttons
+            [style1Button, style2Button, style3Button].forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-blue-500');
+                btn.classList.remove('text-white');
+                btn.classList.add('bg-gray-100');
+                btn.classList.add('text-gray-800');
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            button.classList.remove('bg-gray-100');
+            button.classList.remove('text-gray-800');
+            button.classList.add('bg-blue-500');
+            button.classList.add('text-white');
+        }
+        
+        function updateLogoColors(primaryColor, secondaryColor) {
+            const svgPaths = logoSvg.querySelectorAll('path');
+            
+            // Update fill colors
+            svgPaths.forEach((path, index) => {
+                if (path.getAttribute('fill') === '#3B82F6') {
+                    path.setAttribute('fill', primaryColor);
+                }
+                if (path.getAttribute('stroke') === '#1E40AF') {
+                    path.setAttribute('stroke', secondaryColor);
+                }
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'944291aa41898fb6',t:'MTc0Nzk4MjUwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
