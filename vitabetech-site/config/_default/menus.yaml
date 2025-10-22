@@ -1,0 +1,56 @@
+main:
+  - name: "Home"
+    url: "/"
+    weight: 1
+
+  - name: "About Us"
+    url: "/#about"
+    weight: 2
+
+  - name: "Services"
+    url: "/#services"
+    weight: 3 
+
+  - name: "Latest Products"
+    url: "/#latest-products"
+    weight: 4
+
+  - name: "Projects"
+    url: "/#projects"
+    weight: 5
+
+  - name: "Clients"
+    url: "/#clients"
+    weight: 6
+
+  - name: "Blog"
+    url: "/blog"
+    weight: 7
+
+
+
+buttons:
+  - name: "Contact Us"
+    url: "/#contact"
+    weight: 8
+
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 1
+
+  - name: "About Us"
+    url: "/about"
+    weight: 2
+
+  - name: "Services"
+    url: "/services"
+    weight: 3
+
+  - name: "Blog"
+    url: "/blog"
+    weight: 4
+
+  - name: "Contact Us"
+    url: "/contact"
+    weight: 5

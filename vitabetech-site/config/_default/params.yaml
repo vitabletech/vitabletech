@@ -1,0 +1,24 @@
+title: "VitableTech"
+description: "Empowering Businesses Through Open Source Innovation"
+images: 
+  - "images/home/hero/bill-sitting.png"
+
+# logo: "images/shared/logo.png"
+
+favicons:
+  themeColor: "#FFFFFF"
+  backgroundColor: "#FFFFFF"
+  faviconColor: "#000000"
+
+contact:
+  - "trungkienspktnd@gamail.com"
+  - "207.555.0119"
+
+social:
+  dribbble: "#"
+  instagram: "#"
+  facebook: "#"
+  twitter: "#"
+
+copyright: "© 2022 VitableTech All Rights Reserved"
+

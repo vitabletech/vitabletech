@@ -1,0 +1,14 @@
+.gradient-bg {
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+}
+:root {
+  --color-primary: #3B82F6;
+  --color-secondary: #1E40AF;
+  --color-accent: #FBBF24;
+  --color-background: #F3F4F6;
+  --color-text: #111827;
+}
+
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1 !important;
+}
