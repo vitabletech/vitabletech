@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Primary Meta Tags -->
     <title>VitableTech - Open Source Solutions & Enterprise Services</title>
     <meta name="title" content="VitableTech - Open Source Solutions & Enterprise Services">
-    <meta name="description" content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
-    <meta name="keywords" content="software development, web development, mobile apps, open source, enterprise solutions, VitableTech, custom software, UI/UX design">
+    <meta name="description"
+        content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
+    <meta name="keywords"
+        content="software development, web development, mobile apps, open source, enterprise solutions, VitableTech, custom software, UI/UX design">
     <meta name="author" content="VitableTech">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -17,14 +20,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vitabletech.in/">
     <meta property="og:title" content="VitableTech - Open Source Solutions & Enterprise Services">
-    <meta property="og:description" content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
+    <meta property="og:description"
+        content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
     <meta property="og:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="VitableTech - Open Source Solutions & Enterprise Services Logo">
     <meta property="twitter:url" content="https://vitabletech.in/">
     <meta property="twitter:title" content="VitableTech - Open Source Solutions & Enterprise Services">
-    <meta property="twitter:description" content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
+    <meta property="twitter:description"
+        content="VitableTech provides custom software development, web development, mobile apps, and enterprise solutions. We create powerful open source tools and deliver professional services.">
     <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Favicon & Manifest Tags -->
@@ -47,6 +52,7 @@
     <!-- Existing stylesheet links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -80,6 +86,7 @@
     }
     </script>
 </head>
+
 <body class="font-sans text-gray-800 bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -99,81 +106,70 @@
                         </div>
                     </a>
                 </div>
-                
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
-                    <a href="#latest-products" class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
-                    <a href="#clients" class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="services.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="products.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
+                    <a href="projects.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="clients.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
                 </div>
-                
+
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <a href="#home" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
-                <a href="#about" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
-                <a href="#services" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
-                <a href="#latest-products" class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
-                <a href="#projects" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
-                <a href="#clients" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="products.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Latest
+                    Products</a>
+                <a href="projects.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="clients.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
-<!-- Hero Section -->
+    <!-- Hero Section -->
     <section id="home" class="gradient-bg text-white py-20 md:py-28">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Businesses Through Open Source Innovation</h1>
-                    <p class="text-lg md:text-xl mb-8 opacity-90">VitableTech creates powerful open source solutions and provides enterprise services to help businesses thrive in the digital world.</p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Businesses Through Open
+                        Source Innovation</h1>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">VitableTech creates powerful open source solutions and
+                        provides enterprise services to help businesses thrive in the digital world.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#projects" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-center">Explore Projects</a>
-                        <a href="#contact" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition-colors text-center">Get in Touch</a>
+                        <a href="#projects"
+                            class="bg-white text-primary font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-center">Explore
+                            Projects</a>
+                        <a href="#contact"
+                            class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition-colors text-center">Get
+                            in Touch</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Large Logo for Hero Section -->
-                            <circle cx="200" cy="200" r="180" fill="#3B82F6" fill-opacity="0.1" stroke="white" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="140" fill="#3B82F6" fill-opacity="0.2" stroke="white" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="100" fill="#3B82F6" fill-opacity="0.3" stroke="white" stroke-width="2"/>
-                            <circle cx="200" cy="200" r="60" fill="white"/>
-                            <circle cx="200" cy="200" r="30" fill="#3B82F6"/>
-                            
-                            <!-- Tech elements -->
-                            <path d="M320 120L290 150M80 320L110 290" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                            <path d="M80 80L110 110M320 320L290 290" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                            
-                            <!-- Code brackets -->
-                            <path d="M150 100L120 200L150 300" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M250 100L280 200L250 300" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            
-                            <!-- Pulse rings -->
-                            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="1" stroke-dasharray="10 5">
-                                <animate attributeName="r" from="160" to="190" dur="5s" repeatCount="indefinite"/>
-                                <animate attributeName="opacity" from="1" to="0" dur="5s" repeatCount="indefinite"/>
-                            </circle>
-                        </svg>
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center" style=" display: none; ">
-                            <div class="text-4xl font-bold">
-                                <span class="text-white">Vitable</span><span class="text-white">Tech</span>
-                            </div>
-                            <div class="text-white text-sm mt-2">Open Source Innovation</div>
-                        </div>
+                <div class="md:w-1/2 flex justify-center perspective-1000">
+                    <div id="hero-3d-container" class="relative w-full h-[400px] md:h-[500px]">
+                        <!-- 3D Canvas will be injected here -->
                     </div>
                 </div>
             </div>
@@ -182,88 +178,146 @@
 
 
     <!-- About Section -->
-    <section id="about" class="py-16 md:py-24 bg-white">
+    <section id="about" class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">About VitableTech</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Founded in 2018 in Gwalior, Madhya Pradesh, India, VitableTech is dedicated to creating innovative digital solutions that empower businesses and individuals.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Founded in 2018 in Gwalior, Madhya Pradesh, India,
+                    VitableTech is dedicated to creating innovative digital solutions that empower businesses and
+                    individuals.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-code text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Open Source Community</h3>
-                    <p class="text-gray-600">We develop free, open-source products that anyone can use and contribute to. Our mission is to make quality software accessible to everyone.</p>
+                    <p class="text-gray-600">We develop free, open-source products that anyone can use and contribute
+                        to. Our mission is to make quality software accessible to everyone.</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-building text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Enterprise Services</h3>
-                    <p class="text-gray-600">Through enterprise.vitabletech.in, we provide professional development services for businesses needing custom solutions and dedicated support.</p>
+                    <p class="text-gray-600">Through enterprise.vitabletech.in, we provide professional development
+                        services for businesses needing custom solutions and dedicated support.</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-heart text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Community Driven</h3>
-                    <p class="text-gray-600">Our open source work is supported by donations from the community, allowing us to continue creating valuable tools for everyone.</p>
+                    <p class="text-gray-600">Our open source work is supported by donations from the community, allowing
+                        us to continue creating valuable tools for everyone.</p>
                 </div>
             </div>
-            
-            <div class="mt-16 bg-gray-50 rounded-xl p-8 shadow-lg">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
-                        <p class="text-gray-600 mb-6">At VitableTech, we believe in the power of technology to transform businesses. Our dual approach of open source development and enterprise services allows us to serve a wide range of needs while contributing to the global tech community.</p>
-                        <p class="text-gray-600">Since 2018, we've been building tools that help businesses streamline operations, enhance productivity, and create better user experiences.</p>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white p-6 rounded-lg shadow text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">5+</div>
-                                <div class="text-gray-600">Years Experience</div>
+
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100" data-aos="fade-up"
+                data-aos-delay="400">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <div
+                            class="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                            Our Vision</div>
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800">Transforming Businesses Through Innovation
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                            At VitableTech, we believe in the power of technology to bridge the gap between potential
+                            and performance. Our dual approach of open source contributions and premium enterprise
+                            services creates a unique ecosystem of growth.
+                        </p>
+
+                        <div class="space-y-4 mb-8 text-gray-600">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1 mr-3">
+                                    <i class="fas fa-check text-green-600 text-xs"></i>
+                                </div>
+                                <span>Developing tools to streamline operations</span>
                             </div>
-                            <div class="bg-white p-6 rounded-lg shadow text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">10+</div>
-                                <div class="text-gray-600">Open Source Projects</div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1 mr-3">
+                                    <i class="fas fa-check text-green-600 text-xs"></i>
+                                </div>
+                                <span>Enhancing productivity with custom solutions</span>
                             </div>
-                            <div class="bg-white p-6 rounded-lg shadow text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">50+</div>
-                                <div class="text-gray-600">Contributors</div>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">100+</div>
-                                <div class="text-gray-600">Happy Clients</div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1 mr-3">
+                                    <i class="fas fa-check text-green-600 text-xs"></i>
+                                </div>
+                                <span>Creating exceptional user experiences</span>
                             </div>
                         </div>
+
+                        <a href="about.html"
+                            class="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors text-lg group">
+                            Discover Our Story
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                        <img src="./images/our_mission.png" alt="VitableTech Mission Illustration"
+                            class="w-full max-w-md drop-shadow-xl hover:scale-105 transition-transform duration-500 rounded-lg">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="py-12 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold mb-2">5+</div>
+                    <div class="text-blue-100">Years Experience</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold mb-2">10+</div>
+                    <div class="text-blue-100">Open Source Projects</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-blue-100">Contributors</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl font-bold mb-2">100+</div>
+                    <div class="text-blue-100">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-gray-50">
+    <section id="services" class="py-12 md:py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer a range of services to help businesses grow and succeed in the digital landscape.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer a range of services to help businesses grow
+                    and succeed in the digital landscape.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-laptop-code text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Custom Software Development</h3>
-                    <p class="text-gray-600 mb-4">Tailored software solutions designed to meet your specific business needs and challenges.</p>
+                    <p class="text-gray-600 mb-4">Tailored software solutions designed to meet your specific business
+                        needs and challenges.</p>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check text-primary mr-2"></i>
@@ -279,13 +333,15 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-paint-brush text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">UI/UX Design</h3>
-                    <p class="text-gray-600 mb-4">Beautiful, intuitive interfaces that enhance user experience and drive engagement.</p>
+                    <p class="text-gray-600 mb-4">Beautiful, intuitive interfaces that enhance user experience and drive
+                        engagement.</p>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check text-primary mr-2"></i>
@@ -301,13 +357,15 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-server text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Web Development</h3>
-                    <p class="text-gray-600 mb-4">Responsive, high-performance websites and web applications that drive results.</p>
+                    <p class="text-gray-600 mb-4">Responsive, high-performance websites and web applications that drive
+                        results.</p>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check text-primary mr-2"></i>
@@ -323,9 +381,10 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-mobile-alt text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Mobile App Development</h3>
@@ -345,9 +404,10 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-cogs text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">DevOps & Cloud Services</h3>
@@ -367,13 +427,15 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="bg-white rounded-xl p-8 shadow-md service-card">
-                    <div class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+
+                <div class="bg-white rounded-xl p-8 shadow-md service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div
+                        class="bg-primary bg-opacity-10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                         <i class="fas fa-headset text-primary text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4">Maintenance & Support</h3>
-                    <p class="text-gray-600 mb-4">Ongoing support and maintenance to keep your systems running smoothly.</p>
+                    <p class="text-gray-600 mb-4">Ongoing support and maintenance to keep your systems running smoothly.
+                    </p>
                     <ul class="text-gray-600 space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check text-primary mr-2"></i>
@@ -393,255 +455,354 @@
         </div>
     </section>
 
-    <!-- Latest Products Section -->
-    <section id="latest-products" class="py-16 md:py-24 bg-white">
+    <!-- Technologies Section -->
+    <section class="py-12 md:py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technologies We Use</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We use modern frameworks, AI integrations, and robust
+                    tools to build scalable applications.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
+                <!-- AI -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-brain text-5xl text-purple-600 mb-2"></i>
+                    <div class="font-semibold mt-2">AI Solutions</div>
+                </div>
+                <!-- React -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-react text-5xl text-blue-400 mb-2"></i>
+                    <div class="font-semibold mt-2">React</div>
+                </div>
+                <!-- React Native -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <i class="fab fa-react text-5xl text-blue-600 mb-2"></i>
+                    <div class="font-semibold mt-2">React Native</div>
+                </div>
+                <!-- Flutter -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-mobile-alt text-5xl text-blue-400 mb-2"></i>
+                    <div class="font-semibold mt-2">Flutter</div>
+                </div>
+                <!-- Android -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="250">
+                    <i class="fab fa-android text-5xl text-green-500 mb-2"></i>
+                    <div class="font-semibold mt-2">Android</div>
+                </div>
+                <!-- iOS -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-apple text-5xl text-gray-800 mb-2"></i>
+                    <div class="font-semibold mt-2">iOS</div>
+                </div>
+                <!-- Node.js -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <i class="fab fa-node text-5xl text-green-500 mb-2"></i>
+                    <div class="font-semibold mt-2">Node.js</div>
+                </div>
+                <!-- PHP -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-php text-5xl text-indigo-500 mb-2"></i>
+                    <div class="font-semibold mt-2">PHP</div>
+                </div>
+                <!-- WordPress -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="450">
+                    <i class="fab fa-wordpress text-5xl text-blue-700 mb-2"></i>
+                    <div class="font-semibold mt-2">WordPress</div>
+                </div>
+                <!-- MySQL -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-database text-5xl text-blue-800 mb-2"></i>
+                    <div class="font-semibold mt-2">MySQL</div>
+                </div>
+                <!-- Python -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="550">
+                    <i class="fab fa-python text-5xl text-yellow-500 mb-2"></i>
+                    <div class="font-semibold mt-2">Python</div>
+                </div>
+                <!-- Docker -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <i class="fab fa-docker text-5xl text-blue-500 mb-2"></i>
+                    <div class="font-semibold mt-2">Docker</div>
+                </div>
+                <!-- AWS -->
+                <div class="text-center hover:opacity-100 transition-opacity transform hover:-translate-y-1 duration-300"
+                    data-aos="fade-up" data-aos-delay="650">
+                    <i class="fab fa-aws text-5xl text-orange-500 mb-2"></i>
+                    <div class="font-semibold mt-2">AWS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Products Section -->
+    <section id="latest-products" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest Products</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover our newest releases and innovative tools for developers and professionals.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover our newest releases and innovative tools for
+                    developers and professionals.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Ludo Player -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="h-48 bg-gradient-to-r from-green-400 to-blue-600 flex items-center justify-center">
-                        <img src="./images/lodo.png" alt="Ludo Player Logo" loading="lazy" width="50%" onerror="this.style.display='none'">
+                        <img src="./images/lodo.png" alt="Ludo Player Logo" loading="lazy" width="50%"
+                            onerror="this.style.display='none'">
                         <i class="fas fa-gamepad text-white text-5xl" style="display:none;"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Ludo Player</h3>
-                        <p class="text-gray-600 mb-4">A fun and interactive Ludo game extension for Visual Studio Code. Play Ludo directly in your editor!</p>
+                        <p class="text-gray-600 mb-4">A fun and interactive Ludo game extension for Visual Studio Code.
+                            Play Ludo directly in your editor!</p>
                         <div class="flex justify-between items-center">
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ludo-player" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ludo-player"
+                                target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
                                 <i class="fab fa-windows mr-2"></i> VS Code Marketplace
                             </a>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Game Extension</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Game
+                                Extension</span>
                         </div>
                     </div>
                 </div>
                 <!-- Fake Developer Mode -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="h-48 bg-gradient-to-r from-gray-400 to-black-600 flex items-center justify-center">
-                        <img src="./images/fakeDeveloperMode.png" alt="Fake Developer Mode Logo" loading="lazy" width="50%" onerror="this.style.display='none'">
+                        <img src="./images/fakeDeveloperMode.png" alt="Fake Developer Mode Logo" loading="lazy"
+                            width="50%" onerror="this.style.display='none'">
                         <i class="fas fa-user-secret text-white text-5xl" style="display:none;"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Fake Developer Mode</h3>
-                        <p class="text-gray-600 mb-4">Simulate developer mode in VS Code for fun and pranks. Trick your friends with a fake developer experience!</p>
+                        <p class="text-gray-600 mb-4">Simulate developer mode in VS Code for fun and pranks. Trick your
+                            friends with a fake developer experience!</p>
                         <div class="flex justify-between items-center">
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.fake-developer-mode" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.fake-developer-mode"
+                                target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
                                 <i class="fab fa-windows mr-2"></i> VS Code Marketplace
                             </a>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">Fun Extension</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">Fun
+                                Extension</span>
                         </div>
                     </div>
                 </div>
                 <!-- ANSI Spectrum -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-600 flex items-center justify-center">
-                        <img src="./images/AnsiSpectrum.png" alt="ANSI Spectrum Logo" loading="lazy" width="50%" onerror="this.style.display='none'">
+                        <img src="./images/AnsiSpectrum.png" alt="ANSI Spectrum Logo" loading="lazy" width="50%"
+                            onerror="this.style.display='none'">
                         <i class="fas fa-palette text-white text-5xl" style="display:none;"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">ANSI Spectrum</h3>
-                        <p class="text-gray-600 mb-4">Visualize ANSI color codes and spectrum in your editor. Perfect for developers working with terminal colors.</p>
+                        <p class="text-gray-600 mb-4">Visualize ANSI color codes and spectrum in your editor. Perfect
+                            for developers working with terminal colors.</p>
                         <div class="flex justify-between items-center">
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ansi-spectrum" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ansi-spectrum"
+                                target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
                                 <i class="fab fa-windows mr-2"></i> VS Code Marketplace
                             </a>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Color Tool</span>
+                            <span
+                                class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Color
+                                Tool</span>
                         </div>
                     </div>
                 </div>
-                <!-- AutoDevKit -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-blue-400 to-green-600 flex items-center justify-center">
-                        <img src="https://github.com/msrajawat298/AutoDevKit/raw/main/demo.gif" alt="AutoDevKit Logo" loading="lazy" width="100%" onerror="this.style.display='none'">
-                        <i class="fas fa-robot text-white text-5xl" style="display:none;"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">AutoDevKit</h3>
-                        <p class="text-gray-600 mb-4">A toolkit to automate development workflows and boost productivity. Open source and customizable for your needs.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/msrajawat298/AutoDevKit" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fab fa-github mr-2"></i> GitHub
-                            </a>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Dev Toolkit</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- CareerBuddy -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-400 flex items-center justify-center">
-                        <img src="./images/careerBuddy.png" alt="CareerBuddy Logo" loading="lazy" width="50%" onerror="this.style.display='none'">
-                        <i class="fas fa-user-graduate text-white text-5xl" style="display:none;"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">CareerBuddy</h3>
-                        <p class="text-gray-600 mb-4">Meet your personal AI career companion. Build a private career profile, generate resumes, fill forms, manage assets, analyze jobs, and get a personalized roadmap—all in one installable app. Free, no login required.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://careerbuddy.vitabletech.in/" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fas fa-external-link-alt mr-2"></i> Launch App
-                            </a>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">AI Career Platform</span>
-                        </div>
-                    </div>
-                </div>
-                    <!-- VLearn (Coming Soon) -->
-                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                        <div class="h-48 flex items-center justify-center" style="background: linear-gradient(to right, #2563eb, #7c3aed);">
-                            <i class="fas fa-graduation-cap text-white text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-3">VLearn <span class="text-xs bg-yellow-100 text-yellow-800 font-semibold px-2 py-0.5 rounded align-top ml-2">Coming Soon</span></h3>
-                            <p class="text-gray-600 mb-4">Master Modern Development<br>From JavaScript fundamentals to system design, learn the skills that top tech companies demand. Join thousands of developers who've transformed their careers with VLearn.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Learning Platform</span>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="products.html"
+                    class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-secondary transition-colors">View
+                    All Products</a>
             </div>
         </div>
     </section>
     <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-24 bg-white">
+    <section id="projects" class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Open Source Projects</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our free, open-source tools designed to help businesses and developers.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our free, open-source tools designed to help
+                    businesses and developers.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="h-48 bg-gradient-to-r from-violet-400 to-blue-600 flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/vitabletech/plannerbuddy-mobileapp/refs/heads/main/app/assets/icon.png" alt="Planner Buddy Logo" loading="lazy" width="50%"/>
+                        <img src="https://raw.githubusercontent.com/vitabletech/plannerbuddy-mobileapp/refs/heads/main/app/assets/icon.png"
+                            alt="Planner Buddy Logo" loading="lazy" width="50%" />
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3"> Planner Buddy</h3>
-                        <p class="text-gray-600 mb-4">An event management platform that helps users oversee event details, manage guest lists, track gifts, and generate reports.</p>
+                        <p class="text-gray-600 mb-4">An event management platform that helps users oversee event
+                            details, manage guest lists, track gifts, and generate reports.</p>
                         <div class="flex justify-between items-center">
-                            <a href="https://github.com/vitabletech/plannerbuddy-mobileapp" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                            <a href="https://github.com/vitabletech/plannerbuddy-mobileapp" target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
                                 <i class="fab fa-github mr-2"></i> GitHub
                             </a>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Event Management</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-gray-300 to-black-600 flex items-center justify-center">
-                        <img src="https://snippetmaster.vitabletech.in/images/snippetmaster.webp" alt="Snippet Master Logo" loading="lazy" width="50%"/>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Snippet Master</h3>
-                        <p class="text-gray-600 mb-4">A Visual Studio Code extension that provides custom code snippets for multiple programming languages to enhance productivity.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/vitabletech/SnippetMaster" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fab fa-github mr-2"></i> GitHub
-                            </a>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Developer Tool</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Event
+                                Management</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-r from-gray-300 to-black-600 flex items-center justify-center">
+                        <img src="https://snippetmaster.vitabletech.in/images/snippetmaster.webp"
+                            alt="Snippet Master Logo" loading="lazy" width="50%" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Snippet Master</h3>
+                        <p class="text-gray-600 mb-4">A Visual Studio Code extension that provides custom code snippets
+                            for multiple programming languages to enhance productivity.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="https://github.com/vitabletech/SnippetMaster" target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <span
+                                class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Developer
+                                Tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="h-48 bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center">
                         <i class="fas fa-tools text-white text-5xl"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">General-JS-Toolkit</h3>
-                        <p class="text-gray-600 mb-4">A JavaScript library offering a collection of general-purpose functions for various programming tasks.</p>
+                        <p class="text-gray-600 mb-4">A JavaScript library offering a collection of general-purpose
+                            functions for various programming tasks.</p>
                         <div class="flex justify-between items-center">
-                            <a href="https://github.com/vitabletech/general-js-toolkit" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
+                            <a href="https://github.com/vitabletech/general-js-toolkit" target="_blank"
+                                class="text-primary hover:text-secondary transition-colors flex items-center">
                                 <i class="fab fa-github mr-2"></i> GitHub
                             </a>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">JavaScript Library</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">JavaScript
+                                Library</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="projects.html"
+                    class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-secondary transition-colors">View
+                    All Projects</a>
+            </div>
 
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
-                        <i class="fas fa-image text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">
-                            <a href="https://vitabletech.gitlab.io/online-image-editor/" target="_blank" class="hover:text-secondary transition-colors">
-                                Editelegance
-                            </a>
-                        </h3>
-                        <p class="text-gray-600 mb-4">An online tool for basic image editing, allowing users to crop, resize, and apply filters to their images.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://gitlab.com/vitabletech/online-image-editor" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fab fa-github mr-2"></i> GitHub
-                            </a>
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Image Editing</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-12 text-center">
+                <a href="https://github.com/vitabletech" target="_blank"
+                    class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition-colors">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-pink-400 to-red-400 flex items-center justify-center">
-                        <i class="fas fa-gamepad text-white text-5xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">
-                            <a href="https://vitabletech.gitlab.io/flames_game/" target="_blank" class="hover:text-secondary transition-colors">
-                                Flames Game
-                            </a>
-                        </h3>
-                        <p class="text-gray-600 mb-4">
-                            A fun and interactive tool based on the classic FLAMES game, allowing users to check relationship compatibility by entering two names. Great for entertainment and sharing with friends.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://gitlab.com/vitabletech/flames_game" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fab fa-github mr-2"></i> GitHub
-                            </a>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">CLI Tool</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Process Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How We Work</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our proven development process ensures we deliver
+                    high-quality solutions on time and within budget.</p>
+            </div>
 
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md card-hover">
-                    <div class="h-48 bg-gradient-to-r from-orange-400 to-red-600 flex items-center justify-center">
-                         <i class="fas fa-qrcode text-white text-5xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-primary">01</span>
+                        <div
+                            class="absolute top-0 right-0 -mr-2 -mt-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Step</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">
-                            <a href="https://vitabletech.gitlab.io/generate-you-qr-code/" target="_blank" class="hover:text-secondary transition-colors">
-                                Generate Your qr code
-                            </a>
-                        </h3>
-                        <p class="text-gray-600 mb-4">Generate your QR Code instantly and download it as an image for easy sharing or printing.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="https://gitlab.com/vitabletech/generate-you-qr-code" target="_blank" class="text-primary hover:text-secondary transition-colors flex items-center">
-                                <i class="fab fa-github mr-2"></i> GitHub
-                            </a>
-                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">QR Code Generator Tool</span>
-                        </div>
+                    <h3 class="text-xl font-bold mb-3">Discovery</h3>
+                    <p class="text-gray-600">We analyze your requirements, understand your goals, and plan the roadmap.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-primary">02</span>
+                        <div
+                            class="absolute top-0 right-0 -mr-2 -mt-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Step</div>
                     </div>
+                    <h3 class="text-xl font-bold mb-3">Design</h3>
+                    <p class="text-gray-600">We create intuitive UI/UX designs and prototypes for your approval.</p>
                 </div>
+                <!-- Step 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-primary">03</span>
+                        <div
+                            class="absolute top-0 right-0 -mr-2 -mt-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Step</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Development</h3>
+                    <p class="text-gray-600">Our agile team builds your solution using modern technologies and coding
+                        standards.</p>
                 </div>
-
-                <div class="mt-12 text-center">
-                    <a href="https://github.com/vitabletech" target="_blank" class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition-colors">
-                        <i class="fab fa-github mr-2"></i> View All Projects on GitHub
-                    </a>
+                <!-- Step 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-primary">04</span>
+                        <div
+                            class="absolute top-0 right-0 -mr-2 -mt-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Step</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Launch</h3>
+                    <p class="text-gray-600">We deploy your project, ensure smooth performance, and provide ongoing
+                        support.</p>
                 </div>
+            </div>
         </div>
     </section>
 
     <!-- Clients Section -->
-    <section id="clients" class="py-16 md:py-24 bg-gray-50">
+    <section id="clients" class="py-12 md:py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Clients</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We've had the pleasure of working with amazing clients across various industries.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We've had the pleasure of working with amazing
+                    clients across various industries.</p>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-10">
                 <div class="bg-white p-6 rounded-xl shadow-md flex items-center justify-center h-24">
                     <div class="font-bold text-lg text-gray-700">
                         Flamingo DigiPrint
@@ -663,13 +824,13 @@
                     <div class="font-bold text-lg text-gray-700">Brilliant Concepts</div>
                 </div>
             </div>
-            
+
             <div class="text-center mb-12">
                 <h3 class="text-2xl font-bold mb-8">What Our Clients Say</h3>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="fas fa-star"></i>
@@ -679,7 +840,9 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"VitableTech delivered an exceptional e-commerce platform that has significantly increased our online sales. Their team was professional, responsive, and truly understood our business needs."</p>
+                    <p class="text-gray-600 italic mb-6">"VitableTech delivered an exceptional e-commerce platform that
+                        has significantly increased our online sales. Their team was professional, responsive, and truly
+                        understood our business needs."</p>
                     <div class="flex items-center">
                         <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                             <span class="text-gray-700 font-semibold">FD</span>
@@ -690,8 +853,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="fas fa-star"></i>
@@ -701,7 +864,9 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"Working with VitableTech has been a game-changer for our logistics operations. Their custom software solution has streamlined our processes and improved efficiency across the board."</p>
+                    <p class="text-gray-600 italic mb-6">"Working with VitableTech has been a game-changer for our
+                        logistics operations. Their custom software solution has streamlined our processes and improved
+                        efficiency across the board."</p>
                     <div class="flex items-center">
                         <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                             <span class="text-gray-700 font-semibold">SL</span>
@@ -712,8 +877,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card">
+
+                <div class="bg-white p-8 rounded-xl shadow-md testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="fas fa-star"></i>
@@ -723,7 +888,9 @@
                             <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"The team at VitableTech created a beautiful, user-friendly website for our business that perfectly captures our brand identity. We've seen a significant increase in customer engagement since launch."</p>
+                    <p class="text-gray-600 italic mb-6">"The team at VitableTech created a beautiful, user-friendly
+                        website for our business that perfectly captures our brand identity. We've seen a significant
+                        increase in customer engagement since launch."</p>
                     <div class="flex items-center">
                         <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
                             <span class="text-gray-700 font-semibold">BC</span>
@@ -735,203 +902,172 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-12">
+                <a href="clients.html"
+                    class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-secondary transition-colors">View
+                    All Clients</a>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-white">
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-16 bg-white">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
                 <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Have a project in mind or want to learn more about our services? We'd love to hear from you!</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Common questions about our services and process.</p>
             </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Location</h4>
-                                <p class="text-gray-600">Gwalior, Madhya Pradesh, India</p>
-                            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <details class="group">
+                        <summary
+                            class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>How do I start a project with VitableTech?</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    viewBox="0 0 24 24" width="24">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="p-6 text-gray-600 bg-white">
+                            Contact us via our form, email, or phone. We'll schedule a discovery call to understand your
+                            needs and provide a proposal.
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Email</h4>
-                                <a href="mailto:info@vitabletech.in" class="text-primary hover:text-secondary transition-colors">info@vitabletech.in</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i class="fas fa-phone-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Phone</h4>
-                                <a href="tel:+919009410973" class="text-primary hover:text-secondary transition-colors">+91 9009 410 973</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                                <i class="fab fa-whatsapp text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">WhatsApp</h4>
-                                <a href="https://wa.me/919009410973" target="_blank" class="text-primary hover:text-secondary transition-colors">+91 9009 410 973</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-4">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a target="_blank" href="https://github.com/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a target="_blank" href="https://www.linkedin.com/company/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a target="_blank" href="https://x.com/vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a target="_blank" href="https://www.youtube.com/@vitabletech" class="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
+                    </details>
                 </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
-
-    <form id="contactForm" class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                <!-- FAQ 2 -->
+                <div class="border rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <details class="group">
+                        <summary
+                            class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>Do you provide maintenance after launch?</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    viewBox="0 0 24 24" width="24">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="p-6 text-gray-600 bg-white">
+                            Yes, we offer ongoing support and maintenance packages to keep your software secure and
+                            up-to-date.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="border rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <details class="group">
+                        <summary
+                            class="flex justify-between items-center font-medium cursor-pointer list-none p-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>What industries do you specialize in?</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    viewBox="0 0 24 24" width="24">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="p-6 text-gray-600 bg-white">
+                            We work across E-commerce, Healthcare, FinTech, and Logistics, delivering tailored solutions
+                            for each industry's unique challenges.
+                        </div>
+                    </details>
+                </div>
             </div>
 
-            <div>
-                <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
-                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-            </div>
-        </div>
-
-        <div>
-            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-        </div>
-
-        <div>
-            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
-        </div>
-
-        <div>
-            <button type="submit" class="w-full bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-secondary transition-colors">Send Message</button>
-        </div>
-    </form>
-
-    <div id="formSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
-        Thank you for your message! We'll get back to you soon.
-    </div>
-</div>
-
-<!-- ✅ JavaScript: WhatsApp Integration -->
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        const text = `New Contact Form Submission:%0AName: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
-        const whatsappNumber = "919009410973"; // India code +91
-
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-        window.open(whatsappURL, '_blank');
-
-        // Optional: Show success message
-        document.getElementById("formSuccess").classList.remove("hidden");
-    });
-</script>
-
+            <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="400">
+                <a href="faq.html"
+                    class="text-primary font-semibold hover:text-secondary transition-colors group inline-flex items-center">
+                    View All FAQs
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-16 md:py-20 gradient-bg text-white">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">Let's work together to bring your ideas to life with our expertise in software development and design.</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#contact" class="bg-white text-primary font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">Contact Us</a>
-                <a href="https://github.com/vitabletech" target="_blank" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors">Explore Our Work</a>
-            </div>
+    <!-- CTA Section -->
+    <section class="py-12 md:py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Contact us today to discuss your ideas
+                and how we can help you achieve your goals.</p>
+            <a href="contact.html"
+                class="inline-block px-8 py-3 bg-white text-primary font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-colors">Contact
+                Us</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="bg-secondary-dark text-white py-12">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">VitableTech</h3>
-                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise solutions since 2018.</p>
+                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise
+                        solutions since 2018.</p>
                     <div class="flex space-x-4">
-                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                        <a target="_blank" href="https://github.com/vitabletech"
+                            class="text-gray-300 hover:text-white transition-colors">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-300 hover:text-white transition-colors">
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/"
+                            class="text-gray-300 hover:text-white transition-colors">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a target="_blank" href="https://x.com/vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                        <a target="_blank" href="https://x.com/vitabletech"
+                            class="text-gray-300 hover:text-white transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-300 hover:text-white transition-colors">
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech"
+                            class="text-gray-300 hover:text-white transition-colors">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="#clients" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="projects.html"
+                                class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="clients.html" class="text-gray-300 hover:text-white transition-colors">Clients</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                        </li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Our Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
-                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Custom
+                                Software Development</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">UI/UX
+                                Design</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Web
+                                Development</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Mobile App
+                                Development</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">DevOps &
+                                Cloud Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Maintenance
+                                & Support</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-bold mb-4">Contact Us</h3>
                     <ul class="space-y-2">
@@ -941,7 +1077,8 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-2"></i>
-                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors">info@vitabletech.in</a>
+                            <a href="mailto:info@vitabletech.in"
+                                class="hover:text-white transition-colors">info@vitabletech.in</a>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-phone-alt mt-1 mr-2"></i>
@@ -949,12 +1086,13 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fab fa-whatsapp mt-1 mr-2"></i>
-                            <a href="https://wa.me/919009410973" target="_blank" class="hover:text-white transition-colors">+91 9009 410 973</a>
+                            <a href="https://wa.me/919009410973" target="_blank"
+                                class="hover:text-white transition-colors">+91 9009 410 973</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-700 pt-8 mt-8 text-center">
                 <p class="text-gray-300">&copy; 2018 VitableTech. All rights reserved.</p>
             </div>
@@ -963,5 +1101,17 @@
 
     <script src="./js/mobile_menu_toogle.js"></script>
     <script src="./js/custom_script.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./js/3d-hero.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
+
 </html>

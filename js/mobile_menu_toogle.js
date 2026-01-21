@@ -31,16 +31,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const contactForm = document.getElementById("contactForm");
 const formSuccess = document.getElementById("formSuccess");
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  // In a real implementation, you would send the form data to a server
-  // For this demo, we'll just show the success message
-  formSuccess.classList.remove("hidden");
-  contactForm.reset();
+    // In a real implementation, you would send the form data to a server
+    // For this demo, we'll just show the success message
+    formSuccess.classList.remove("hidden");
+    contactForm.reset();
 
-  // Hide success message after 5 seconds
-  setTimeout(() => {
-    formSuccess.classList.add("hidden");
-  }, 5000);
-});
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      formSuccess.classList.add("hidden");
+    }, 5000);
+  });
+}
