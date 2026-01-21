@@ -1,10 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
 html {
     scroll-behavior: smooth;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  nav a {
+    @apply font-heading;
+  }
 }
 
 .gradient-bg {

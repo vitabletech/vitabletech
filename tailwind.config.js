@@ -27,6 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        heading: ['Outfit', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
