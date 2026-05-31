@@ -54,3 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Clear App Cache functionality
+window.clearAppCache = function() {
+    if (confirm('Are you sure you want to clear the app cache? This will reload the page.')) {
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) caches.delete(name);
+            });
+        }
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        alert('Cache cleared successfully!');
+        window.location.reload(true);
+    }
+};
