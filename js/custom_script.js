@@ -31,3 +31,26 @@
     }
   }
 })();
+
+// Go To Top functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const goToTopBtn = document.getElementById('goToTopBtn');
+    if (goToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                goToTopBtn.classList.remove('opacity-0', 'invisible');
+                goToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                goToTopBtn.classList.add('opacity-0', 'invisible');
+                goToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
