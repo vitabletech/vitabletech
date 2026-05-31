@@ -31,3 +31,48 @@
     }
   }
 })();
+
+// Go To Top functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const goToTopBtn = document.getElementById('goToTopBtn');
+    if (goToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                goToTopBtn.classList.remove('opacity-0', 'invisible');
+                goToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                goToTopBtn.classList.add('opacity-0', 'invisible');
+                goToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Clear App Cache functionality
+window.clearAppCache = function() {
+    if (confirm('Are you sure you want to clear the app cache? This will reload the page.')) {
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) caches.delete(name);
+            });
+        }
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        alert('Cache cleared successfully!');
+        window.location.reload(true);
+    }
+};
