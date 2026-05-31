@@ -76,3 +76,60 @@ window.clearAppCache = function() {
         window.location.reload(true);
     }
 };
+
+// Section Lazy Loader
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all sections except the first one (hero section)
+    const sections = document.querySelectorAll('section:not(:first-of-type)');
+    
+    // Add loader to each section
+    sections.forEach(section => {
+        // Ensure section is positioned relative for absolute loader
+        if (getComputedStyle(section).position === 'static') {
+            section.classList.add('relative');
+        }
+        
+        const loader = document.createElement('div');
+        loader.className = 'section-lazy-loader absolute inset-0 z-40 flex items-center justify-center bg-gray-50/90 backdrop-blur-sm transition-opacity duration-700';
+        loader.innerHTML = `
+            <div class="flex flex-col items-center">
+                <div class="animate-spin rounded-full h-10 w-10 border-4 border-gray-200 border-t-primary mb-2"></div>
+                <span class="text-sm text-gray-500 font-medium tracking-wider">Loading Section...</span>
+            </div>
+        `;
+        
+        section.appendChild(loader);
+    });
+
+    // Intersection Observer to trigger lazy load
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                const loader = section.querySelector('.section-lazy-loader');
+                
+                if (loader) {
+                    // Fade out loader
+                    loader.style.opacity = '0';
+                    // Remove after transition
+                    setTimeout(() => {
+                        if (loader.parentNode === section) {
+                            section.removeChild(loader);
+                        }
+                    }, 700); 
+                }
+                
+                // Stop observing this section
+                observer.unobserve(section);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px', // Start loading slightly before it enters the viewport
+        threshold: 0.1
+    });
+
+    // Start observing sections
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
