@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vitabletech-cache-v1';
+const CACHE_NAME = 'vitabletech-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -9,6 +9,9 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+  // Force the waiting service worker to become the active service worker.
+  self.skipWaiting();
+  
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -18,19 +21,10 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
-});
-
 self.addEventListener('activate', event => {
+  // Claim clients immediately so they use the new service worker without requiring a reload.
+  event.waitUntil(clients.claim());
+  
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -42,5 +36,32 @@ self.addEventListener('activate', event => {
         })
       );
     })
+  );
+});
+
+// Network First, fall back to cache strategy
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+  
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        // Clone the response before caching
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME)
+          .then(cache => {
+            // Check if request URL starts with http to avoid caching unsupported schemes like chrome-extension
+            if (event.request.url.startsWith('http')) {
+               cache.put(event.request, responseToCache);
+            }
+          });
+        return response;
+      })
+      .catch(() => {
+        // If network fails, try to get it from the cache
+        return caches.match(event.request);
+      })
   );
 });
