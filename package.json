@@ -2,9 +2,9 @@
   "name": "vitabletech",
   "version": "1.0.0",
   "scripts": {
-    "build": "tailwindcss -i ./css/input.css -o ./css/main.css --minify",
+    "build": "node scripts/bump-version.js && tailwindcss -i ./css/input.css -o ./css/main.css --minify",
     "dev": "tailwindcss -i ./css/input.css -o ./css/main.css --watch",
-    "release": "node bump-version.js"
+    "release": "node scripts/bump-version.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

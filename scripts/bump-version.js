@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const versionFilePath = path.join(__dirname, 'version.json');
-const swFilePath = path.join(__dirname, 'sw.js');
+const versionFilePath = path.join(__dirname, '../version.json');
+const swFilePath = path.join(__dirname, '../sw.js');
 
 // 1. Read and parse version.json
 let versionData = { version: '1.0.0', timestamp: Date.now() };
