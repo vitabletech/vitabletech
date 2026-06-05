@@ -81,7 +81,7 @@ window.clearAppCache = function() {
 document.addEventListener('DOMContentLoaded', () => {
     // Select all sections except the first one (hero section)
     const sections = document.querySelectorAll('section:not(:first-of-type)');
-    
+    console.log('sections :: ', sections);
     // Add loader to each section
     sections.forEach(section => {
         // Ensure section is positioned relative for absolute loader

@@ -52,6 +52,7 @@
 
     <!-- Existing stylesheet links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 
     <!-- Schema.org markup -->
@@ -101,26 +102,25 @@
     </div>
 
     <!-- Floating Social Media Bar -->
-    <div
-        class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-3 p-3 glass rounded-r-2xl border-l-0">
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
         <a href="https://github.com/vitabletech" target="_blank"
-            class="w-10 h-10 bg-secondary-dark text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
+            class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-github text-xl"></i>
         </a>
         <a href="https://www.facebook.com/vitabletech" target="_blank"
-            class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all duration-300">
+            class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-facebook-f text-xl"></i>
         </a>
         <a href="https://www.youtube.com/@vitabletech" target="_blank"
-            class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-[0_0_15px_rgba(220,38,38,0.5)] transition-all duration-300">
+            class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-youtube text-xl"></i>
         </a>
         <a href="https://wa.me/916280671085" target="_blank"
-            class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300">
+            class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
         <a href="https://www.instagram.com/vitabletech" target="_blank"
-            class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] transition-all duration-300">
+            class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-instagram text-xl"></i>
         </a>
     </div>
@@ -205,11 +205,23 @@
     <!-- Gallery Section -->
     <section class="py-12 md:py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="insights-gallery">
+            <!-- Tabs -->
+            <div class="flex justify-center space-x-4 mb-8" data-aos="fade-up">
+                <button id="tab-english"
+                    class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white shadow-md focus:outline-none"
+                    onclick="switchTab('english')">English Posts</button>
+                <button id="tab-hindi"
+                    class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 shadow-md focus:outline-none"
+                    onclick="switchTab('hindi')">Hindi Posts</button>
+            </div>
+
+            <!-- Grids -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 " id="english-gallery">
 
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/1.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/0.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -217,9 +229,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/2.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/1.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -227,9 +240,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/3.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/2.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -237,9 +251,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/4.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/3.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -247,9 +262,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/5.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/4.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -257,9 +273,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/6.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/5.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -267,9 +284,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/7.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/6.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -277,9 +295,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/8.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/7.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -287,9 +306,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/9.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/8.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -297,9 +317,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/10.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/9.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -307,9 +328,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/11.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/10.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -317,9 +339,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/12.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/11.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -327,9 +350,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/13.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/12.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -337,9 +361,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/14.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/13.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -347,9 +372,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/15.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/14.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -357,9 +383,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/16.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/15.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -367,9 +394,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/17.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/16.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -377,9 +405,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/18.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/17.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -387,9 +416,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/19.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/18.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -397,9 +427,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/20.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/19.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -407,9 +438,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/21.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/20.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -417,9 +449,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/22.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/21.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -427,9 +460,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/23.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/22.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -437,9 +471,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/24.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/23.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -447,9 +482,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/25.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/24.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -457,9 +493,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="100">
-                    <img src="./images/insights/Hindi-Post/26.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/25.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -467,9 +504,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <img src="./images/insights/Hindi-Post/27.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/26.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -477,9 +515,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="300">
-                    <img src="./images/insights/Hindi-Post/28.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/27.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -487,9 +526,10 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     data-aos="fade-up" data-aos-delay="0">
-                    <img src="./images/insights/Hindi-Post/29.png" alt="VitableTech Insight" loading="lazy"
+                    <img src="./images/insights/English-Post/28.webp" alt="VitableTech Insight" loading="lazy"
                         class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
                         onclick="openLightbox(this.previousElementSibling.src)">
@@ -497,8 +537,355 @@
                             class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
                     </div>
                 </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/English-Post/29.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/English-Post/30.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
             </div>
-        
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 hidden" id="hindi-gallery">
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/1.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/2.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/3.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/4.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/5.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/6.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/7.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/8.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/9.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/10.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/11.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/12.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/13.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/14.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/15.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/16.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/17.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/18.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/19.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/Hindi-Post/20.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/21.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/22.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/23.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/24.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/25.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="./images/insights/Hindi-Post/26.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="./images/insights/Hindi-Post/27.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="./images/insights/Hindi-Post/28.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src="./images/insights/Hindi-Post/29.webp" alt="VitableTech Insight" loading="lazy"
+                        class="w-full h-auto object-cover" onclick="openLightbox(this.src)">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center"
+                        onclick="openLightbox(this.previousElementSibling.src)">
+                        <i
+                            class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100"></i>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -508,12 +895,32 @@
         onclick="closeLightbox(event)">
         <span class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors"
             onclick="closeLightbox(event)">&times;</span>
-        <img loading="lazy" id="lightbox-img"
+        <img id="lightbox-img"
             class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300"
             src="" alt="Enlarged Insight">
     </div>
 
     <script>
+        function switchTab(tab) {
+            const btnEnglish = document.getElementById('tab-english');
+            const btnHindi = document.getElementById('tab-hindi');
+            const gridEnglish = document.getElementById('english-gallery');
+            const gridHindi = document.getElementById('hindi-gallery');
+
+            if (tab === 'english') {
+                btnEnglish.className = 'px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white shadow-md focus:outline-none';
+                btnHindi.className = 'px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 shadow-md focus:outline-none';
+                gridEnglish.classList.remove('hidden');
+                gridHindi.classList.add('hidden');
+            } else {
+                btnHindi.className = 'px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white shadow-md focus:outline-none';
+                btnEnglish.className = 'px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-gray-600 hover:bg-gray-100 shadow-md focus:outline-none';
+                gridHindi.classList.remove('hidden');
+                gridEnglish.classList.add('hidden');
+            }
+            AOS.refresh();
+        }
+
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -546,6 +953,13 @@
                     closeLightbox({ target: lightbox });
                 }
             }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
         });
     </script>
 
@@ -601,7 +1015,8 @@
                         </li>
                         <li><a href="privacy-policy.html"
                                 class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="return-refund-policy.html" class="text-gray-300 hover:text-white transition-colors">Return & Refund Policy</a></li>
+                        <li><a href="return-refund-policy.html"
+                                class="text-gray-300 hover:text-white transition-colors">Return & Refund Policy</a></li>
                     </ul>
                 </div>
 
