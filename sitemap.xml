@@ -1,9 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://vitabletech.in/</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vitabletech.in/</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/index.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/about.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/services.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/products.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/projects.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/clients.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/contact.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/insights.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-edi-supply-chain.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-maintenance-support.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-devops-cloud.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-mobile-app.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-web-development.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-ui-ux.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-custom-software.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-ai-machine-learning.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/service-ecommerce.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/faq.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/pricing.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/T&amp;C.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/privacy-policy.html</loc>
+  <lastmod>2026-05-31T16:35:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitabletech.in/return-refund-policy.html</loc>
+  <lastmod>2026-06-05T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 </urlset>
