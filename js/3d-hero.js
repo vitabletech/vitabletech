@@ -3,14 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('hero-3d-container');
     if (!container) return;
     
-    // Disable 3D hero on mobile to save performance and battery
+    // Disable 3D hero on mobile to save performance, bandwidth, and parsing time
     if (window.innerWidth < 768) {
         container.style.display = 'none';
         return;
     }
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    // Dynamically load Three.js only for desktop devices
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    script.onload = init3DHero;
+    document.head.appendChild(script);
+
+    function init3DHero() {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     
     // Transparent background
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -100,4 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
     });
+    }
 });
