@@ -1,0 +1,7 @@
+{
+  "resource": "https://vitabletech.in/api",
+  "authorization_servers": [
+    "https://vitabletech.in"
+  ],
+  "scopes_supported": ["api", "read", "write"]
+}
