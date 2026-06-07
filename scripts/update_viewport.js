@@ -22,7 +22,7 @@ function getAllHtmlFiles(dirPath, arrayOfFiles) {
 
 const allHtmlFiles = getAllHtmlFiles(dir);
 
-const newViewport = '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">';
+const newViewport = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
 allHtmlFiles.forEach(file => {
     let content = fs.readFileSync(file, 'utf8');
