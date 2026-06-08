@@ -1,6 +1,7 @@
 {
   "name": "Vitabletech",
   "short_name": "Vtech",
+  "start_url": "/",
   "icons": [
     {
       "src": "/icons-vitabletech/web-app-manifest-192x192.png",
