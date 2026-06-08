@@ -140,3 +140,43 @@ window.clearAppCache = function() {
         }
     }
 })();
+
+// --- Offline Status Indicator ---
+(function initOfflineIndicator() {
+    let offlinePopupInjected = false;
+
+    function injectOfflineUI() {
+        if (offlinePopupInjected) return;
+        offlinePopupInjected = true;
+
+        const popupHTML = `
+            <div id="offline-status-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: #ef4444; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 12px 16px; font-size: 14px; font-weight: bold; justify-content: center; align-items: center; gap: 8px; transition: opacity 0.3s ease;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                You are currently offline
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', popupHTML);
+    }
+
+    function updateOnlineStatus() {
+        injectOfflineUI();
+        const offlinePopup = document.getElementById('offline-status-popup');
+        if (navigator.onLine) {
+            offlinePopup.style.display = 'none';
+        } else {
+            offlinePopup.style.display = 'flex';
+        }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    // Initial check
+    if (!navigator.onLine) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateOnlineStatus);
+        } else {
+            updateOnlineStatus();
+        }
+    }
+})();
