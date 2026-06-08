@@ -60,10 +60,10 @@
     <link rel="preload" href="./css/main.css" as="style" fetchpriority="high">
     <!-- Existing stylesheet links -->
     <link rel="stylesheet" href="./css/main.css" fetchpriority="high">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+    <link rel="preload" href="./css/fa-purged.css" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/fa-purged.css">
     </noscript>
 
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
@@ -1558,10 +1558,13 @@
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
+            // Defer AOS init until fonts are loaded to prevent forced reflows
+            document.fonts.ready.then(() => {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
             });
         });
     </script>
