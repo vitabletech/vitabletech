@@ -1,2 +1,17 @@
 /*
   Link: </.well-known/api-catalog>; rel="api-catalog"
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/icons-vitabletech/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/webfonts/*
+  Cache-Control: public, max-age=31536000, immutable
