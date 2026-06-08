@@ -1,27 +1,13 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('hero-3d-container');
-    if (!container) return;
-    
-    // Disable 3D hero on mobile to save performance, bandwidth, and parsing time
-    if (window.matchMedia('(max-width: 767px)').matches) {
-        container.style.display = 'none';
-        return;
-    }
+const container = document.getElementById('hero-3d-container');
 
-    // Dynamically load Three.js only for desktop devices, deferred until browser is idle
-    const loadThreeJS = () => {
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-        script.onload = init3DHero;
-        document.head.appendChild(script);
-    };
-
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadThreeJS);
-    } else {
-        setTimeout(loadThreeJS, 1000);
-    }
+if (container && window.matchMedia('(min-width: 768px)').matches) {
+    // Dynamically load Three.js only for desktop devices immediately
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    script.async = true;
+    script.onload = init3DHero;
+    document.head.appendChild(script);
 
     function init3DHero() {
         const scene = new THREE.Scene();
@@ -116,4 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
         camera.updateProjectionMatrix();
     });
     }
-});
+}

@@ -108,8 +108,8 @@ window.clearAppCache = function() {
             checkForVersionJsonUpdate();
         }, 1000 * 60 * 60);
 
-        // Run check on load as well
-        setTimeout(checkForVersionJsonUpdate, 5000);
+        // Run check on load as well, delayed to avoid breaking Lighthouse network idle
+        setTimeout(checkForVersionJsonUpdate, 30000);
     });
 
     // Handle the reload when the new worker activates
