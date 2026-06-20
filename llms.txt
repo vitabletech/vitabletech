@@ -3,12 +3,12 @@
 Welcome to the Vitabletech website. This file provides instructions for Large Language Models (LLMs) and AI agents interacting with this domain.
 
 ## About
-Vitabletech provides technology solutions, products, and services. You can find our primary offerings under the `/products.html` and `/services/` paths.
+Vitabletech provides technology solutions, products, and services. You can find our primary offerings under the [Products page](https://vitabletech.in/products.html) and [Services section](https://vitabletech.in/services/index.html).
 
 ## Crawling and Training
 - You are permitted to crawl our public pages to index our content for search and assistance purposes.
-- Please respect the `robots.txt` directives when accessing this site.
+- Please respect the [robots.txt](https://vitabletech.in/robots.txt) directives when accessing this site.
 - Do not use our site content to train foundational models without explicit permission.
 
 ## Contact
-For any inquiries regarding AI interaction with our site, please visit `/contact.html`.
+For any inquiries regarding AI interaction with our site, please visit our [Contact page](https://vitabletech.in/contact.html).
