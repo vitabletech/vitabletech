@@ -4,7 +4,8 @@
   "scripts": {
     "build": "node scripts/bump-version.js && tailwindcss -i ./css/input.css -o ./css/main.css --minify",
     "dev": "tailwindcss -i ./css/input.css -o ./css/main.css --watch",
-    "release": "node scripts/bump-version.js"
+    "release": "node scripts/bump-version.js",
+    "sitemap": "node scripts/update-sitemap.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
