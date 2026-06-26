@@ -74,30 +74,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "VitableTech",
-      "url": "https://vitabletech.in",
-      "logo": "https://vitabletech.in/images/logo.svg",
-      "description": "VitableTech provides custom software development, web development, mobile apps, and enterprise solutions.",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "E-Commerce Solutions",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "VitableTech",
+            "image": "https://vitabletech.in/images/logo.svg",
             "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Gwalior",
-                "addressRegion": "Madhya Pradesh",
-                "addressCountry": "India",
-                "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-                "postalCode": "474001"
+              "@type": "PostalAddress",
+              "addressLocality": "Gwalior",
+              "addressRegion": "Madhya Pradesh",
+              "addressCountry": "India",
+              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
+              "postalCode": "474001"
             },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9009410973",
-        "contactType": "customer service",
-        "email": "info@vitabletech.in"
-      },
-      "sameAs": [
-        "https://github.com/vitabletech",
-        "https://www.linkedin.com/company/vitabletech",
-        "https://x.com/vitabletech",
-        "https://www.youtube.com/@vitabletech"
+            "telephone": "+91-9009410973"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Gwalior"
+          },
+          "description": "Elite e-commerce services in Gwalior by VitableTech."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which platforms do you support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in Shopify, WooCommerce, and custom-built e-commerce platforms."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you integrate payment gateways?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we integrate Stripe, Razorpay, PayPal, and more."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the checkout secure?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely, we follow strict PCI compliance and security best practices."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -234,7 +263,7 @@
 
                 <div class="prose max-w-none">
 
-                    <p class="text-lg text-gray-600 mb-6">Take your retail business global. We build tailored e-commerce
+                    <p class="text-lg text-gray-600 mb-6"><strong>What is E-Commerce Solutions?</strong> VitableTech provides elite e-commerce services in Gwalior. Take your retail business global. We build tailored e-commerce
                         platforms that are secure, blazingly fast, and optimized for maximum conversions.</p>
                     <h3 class="text-2xl font-bold mb-4">What We Offer</h3>
                     <ul class="space-y-4 text-gray-600 mb-8">
@@ -268,6 +297,39 @@
                         A modern e-commerce solution engineered by VitableTech brings immediate, tangible benefits to your bottom line. By implementing advanced caching, lightning-fast search functionality, and frictionless checkout processes, we drastically reduce cart abandonment rates. Furthermore, our platforms are built with deep Technical SEO optimization from day one, ensuring your products rank higher on search engines like Google and Bing. Partner with us to scale your online retail business and deliver a shopping experience that turns casual browsers into loyal, repeat customers.
                     </p>
 </div>
+
+                                <!-- Testimonial Section -->
+                <div class="mt-12 bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-center">What Our Clients Say</h3>
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg flex-1">
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-4">"VitableTech delivered outstanding e-commerce. The team in Gwalior was highly professional and deeply understood our requirements."</p>
+                            <p class="font-semibold text-gray-800">— Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-12 mb-12">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Which platforms do you support?</h4>
+                            <p class="text-gray-600">We specialize in Shopify, WooCommerce, and custom-built e-commerce platforms.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Do you integrate payment gateways?</h4>
+                            <p class="text-gray-600">Yes, we integrate Stripe, Razorpay, PayPal, and more.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Is the checkout secure?</h4>
+                            <p class="text-gray-600">Absolutely, we follow strict PCI compliance and security best practices.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
                     <h3 class="text-2xl font-bold mb-4">Ready to start your project?</h3>
@@ -309,6 +371,24 @@
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-facebook-f"></i>
                         <span class="sr-only">Facebook</span></a>
+                    </div>
+                
+                    <!-- Trustpilot Widget -->
+                    <div class="mt-6 inline-block bg-white/10 rounded-lg p-4 border border-white/20 transition-all hover:bg-white/20">
+                        <a href="https://www.trustpilot.com/review/vitabletech.in" target="_blank">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-star text-green-500 text-xl"></i>
+                                <span class="font-bold text-lg">Trustpilot</span>
+                            </div>
+                            <div class="flex gap-1 mb-1">
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                            </div>
+                            <p class="text-xs text-gray-300">Leave a review or read them on Trustpilot</p>
+                        </a>
                     </div>
                 </div>
 

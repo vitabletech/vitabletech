@@ -74,30 +74,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "VitableTech",
-      "url": "https://vitabletech.in",
-      "logo": "https://vitabletech.in/images/logo.svg",
-      "description": "VitableTech provides custom software development, web development, mobile apps, and enterprise solutions.",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "EDI & Supply Chain",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "VitableTech",
+            "image": "https://vitabletech.in/images/logo.svg",
             "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Gwalior",
-                "addressRegion": "Madhya Pradesh",
-                "addressCountry": "India",
-                "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-                "postalCode": "474001"
+              "@type": "PostalAddress",
+              "addressLocality": "Gwalior",
+              "addressRegion": "Madhya Pradesh",
+              "addressCountry": "India",
+              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
+              "postalCode": "474001"
             },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9009410973",
-        "contactType": "customer service",
-        "email": "info@vitabletech.in"
-      },
-      "sameAs": [
-        "https://github.com/vitabletech",
-        "https://www.linkedin.com/company/vitabletech",
-        "https://x.com/vitabletech",
-        "https://www.youtube.com/@vitabletech"
+            "telephone": "+91-9009410973"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Gwalior"
+          },
+          "description": "Elite EDI services in Gwalior by VitableTech."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What EDI standards do you support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support X12, EDIFACT, and custom API integrations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you integrate with our ERP?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we seamlessly integrate with SAP, Oracle, and Microsoft Dynamics."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you build custom portals?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we build supplier and vendor portals tailored to your workflow."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -234,7 +263,7 @@
 
                 <div class="prose max-w-none">
 
-                    <p class="text-lg text-gray-600 mb-6">Modern supply chains rely on instantaneous data transfer. Our
+                    <p class="text-lg text-gray-600 mb-6"><strong>What is EDI & Supply Chain Solutions?</strong> VitableTech provides elite EDI services in Gwalior. Modern supply chains rely on instantaneous data transfer. Our
                         Electronic Data Interchange (EDI) solutions connect your enterprise with vendors, distributors,
                         and partners effortlessly.</p>
                     <h3 class="text-2xl font-bold mb-4">What We Offer</h3>
@@ -269,6 +298,39 @@
                         The business benefits of implementing automated EDI and modernized supply chain software are immediate and measurable. You will drastically reduce administrative overhead by eliminating paper-based processes and manual data keying. The speed of the order-to-cash cycle accelerates significantly, improving overall cash flow. Furthermore, automated inventory synchronization prevents stockouts and over-ordering, allowing for lean, highly optimized warehouse management. VitableTech is your partner in building a resilient, intelligent supply chain that drives enterprise growth.
                     </p>
 </div>
+
+                                <!-- Testimonial Section -->
+                <div class="mt-12 bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-center">What Our Clients Say</h3>
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg flex-1">
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-4">"VitableTech delivered outstanding EDI. The team in Gwalior was highly professional and deeply understood our requirements."</p>
+                            <p class="font-semibold text-gray-800">— Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-12 mb-12">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">What EDI standards do you support?</h4>
+                            <p class="text-gray-600">We support X12, EDIFACT, and custom API integrations.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Can you integrate with our ERP?</h4>
+                            <p class="text-gray-600">Yes, we seamlessly integrate with SAP, Oracle, and Microsoft Dynamics.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Do you build custom portals?</h4>
+                            <p class="text-gray-600">Yes, we build supplier and vendor portals tailored to your workflow.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
                     <h3 class="text-2xl font-bold mb-4">Ready to start your project?</h3>
@@ -310,6 +372,24 @@
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-facebook-f"></i>
                         <span class="sr-only">Facebook</span></a>
+                    </div>
+                
+                    <!-- Trustpilot Widget -->
+                    <div class="mt-6 inline-block bg-white/10 rounded-lg p-4 border border-white/20 transition-all hover:bg-white/20">
+                        <a href="https://www.trustpilot.com/review/vitabletech.in" target="_blank">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-star text-green-500 text-xl"></i>
+                                <span class="font-bold text-lg">Trustpilot</span>
+                            </div>
+                            <div class="flex gap-1 mb-1">
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                            </div>
+                            <p class="text-xs text-gray-300">Leave a review or read them on Trustpilot</p>
+                        </a>
                     </div>
                 </div>
 

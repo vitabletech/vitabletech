@@ -74,30 +74,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "VitableTech",
-      "url": "https://vitabletech.in",
-      "logo": "https://vitabletech.in/images/logo.svg",
-      "description": "VitableTech provides custom software development, web development, mobile apps, and enterprise solutions.",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Mobile App Development",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "VitableTech",
+            "image": "https://vitabletech.in/images/logo.svg",
             "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Gwalior",
-                "addressRegion": "Madhya Pradesh",
-                "addressCountry": "India",
-                "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-                "postalCode": "474001"
+              "@type": "PostalAddress",
+              "addressLocality": "Gwalior",
+              "addressRegion": "Madhya Pradesh",
+              "addressCountry": "India",
+              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
+              "postalCode": "474001"
             },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9009410973",
-        "contactType": "customer service",
-        "email": "info@vitabletech.in"
-      },
-      "sameAs": [
-        "https://github.com/vitabletech",
-        "https://www.linkedin.com/company/vitabletech",
-        "https://x.com/vitabletech",
-        "https://www.youtube.com/@vitabletech"
+            "telephone": "+91-9009410973"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Gwalior"
+          },
+          "description": "Elite mobile apps services in Gwalior by VitableTech."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you develop for iOS and Android?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we build native apps as well as cross-platform apps using React Native and Flutter."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you help with app store submission?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we handle end-to-end publishing on the Apple App Store and Google Play Store."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you provide app maintenance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer ongoing maintenance and support plans."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -234,7 +263,7 @@
 
                 <div class="prose max-w-none">
 
-                    <p class="text-lg text-gray-600 mb-6">Reach your customers wherever they are with powerful,
+                    <p class="text-lg text-gray-600 mb-6"><strong>What is Mobile App Development?</strong> VitableTech provides elite mobile apps services in Gwalior. Reach your customers wherever they are with powerful,
                         intuitive, and high-performance mobile applications.</p>
                     <h3 class="text-2xl font-bold mb-4">What We Offer</h3>
                     <ul class="space-y-4 text-gray-600 mb-8">
@@ -268,6 +297,39 @@
                         A meticulously crafted mobile app offers tremendous strategic advantages. It provides a direct, highly personalized marketing channel to your users through push notifications and location-based services. By optimizing the User Experience (UX) for touch interfaces, we ensure high retention rates and frictionless user journeys. We also handle the complexities of App Store Optimization (ASO), rigorous security testing, and seamless backend API integrations. Partner with VitableTech to launch a mobile application that delights your users and dominates the app store charts.
                     </p>
 </div>
+
+                                <!-- Testimonial Section -->
+                <div class="mt-12 bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-center">What Our Clients Say</h3>
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg flex-1">
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-4">"VitableTech delivered outstanding mobile apps. The team in Gwalior was highly professional and deeply understood our requirements."</p>
+                            <p class="font-semibold text-gray-800">— Verified Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mt-12 mb-12">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Do you develop for iOS and Android?</h4>
+                            <p class="text-gray-600">Yes, we build native apps as well as cross-platform apps using React Native and Flutter.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Can you help with app store submission?</h4>
+                            <p class="text-gray-600">Yes, we handle end-to-end publishing on the Apple App Store and Google Play Store.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">Do you provide app maintenance?</h4>
+                            <p class="text-gray-600">Yes, we offer ongoing maintenance and support plans.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
                     <h3 class="text-2xl font-bold mb-4">Ready to start your project?</h3>
@@ -309,6 +371,24 @@
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-facebook-f"></i>
                         <span class="sr-only">Facebook</span></a>
+                    </div>
+                
+                    <!-- Trustpilot Widget -->
+                    <div class="mt-6 inline-block bg-white/10 rounded-lg p-4 border border-white/20 transition-all hover:bg-white/20">
+                        <a href="https://www.trustpilot.com/review/vitabletech.in" target="_blank">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-star text-green-500 text-xl"></i>
+                                <span class="font-bold text-lg">Trustpilot</span>
+                            </div>
+                            <div class="flex gap-1 mb-1">
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                            </div>
+                            <p class="text-xs text-gray-300">Leave a review or read them on Trustpilot</p>
+                        </a>
                     </div>
                 </div>
 
