@@ -22,10 +22,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Blog - VitableTech</title>
-    <meta name="title" content="Blog - VitableTech">
+    <title>How to Automate Google Business Profile (The Easy Way) | VitableTech Blog</title>
+    <meta name="title" content="How to Automate Google Business Profile (The Easy Way) | VitableTech Blog">
     <meta name="description"
-        content="Read the VitableTech blog for the latest tech news, programming tutorials, SEO strategies, and expert advice on modern software development.">
+        content="Stop fighting with the Google Business Profile API. Learn how to easily automate reviews, locations, and tokens using the new @vitabletech/gbp-sdk for Node.js.">
     <meta name="keywords"
         content="software development, web development, mobile apps, open source, enterprise solutions, VitableTech, custom software, UI/UX design">
     <meta name="author" content="VitableTech">
@@ -37,7 +37,7 @@
     <meta property="og:url" content="https://vitabletech.in/">
     <meta property="og:title" content="About Us - VitableTech">
     <meta property="og:description"
-        content="Read the VitableTech blog for the latest tech news, programming tutorials, SEO strategies, and expert advice on modern software development.">
+        content="Stop fighting with the Google Business Profile API. Learn how to easily automate reviews, locations, and tokens using the new @vitabletech/gbp-sdk for Node.js.">
     <meta property="og:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Twitter -->
@@ -45,7 +45,7 @@
     <meta property="twitter:url" content="https://vitabletech.in/">
     <meta property="twitter:title" content="About Us - VitableTech">
     <meta property="twitter:description"
-        content="Read the VitableTech blog for the latest tech news, programming tutorials, SEO strategies, and expert advice on modern software development.">
+        content="Stop fighting with the Google Business Profile API. Learn how to easily automate reviews, locations, and tokens using the new @vitabletech/gbp-sdk for Node.js.">
     <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Favicon & Manifest Tags -->
@@ -60,7 +60,7 @@
     <meta name="theme-color" content="#4F46E5">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://vitabletech.in/blog/index.html">
+    <link rel="canonical" href="https://vitabletech.in/blog/automate-google-business-profile-node-sdk.html">
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -213,67 +213,134 @@
     <!-- Page Header -->
     <section class="gradient-bg py-20 text-white text-center">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Blog</h1>
-            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Insights, guides, and news from the tech world.</p>
+            <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Open Source & APIs</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Stop Fighting the Google Business Profile API. Do This Instead.</h1>
+            <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> June 2026</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 10 min read</span>
+            </div>
         </div>
     </section>
 
-    <!-- Blog List Section -->
+    <!-- Blog Content Section -->
     <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-6xl">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Latest Technology Insights & Updates</h2>
-                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
-                <div class="prose max-w-none text-gray-600 text-left md:text-center space-y-4">
-                    <p class="text-lg">
-                        Welcome to the official VitableTech blog, your premier destination for deep dives into the rapidly evolving world of software engineering, digital transformation, and open-source innovation. Our team of expert developers and industry analysts regularly publish comprehensive guides, technical tutorials, and thought leadership articles designed to help you stay ahead of the technology curve.
-                    </p>
-                    <p class="text-md">
-                        Whether you are researching the true cost of custom web development, looking for actionable E-commerce SEO strategies to boost your online sales, or exploring the tangible business benefits of migrating to modern cloud infrastructure, our blog provides the actionable intelligence you need. Browse our latest articles below to discover how modern technology can streamline your operations and drive unprecedented growth for your enterprise.
-                    </p>
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img src="../images/blog-images/gbp-npm-pacakge.webp" alt="Automate Google Business Profile Node SDK" class="w-full h-auto object-cover" />
+            </div>
+            <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
+                
+                <p>If you've ever tried to integrate the <strong>Google Business Profile (GBP) API</strong> into a Node.js application, you already know the pain. It’s notorious for being wildly overcomplicated, poorly documented for modern stacks, and an absolute nightmare when it comes to token management and pagination.</p>
+
+                <p>You probably just wanted to fetch some customer reviews or update a store's holiday hours. Instead, you found yourself drowning in a sea of OAuth2 refresh token errors, opaque <code>429 Rate Limit</code> responses, and deeply nested JSON structures that make zero sense.</p>
+
+                <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-10 shadow-sm">
+                    <p class="font-bold text-gray-900 m-0 text-xl">We got sick of it. So we fixed it.</p>
+                    <p class="m-0 mt-3">Today, VitableTech is officially open-sourcing the <strong class="text-primary">@vitabletech/gbp-sdk</strong>. It’s an enterprise-grade, dead-simple Node.js and TypeScript wrapper that handles all the heavy lifting so you don't have to.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">The 3 Big Nightmares of the GBP API (And How We Solved Them)</h2>
+                
+                <p>When our engineering team was building a dashboard for a client with hundreds of retail locations, we realized the official Google libraries were just too generic. They are built to cover <em>every</em> Google service, meaning they aren't optimized for the specific quirks of the Business Profile API.</p>
+                <p>Here is what usually breaks, and how the new SDK handles it automatically:</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Nightmare 1: The Token Expiration Dance</h3>
+                <p>Google OAuth access tokens expire every 3600 seconds (1 hour). In a high-traffic app, if multiple requests hit your server the exact second a token expires, your app might try to refresh the token 50 times simultaneously. This leads to Google temporarily blocking your API access.</p>
+                <p><strong>The Fix:</strong> The SDK features a thread-safe token manager. If a token expires, it pauses all outgoing requests, refreshes the token <em>exactly once</em>, and then resumes the queued requests seamlessly. You never have to write a single line of token refresh logic.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Nightmare 2: "nextPageToken" Hell</h3>
+                <p>Want to pull 500 reviews? You can't just ask for them. You have to ask for 50, get a cryptic string called a <code>nextPageToken</code>, pass it into a new request, and repeat this loop until the token disappears.</p>
+                <p><strong>The Fix:</strong> We introduced Auto-Pagination. You just call <code>client.reviews.listAll(locationName)</code> and the SDK automatically traverses every single page and hands you a clean array of all 500 reviews.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Nightmare 3: Rate Limits & Flaky Connections</h3>
+                <p>Google's APIs will occasionally throw a <code>503 Service Unavailable</code> or a <code>429 Too Many Requests</code> just because they feel like it. If you don't have retry logic, your app crashes.</p>
+                <p><strong>The Fix:</strong> Built-in Exponential Backoff. If Google hiccups, the SDK waits a few seconds and tries again automatically before finally giving up and throwing a properly formatted error.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Show Me The Code!</h2>
+                
+                <p>We designed the SDK to be incredibly intuitive. Look at how easy it is to fetch all locations for an account:</p>
+
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-javascript">import { GBPClient } from '@vitabletech/gbp-sdk';
+
+const client = new GBPClient({
+  clientId: 'YOUR_CLIENT_ID',
+  clientSecret: 'YOUR_CLIENT_SECRET',
+  tokenStorage: 'file', // Stores tokens safely on disk
+});
+
+// The SDK automatically attaches the token, handles refreshes, and paginates!
+const accounts = await client.accounts.listAll();
+const locations = await client.locations.listAll(accounts[0].name);
+
+console.log(`Found ${locations.length} locations!`);
+</code></pre>
+                </div>
+
+                <p>That's it. What used to take 200 lines of boilerplate code is now reduced to 4 lines.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <div class="bg-gradient-to-br from-primary-dark via-primary to-accent p-10 rounded-3xl text-center text-white my-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-48 h-48 bg-white opacity-10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-white opacity-10 rounded-full blur-3xl"></div>
+                    
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 relative z-10">Stop writing boilerplate. Start building.</h3>
+                    <p class="mb-8 text-lg opacity-90 relative z-10 max-w-2xl mx-auto">The @vitabletech/gbp-sdk is completely free, open-source, and fully typed for TypeScript developers.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                        <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" class="inline-block bg-white text-primary font-bold py-4 px-10 rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"><i class="fab fa-npm text-xl mr-2"></i> View on NPM</a>
+                        <a href="https://gbp.vitabletech.in" target="_blank" class="inline-block bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all shadow-lg"><i class="fas fa-book text-xl mr-2"></i> Read the Docs</a>
+                    </div>
+                </div>
+
+            <!-- Author Bio Section -->
+            <div class="mt-16 bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center text-3xl flex-shrink-0 shadow-md">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-1">About the Author</h4>
+                    <p class="text-gray-600 text-base mb-2">Written by the <strong>VitableTech Engineering Team</strong>. We specialize in building robust, scalable digital solutions for enterprises in Gwalior and beyond.</p>
+                    <a href="../about.html" class="text-primary text-sm font-semibold hover:underline">Learn more about our expertise &rarr;</a>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-        <a href="../blog/automate-google-business-profile-node-sdk.html" class="block bg-gray-50 rounded-xl p-6 shadow-md card-hover group border border-gray-100 hover:border-primary transition-all flex flex-col h-full">
-            <div class="bg-gray-100 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
-                <img src="../images/blog-images/gbp-npm-pacakge.webp" alt="Automate Google Business Profile Node SDK" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-            </div>
-            <div class="text-sm text-primary font-semibold mb-2 tracking-wide uppercase">Open Source</div>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">Stop Fighting the Google Business Profile API. Do This Instead.</h3>
-            <p class="text-gray-600 mb-6 line-clamp-3 text-sm flex-grow">Learn how to easily automate reviews, locations, and tokens using the new @vitabletech/gbp-sdk for Node.js.</p>
-            <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
-        </a>
-        <a href="../blog/website-development-cost-in-gwalior.html" class="block bg-gray-50 rounded-xl p-6 shadow-md card-hover group border border-gray-100 hover:border-primary transition-all flex flex-col h-full">
-            <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
-                <i class="fas fa-laptop-code text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
-            </div>
-            <div class="text-sm text-primary font-semibold mb-2 tracking-wide uppercase">Web Development</div>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">Website Development Cost in Gwalior (2026 Guide)</h3>
-            <p class="text-gray-600 mb-6 line-clamp-3 text-sm flex-grow">A comprehensive guide on what you should expect to pay for website development in Gwalior, factors that affect the cost, and why it's a crucial investment.</p>
-            <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
-        </a>
-    
-        <a href="../blog/custom-software-development-benefits.html" class="block bg-gray-50 rounded-xl p-6 shadow-md card-hover group border border-gray-100 hover:border-primary transition-all flex flex-col h-full">
-            <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
-                <i class="fas fa-code text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
-            </div>
-            <div class="text-sm text-primary font-semibold mb-2 tracking-wide uppercase">Custom Software</div>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">Why Your Business Needs Custom Software in 2026</h3>
-            <p class="text-gray-600 mb-6 line-clamp-3 text-sm flex-grow">Discover the top reasons why off-the-shelf software is holding your business back and how custom software development can drive unprecedented growth.</p>
-            <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
-        </a>
-    
-        <a href="../blog/ecommerce-seo-strategies-2026.html" class="block bg-gray-50 rounded-xl p-6 shadow-md card-hover group border border-gray-100 hover:border-primary transition-all flex flex-col h-full">
-            <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
-                <i class="fas fa-shopping-cart text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
-            </div>
-            <div class="text-sm text-primary font-semibold mb-2 tracking-wide uppercase">E-Commerce & SEO</div>
-            <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">E-Commerce SEO Strategies to Dominate Search in 2026</h3>
-            <p class="text-gray-600 mb-6 line-clamp-3 text-sm flex-grow">Learn the most effective technical SEO and content strategies to skyrocket your online store's organic traffic and sales.</p>
-            <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
-        </a>
-    
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-8 tracking-tight">Frequently Asked Questions (FAQs)</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> How much time does it take to design and build a website in Gwalior?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">A standard 5-to-7-page informational website usually takes 2 to 4 weeks. Complex e-commerce sites require 6 to 10 weeks.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Do I have to pay the entire development cost upfront?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">No. We follow a milestone-based payment structure (e.g., 40% advance, 30% after design, 30% before launch) to ensure peace of mind.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Will my website function properly on mobile phones?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">Absolutely. With over 70% of traffic coming from mobile, all websites engineered by VitableTech are 100% fully responsive and mobile-first.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Can I update the website content myself?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">Yes! For dynamic websites, we provide an intuitive backend dashboard and full training so you can make updates easily without coding.</p>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <div class="bg-white p-8 md:p-12 border-2 border-dashed border-primary/30 rounded-3xl text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Making the Right Digital Investment</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">Understanding the true <strong>website development cost in Gwalior</strong> is the critical first step toward digitizing your business and future-proofing your revenue. A professional website is an investment that yields extraordinarily high returns by establishing brand trust, expanding your geographic reach, and automating sales 24/7.</p>
+                    <p class="text-gray-600 mb-8 max-w-3xl mx-auto">Do not settle for a subpar digital presence. Partner with a trusted, experienced technical team.</p>
+                    <a href="../contact.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"><i class="fas fa-paper-plane"></i> Contact VitableTech Today</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -348,6 +415,10 @@
                         <li><a href="../policies/privacy-policy.html"
                                 class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
                         <li><a href="../policies/return-refund-policy.html" class="text-gray-300 hover:text-white transition-colors">Return & Refund Policy</a></li>
+                    
+                        <li><a href="../blog/custom-software-development-benefits.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Benefits</a></li>
+                        <li><a href="../blog/ecommerce-seo-strategies-2026.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce SEO</a></li>
+                        <li><a href="../blog/automate-google-business-profile-node-sdk.html" class="text-gray-300 hover:text-white transition-colors">Website Cost Gwalior</a></li>
                     </ul>
                 </div>
 
