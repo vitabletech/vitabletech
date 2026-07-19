@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-60TFS60E2F');
+            }, 3000);
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Step-by-Step Developer Guide: Run OpenWA with Docker & Node.js Backend | VitableTech Blog</title>
+    <meta name="title" content="Step-by-Step Developer Guide: Run OpenWA with Docker & Node.js Backend | VitableTech Blog">
+    <meta name="description"
+        content="Learn how to deploy OpenWA using Docker, connect your WhatsApp session via QR code, retrieve your API key, send messages via REST APIs, and integrate webhooks into Node.js.">
+    <meta name="keywords"
+        content="OpenWA Docker setup, self-hosted WhatsApp API, WhatsApp API gateway, Baileys engine docker, OpenWA API key, nodejs whatsapp webhook, whatsapp bulk sender docker">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitabletech.in/blog/openwa-docker-setup-guide.html">
+    <meta property="og:title" content="Run OpenWA with Docker: A Developer Setup Guide | VitableTech">
+    <meta property="og:description"
+        content="Learn how to deploy OpenWA using Docker, connect your WhatsApp session via QR code, retrieve your API key, send messages via REST APIs, and integrate webhooks into Node.js.">
+    <meta property="og:image" content="https://vitabletech.in/images/blog-images/openwa-infrastructure-settings.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vitabletech.in/blog/openwa-docker-setup-guide.html">
+    <meta property="twitter:title" content="Run OpenWA with Docker: A Developer Setup Guide | VitableTech">
+    <meta property="twitter:description"
+        content="Learn how to deploy OpenWA using Docker, connect your WhatsApp session via QR code, retrieve your API key, send messages via REST APIs, and integrate webhooks into Node.js.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/blog-images/openwa-infrastructure-settings.png">
+
+    <!-- Favicon & Manifest Tags -->
+    <link rel="icon" type="image/x-icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="shortcut icon" href="../icons-vitabletech/favicon.ico" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="../icons-vitabletech/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons-vitabletech/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="VitableTech" />
+    <link rel="manifest" href="../icons-vitabletech/site.webmanifest" />
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitabletech.in/blog/openwa-docker-setup-guide.html">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Existing stylesheet links -->
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitabletech.in/blog/openwa-docker-setup-guide.html"
+      },
+      "headline": "Run OpenWA with Docker: A Step-by-Step Developer Integration Guide",
+      "description": "Learn how to deploy OpenWA using Docker, connect your WhatsApp session via QR code, retrieve your API key, send messages via REST APIs, and integrate webhooks into Node.js.",
+      "image": "https://vitabletech.in/images/blog-images/openwa-infrastructure-settings.png",
+      "author": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "url": "https://vitabletech.in"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitabletech.in/images/logo.svg"
+        }
+      },
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-07-19"
+    }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-primary-dark via-primary to-accent text-white py-2 overflow-hidden relative z-[100] border-b border-white/20">
+        <div class="whitespace-nowrap animate-marquee flex items-center text-sm md:text-base font-semibold tracking-wide">
+            <span class="mx-8 flex items-center gap-2"><i class="fas fa-rocket text-yellow-300"></i> Special Offer for Gwalior! Get a Free Consultation & 20% Off on all Web & App Development Services. <i class="fas fa-star text-yellow-300"></i> Empowering Gwalior Businesses with Next-Gen Digital Solutions.</span>
+        </div>
+    </div>
+
+    <!-- Floating Social Media Bar -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
+        <a href="https://github.com/vitabletech" target="_blank" class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-github text-xl"></i>
+            <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank" class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+            <span class="sr-only">Facebook</span>
+        </a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank" class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-youtube text-xl"></i>
+            <span class="sr-only">YouTube</span>
+        </a>
+        <a href="https://wa.me/916280671085" target="_blank" class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span class="sr-only">WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank" class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+            <span class="sr-only">Instagram</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="mr-2">
+                            <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" />
+                        </div>
+                        <div class="logo-text text-2xl">
+                            <div>
+                                <span class="text-primary">Vitable</span><span class="text-secondary">Tech</span>
+                            </div>
+                            <div class="text-secondary text-sm">Open Source Innovation</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="../about.html" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="../services/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="../products.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
+                    <a href="../projects.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="../clients.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="../contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="../pricing.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="../blog/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="../insights.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Insights</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="../services/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="../products.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Latest Products</a>
+                <a href="../projects.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="../clients.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="../contact.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <a href="../pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Pricing</a>
+                <a href="../blog/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Blog</a>
+                <a href="../insights.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Insights</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Developer Workflows</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Run OpenWA with Docker: A Step-by-Step WhatsApp API Gateway Setup Guide</h1>
+            <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> July 2026</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 10 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img src="../images/blog-images/openwa-infrastructure-settings.png" alt="OpenWA Docker Engine Setup Overview" class="w-full h-auto object-cover" />
+            </div>
+            <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
+
+                <p>For developers, getting a self-hosted API gateway running locally is the crucial first step. If you want to connect your personal WhatsApp number and start sending messages without waiting for Meta verification tokens, **Docker** is the fastest, cleanest environment to make that happen.</p>
+
+                <p>In this walkthrough, we will cover the step-by-step process to clone OpenWA, run it inside a Docker container, scan the QR code to pair your device, issue API calls, and integrate it with your Node.js backend. Let's get started!</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 1: Prerequisites</h2>
+                <p>Ensure you have the following installed and running on your system:</p>
+                <ul class="list-disc pl-8 mb-6 space-y-2">
+                    <li><strong>Git</strong> (for cloning the repository)</li>
+                    <li><strong>Docker Desktop</strong> (ensure Docker engine daemon is active)</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 2: Clone the OpenWA Repository</h2>
+                <p>Clone the official single-container bundler containing both the backend API engine and dashboard administration layout:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">git clone https://github.com/rmyndharis/OpenWA.git
+cd OpenWA</code></pre>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 3: Launch with Docker Compose</h2>
+                <p>Start the container in detached (background) mode. OpenWA sets up all browser rendering libraries, SQLite/PostgreSQL schemas, and administrative ports out-of-the-box:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">docker compose up -d</code></pre>
+                </div>
+                <p>Verify that your containers are running successfully:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">docker compose ps</code></pre>
+                </div>
+                <p>To watch container initialization logs in real-time, execute:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">docker compose logs -f</code></pre>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 4: Access the Dashboard & Endpoints</h2>
+                <p>Once started, open your web browser and navigate to the local portal:</p>
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 my-6 shadow-sm">
+                    <ul class="space-y-2 font-mono text-sm">
+                        <li><strong>Dashboard Portal:</strong> <a href="http://localhost:2785" target="_blank" class="text-primary hover:underline">http://localhost:2785</a></li>
+                        <li><strong>REST API base:</strong> <a href="http://localhost:2785/api" target="_blank" class="text-primary hover:underline">http://localhost:2785/api</a></li>
+                        <li><strong>Swagger Docs:</strong> <a href="http://localhost:2785/api/docs" target="_blank" class="text-primary hover:underline">http://localhost:2785/api/docs</a></li>
+                        <li><strong>Health Checks:</strong> <a href="http://localhost:2785/api/health" target="_blank" class="text-primary hover:underline">http://localhost:2785/api/health</a></li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 5: Retrieve Your Admin API Key</h2>
+                <p>On initial deployment, OpenWA generates an automated secure admin API key. You can find this key by looking through the terminal container startup logs:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">docker compose logs | grep owa_k1</code></pre>
+                </div>
+                <p>You will see a printed token layout structured like `owa_k1_xxxxxxxxxxxxxxxxx`. Alternatively, you can read it directly from inside the container volume path:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700 font-mono">
+<pre><code>/app/data/.api-key</code></pre>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 6: Initialize a WhatsApp Session</h2>
+                <p>You can create a session directly via the dashboard panels (using session name: <code>personal-whatsapp</code>), or perform a POST request to the sessions controller:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">curl -X POST http://localhost:2785/api/sessions \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"personal-whatsapp"}'</code></pre>
+                </div>
+                <p>This request registers your connection profile, returning a <code>sessionId</code>.</p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 7: Start & Request the Pairing QR Code</h2>
+                <p>Wake up the session engine wrapper using your target ID:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">curl -X POST http://localhost:2785/api/sessions/YOUR_SESSION_ID/start \
+  -H "X-API-Key: YOUR_API_KEY"</code></pre>
+                </div>
+                <p>Then fetch the generated QR payload to link your device:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">curl http://localhost:2785/api/sessions/YOUR_SESSION_ID/qr \
+  -H "X-API-Key: YOUR_API_KEY"</code></pre>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 8: Connect Your Device</h2>
+                <p>Grab your mobile phone containing your WhatsApp number and connect the device:
+                    <ul class="list-none pl-4 mt-2 space-y-1 font-semibold text-primary">
+                        <li>WhatsApp &rarr; Settings / Menu &rarr; Linked Devices &rarr; Link a Device &rarr; Scan QR</li>
+                    </ul>
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step 9: Send Your First Message</h2>
+                <p>Test your connection pipeline by sending a text message payload. Be sure to target recipients using their full international formatting suffix (e.g. <code>@c.us</code> for individual chats or <code>@g.us</code> for groups):</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-bash">curl -X POST http://localhost:2785/api/sessions/YOUR_SESSION_ID/messages/send-text \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "chatId": "91XXXXXXXXXX@c.us",
+    "text": "Hello from my OpenWA API Docker container!"
+  }'</code></pre>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg my-10 shadow-sm">
+                    <p class="font-bold text-yellow-900 m-0 text-xl"><i class="fas fa-exclamation-circle"></i> Known Connection Issue (July 2026)</p>
+                    <p class="m-0 mt-3 text-yellow-800">There is currently an active GitHub issue (#560) reporting that WhatsApp's mandatory passkey requirements prevent QR pairings for some newer accounts. If your scanning fails to advance the state to <code>ready</code>, verify your account's passkey verification statuses.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">4. Node.js Backend Integration Workflow</h2>
+                <p>Once OpenWA is running locally, your custom CRM or dashboard backend acts as an intermediary. Here is the operational workflow for sending outbound and capturing inbound messages:</p>
+
+                <h3 class="text-xl font-bold text-primary mt-6 mb-2">Outbound Message Flow</h3>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 font-mono text-sm my-4">
+                    React Frontend &rarr; Node.js API (POST /messages/send-text) &rarr; OpenWA Gateway &rarr; WhatsApp Servers &rarr; Customer Mobile Device
+                </div>
+
+                <h3 class="text-xl font-bold text-primary mt-6 mb-2">Inbound Message (Webhook) Flow</h3>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 font-mono text-sm my-4">
+                    Customer sends message &rarr; WhatsApp App &rarr; OpenWA (Captures message) &rarr; Webhook Trigger POST payload &rarr; Node.js Backend Webhook Handler &rarr; SQLite/Postgres DB &rarr; React Admin Panel UI
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <div class="bg-white p-8 md:p-12 border-2 border-dashed border-primary/30 rounded-3xl text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Ready to Automate Your Business Communications?</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">VitableTech specializes in Dockerized microservice deployments, Webhook systems, and building responsive client dashboard platforms. Let's discuss your next automation project.</p>
+                    <a href="../contact.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg">
+                        <i class="fas fa-paper-plane"></i> Contact VitableTech Today
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-secondary-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">VitableTech</h3>
+                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise solutions since 2018.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-github"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-youtube"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-instagram"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../services/index.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="../clients.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../policies/terms-and-conditions.html" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../policies/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../services/custom-software.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
+                        <li><a href="../services/ui-ux.html" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="../services/web-development.html" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="../services/mobile-app.html" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="../services/devops-cloud.html" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
+                        <li><a href="../services/maintenance-support.html" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="../services/ecommerce.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors font-semibold">info@vitabletech.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone  mt-1 mr-2"></i>
+                            <a href="tel:+916280671085" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2"></i>
+                            <a href="https://wa.me/916280671085" target="_blank" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300">
+                    <p>&copy; 2018 VitableTech. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/mobile_menu_toogle.js"></script>
+    <script src="../js/custom_script.js"></script>
+
+    <!-- Go to Top Button -->
+    <button id="goToTopBtn" class="fixed bottom-[130px] right-2 md:bottom-24 md:right-6 z-40 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:-translate-y-1 hover:shadow-xl">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-[60] pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.08)] border-t border-white/50 backdrop-blur-xl bg-white/85 transition-all duration-300 rounded-t-2xl">
+        <div class="flex justify-around items-center px-1 py-2" id="mobile-bottom-nav">
+            <a href="../index.html" data-nav="home" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-home text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Home</span>
+            </a>
+            <a href="../services/index.html" data-nav="services" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-layer-group text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Services</span>
+            </a>
+            <a href="../projects.html" data-nav="projects" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-briefcase text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Projects</span>
+            </a>
+            <a href="../blog/index.html" data-nav="blog" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-newspaper text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Blog</span>
+            </a>
+            <a href="../contact.html" data-nav="contact" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-envelope text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('#mobile-bottom-nav a');
+            navLinks.forEach(link => {
+                const navType = link.getAttribute('data-nav');
+                let isActive = false;
+                if (navType === 'home' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') && !currentPath.includes('services') && !currentPath.includes('blog'))) {
+                    isActive = true;
+                } else if (navType !== 'home' && currentPath.includes(navType)) {
+                    isActive = true;
+                }
+                if (isActive) {
+                    link.classList.remove('text-gray-500');
+                    link.classList.add('text-primary');
+                    const iconContainer = link.querySelector('.icon-container');
+                    if (iconContainer) iconContainer.classList.add('bg-primary', 'bg-opacity-10');
+                    const icon = link.querySelector('i');
+                    if (icon) icon.classList.add('-translate-y-1');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

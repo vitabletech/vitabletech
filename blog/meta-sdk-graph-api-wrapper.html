@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-60TFS60E2F');
+            }, 3000);
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Stop Fighting the Meta Graph API. Announcing @vitabletech/meta-sdk | VitableTech Blog</title>
+    <meta name="title" content="Stop Fighting the Meta Graph API. Announcing @vitabletech/meta-sdk | VitableTech Blog">
+    <meta name="description"
+        content="Read how to easily query Facebook and Instagram Graph APIs. Learn how the new @vitabletech/meta-sdk for Node.js handles rate limiting, cursor pagination, and webhook validation.">
+    <meta name="keywords"
+        content="Meta Graph API wrapper, Facebook API SDK, Instagram Graph API Node.js, @vitabletech/meta-sdk, Meta SDK rate limiting, Graph API pagination TypeScript">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitabletech.in/blog/meta-sdk-graph-api-wrapper.html">
+    <meta property="og:title" content="Stop Fighting the Meta Graph API. Announcing @vitabletech/meta-sdk">
+    <meta property="og:description"
+        content="Read how to easily query Facebook and Instagram Graph APIs. Learn how the new @vitabletech/meta-sdk for Node.js handles rate limiting, cursor pagination, and webhook validation.">
+    <meta property="og:image" content="https://vitabletech.in/images/blog-images/meta-sdk-thumbnail.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vitabletech.in/blog/meta-sdk-graph-api-wrapper.html">
+    <meta property="twitter:title" content="Stop Fighting the Meta Graph API. Announcing @vitabletech/meta-sdk">
+    <meta property="twitter:description"
+        content="Read how to easily query Facebook and Instagram Graph APIs. Learn how the new @vitabletech/meta-sdk for Node.js handles rate limiting, cursor pagination, and webhook validation.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/blog-images/meta-sdk-thumbnail.png">
+
+    <!-- Favicon & Manifest Tags -->
+    <link rel="icon" type="image/x-icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="shortcut icon" href="../icons-vitabletech/favicon.ico" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="../icons-vitabletech/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons-vitabletech/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="VitableTech" />
+    <link rel="manifest" href="../icons-vitabletech/site.webmanifest" />
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitabletech.in/blog/meta-sdk-graph-api-wrapper.html">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Existing stylesheet links -->
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitabletech.in/blog/meta-sdk-graph-api-wrapper.html"
+      },
+      "headline": "Stop Fighting the Facebook Graph API. Use the Ultimate Meta Graph API Wrapper: Meta-SDK",
+      "description": "Learn how to easily query Facebook and Instagram Graph APIs with @vitabletech/meta-sdk, featuring automatic rate limit handling, typescript types, cursor pagination, and webhook validation.",
+      "image": "https://vitabletech.in/images/blog-images/meta-sdk-thumbnail.png",
+      "author": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "url": "https://vitabletech.in"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitabletech.in/images/logo.svg"
+        }
+      },
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-07-19"
+    }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-primary-dark via-primary to-accent text-white py-2 overflow-hidden relative z-[100] border-b border-white/20">
+        <div class="whitespace-nowrap animate-marquee flex items-center text-sm md:text-base font-semibold tracking-wide">
+            <span class="mx-8 flex items-center gap-2"><i class="fas fa-rocket text-yellow-300"></i> Special Offer for Gwalior! Get a Free Consultation & 20% Off on all Web & App Development Services. <i class="fas fa-star text-yellow-300"></i> Empowering Gwalior Businesses with Next-Gen Digital Solutions.</span>
+        </div>
+    </div>
+
+    <!-- Floating Social Media Bar -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
+        <a href="https://github.com/vitabletech" target="_blank" class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-github text-xl"></i>
+            <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank" class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+            <span class="sr-only">Facebook</span>
+        </a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank" class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-youtube text-xl"></i>
+            <span class="sr-only">YouTube</span>
+        </a>
+        <a href="https://wa.me/916280671085" target="_blank" class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span class="sr-only">WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank" class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+            <span class="sr-only">Instagram</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="mr-2">
+                            <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" />
+                        </div>
+                        <div class="logo-text text-2xl">
+                            <div>
+                                <span class="text-primary">Vitable</span><span class="text-secondary">Tech</span>
+                            </div>
+                            <div class="text-secondary text-sm">Open Source Innovation</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="../about.html" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="../services/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="../products.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
+                    <a href="../projects.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="../clients.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="../contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="../pricing.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="../blog/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="../insights.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Insights</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="../services/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="../products.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Latest Products</a>
+                <a href="../projects.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="../clients.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="../contact.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <a href="../pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Pricing</a>
+                <a href="../blog/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Blog</a>
+                <a href="../insights.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Insights</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Open Source Production</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Stop Fighting the Meta Graph API. Use the Ultimate Node.js Wrapper: Meta-SDK</h1>
+            <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> July 2026</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 8 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img src="../images/blog-images/meta-sdk-thumbnail.png" alt="Meta-SDK Graph API Wrapper Product Landing" class="w-full h-auto object-cover" />
+            </div>
+            <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
+
+                <p>If you've ever had to build direct integrations with the <strong>Facebook or Instagram Graph APIs</strong>, you know the developer experience leaves a lot to be desired. Dealing with complex cursor-based pagination, sudden rate-limit throttling (the infamous <code>429 Too Many Requests</code>), loosely-typed request/response payloads, and security validations for webhook signatures is a massive drain on developer productivity.</p>
+
+                <p>To address this, VitableTech is proud to announce the production release of <strong class="text-primary">Meta-SDK</strong> (available at <a href="https://metasdk.vitabletech.in" target="_blank" class="text-primary font-semibold hover:underline">metasdk.vitabletech.in</a>). It is a highly scalable, modern Node.js and TypeScript wrapper for the Meta Graph APIs that automates the complex plumbing so you can focus on building features.</p>
+
+                <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-10 shadow-sm">
+                    <p class="font-bold text-gray-900 m-0 text-xl">The Core Goal of Meta-SDK</p>
+                    <p class="m-0 mt-3">Provide a developer-first interface for Meta Graph integrations. Meta-SDK abstracts token authentication, request queueing, paginated loops, and webhook decryption into a few clean, fully-typed API methods.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">The Core Pillars of Meta-SDK</h2>
+                <p>Here is what makes Meta-SDK an essential utility for modern Node.js and TypeScript backends:</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">1. Fully Typed Payload Interfaces</h3>
+                <p>No more guessing the keys of Facebook page posts, Instagram media feed items, or user accounts. Meta-SDK is written entirely in <strong>TypeScript</strong>. Every method offers complete autocomplete and inline documentation inside modern IDEs, reducing runtime validation errors to zero.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">2. Automatic & Intelligent Rate Limiting</h3>
+                <p>Meta enforces dynamic, adaptive rate limiting across Facebook and Instagram Graph queries. When your queries exceed limits, Meta-SDK automatically queues, pauses, and backsoff requests before retrying them once the cooling period is complete. You never have to manually handle 429 response codes.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">3. Built-in Paginator System</h3>
+                <p>Fetching thousands of Instagram comments or page insights typically requires implementing recursive loops parsing <code>paging.cursors.after</code> payloads. Meta-SDK includes a native paginated generator system, allowing you to stream or iterate through thousands of pages of records with a simple cursor loop.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">4. Webhooks Security Validation</h3>
+                <p>Validating webhook events from Meta requires cryptographic header parsing using <code>x-hub-signature-256</code> headers. Meta-SDK automates HMAC SHA-256 validation, ensuring only genuine payloads from Facebook reach your route controllers, using a single line of middleware code.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Show Me The Code!</h2>
+                <p>Here is how easy it is to authenticate and fetch a page's Instagram feed with automatic rate limit handling and pagination:</p>
+
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-typescript">import { MetaClient } from '@vitabletech/meta-sdk';
+
+const client = new MetaClient({
+  accessToken: 'YOUR_META_USER_ACCESS_TOKEN',
+  appSecret: 'YOUR_APP_SECRET', // optional, for secure webhook verification
+});
+
+// Auto-paginated, auto-rate-limit handled fetch
+const feedGenerator = client.instagram.pages.listFeed('INSTAGRAM_BUSINESS_ACCOUNT_ID', {
+  fields: ['id', 'caption', 'media_url', 'timestamp'],
+  limit: 50
+});
+
+for await (const page of feedGenerator) {
+  console.log(`Retrieved ${page.data.length} posts!`);
+  // Process post items
+}
+</code></pre>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-8 tracking-tight">Meta Graph API: Developer FAQ</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Does Meta-SDK handle Token Expiration and Refresh?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">Yes. Meta-SDK handles both short-lived user tokens and long-lived page tokens, providing utility methods to exchange user access tokens for long-lived credentials automatically.</p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> How does the cryptographic Webhook helper function?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">You pass the raw request buffer and the signature header to the helper: <code>client.webhooks.verifySignature(rawBody, signature, appSecret)</code>. It returns a boolean, keeping your API endpoints secure against payload injection.</p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Can I query metrics and page insights?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">Absolutely. The SDK has specific controllers for page insights (impressions, reach, engagement) and Instagram business metrics, returning cleanly mapped TypeScript arrays.</p>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <div class="bg-gradient-to-br from-primary-dark via-primary to-accent p-10 rounded-3xl text-center text-white my-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-48 h-48 bg-white opacity-10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-white opacity-10 rounded-full blur-3xl"></div>
+                    
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 relative z-10">Stop writing boilerplate. Start building.</h3>
+                    <p class="mb-8 text-lg opacity-90 relative z-10 max-w-2xl mx-auto">The @vitabletech/meta-sdk is production-ready, open-source, and fully typed for modern backend architectures.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                        <a href="https://github.com/vitabletech/MetaSDK" target="_blank" class="inline-block bg-white text-primary font-bold py-4 px-10 rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"><i class="fab fa-github text-xl mr-2"></i> View on GitHub</a>
+                        <a href="https://metasdk.vitabletech.in" target="_blank" class="inline-block bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all shadow-lg"><i class="fas fa-book text-xl mr-2"></i> Documentation</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-secondary-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">VitableTech</h3>
+                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise solutions since 2018.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-github"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-youtube"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-instagram"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../services/index.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="../clients.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../policies/terms-and-conditions.html" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../policies/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../services/custom-software.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
+                        <li><a href="../services/ui-ux.html" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="../services/web-development.html" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="../services/mobile-app.html" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="../services/devops-cloud.html" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
+                        <li><a href="../services/maintenance-support.html" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="../services/ecommerce.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors font-semibold">info@vitabletech.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone  mt-1 mr-2"></i>
+                            <a href="tel:+916280671085" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2"></i>
+                            <a href="https://wa.me/916280671085" target="_blank" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300">
+                    <p>&copy; 2018 VitableTech. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/mobile_menu_toogle.js"></script>
+    <script src="../js/custom_script.js"></script>
+
+    <!-- Go to Top Button -->
+    <button id="goToTopBtn" class="fixed bottom-[130px] right-2 md:bottom-24 md:right-6 z-40 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:-translate-y-1 hover:shadow-xl">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-[60] pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.08)] border-t border-white/50 backdrop-blur-xl bg-white/85 transition-all duration-300 rounded-t-2xl">
+        <div class="flex justify-around items-center px-1 py-2" id="mobile-bottom-nav">
+            <a href="../index.html" data-nav="home" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-home text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Home</span>
+            </a>
+            <a href="../services/index.html" data-nav="services" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-layer-group text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Services</span>
+            </a>
+            <a href="../projects.html" data-nav="projects" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-briefcase text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Projects</span>
+            </a>
+            <a href="../blog/index.html" data-nav="blog" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-newspaper text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Blog</span>
+            </a>
+            <a href="../contact.html" data-nav="contact" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-envelope text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('#mobile-bottom-nav a');
+            navLinks.forEach(link => {
+                const navType = link.getAttribute('data-nav');
+                let isActive = false;
+                if (navType === 'home' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') && !currentPath.includes('services') && !currentPath.includes('blog'))) {
+                    isActive = true;
+                } else if (navType !== 'home' && currentPath.includes(navType)) {
+                    isActive = true;
+                }
+                if (isActive) {
+                    link.classList.remove('text-gray-500');
+                    link.classList.add('text-primary');
+                    const iconContainer = link.querySelector('.icon-container');
+                    if (iconContainer) iconContainer.classList.add('bg-primary', 'bg-opacity-10');
+                    const icon = link.querySelector('i');
+                    if (icon) icon.classList.add('-translate-y-1');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

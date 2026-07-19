@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-60TFS60E2F');
+            }, 3000);
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>How to Get a Permanent Meta Graph API Access Token (Never Expires) | VitableTech Blog</title>
+    <meta name="title" content="How to Get a Permanent Meta Graph API Access Token (Never Expires) | VitableTech Blog">
+    <meta name="description"
+        content="Stop rebuilding token refresh cron jobs. Learn how to generate a permanent access token using Meta System Users for internal daemon apps and server scripts.">
+    <meta name="keywords"
+        content="Meta permanent access token, Facebook system users token, Graph API token never expires, Facebook Graph API daemon app, System User token expiry Never, long-lived access token facebook">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitabletech.in/blog/meta-graph-api-permanent-access-token.html">
+    <meta property="og:title" content="How to Get a Permanent Meta Graph API Access Token (Never Expires) | VitableTech">
+    <meta property="og:description"
+        content="Stop rebuilding token refresh cron jobs. Learn how to generate a permanent access token using Meta System Users for internal daemon apps and server scripts.">
+    <meta property="og:image" content="https://vitabletech.in/images/blog-images/meta-token-expiry.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vitabletech.in/blog/meta-graph-api-permanent-access-token.html">
+    <meta property="twitter:title" content="How to Get a Permanent Meta Graph API Access Token (Never Expires) | VitableTech">
+    <meta property="twitter:description"
+        content="Stop rebuilding token refresh cron jobs. Learn how to generate a permanent access token using Meta System Users for internal daemon apps and server scripts.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/blog-images/meta-token-expiry.png">
+
+    <!-- Favicon & Manifest Tags -->
+    <link rel="icon" type="image/x-icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="shortcut icon" href="../icons-vitabletech/favicon.ico" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="../icons-vitabletech/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons-vitabletech/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="VitableTech" />
+    <link rel="manifest" href="../icons-vitabletech/site.webmanifest" />
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitabletech.in/blog/meta-graph-api-permanent-access-token.html">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Existing stylesheet links -->
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitabletech.in/blog/meta-graph-api-permanent-access-token.html"
+      },
+      "headline": "How to Get a Permanent Meta Graph API Access Token (Never Expires) for Daemon Apps",
+      "description": "Stop rebuilding token refresh cron jobs. Learn how to generate a permanent access token using Meta System Users for internal daemon apps and server scripts.",
+      "image": "https://vitabletech.in/images/blog-images/meta-token-expiry.png",
+      "author": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "url": "https://vitabletech.in"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitabletech.in/images/logo.svg"
+        }
+      },
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-07-19"
+    }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-primary-dark via-primary to-accent text-white py-2 overflow-hidden relative z-[100] border-b border-white/20">
+        <div class="whitespace-nowrap animate-marquee flex items-center text-sm md:text-base font-semibold tracking-wide">
+            <span class="mx-8 flex items-center gap-2"><i class="fas fa-rocket text-yellow-300"></i> Special Offer for Gwalior! Get a Free Consultation & 20% Off on all Web & App Development Services. <i class="fas fa-star text-yellow-300"></i> Empowering Gwalior Businesses with Next-Gen Digital Solutions.</span>
+        </div>
+    </div>
+
+    <!-- Floating Social Media Bar -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
+        <a href="https://github.com/vitabletech" target="_blank" class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-github text-xl"></i>
+            <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank" class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+            <span class="sr-only">Facebook</span>
+        </a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank" class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-youtube text-xl"></i>
+            <span class="sr-only">YouTube</span>
+        </a>
+        <a href="https://wa.me/916280671085" target="_blank" class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span class="sr-only">WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank" class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+            <span class="sr-only">Instagram</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="mr-2">
+                            <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" />
+                        </div>
+                        <div class="logo-text text-2xl">
+                            <div>
+                                <span class="text-primary">Vitable</span><span class="text-secondary">Tech</span>
+                            </div>
+                            <div class="text-secondary text-sm">Open Source Innovation</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="../about.html" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="../services/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="../products.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
+                    <a href="../projects.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="../clients.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="../contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="../pricing.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="../blog/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="../insights.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Insights</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="../services/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="../products.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Latest Products</a>
+                <a href="../projects.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="../clients.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="../contact.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <a href="../pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Pricing</a>
+                <a href="../blog/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Blog</a>
+                <a href="../insights.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Insights</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Backend Tutorials</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">How to Generate a Permanent Meta Graph API Token (Never Expires)</h1>
+            <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> July 2026</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 9 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img src="../images/blog-images/meta-token-expiry.png" alt="Meta Permanent Token Expiry Setup" class="w-full h-auto object-cover" />
+            </div>
+            <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
+
+                <p>If you've ever built a background cron service or a daemon application that queries Facebook Page insights, posts to Instagram automatically, or manages Catalog feeds, you have likely run into the dreaded **Token Expiration** wall.</p>
+
+                <p>By default, Facebook user access tokens expire after a few hours, and even "long-lived" tokens expire after 60 days. In the past, developers had to write complex token-refresh cron jobs, implement client-secret integrations, or store keys in secure cloud vaults like Azure Key Vault to prevent their background daemons from breaking.</p>
+
+                <p>Fortunately, there is a much simpler, production-ready solution: **Meta System Users**. By generating a system-user-scoped token, you can request a token that <strong>Never Expires</strong>, allowing you to run your internal scripts via basic environment variables without any third-party vault or complex refresh logic.</p>
+
+                <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-10 shadow-sm">
+                    <p class="font-bold text-gray-900 m-0 text-xl">The Solution at a Glance</p>
+                    <p class="m-0 mt-3 font-semibold text-gray-800">Instead of checking user logins and rotating refresh tokens via OAuth, you create a Meta System User in Facebook Business Suite, grant it asset access permissions, and generate a token with a 'Never' expiration date. You save this token in your backend <code>.env</code> file, and you're set.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight font-sans">Step-by-Step Guide to Generate a Permanent Token</h2>
+                
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Step 1: Set Up a Meta System User & Assign Assets</h3>
+                <p>To create a system user, you need Admin access to the Meta Business Portfolio. This user acts as a programmatic daemon, decoupling the API access from any physical employee account.</p>
+                <ul class="list-disc pl-8 mt-2 space-y-2">
+                    <li>Go to the <a href="https://business.facebook.com/settings" target="_blank" class="text-primary hover:underline">Meta Business Settings</a> page.</li>
+                    <li>In the left-hand navigation menu, under the <strong>Users</strong> section, click on <strong>System Users</strong>. (Reference: <a href="https://www.facebook.com/business/help/503306463479099?id=2190812977867143" target="_blank" class="text-primary hover:underline">How to Add System Users (Official Help)</a>).</li>
+                    <li>Click the <strong>Add</strong> button, name your system user (e.g., <code>admin</code>), select the <strong>Admin System User</strong> role, and click save.</li>
+                    <li>Under the system user settings dashboard, click <strong>Assigned Assets</strong>. Assign the target resources (e.g., Facebook Pages, Meta Apps, or Instagram accounts) that your app needs programmatic control over.</li>
+                </ul>
+                <div class="my-6 rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+                    <img src="../images/blog-images/meta-system-users.png" alt="Meta System Users Settings" class="w-full h-auto" />
+                </div>
+                <p class="text-sm text-gray-500 italic text-center">System Users management dashboard showing assigned Pages, Apps, and Instagram Accounts.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Step 2: Start Token Generation & Select App</h3>
+                <p>Once your assets are assigned, you can generate the credentials:</p>
+                <ul class="list-disc pl-8 mt-2 space-y-2">
+                    <li>Click on the **Generate token** button located in your System User pane.</li>
+                    <li>In the overlay modal, choose the target application (e.g., <code>deloitte</code> or <code>bpcl-india</code>) to link with the credentials.</li>
+                </ul>
+                <div class="my-6 rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+                    <img src="../images/blog-images/meta-select-app.png" alt="Select App step during token generation" class="w-full h-auto" />
+                </div>
+                <p class="text-sm text-gray-500 italic text-center">Selecting the target application for token generation.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Step 3: Set Token Expiry to Never</h3>
+                <p>This is the most critical step to prevent token expiration warnings and failures:</p>
+                <ul class="list-disc pl-8 mt-2 space-y-2">
+                    <li>Under **When should the token expire?**, select the <strong class="text-primary">Never</strong> option.</li>
+                </ul>
+                <div class="my-6 rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+                    <img src="../images/blog-images/meta-token-expiry.png" alt="Choosing Never Expiry for Meta Token" class="w-full h-auto" />
+                </div>
+                <p class="text-sm text-gray-500 italic text-center">Selecting 'Never' to generate a permanent access token.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2">Step 4: Assign Required Scopes</h3>
+                <p>Select the specific permissions required for your app (e.g. <code>instagram_basic</code>, <code>ads_read</code>, <code>business_management</code>) and click **Next** to generate and copy your final token secure key.</p>
+                <div class="my-6 rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+                    <img src="../images/blog-images/meta-assign-permissions.png" alt="Assign Permissions scopes dropdown" class="w-full h-auto" />
+                </div>
+                <p class="text-sm text-gray-500 italic text-center">Selecting the specific Graph API permission scopes.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Pros and Cons of Permanent System User Tokens</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                    <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                        <h4 class="text-xl font-bold text-green-900 mb-3"><i class="fas fa-check-circle mr-2"></i> Pros</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-green-800 text-sm">
+                            <li><strong>Zero Token Maintenance:</strong> Eliminates the need to write cron jobs or refresh loops to keep credentials alive.</li>
+                            <li><strong>Decoupled from Users:</strong> Unlike page tokens, these do not expire when an employee changes their password or leaves the business.</li>
+                            <li><strong>Simple Deployment:</strong> No complex integration with cloud vault environments (like Azure Key Vault) is required. A simple local <code>.env</code> file is sufficient.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                        <h4 class="text-xl font-bold text-red-900 mb-3"><i class="fas fa-times-circle mr-2"></i> Cons</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-red-800 text-sm">
+                            <li><strong>Security Risk on Leakage:</strong> Because the token does not expire, if the token is leaked or committed to a public git repo, attackers retain permanent access until it is manually revoked.</li>
+                            <li><strong>Admin Privileges Required:</strong> Only Business Manager Admins can create System Users and generate these tokens.</li>
+                            <li><strong>Meta Policy Restrictions:</strong> Some advanced API scopes are restricted and cannot be generated using simple System Users without complete App Review approval.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Sources of Truth</h2>
+                <p>To learn more about Meta's token architecture, read the official developer specifications and guides:</p>
+                <ul class="list-disc pl-8 mt-2 space-y-2 text-sm">
+                    <li><strong>Meta Docs:</strong> <a href="https://developers.facebook.com/docs/business-management-apis/system-users" target="_blank" class="text-primary hover:underline">About Meta Business Suite System Users</a></li>
+                    <li><strong>Meta Setup:</strong> <a href="https://developers.facebook.com/docs/business-management-apis/system-users/install-apps-and-generate-tokens#generate-token" target="_blank" class="text-primary hover:underline">Install Apps and Generate Tokens Guide</a></li>
+                    <li><strong>Facebook Help Center:</strong> <a href="https://www.facebook.com/business/help/503306463479099?id=2190812977867143" target="_blank" class="text-primary hover:underline">Add System Users to Business Portfolio</a></li>
+                    <li><strong>Developer Discussion:</strong> <a href="https://stackoverflow.com/questions/79501605/meta-graph-api-how-to-get-a-permanent-access-token-for-internal-daemon-app" target="_blank" class="text-primary hover:underline">StackOverflow: Permanent Token for Internal Daemon Apps</a></li>
+                </ul>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-8 tracking-tight">Key Developer & Operator FAQ</h2>
+
+                <div class="space-y-6 font-sans text-base">
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Can I revoke a permanent token if it gets compromised?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">Yes. If your server environment is compromised or your token is leaked, you can revoke it instantly by clicking the <strong>Revoke tokens</strong> button in the System Users console next to the corresponding user account.</p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> Do I need to implement refresh token rotation?</h4>
+                        <p class="text-gray-600 mt-3 ml-8">No. By setting the expiry to "Never", the generated access token acts as a permanent API key. There is no refresh token returned because none is required.</p>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <div class="bg-white p-8 md:p-12 border-2 border-dashed border-primary/30 rounded-3xl text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 tracking-tight font-sans">Simplify Your Meta Graph Integrations</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">VitableTech engineers custom API workflows, automated backend daemons, and system integrations. Leverage our open-source tools to streamline your production environments.</p>
+                    <a href="../contact.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg">
+                        <i class="fas fa-paper-plane"></i> Contact VitableTech Today
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-secondary-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">VitableTech</h3>
+                    <p class="text-gray-300 mb-4">Empowering businesses through open source innovation and enterprise solutions since 2018.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-github"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-youtube"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-instagram"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/vitabletech" class="text-gray-300 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../services/index.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="../clients.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../policies/terms-and-conditions.html" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../policies/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../services/custom-software.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
+                        <li><a href="../services/ui-ux.html" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="../services/web-development.html" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="../services/mobile-app.html" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="../services/devops-cloud.html" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
+                        <li><a href="../services/maintenance-support.html" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="../services/ecommerce.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors font-semibold">info@vitabletech.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone  mt-1 mr-2"></i>
+                            <a href="tel:+916280671085" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2"></i>
+                            <a href="https://wa.me/916280671085" target="_blank" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300">
+                    <p>&copy; 2018 VitableTech. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/mobile_menu_toogle.js"></script>
+    <script src="../js/custom_script.js"></script>
+
+    <!-- Go to Top Button -->
+    <button id="goToTopBtn" class="fixed bottom-[130px] right-2 md:bottom-24 md:right-6 z-40 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:-translate-y-1 hover:shadow-xl">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-[60] pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.08)] border-t border-white/50 backdrop-blur-xl bg-white/85 transition-all duration-300 rounded-t-2xl">
+        <div class="flex justify-around items-center px-1 py-2" id="mobile-bottom-nav">
+            <a href="../index.html" data-nav="home" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-home text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Home</span>
+            </a>
+            <a href="../services/index.html" data-nav="services" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-layer-group text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Services</span>
+            </a>
+            <a href="../projects.html" data-nav="projects" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-briefcase text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Projects</span>
+            </a>
+            <a href="../blog/index.html" data-nav="blog" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-newspaper text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Blog</span>
+            </a>
+            <a href="../contact.html" data-nav="contact" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-envelope text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('#mobile-bottom-nav a');
+            navLinks.forEach(link => {
+                const navType = link.getAttribute('data-nav');
+                let isActive = false;
+                if (navType === 'home' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') && !currentPath.includes('services') && !currentPath.includes('blog'))) {
+                    isActive = true;
+                } else if (navType !== 'home' && currentPath.includes(navType)) {
+                    isActive = true;
+                }
+                if (isActive) {
+                    link.classList.remove('text-gray-500');
+                    link.classList.add('text-primary');
+                    const iconContainer = link.querySelector('.icon-container');
+                    if (iconContainer) iconContainer.classList.add('bg-primary', 'bg-opacity-10');
+                    const icon = link.querySelector('i');
+                    if (icon) icon.classList.add('-translate-y-1');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
