@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
@@ -131,23 +131,23 @@
         <a href="https://github.com/vitabletech" target="_blank"
             class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-github text-xl"></i>
-        <span class="sr-only">GitHub</span></a>
+            <span class="sr-only">GitHub</span></a>
         <a href="https://www.facebook.com/vitabletech" target="_blank"
             class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-facebook-f text-xl"></i>
-        <span class="sr-only">Facebook</span></a>
+            <span class="sr-only">Facebook</span></a>
         <a href="https://www.youtube.com/@vitabletech" target="_blank"
             class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-youtube text-xl"></i>
-        <span class="sr-only">YouTube</span></a>
+            <span class="sr-only">YouTube</span></a>
         <a href="https://wa.me/916280671085" target="_blank"
             class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-whatsapp text-xl"></i>
-        <span class="sr-only">WhatsApp</span></a>
+            <span class="sr-only">WhatsApp</span></a>
         <a href="https://www.instagram.com/vitabletech" target="_blank"
             class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
             <i class="fab fa-instagram text-xl"></i>
-        <span class="sr-only">Instagram</span></a>
+            <span class="sr-only">Instagram</span></a>
     </div>
 
     <!-- Navigation -->
@@ -235,16 +235,25 @@
     <!-- Gallery Section -->
     <section class="py-12 md:py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
-            
+
             <!-- Descriptive SEO Content -->
             <div class="max-w-4xl mx-auto text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Educational Tech Infographics</h2>
                 <div class="prose max-w-none text-left md:text-center text-gray-600 space-y-4">
                     <p class="text-lg">
-                        At VitableTech, we believe in empowering the developer community through continuous learning. Our <strong>Tech Insights</strong> gallery features beautifully designed, easy-to-understand educational infographics covering a wide range of topics. Whether you are diving into core software engineering principles, exploring advanced web development best practices, or mastering modern cloud computing architectures, our visual guides are here to simplify your learning journey.
+                        At VitableTech, we believe in empowering the developer community through continuous learning.
+                        Our <strong>Tech Insights</strong> gallery features beautifully designed, easy-to-understand
+                        educational infographics covering a wide range of topics. Whether you are diving into core
+                        software engineering principles, exploring advanced web development best practices, or mastering
+                        modern cloud computing architectures, our visual guides are here to simplify your learning
+                        journey.
                     </p>
                     <p class="text-md">
-                        We regularly publish insights on emerging technologies like Artificial Intelligence, Machine Learning, and DevOps automation. To ensure accessibility for all learners across India and the globe, we provide our educational content in both <strong>English</strong> and <strong>Hindi</strong>. Browse through our extensive library of infographics below, click on any image to expand it, and share the knowledge with your peers!
+                        We regularly publish insights on emerging technologies like Artificial Intelligence, Machine
+                        Learning, and DevOps automation. To ensure accessibility for all learners across India and the
+                        globe, we provide our educational content in both <strong>English</strong> and
+                        <strong>Hindi</strong>. Browse through our extensive library of infographics below, click on any
+                        image to expand it, and share the knowledge with your peers!
                     </p>
                 </div>
             </div>
@@ -261,10 +270,11 @@
 
             <!-- Grids -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="english-gallery"></div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 hidden" id="hindi-gallery"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 hidden" id="hindi-gallery">
+            </div>
         </div>
     </section>
-    
+
     <!-- Dynamic Gallery Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -278,21 +288,45 @@
                 </div>`;
             };
 
+            const newEnglishImages = [
+                './images/insights/1.jpg',
+                './images/insights/2-NPM-package.jpg',
+                './images/insights/3-why Google business profile is required for the client.jpg',
+                './images/insights/4.jpg',
+                './images/insights/5.jpg',
+                './images/insights/6.jpg',
+                './images/insights/7.jpg',
+                './images/insights/8.jpg',
+                './images/insights/10.jpg',
+                './images/insights/11.jpg',
+                './images/insights/12 - Removed.png',
+                './images/insights/13 - Removed.png',
+                './images/insights/14.png',
+                './images/insights/15.png'
+            ];
+
             const engGallery = document.getElementById('english-gallery');
             let engHtml = '';
-            for(let i=0; i<=30; i++) {
-                engHtml += createCard(`./images/insights/English-Post/${i}.webp`, (i%4)*100);
+
+            // Prepend new images first
+            newEnglishImages.forEach((src, idx) => {
+                engHtml += createCard(src, (idx % 4) * 100);
+            });
+
+            // Append old loop images
+            for (let i = 0; i <= 30; i++) {
+                engHtml += createCard(`./images/insights/English-Post/${i}.webp`, ((i + newEnglishImages.length) % 4) * 100);
             }
             engGallery.innerHTML = engHtml;
 
             const hindiGallery = document.getElementById('hindi-gallery');
             let hinHtml = '';
-            for(let i=1; i<=29; i++) {
-                hinHtml += createCard(`./images/insights/Hindi-Post/${i}.webp`, (i%4)*100);
+            for (let i = 1; i <= 29; i++) {
+                hinHtml += createCard(`./images/insights/Hindi-Post/${i}.webp`, (i % 4) * 100);
             }
             hindiGallery.innerHTML = hinHtml;
         });
-        
+
         function switchTab(tab) {
             const engGallery = document.getElementById('english-gallery');
             const hinGallery = document.getElementById('hindi-gallery');
@@ -402,38 +436,44 @@
                         <a target="_blank" href="https://github.com/vitabletech"
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-github"></i>
-                        <span class="sr-only">GitHub</span></a>
+                            <span class="sr-only">GitHub</span></a>
                         <a target="_blank" href="https://www.linkedin.com/company/vitabletech/"
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-linkedin-in"></i>
-                        <span class="sr-only">LinkedIn</span></a>
+                            <span class="sr-only">LinkedIn</span></a>
                         <a target="_blank" href="https://www.youtube.com/@vitabletech"
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-youtube"></i>
-                        <span class="sr-only">YouTube</span></a>
+                            <span class="sr-only">YouTube</span></a>
                         <a target="_blank" href="https://www.instagram.com/vitabletech"
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-instagram"></i>
-                        <span class="sr-only">Instagram</span></a>
+                            <span class="sr-only">Instagram</span></a>
                         <a target="_blank" href="https://www.facebook.com/vitabletech"
                             class="text-gray-300 hover:text-white transition-colors text-xl">
                             <i class="fab fa-facebook-f"></i>
-                        <span class="sr-only">Facebook</span></a>
+                            <span class="sr-only">Facebook</span></a>
                     </div>
-                
+
                     <!-- Trustpilot Widget -->
-                    <div class="mt-6 inline-block bg-white/10 rounded-lg p-4 border border-white/20 transition-all hover:bg-white/20">
+                    <div
+                        class="mt-6 inline-block bg-white/10 rounded-lg p-4 border border-white/20 transition-all hover:bg-white/20">
                         <a href="https://www.trustpilot.com/review/vitabletech.in" target="_blank">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-star text-green-500 text-xl"></i>
                                 <span class="font-bold text-lg">Trustpilot</span>
                             </div>
                             <div class="flex gap-1 mb-1">
-                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
-                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
-                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
-                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
-                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i
+                                        class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i
+                                        class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i
+                                        class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i
+                                        class="fas fa-star"></i></div>
+                                <div class="bg-green-500 text-white w-6 h-6 flex items-center justify-center text-xs"><i
+                                        class="fas fa-star"></i></div>
                             </div>
                             <p class="text-xs text-gray-300">Leave a review or read them on Trustpilot</p>
                         </a>
@@ -467,25 +507,40 @@
                                 class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
                         <li><a href="./policies/return-refund-policy.html"
                                 class="text-gray-300 hover:text-white transition-colors">Return & Refund Policy</a></li>
-                    
-                        <li><a href="./blog/custom-software-development-benefits.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Benefits</a></li>
-                        <li><a href="./blog/ecommerce-seo-strategies-2026.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce SEO</a></li>
-                        <li><a href="./blog/website-development-cost-in-gwalior.html" class="text-gray-300 hover:text-white transition-colors">Website Cost Gwalior</a></li>
+
+                        <li><a href="./blog/custom-software-development-benefits.html"
+                                class="text-gray-300 hover:text-white transition-colors">Custom Software Benefits</a>
+                        </li>
+                        <li><a href="./blog/ecommerce-seo-strategies-2026.html"
+                                class="text-gray-300 hover:text-white transition-colors">E-Commerce SEO</a></li>
+                        <li><a href="./blog/website-development-cost-in-gwalior.html"
+                                class="text-gray-300 hover:text-white transition-colors">Website Cost Gwalior</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-bold mb-4">Our Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="./services/custom-software.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
-                        <li><a href="./services/ui-ux.html" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
-                        <li><a href="./services/web-development.html" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="./services/mobile-app.html" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
-                        <li><a href="./services/devops-cloud.html" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
-                        <li><a href="./services/maintenance-support.html" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
-                        <li><a href="./services/ecommerce.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
-                        <li><a href="./services/ai-machine-learning.html" class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
-                        <li><a href="./services/edi-supply-chain.html" class="text-gray-300 hover:text-white transition-colors">EDI & Supply Chain</a></li>
+                        <li><a href="./services/custom-software.html"
+                                class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a>
+                        </li>
+                        <li><a href="./services/ui-ux.html"
+                                class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="./services/web-development.html"
+                                class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="./services/mobile-app.html"
+                                class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="./services/devops-cloud.html"
+                                class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a>
+                        </li>
+                        <li><a href="./services/maintenance-support.html"
+                                class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="./services/ecommerce.html"
+                                class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
+                        <li><a href="./services/ai-machine-learning.html"
+                                class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="./services/edi-supply-chain.html"
+                                class="text-gray-300 hover:text-white transition-colors">EDI & Supply Chain</a></li>
                     </ul>
                 </div>
 
