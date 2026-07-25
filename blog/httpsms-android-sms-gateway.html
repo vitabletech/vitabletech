@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-60TFS60E2F');
+            }, 3000); // Delay loading GA by 3 seconds to let the main thread render the page first
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Turn Your Android Phone into an SMS API Gateway with HttpSms | VitableTech Blog</title>
+    <meta name="title" content="Turn Your Android Phone into an SMS API Gateway with HttpSms | VitableTech Blog">
+    <meta name="description"
+        content="Stop paying expensive fees for Twilio. Learn how to self-host HttpSms to turn your own Android phone and SIM card into a secure, programmatically accessible HTTP SMS gateway.">
+    <meta name="keywords"
+        content="HttpSms Android gateway, open-source SMS gateway, self-hosted SMS API, Twilio alternatives, send SMS programmatically">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitabletech.in/blog/httpsms-android-sms-gateway.html">
+    <meta property="og:title" content="Turn Your Android Phone into an SMS API Gateway with HttpSms">
+    <meta property="og:description"
+        content="Stop paying expensive fees for Twilio. Learn how to self-host HttpSms to turn your own Android phone and SIM card into a secure, programmatically accessible HTTP SMS gateway.">
+    <meta property="og:image" content="https://vitabletech.in/images/blog-images/httpsms-gateway.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vitabletech.in/blog/httpsms-android-sms-gateway.html">
+    <meta property="twitter:title" content="Turn Your Android Phone into an SMS API Gateway with HttpSms">
+    <meta property="twitter:description"
+        content="Stop paying expensive fees for Twilio. Learn how to self-host HttpSms to turn your own Android phone and SIM card into a secure, programmatically accessible HTTP SMS gateway.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/blog-images/httpsms-gateway.png">
+
+    <!-- Favicon & Manifest Tags -->
+    <link rel="icon" type="image/x-icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="shortcut icon" href="../icons-vitabletech/favicon.ico" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="../icons-vitabletech/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons-vitabletech/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="VitableTech" />
+    <link rel="manifest" href="../icons-vitabletech/site.webmanifest" />
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitabletech.in/blog/httpsms-android-sms-gateway.html">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Existing stylesheet links -->
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitabletech.in/blog/httpsms-android-sms-gateway.html"
+      },
+      "headline": "Turn Your Android Phone into an SMS API Gateway with HttpSms",
+      "description": "Unlock self-hosted SMS messaging with HttpSms. Learn how to convert your own Android device and local SIM card into an encrypted HTTP SMS API.",
+      "image": "https://vitabletech.in/images/blog-images/httpsms-gateway.png",
+      "author": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "url": "https://vitabletech.in"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitabletech.in/images/logo.svg"
+        }
+      },
+      "datePublished": "2026-07-25",
+      "dateModified": "2026-07-25"
+    }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+    <!-- Announcement Bar -->
+    <div
+        class="bg-gradient-to-r from-primary-dark via-primary to-accent text-white py-2 overflow-hidden relative z-[100] border-b border-white/20">
+        <div
+            class="whitespace-nowrap animate-marquee flex items-center text-sm md:text-base font-semibold tracking-wide">
+            <span class="mx-8 flex items-center gap-2"><i class="fas fa-rocket text-yellow-300"></i> Special Offer for
+                Gwalior! Get a Free Consultation & 20% Off on all Web & App Development Services. <i
+                    class="fas fa-star text-yellow-300"></i> Empowering Gwalior Businesses with Next-Gen Digital
+                Solutions.</span>
+        </div>
+    </div>
+
+    <!-- Floating Social Media Bar -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
+        <a href="https://github.com/vitabletech" target="_blank"
+            class="w-10 h-10 bg-gray-800 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-github text-xl"></i>
+        <span class="sr-only">GitHub</span></a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank"
+            class="w-10 h-10 bg-blue-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+        <span class="sr-only">Facebook</span></a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank"
+            class="w-10 h-10 bg-red-600 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-youtube text-xl"></i>
+        <span class="sr-only">YouTube</span></a>
+        <a href="https://wa.me/916280671085" target="_blank"
+            class="w-10 h-10 bg-green-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+        <span class="sr-only">WhatsApp</span></a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank"
+            class="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-r-lg flex items-center justify-center hover:w-12 transition-all duration-300 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+        <span class="sr-only">Instagram</span></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="mr-2">
+                            <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" />
+                        </div>
+
+                        <div class="logo-text text-2xl">
+                            <div>
+                                <span class="text-primary">Vitable</span><span class="text-secondary">Tech</span>
+                            </div>
+                            <div class="text-secondary text-sm">Open Source Innovation</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="../about.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                    <a href="../services/index.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="../products.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Latest Products</a>
+                    <a href="../projects.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+                    <a href="../clients.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Clients</a>
+                    <a href="../contact.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="../pricing.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="../blog/index.html" class="text-gray-700 hover:text-primary font-medium transition-colors">Blog</a>
+                    <a href="../insights.html"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors">Insights</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="../services/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="../products.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Latest
+                    Products</a>
+                <a href="../projects.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Projects</a>
+                <a href="../clients.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Clients</a>
+                <a href="../contact.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Contact</a>
+                <a href="../pricing.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Pricing</a>
+                <a href="../blog/index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Blog</a>
+                <a href="../insights.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Insights</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Open Source & APIs</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Turn Your Android Phone into an SMS API Gateway with HttpSms</h1>
+            <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> July 2026</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 7 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img src="../images/blog-images/httpsms-gateway.png" alt="HttpSms Android SMS Gateway Banner" class="w-full h-auto object-cover" />
+            </div>
+
+            <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
+                <p>For modern web applications and mobile apps, text messages are essential. Whether you are dispatching transaction OTPs, order delivery status updates, account alerts, or local marketing campaigns, SMS remains the most direct way to reach users. However, integrating third-party messaging services like Twilio can get expensive quickly—especially in countries where purchasing virtual numbers is heavily restricted or where carrier tariffs make outbound messages prohibitive.</p>
+
+                <p>But what if you could use your own Android phone and SIM card as a programmable gateway? That is the exact problem solved by <a href="https://github.com/NdoleStudio/httpsms" target="_blank" class="text-primary font-semibold hover:underline font-mono">HttpSms</a>, an open-source project by NdoleStudio. It allows developers to send and receive text messages programmatically via a simple, fully-featured HTTP REST API using a standard Android phone.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">How HttpSms Works Under the Hood</h2>
+                <p>Unlike old-school SMS gateways that required connecting a phone directly to a local server via USB or setting up complex GSM modems, HttpSms utilizes cloud-based message queuing and push notifications. The request flow follows a robust, asynchronous sequence:</p>
+
+                <ol class="list-decimal pl-6 space-y-3 mt-4">
+                    <li>Your backend application initiates an HTTP POST request to the <strong>HttpSms API</strong> containing the recipient number and message content.</li>
+                    <li>The API queues the message and schedules a push notification request through <strong>Firebase Cloud Messaging (FCM)</strong>.</li>
+                    <li>The API immediately responds to your backend with a status code of <code>202 Accepted</code>, ensuring your application flow is never blocked.</li>
+                    <li>The <strong>HttpSms Android App</strong> running on your phone receives the background push notification.</li>
+                    <li>The Android app fetches the queued message payload from the API server, encrypts/decrypts it locally, and sends it out using the native Android SMS API.</li>
+                    <li>Once sent, the Android app sends the delivery status report back to the central API server.</li>
+                </ol>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Key Enterprise Features of HttpSms</h2>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2"><i class="fas fa-lock mr-2"></i> 1. End-to-End Encryption (AES-256 E2EE)</h3>
+                <p>Security is critical when handling user communications. HttpSms integrates AES-256 cryptographic encryption. The encryption key remains stored strictly on your local Android device. Payloads flowing through the cloud API server are encrypted, meaning the server operator cannot inspect the contents of your messages.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2"><i class="fas fa-random mr-2"></i> 2. Real-time Webhooks for Inbound SMS</h3>
+                <p>Need to build conversational interfaces or process customer replies? HttpSms supports webhook subscriptions. Whenever your Android phone receives an incoming text message, the app pushes the content back to the cloud API, which immediately forwards it to your configured server endpoint as a secure HTTP callback.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2"><i class="fas fa-tachometer-alt mr-2"></i> 3. Smart Rate Limiting & Back Pressure</h3>
+                <p>Mobile carriers often restrict or flag SIM cards that send thousands of text messages within seconds. To protect your phone number from carrier suspension, HttpSms features customizable rate limits (e.g., 3 messages per minute). The backend queue buffers any extra traffic, releasing messages smoothly at your specified pace.</p>
+
+                <h3 class="text-2xl font-bold text-primary mt-10 mb-2"><i class="fas fa-hourglass-half mr-2"></i> 4. Message Expiration Thresholds</h3>
+                <p>For time-sensitive alerts like OTPs, delayed delivery is useless. You can attach a validity timeout to your API requests. If the Android phone loses internet access and cannot transmit the message within the timeout window, the system automatically flags the message as expired and notifies your webhook.</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Show Me the Code: Node.js Integration</h2>
+                <p>Integrating HttpSms into your application is extremely simple. Below is an example of how to dispatch a text message using the official Node.js client library:</p>
+
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-6 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code class="language-javascript">const { HttpSms } = require('httpsms');
+
+// Initialize client with API key from your settings dashboard
+const client = new HttpSms({
+  apiKey: 'YOUR_HTTPSMS_API_KEY'
+});
+
+// Dispatch the SMS
+async function sendNotification() {
+  try {
+    const response = await client.messages.send({
+      content: 'Your VitableTech order #1085 is confirmed!',
+      from: '+18005550199', // Your linked Android phone number
+      to: '+18005550100'   // Recipient number
+    });
+    
+    console.log('Message scheduled. ID:', response.id);
+  } catch (error) {
+    console.error('Failed to send SMS:', error.message);
+  }
+}
+
+sendNotification();</code></pre>
+                </div>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Self-Hosting Setup Guide (Docker)</h2>
+                <p>While HttpSms offers a managed service at <code>httpsms.com</code>, the entire stack (Go/Fiber API backend and Nuxt/Vuetify dashboard) can be self-hosted. Here is the high-level roadmap to configure your instance using Docker:</p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Step 1: Firebase Project Setup</h3>
+                <p>Since the gateway depends on Firebase Cloud Messaging (FCM) for push signals, head over to the Firebase console, register a new Web App, download your configuration keys, and retrieve a Service Account JSON credentials file.</p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Step 2: SMTP Credentials</h3>
+                <p>Configure a simple SMTP email delivery endpoint (like Mailgun, SendGrid, or SES) to manage platform transactional emails, sign-ups, and alert dispatches.</p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Step 3: Define Environment Variables</h3>
+                <p>Create a local environment file mapping the key variables:</p>
+                <div class="bg-gray-900 text-gray-100 p-6 rounded-xl my-4 overflow-x-auto text-sm font-mono shadow-lg border border-gray-700">
+<pre><code># Firebase credentials mapping
+FIREBASE_API_KEY=your_fb_key
+FIREBASE_PROJECT_ID=httpsms-docker
+FIREBASE_CREDENTIALS={"type":"service_account",...}
+
+# SMTP configuration
+SMTP_HOST=smtp.mailgun.org
+SMTP_PORT=587
+SMTP_USERNAME=postmaster@mg.yourdomain.com
+SMTP_PASSWORD=your_smtp_password</code></pre>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Step 4: Build and Deploy</h3>
+                <p>Clone the repository and run the Docker Compose pipeline to pull the Fiber Go server and CockroachDB nodes. Once the containers are running, download the official Android client APK, link it to your local server instance, and you are ready to send SMS programmatically!</p>
+
+                <hr class="my-12 border-gray-200">
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="border-b border-gray-100 pb-4">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Can I use HttpSms for commercial production workloads?</h4>
+                        <p class="text-gray-600">Yes, but since messages are routed through a physical Android phone using a carrier SIM, you are subject to the carrier's daily send limits and terms of service. For low-to-medium transaction volumes, it is exceptionally cost-effective.</p>
+                    </div>
+                    <div class="border-b border-gray-100 pb-4">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">What happens if my Android phone goes offline?</h4>
+                        <p class="text-gray-600">The HttpSms server queues requests. If your phone loses internet connection, the messages will remain buffered. You can configure a validity expiration window; if the phone doesn't connect before it expires, the message fails.</p>
+                    </div>
+                    <div class="border-b border-gray-100 pb-4">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Is my message text secure on the HttpSms cloud servers?</h4>
+                        <p class="text-gray-600">Yes, HttpSms features AES-256 end-to-end encryption (E2EE). Payloads are encrypted using a local key on the device, meaning only the Android phone and your application hold the keys to read content.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 border-2 border-dashed border-primary/30 rounded-3xl text-center mt-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Need assistance building custom communication systems?</h2>
+                    <p class="text-gray-600 mb-8 max-w-3xl mx-auto">VitableTech specializes in self-hosted messaging gateways, Webhook pipelines, WhatsApp API integrations, and robust API development.</p>
+                    <a href="../contact.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"><i class="fas fa-paper-plane"></i> Discuss Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-12 md:py-16 mt-20 relative z-[20]">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10 mr-2" />
+                        <span class="text-2xl font-bold text-white">Vitable<span class="text-primary">Tech</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Empowering businesses with custom software, web applications, and cutting-edge digital solutions.</p>
+                    <div class="flex space-x-4">
+                        <a target="_blank" href="https://github.com/vitabletech" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/vitabletech/" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/@vitabletech" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/vitabletech" class="text-gray-400 hover:text-white transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../services/index.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="../projects.html" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="../clients.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        <li><a href="../contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../policies/terms-and-conditions.html" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="../policies/privacy-policy.html" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../policies/return-refund-policy.html" class="text-gray-300 hover:text-white transition-colors">Return & Refund Policy</a></li>
+                        <li><a href="../blog/custom-software-development-benefits.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Benefits</a></li>
+                        <li><a href="../blog/ecommerce-seo-strategies-2026.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce SEO</a></li>
+                        <li><a href="../blog/website-development-cost-in-gwalior.html" class="text-gray-300 hover:text-white transition-colors">Website Cost Gwalior</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../services/custom-software.html" class="text-gray-300 hover:text-white transition-colors">Custom Software Development</a></li>
+                        <li><a href="../services/ui-ux.html" class="text-gray-300 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="../services/web-development.html" class="text-gray-300 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="../services/mobile-app.html" class="text-gray-300 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="../services/devops-cloud.html" class="text-gray-300 hover:text-white transition-colors">DevOps & Cloud Services</a></li>
+                        <li><a href="../services/maintenance-support.html" class="text-gray-300 hover:text-white transition-colors">Maintenance & Support</a></li>
+                        <li><a href="../services/ecommerce.html" class="text-gray-300 hover:text-white transition-colors">E-Commerce Solutions</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="text-gray-300 hover:text-white transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="../services/edi-supply-chain.html" class="text-gray-300 hover:text-white transition-colors">EDI & Supply Chain</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-primary"></i>
+                            <span>Gwalior, Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-primary"></i>
+                            <a href="mailto:info@vitabletech.in" class="hover:text-white transition-colors">info@vitabletech.in</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2 text-primary"></i>
+                            <a href="tel:+916280671085" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-2 text-primary"></i>
+                            <a href="https://wa.me/916280671085" target="_blank" class="hover:text-white transition-colors">+91 6280 671 085</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-400">
+                    <p>&copy; 2018 VitableTech. All rights reserved.</p>
+                    <button onclick="clearAppCache()"
+                        class="text-xs text-gray-500 hover:text-white transition-colors underline cursor-pointer">Clear App Cache</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/mobile_menu_toogle.js"></script>
+    <script src="../js/custom_script.js"></script>
+
+    <!-- Google Review Floating Button -->
+    <a href="https://www.google.com/search?q=VitableTech+Gwalior" target="_blank"
+        class="fixed bottom-20 right-2 md:bottom-6 md:right-6 z-50 flex bg-white text-gray-800 shadow-[0_4px_15px_rgba(0,0,0,0.1)] rounded-full px-3 py-2 md:px-4 md:py-3 items-center gap-2 md:gap-3 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 border border-gray-100 group scale-90 md:scale-100 origin-bottom-right">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+            <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+            <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                fill="#FBBC05" />
+            <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+        </svg>
+        <div class="flex flex-col text-left">
+            <span class="text-[13px] font-bold leading-tight text-gray-800">Review us on</span>
+            <span
+                class="text-[11px] text-gray-500 font-medium leading-tight group-hover:text-primary transition-colors">Google</span>
+        </div>
+        <div class="flex ml-1">
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+            <i class="fas fa-star text-yellow-400 text-xs"></i>
+        </div>
+    </a>
+
+    <!-- Go to Top Button -->
+    <button id="goToTopBtn"
+        class="fixed bottom-[130px] right-2 md:bottom-24 md:right-6 z-40 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:-translate-y-1 hover:shadow-xl">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-[60] pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.08)] border-t border-white/50 backdrop-blur-xl bg-white/85 transition-all duration-300 rounded-t-2xl">
+        <div class="flex justify-around items-center px-1 py-2" id="mobile-bottom-nav">
+            <a href="../index.html" data-nav="home" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-home text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Home</span>
+            </a>
+            <a href="../services/index.html" data-nav="services" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-layer-group text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Services</span>
+            </a>
+            <a href="../projects.html" data-nav="projects" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-briefcase text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Projects</span>
+            </a>
+            <a href="../blog/index.html" data-nav="blog" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-newspaper text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Blog</span>
+            </a>
+            <a href="../contact.html" data-nav="contact" class="flex flex-col items-center text-gray-500 hover:text-primary active:scale-90 transition-all duration-300 touch-manipulation group w-[20%]">
+                <div class="relative w-12 h-8 flex items-center justify-center rounded-full transition-colors icon-container">
+                    <i class="fas fa-envelope text-[22px] group-hover:transform group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+                <span class="text-[10px] font-semibold mt-1 transition-colors nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('#mobile-bottom-nav a');
+            navLinks.forEach(link => {
+                const navType = link.getAttribute('data-nav');
+                let isActive = false;
+                if (navType === 'home' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') && !currentPath.includes('services') && !currentPath.includes('blog'))) {
+                    isActive = true;
+                } else if (navType !== 'home' && currentPath.includes(navType)) {
+                    isActive = true;
+                }
+                if (isActive) {
+                    link.classList.remove('text-gray-500');
+                    link.classList.add('text-primary');
+                    const iconContainer = link.querySelector('.icon-container');
+                    if (iconContainer) iconContainer.classList.add('bg-primary', 'bg-opacity-10');
+                    const icon = link.querySelector('i');
+                    if (icon) icon.classList.add('-translate-y-1');
+                }
+            });
+        });
+    </script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('SW registered successfully');
+                }).catch(error => {
+                    console.log('SW registration failed:', error);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
