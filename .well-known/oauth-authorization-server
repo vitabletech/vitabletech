@@ -1,0 +1,9 @@
+{
+  "issuer": "https://vitabletech.in",
+  "authorization_endpoint": "https://vitabletech.in/oauth/authorize",
+  "token_endpoint": "https://vitabletech.in/oauth/token",
+  "jwks_uri": "https://vitabletech.in/oauth/jwks",
+  "scopes_supported": ["openid", "profile", "email", "api"],
+  "response_types_supported": ["code", "token"],
+  "grant_types_supported": ["authorization_code", "client_credentials"]
+}

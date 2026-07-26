@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /private/
 Sitemap: https://vitabletech.in/sitemap.xml

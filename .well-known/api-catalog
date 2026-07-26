@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://vitabletech.in/api",
+      "service-desc": [
+        {
+          "href": "https://vitabletech.in/openapi.yaml",
+          "type": "application/openapi+yaml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://vitabletech.in/docs/api",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://vitabletech.in/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
