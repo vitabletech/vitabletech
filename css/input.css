@@ -1,84 +1,243 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html {
     scroll-behavior: smooth;
+    color-scheme: dark;
 }
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading tracking-tight text-white;
   }
   
   nav a {
-    @apply font-heading;
+    @apply font-heading transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-dark text-gray-300 antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
   }
 }
 
-.gradient-bg {
-    background: linear-gradient(135deg, theme('colors.primary.dark') 0%, theme('colors.primary.DEFAULT') 50%, theme('colors.accent.hover') 100%);
+/* ==========================================
+   LIQUID GLASS & GLASSMORPHISM DESIGN SYSTEM
+   ========================================== */
+
+.liquid-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.liquid-glass-dark {
+    background: rgba(2, 6, 23, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.liquid-glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.3), 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+.liquid-shine {
     position: relative;
     overflow: hidden;
 }
 
-.gradient-bg::before {
+.liquid-shine::after {
     content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg) translateY(-100%);
+    transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none;
+}
+
+.liquid-shine:hover::after {
+    transform: rotate(30deg) translateY(100%);
+}
+
+/* ==========================================
+   AURORA & MESH BACKGROUNDS
+   ========================================== */
+
+.aurora-bg {
+    position: relative;
+    overflow: hidden;
+    background: #020617;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+    animation: blob 15s infinite ease-in-out alternate;
+}
+
+.aurora-bg::before {
+    top: -100px;
+    left: 10%;
+    background: radial-gradient(circle, #2563EB 0%, #7C3AED 100%);
+}
+
+.aurora-bg::after {
+    bottom: -100px;
+    right: 10%;
+    background: radial-gradient(circle, #06B6D4 0%, #2563EB 100%);
+    animation-delay: -7s;
+}
+
+/* ==========================================
+   INSPIRA UI & ACETERNITY UI UTILITIES
+   ========================================== */
+
+/* Mouse Spotlight Card */
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+}
+
+.spotlight-card::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 40%);
+    background: radial-gradient(
+        800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(37, 99, 235, 0.12),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
     pointer-events: none;
+    z-index: 1;
 }
 
-.glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-lg;
+.spotlight-card:hover::before {
+    opacity: 1;
 }
 
-.glass-dark {
-    @apply bg-secondary/80 backdrop-blur-md border border-white/10 shadow-lg;
+.spotlight-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(6, 182, 212, 0.3),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
 }
 
-.card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.spotlight-card:hover::after {
+    opacity: 1;
 }
 
-.card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.05);
+/* Border Beam */
+.border-beam-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: inherit;
 }
 
-.service-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.border-beam-container::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(from 0deg at 50% 50%, transparent 0%, #06B6D4 20%, #2563EB 40%, transparent 60%);
+    animation: spin 6s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 30px -5px rgba(79, 70, 229, 0.15), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+.border-beam-container:hover::after {
+    opacity: 1;
 }
 
-.testimonial-card {
-    transition: all 0.3s ease;
+/* Magnetic & Ripple Buttons */
+.shiny-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
+.shiny-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
+.shiny-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5), 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+.shiny-btn:hover::before {
+    left: 100%;
+}
+
+/* Infinite Marquee */
 .animate-marquee {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 25s linear infinite;
+    display: flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
     animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
 }
 
 /* Override FontAwesome font-display to swap for better PageSpeed performance */
