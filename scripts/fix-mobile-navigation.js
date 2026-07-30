@@ -87,16 +87,16 @@ function getDrawerAndBottomNavHtml(relFile, dirType, activeKey) {
             projects: 'fa-briefcase',
             clients: 'fa-handshake',
             contact: 'fa-envelope',
-            pricing: 'fa-tag',
+            pricing: 'fa-wallet',
             blog: 'fa-newspaper',
             insights: 'fa-chart-line'
         };
         const iconClass = icons[item.key] || 'fa-arrow-right';
         const isActive = activeKey === item.key;
         const className = isActive
-            ? "flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 shadow-sm transition-all"
-            : "flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5";
-        const iconColor = isActive ? "text-cyan-300" : "text-cyan-400 group-hover:text-cyan-300";
+            ? "flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all group"
+            : "flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/15 hover:to-blue-500/15 hover:border-cyan-400/30 hover:translate-x-1.5 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] active:scale-[0.98] transition-all duration-200 border border-transparent group";
+        const iconColor = isActive ? "text-cyan-300 scale-110" : "text-cyan-400 group-hover:text-cyan-300 group-hover:scale-110 transition-transform duration-200";
         return `            <a href="${item.url}" class="${className}">\n                <i class="fas ${iconClass} ${iconColor} w-5 text-center"></i>\n                <span>${item.name}</span>\n            </a>`;
     }).join('\n');
 
@@ -262,6 +262,12 @@ files.forEach(filePath => {
 
     // 6. Ensure footer has pb-24 on mobile so content isn't covered by bottom nav
     content = content.replace(/(<footer[^>]*class="[^"]*)(?:pb-24 md:)?pb-12([^"]*")/i, '$1pb-24 md:pb-12$2');
+
+    // 7. Ensure inspira-ui.js is included on the page for Aceternity UI & Magic UI interactions
+    if (!content.includes('inspira-ui.js')) {
+        const prefix = dirType === 'root' ? './' : '../';
+        content = content.replace('</body>', `    <script src="${prefix}js/inspira-ui.js"></script>\n</body>`);
+    }
 
     fs.writeFileSync(filePath, content, 'utf8');
     count++;

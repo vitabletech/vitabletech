@@ -260,7 +260,20 @@
 
         <!-- Blog Content Section -->
         <section class="py-16 md:py-24 bg-slate-900/40 border-y border-white/5">
-            <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl flex flex-col lg:flex-row gap-12">
+            <div class="w-full lg:w-2/3">
+                
+                <!-- Share Buttons -->
+                <div class="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-white/10">
+                    <span class="text-sm font-semibold text-gray-400">Share this article:</span>
+                    <div class="flex items-center gap-3">
+                        <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share-dialog', 'width=800,height=600'); return false;" class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), 'twitter-share-dialog', 'width=800,height=600'); return false;" class="w-10 h-10 rounded-full bg-slate-700/50 text-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition-colors" title="Share on X"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(window.location.href), 'linkedin-share-dialog', 'width=800,height=600'); return false;" class="w-10 h-10 rounded-full bg-blue-700/20 text-blue-500 flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(window.location.href), 'whatsapp-share-dialog', 'width=800,height=600'); return false;" class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
                 <div class="mx-auto text-gray-300 leading-relaxed space-y-6 text-lg">
                     
             <p>In today's fast-paced digital economy, relying on generic, off-the-shelf software solutions is no longer enough to maintain a competitive edge. As businesses scale, their operational workflows become unique, and a one-size-fits-all software product simply cannot accommodate those specialized needs.</p>
@@ -504,43 +517,43 @@
 
         <!-- Drawer Navigation Links -->
         <nav class="flex-1 overflow-y-auto py-5 px-4 space-y-1 custom-scrollbar">
-            <a href="../index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-home text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Home</span>
             </a>
-            <a href="../about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-info-circle text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>About</span>
             </a>
-            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-layer-group text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Services</span>
             </a>
-            <a href="../products.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../products.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-cube text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Latest Products</span>
             </a>
-            <a href="../projects.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../projects.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-briefcase text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Projects</span>
             </a>
-            <a href="../clients.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../clients.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-handshake text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Clients</span>
             </a>
-            <a href="../contact.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../contact.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-envelope text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Contact</span>
             </a>
-            <a href="../pricing.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../pricing.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-tag text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Pricing</span>
             </a>
-            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 shadow-sm transition-all">
+            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white active glass-nav-item shadow-sm">
                 <i class="fas fa-newspaper text-cyan-300 w-5 text-center"></i>
                 <span>Blog</span>
             </a>
-            <a href="../insights.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../insights.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-chart-line text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Insights</span>
             </a>
@@ -562,25 +575,25 @@
     </aside>
 
     <!-- iOS Native Bottom Navigation Bar -->
-    <nav id="ios-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full z-[80] pb-safe pt-2 px-2 bg-slate-950/95 backdrop-blur-2xl border-t border-white/15 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] transition-all duration-300">
+    <nav id="ios-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full z-[80] pb-safe pt-2 px-2 liquid-glass-dark border-t-0 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] transition-all duration-300">
         <div class="flex justify-around items-center max-w-md mx-auto">
-            <a href="../index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="../index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-home text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Home</span>
             </a>
-            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-layer-group text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Services</span>
             </a>
-            <a href="../projects.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="../projects.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-briefcase text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Projects</span>
             </a>
-            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-cyan-400 font-bold scale-105">
+            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-cyan-400 font-bold scale-105 active glass-nav-item">
                 <i class="fas fa-newspaper text-lg drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]"></i>
                 <span class="text-[10px] mt-1 tracking-tight">Blog</span>
             </a>
-            <button id="bottom-nav-menu-btn" aria-label="Open Menu" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-gray-400 hover:text-white transition-all active:scale-95 focus:outline-none">
+            <button id="bottom-nav-menu-btn" aria-label="Open Menu" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-gray-400 hover:text-white transition-all active:scale-95 focus:outline-none glass-nav-item">
                 <i class="fas fa-bars text-lg text-cyan-400"></i>
                 <span class="text-[10px] mt-1 tracking-tight text-cyan-400 font-semibold">Menu</span>
             </button>

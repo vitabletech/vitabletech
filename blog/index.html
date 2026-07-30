@@ -269,9 +269,28 @@
                     </p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Blog Search Bar -->
+            <div class="max-w-2xl mx-auto mb-12 relative z-50">
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400 group-focus-within:text-cyan-400 transition-colors"></i>
+                    </div>
+                    <input type="text" id="blog-search-input" 
+                        class="w-full pr-4 py-4 liquid-glass-dark rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" 
+                        style="padding-left: 3.5rem;"
+                        placeholder="Search articles by title, keyword, or category..." autocomplete="off">
+                    
+                    <!-- Search Suggestions Dropdown -->
+                    <ul id="blog-search-suggestions" class="absolute w-full mt-2 liquid-glass-dark rounded-xl max-h-60 overflow-y-auto hidden flex-col divide-y divide-white/5">
+                        <!-- Suggestions will be injected here via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-        <a href="../blog/pocketbase-self-hosted-backend-guide.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/pocketbase-self-hosted-backend-guide.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/pocketbase-backend.png" alt="The Single-File Backend: A Complete Guide to PocketBase" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -280,7 +299,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Discover PocketBase, the open-source backend in a single binary. Learn about its Go/SQLite WAL architecture, real-time SDK subscriptions, and read our comprehensive developer FAQ.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/coolify-self-hosted-heroku-alternative.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/coolify-self-hosted-heroku-alternative.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/coolify-deployment.png" alt="Self-Host Your PaaS: Simplify Docker Deployments with Coolify" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -289,7 +308,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Stop paying expensive PaaS fees. Learn how Coolify allows you to deploy applications, databases, and one-click services onto your own VPS with Heroku-like simplicity.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/trigger-dev-background-jobs-guide.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/trigger-dev-background-jobs-guide.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/triggerdev-workflows.png" alt="Build Long-Running Workflows Without Timeouts: A Developer's Guide to Trigger.dev" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -298,7 +317,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Stop fighting serverless function timeouts. Learn how Trigger.dev allows developers to write durable, long-running TypeScript background tasks, cron jobs, and AI workflows.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/papercups-open-source-live-chat.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/papercups-open-source-live-chat.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/papercups-chat.png" alt="Self-Host Your Live Chat: Introducing Papercups, the Open-Source Intercom Alternative" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -307,7 +326,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Own your customer data. Discover Papercups, the open-source live customer support chat widget built with Elixir. Learn how developers can integrate it with React, Slack, and Flutter.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/htmx-vs-react-frontend-paradigm.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/htmx-vs-react-frontend-paradigm.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/htmx-frontend.png" alt="HTML-First: When and Why You Should Choose HTMX Over React" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -316,7 +335,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Is React overkill for your web application? Discover HTMX, the 14KB framework that brings SPA-like interactivity to plain HTML. Learn when and why to use it.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/databasement-database-backup-manager.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/databasement-database-backup-manager.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/databasement-backups.png" alt="Take Control of Your Data: Simplify Database Backups with Databasement" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -325,7 +344,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Discover Databasement, the ultimate open-source, self-hosted backup manager. Learn how to schedule automated snapshots, secure transfers via SSH tunnels, and back up multiple databases.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/httpsms-android-sms-gateway.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/httpsms-android-sms-gateway.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/httpsms-gateway.png" alt="Turn Your Android Phone into an SMS API Gateway with HttpSms" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -334,7 +353,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Stop paying expensive fees for Twilio. Learn how to self-host HttpSms to turn your own Android phone and SIM card into a secure, programmatically accessible HTTP SMS gateway.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/paperdraw-system-design-simulator.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/paperdraw-system-design-simulator.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/paperdraw-system-design.png" alt="Stress-Test Your Architecture in the Browser: A Deep Dive into Paperdraw.dev" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -343,7 +362,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Discover Paperdraw.dev, the interactive system design simulator that allows software engineers to build architectures, run live traffic simulations, and inject chaos.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/chatgpt-slash-commands-list.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/chatgpt-slash-commands-list.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/chatgpt-slash-commands.png" alt="Every ChatGPT Slash Command: The Complete Master List" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -352,7 +371,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Unlock the full potential of ChatGPT with this comprehensive guide to slash (/) commands, featuring writing, learning, developer, and creative shortcuts.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/meta-graph-api-permanent-access-token.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/meta-graph-api-permanent-access-token.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/meta-token-expiry.png" alt="Generate Permanent Meta Access Token" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -362,7 +381,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
 
-        <a href="../blog/meta-sdk-graph-api-wrapper.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/meta-sdk-graph-api-wrapper.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/meta-sdk-thumbnail.png" alt="VitableTech Meta-SDK Graph API Wrapper" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -372,7 +391,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
 
-        <a href="../blog/openwa-docker-setup-guide.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/openwa-docker-setup-guide.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/openwa-infrastructure-settings.png" alt="OpenWA Docker Setup Guide" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -382,7 +401,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
 
-        <a href="../blog/openwa-whatsapp-api-gateway-plugins.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/openwa-whatsapp-api-gateway-plugins.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/openwa-chats-dashboard.png" alt="OpenWA Self-Hosted WhatsApp API Gateway" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -392,7 +411,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
 
-        <a href="../blog/automate-google-business-profile-node-sdk.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/automate-google-business-profile-node-sdk.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-slate-900/60 border border-white/10 rounded-lg h-48 mb-6 overflow-hidden flex-shrink-0">
                 <img src="../images/blog-images/gbp-npm-pacakge.webp" alt="Automate Google Business Profile Node SDK" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
             </div>
@@ -401,7 +420,7 @@
             <p class="text-gray-400 mb-6 line-clamp-3 text-sm flex-grow">Learn how to easily automate reviews, locations, and tokens using the new @vitabletech/gbp-sdk for Node.js.</p>
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
-        <a href="../blog/website-development-cost-in-gwalior.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/website-development-cost-in-gwalior.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
                 <i class="fas fa-laptop-code text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -411,7 +430,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
     
-        <a href="../blog/custom-software-development-benefits.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/custom-software-development-benefits.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
                 <i class="fas fa-code text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -421,7 +440,7 @@
             <span class="text-primary font-medium group-hover:underline flex items-center gap-2 mt-auto">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
         </a>
     
-        <a href="../blog/ecommerce-seo-strategies-2026.html" class="block bg-dark rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
+        <a href="../blog/ecommerce-seo-strategies-2026.html" class="block liquid-glass-card rounded-xl p-6 shadow-md card-hover group border border-white/10 hover:border-primary transition-all flex flex-col h-full">
             <div class="bg-primary bg-opacity-10 rounded-lg h-48 flex items-center justify-center mb-6 overflow-hidden flex-shrink-0">
                 <i class="fas fa-shopping-cart text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -624,43 +643,43 @@
 
         <!-- Drawer Navigation Links -->
         <nav class="flex-1 overflow-y-auto py-5 px-4 space-y-1 custom-scrollbar">
-            <a href="../index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-home text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Home</span>
             </a>
-            <a href="../about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-info-circle text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>About</span>
             </a>
-            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="./index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-layer-group text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Services</span>
             </a>
-            <a href="../products.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../products.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-cube text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Latest Products</span>
             </a>
-            <a href="../projects.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../projects.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-briefcase text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Projects</span>
             </a>
-            <a href="../clients.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../clients.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-handshake text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Clients</span>
             </a>
-            <a href="../contact.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../contact.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-envelope text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Contact</span>
             </a>
-            <a href="../pricing.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../pricing.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-tag text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Pricing</span>
             </a>
-            <a href="#blog" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 shadow-sm transition-all">
+            <a href="#blog" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-white active glass-nav-item shadow-sm">
                 <i class="fas fa-newspaper text-cyan-300 w-5 text-center"></i>
                 <span>Blog</span>
             </a>
-            <a href="../insights.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 active:scale-[0.98] transition-all border border-transparent hover:border-white/5">
+            <a href="../insights.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white active:scale-[0.98] glass-nav-item">
                 <i class="fas fa-chart-line text-cyan-400 group-hover:text-cyan-300 w-5 text-center"></i>
                 <span>Insights</span>
             </a>
@@ -682,29 +701,158 @@
     </aside>
 
     <!-- iOS Native Bottom Navigation Bar -->
-    <nav id="ios-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full z-[80] pb-safe pt-2 px-2 bg-slate-950/95 backdrop-blur-2xl border-t border-white/15 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] transition-all duration-300">
+    <nav id="ios-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full z-[80] pb-safe pt-2 px-2 liquid-glass-dark border-t-0 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] transition-all duration-300">
         <div class="flex justify-around items-center max-w-md mx-auto">
-            <a href="../index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="../index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-home text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Home</span>
             </a>
-            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="./index.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-layer-group text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Services</span>
             </a>
-            <a href="../projects.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white">
+            <a href="../projects.html" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
                 <i class="fas fa-briefcase text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Projects</span>
             </a>
-            <a href="#blog" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-cyan-400 font-bold scale-105">
+            <a href="#blog" class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-cyan-400 font-bold scale-105 active glass-nav-item">
                 <i class="fas fa-newspaper text-lg drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]"></i>
                 <span class="text-[10px] mt-1 tracking-tight">Blog</span>
             </a>
-            <button id="bottom-nav-menu-btn" aria-label="Open Menu" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-gray-400 hover:text-white transition-all active:scale-95 focus:outline-none">
+            <button id="bottom-nav-menu-btn" aria-label="Open Menu" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-gray-400 hover:text-white transition-all active:scale-95 focus:outline-none glass-nav-item">
                 <i class="fas fa-bars text-lg text-cyan-400"></i>
                 <span class="text-[10px] mt-1 tracking-tight text-cyan-400 font-semibold">Menu</span>
             </button>
         </div>
     </nav>
+    <script src="../js/inspira-ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('blog-search-input');
+            const searchSuggestions = document.getElementById('blog-search-suggestions');
+            const blogGrid = document.getElementById('blog-grid');
+            if (!searchInput || !blogGrid || !searchSuggestions) return;
+
+            const articles = Array.from(blogGrid.children);
+            
+            // Generate suggestions data
+            const suggestionsData = articles.map(article => {
+                const title = article.querySelector('h3').textContent;
+                const category = article.querySelector('.text-sm.text-primary').textContent;
+                const url = article.getAttribute('href');
+                return { title, category, url, element: article };
+            });
+
+            let activeSuggestionIndex = -1;
+
+            const renderSuggestions = (query) => {
+                searchSuggestions.innerHTML = '';
+                activeSuggestionIndex = -1;
+                if (!query) {
+                    searchSuggestions.classList.add('hidden');
+                    return;
+                }
+
+                const lowerQuery = query.toLowerCase();
+                const matched = suggestionsData.filter(data => 
+                    data.title.toLowerCase().includes(lowerQuery) || 
+                    data.category.toLowerCase().includes(lowerQuery)
+                );
+
+                if (matched.length === 0) {
+                    searchSuggestions.innerHTML = '<li class="p-4 text-sm text-gray-400 text-center">No articles found.</li>';
+                } else {
+                    matched.slice(0, 5).forEach((data, index) => {
+                        const li = document.createElement('li');
+                        li.className = 'p-3 hover:bg-white/5 cursor-pointer transition-colors flex flex-col gap-1';
+                        li.dataset.url = data.url;
+                        li.dataset.index = index;
+                        
+                        // Highlight matched text
+                        const regex = new RegExp(`(${query})`, 'gi');
+                        const highlightedTitle = data.title.replace(regex, '<span class="text-cyan-400 font-bold">$1</span>');
+                        
+                        li.innerHTML = `
+                            <span class="text-white font-medium text-sm">${highlightedTitle}</span>
+                            <span class="text-xs text-gray-400">${data.category}</span>
+                        `;
+                        
+                        li.addEventListener('click', () => {
+                            window.location.href = data.url;
+                        });
+                        
+                        searchSuggestions.appendChild(li);
+                    });
+                }
+                
+                searchSuggestions.classList.remove('hidden');
+            };
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+                
+                // Filter Grid
+                const lowerQuery = query.toLowerCase();
+                let hasVisible = false;
+                articles.forEach(article => {
+                    const text = article.textContent.toLowerCase();
+                    if (text.includes(lowerQuery)) {
+                        article.style.display = '';
+                        hasVisible = true;
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+                
+                // Show Suggestions
+                renderSuggestions(query);
+            });
+
+            // Keyboard navigation for suggestions
+            searchInput.addEventListener('keydown', (e) => {
+                if (searchSuggestions.classList.contains('hidden')) return;
+                
+                const items = searchSuggestions.querySelectorAll('li[data-url]');
+                if (items.length === 0) return;
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeSuggestionIndex = (activeSuggestionIndex + 1) % items.length;
+                    updateActiveSuggestion(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeSuggestionIndex = (activeSuggestionIndex - 1 + items.length) % items.length;
+                    updateActiveSuggestion(items);
+                } else if (e.key === 'Enter' && activeSuggestionIndex >= 0) {
+                    e.preventDefault();
+                    window.location.href = items[activeSuggestionIndex].dataset.url;
+                }
+            });
+
+            function updateActiveSuggestion(items) {
+                items.forEach((item, idx) => {
+                    if (idx === activeSuggestionIndex) {
+                        item.classList.add('bg-white/10');
+                    } else {
+                        item.classList.remove('bg-white/10');
+                    }
+                });
+            }
+
+            // Close suggestions when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                    searchSuggestions.classList.add('hidden');
+                }
+            });
+            
+            // Re-open on focus if there's text
+            searchInput.addEventListener('focus', () => {
+                if (searchInput.value.trim()) {
+                    searchSuggestions.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -68,7 +68,7 @@ function getTopSection(dirType, activeKey) {
             projects: 'fa-briefcase',
             clients: 'fa-handshake',
             contact: 'fa-envelope',
-            pricing: 'fa-tag',
+            pricing: 'fa-wallet',
             blog: 'fa-newspaper',
             insights: 'fa-chart-line'
         };
@@ -315,7 +315,7 @@ function getFooterSection(dirType) {
                     </ul>
                 </div>
 
-                <div class="space-y-4">
+                <!-- <div class="space-y-4">
                     <h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Stay Ahead</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">
                         Subscribe to our engineering newsletter for AI architecture breakdowns, open-source releases,
@@ -333,7 +333,7 @@ function getFooterSection(dirType) {
                             <span>Subscribe to Newsletter</span> <span>→</span>
                         </button>
                     </form>
-                </div>
+                </div> -->
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">

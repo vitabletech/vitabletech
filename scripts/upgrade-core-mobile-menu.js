@@ -54,7 +54,7 @@ function getDrawerSection(file, dirType, activeKey) {
             projects: 'fa-briefcase',
             clients: 'fa-handshake',
             contact: 'fa-envelope',
-            pricing: 'fa-tag',
+            pricing: 'fa-wallet',
             blog: 'fa-newspaper',
             insights: 'fa-chart-line'
         };
