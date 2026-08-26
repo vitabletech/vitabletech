@@ -33,7 +33,6 @@ const projectsData = [
     { name: "Calibrated Diamonds", url: "https://www.calibrateddiamonds.in/", tech: "Bootstrap, HTML, CSS", domain: "Portfolio", icon: "fa-gem", color: "from-cyan-400 to-cyan-600" },
     { name: "Swiftal Logistics", url: "https://swiftallogistics.com/", tech: "WordPress", domain: "Logistics", icon: "fa-truck", color: "from-orange-400 to-orange-600" },
     { name: "Mapp Call", url: "https://www.mappcall.com/", tech: "Mobile Application", domain: "Professional Networking Platform", icon: "fa-mobile-alt", color: "from-green-400 to-green-600" },
-    { name: "PeswaPay App", url: "#", tech: "POC", domain: "Fintech", icon: "fa-wallet", color: "from-teal-400 to-teal-600" },
     { name: "Rakshak", url: "#", tech: "Fullstack PHP Web Application", domain: "NGO Application", icon: "fa-shield-alt", color: "from-red-400 to-red-600" }
 ];
 

@@ -1,8 +1,38 @@
-<svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
-    <path d="M40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0Z" fill="#3B82F6"/>
-    <path d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z" fill="white"/>
-    <path d="M40 20C29.0543 20 20 29.0543 20 40C20 50.9457 29.0543 60 40 60C50.9457 60 60 50.9457 60 40C60 29.0543 50.9457 20 40 20Z" fill="#3B82F6"/>
-    <path d="M40 30C34.4772 30 30 34.4772 30 40C30 45.5228 34.4772 50 40 50C45.5228 50 50 45.5228 50 40C50 34.4772 45.5228 30 40 30Z" fill="white"/>
-    <path d="M65 15L55 25M15 65L25 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
-    <path d="M15 15L25 25M65 65L55 55" stroke="#1E40AF" stroke-width="4" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 37.69 35.39">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st1 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="14.01" y1="17.87" x2="37.69" y2="17.87" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="0" y1="10.91" x2="15.7" y2="10.91" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient2" x1="-101.03" y1="29.64" x2="-63.34" y2="29.64" gradientTransform="translate(101.03 -11.94)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient3" x1="-101.03" y1="29.64" x2="-63.34" y2="29.64" gradientTransform="translate(101.03 -11.94)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g>
+    <polygon class="st3" points="37.69 .36 18.18 35.39 14.01 27.23 24.03 9.58 37.69 .36"/>
+    <polygon class="st1" points="15.7 14.55 11.09 21.82 0 0 15.7 14.55"/>
+  </g>
+  <g>
+    <polygon class="st0" points="37.69 .36 18.18 35.39 14.01 27.23 24.03 9.58 37.69 .36"/>
+    <polygon class="st2" points="15.7 14.55 11.09 21.82 0 0 15.7 14.55"/>
+  </g>
 </svg>
