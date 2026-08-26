@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://vitabletech.in/</loc>
   <lastmod>2026-07-19T11:59:44.463Z</lastmod>
@@ -20,28 +16,18 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vitabletech.in/products.html</loc>
-  <lastmod>2026-07-19T11:40:40.337Z</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://vitabletech.in/pricing.html</loc>
   <lastmod>2026-06-28T05:20:17.909Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vitabletech.in/clients.html</loc>
-  <lastmod>2026-06-28T05:20:17.697Z</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://vitabletech.in/projects.html</loc>
-  <lastmod>2026-06-28T05:20:17.910Z</lastmod>
+  <lastmod>2026-08-26T17:21:40.000Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://vitabletech.in/insights.html</loc>
-  <lastmod>2026-07-19T12:10:53.283Z</lastmod>
+  <lastmod>2026-08-26T17:21:40.000Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -62,11 +48,6 @@
 <url>
   <loc>https://vitabletech.in/policies/return-refund-policy.html</loc>
   <lastmod>2026-06-28T05:20:17.909Z</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vitabletech.in/blog/index.html</loc>
-  <lastmod>2026-07-25T11:50:25.089Z</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
