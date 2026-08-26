@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initTestimonialCarousel();
     initTechCloudParallax();
     // Aceternity UI & Magic UI Award-Winning Interactions
-    initSmoothCursor();
     initContainerScroll();
     initMagicDock();
     initHoverLens();
@@ -245,80 +244,6 @@ function initTechCloudParallax() {
     });
 }
 
-/**
- * 7. Smooth Cursor (Spring Physics)
- * Physics-based smooth cursor animation matching Vue component parameters.
- */
-function initSmoothCursor() {
-    if (window.innerWidth <= 768 || ('ontouchstart' in window)) return; // Only on desktop
-
-    if (!document.getElementById("magic-cursor")) {
-        const cursor = document.createElement("div");
-        cursor.id = "magic-cursor";
-        cursor.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.65376 21.2573L2.27415 3.25052C2.07223 2.17462 3.14917 1.34149 4.14856 1.79978L21.4116 9.71216C22.4578 10.192 22.4206 11.666 21.3468 12.0911L13.8053 15.076C13.5222 15.1881 13.2982 15.4147 13.1906 15.6983L10.3708 23.1362C9.96784 24.1994 8.4419 24.2052 8.02987 23.1458L5.65376 21.2573Z" fill="white" stroke="#000000" stroke-width="1.5"/></svg>`;
-        cursor.className = "fixed top-0 left-0 w-6 h-6 pointer-events-none z-[100000] mix-blend-difference hidden md:block transition-transform duration-150 ease-out";
-        cursor.style.transformOrigin = "0 0";
-        document.body.appendChild(cursor);
-
-        // Hide default cursor
-        const styleEl = document.createElement('style');
-        styleEl.innerHTML = `* { cursor: none !important; }`;
-        document.head.appendChild(styleEl);
-    }
-
-    const cursor = document.getElementById("magic-cursor");
-    // Remove the dot if it exists from previous version
-    const oldDot = document.getElementById("magic-cursor-dot");
-    if (oldDot) oldDot.remove();
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let cursorX = mouseX;
-    let cursorY = mouseY;
-    let velocityX = 0;
-    let velocityY = 0;
-
-    // Physics parameters from Vue Props
-    const stiffness = 400;
-    const damping = 45;
-    const mass = 1;
-    let lastTime = performance.now();
-
-    window.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        if (cursor.style.display === 'none' || !cursor.style.display) {
-            cursor.style.display = 'block';
-        }
-    }, { passive: true });
-
-    function renderCursor(time) {
-        let dt = (time - lastTime) / 1000;
-        lastTime = time;
-        if (dt > 0.05) dt = 0.05; // Cap dt for tab switching stability
-        
-        // Spring physics calculations
-        const forceX = -stiffness * (cursorX - mouseX);
-        const forceY = -stiffness * (cursorY - mouseY);
-        
-        const dampingForceX = -damping * velocityX;
-        const dampingForceY = -damping * velocityY;
-        
-        const ax = (forceX + dampingForceX) / mass;
-        const ay = (forceY + dampingForceY) / mass;
-        
-        velocityX += ax * dt;
-        velocityY += ay * dt;
-        
-        cursorX += velocityX * dt;
-        cursorY += velocityY * dt;
-
-        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
-
-        requestAnimationFrame(renderCursor);
-    }
-    requestAnimationFrame(renderCursor);
-}
 
 /**
  * 8. Container Scroll Animation (Aceternity UI 3D Scroll Transformation)
