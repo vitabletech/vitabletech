@@ -685,21 +685,28 @@
     <script>
         function handleConsultationSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('cons-name').value.trim();
-            const email = document.getElementById('cons-email').value.trim();
-            const phone = document.getElementById('cons-phone').value.trim();
-            const projectType = document.getElementById('cons-type').value;
+            
+            const nameEl = document.getElementById('cons-name');
+            const emailEl = document.getElementById('cons-email');
+            const phoneEl = document.getElementById('cons-phone');
+            const typeEl = document.getElementById('cons-type');
             const budgetEl = document.querySelector('input[name="budget"]:checked');
-            const budget = budgetEl ? budgetEl.value : 'Not specified';
-            const message = document.getElementById('cons-message').value.trim();
+            const messageEl = document.getElementById('cons-message');
 
-            const waMessage = `*New Free Consultation Request — VitableTech* 🚀\n\n` +
-                `*Name:* ${name}\n` +
-                `*Email:* ${email}\n` +
-                `*Phone / WhatsApp:* ${phone}\n` +
-                `*Project Type:* ${projectType}\n` +
-                `*Estimated Budget:* ${budget}\n\n` +
-                `*Project Specifications / Message:*\n${message}`;
+            const name = nameEl ? nameEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            const phone = phoneEl ? phoneEl.value.trim() : '';
+            const projectType = typeEl ? typeEl.value : '';
+            const budget = budgetEl ? budgetEl.value : '';
+            const message = messageEl ? messageEl.value.trim() : '';
+
+            let waMessage = `*New Free Consultation Request — VitableTech* 🚀\n\n`;
+            if (name) waMessage += `*Name:* ${name}\n`;
+            if (email) waMessage += `*Email:* ${email}\n`;
+            if (phone) waMessage += `*Phone / WhatsApp:* ${phone}\n`;
+            if (projectType) waMessage += `*Project Type:* ${projectType}\n`;
+            if (budget) waMessage += `*Estimated Budget:* ${budget}\n`;
+            if (message) waMessage += `\n*Project Specifications / Message:*\n${message}`;
 
             const waUrl = `https://wa.me/916280671085?text=${encodeURIComponent(waMessage)}`;
 
