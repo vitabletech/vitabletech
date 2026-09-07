@@ -300,9 +300,11 @@
 
             <!-- Browser Top Bar -->
             <div
-                class="flex-shrink-0 h-14 bg-slate-900 border-b border-white/10 flex items-center px-4 justify-between select-none">
+                class="flex-shrink-0 h-14 bg-slate-900 border-b border-white/10 flex items-center px-4 justify-between select-none relative z-10"
+                onmouseenter="document.getElementById('iframe-focus-guard').style.pointerEvents='auto'" onmouseleave="document.getElementById('iframe-focus-guard').style.pointerEvents='none'">
                 <div class="flex items-center gap-2 hidden sm:flex">
                     <div class="w-3.5 h-3.5 rounded-full border flex items-center justify-center cursor-pointer group modal-close-btn"
+                        onclick="closeModal()"
                         style="background-color: #ef4444; border-color: rgba(220,38,38,0.5);">
                         <i
                             class="fas fa-times text-[8px] text-black opacity-0 group-hover:opacity-100 transition-opacity"></i>
@@ -331,7 +333,8 @@
                         title="Open in New Tab">
                         <i class="fas fa-external-link-alt text-sm"></i>
                     </a>
-                    <button
+                    <button type="button"
+                        onclick="closeModal()"
                         class="text-white bg-white/10 hover:bg-red-500 hover:text-white px-3 py-1.5 rounded-lg modal-close-btn transition-colors flex items-center gap-2 text-xs font-bold border border-white/10 hover:border-red-400">
                         <i class="fas fa-times"></i> <span class="hidden sm:inline">Close</span>
                     </button>
@@ -339,7 +342,7 @@
             </div>
 
             <!-- Iframe Container -->
-            <div class="flex-1 relative w-full h-full bg-slate-950 flex items-center justify-center">
+            <div class="flex-1 relative w-full bg-slate-950 flex items-center justify-center overflow-hidden">
                 <!-- Loader -->
                 <div id="modal-loader"
                     class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 z-10">
@@ -365,12 +368,17 @@
                             class="px-6 py-3 rounded-xl font-bold text-sm text-black bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.4)]">
                             Open Site in New Tab
                         </a>
-                        <button
+                        <button type="button"
+                            onclick="closeModal()"
                             class="px-6 py-3 rounded-xl font-bold text-sm text-gray-300 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors modal-close-btn">
                             Close Viewer
                         </button>
                     </div>
                 </div>
+
+                <!-- Focus Guard Overlay: transparent div that temporarily blocks iframe clicks when user hovers the top bar, reclaiming parent-window focus so the Close button works on the first click -->
+                <div id="iframe-focus-guard"
+                    style="position:absolute;inset:0;z-index:5;pointer-events:none;background:transparent;"></div>
 
                 <!-- The Iframe -->
                 <iframe id="modal-iframe"
