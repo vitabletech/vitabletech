@@ -94,7 +94,8 @@ async function generateFontAwesome() {
         "fa-fade",
         "fa-flip",
         "fa-shake",
-        "fa-spin-pulse"
+        "fa-spin-pulse",
+        "fa-play"
       ],
 
       /*
