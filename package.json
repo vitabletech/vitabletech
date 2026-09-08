@@ -2,7 +2,7 @@
   "name": "vitabletech",
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/bump-version.js && node scripts/generate-fa-purged.js && tailwindcss -i ./css/input.css -o ./css/main.css --minify",
+    "build": "node scripts/bump-version.js && cp node_modules/@fortawesome/fontawesome-free/css/all.min.css css/fa-purged.css && cp node_modules/@fortawesome/fontawesome-free/webfonts/*.woff2 webfonts/ && tailwindcss -i ./css/input.css -o ./css/main.css --minify",
     "dev": "tailwindcss -i ./css/input.css -o ./css/main.css --watch",
     "release": "node scripts/bump-version.js",
     "sitemap": "node scripts/update-sitemap.js"
