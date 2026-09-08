@@ -93,7 +93,7 @@ files.forEach(file => {
             "@type": "City",
             "name": "Gwalior"
           },
-          "description": "Elite ${data.urlName} services in Gwalior by VitableTech."
+          "description": "Elite ${data.urlName} services in India by VitableTech."
         },
         {
           "@type": "FAQPage",
@@ -134,7 +134,7 @@ files.forEach(file => {
     // Find the first <p> after prose max-w-none
     const introRegex = /(<div class="prose max-w-none">\s*)<p class="text-lg text-gray-600 mb-6">([^<]+)<\/p>/;
     content = content.replace(introRegex, (match, p1, p2) => {
-      return `${p1}<p class="text-lg text-gray-600 mb-6"><strong>What is ${data.service}?</strong> VitableTech provides elite ${data.urlName} services in Gwalior. ${p2}</p>`;
+      return `${p1}<p class="text-lg text-gray-600 mb-6"><strong>What is ${data.service}?</strong> VitableTech provides elite ${data.urlName} services in India. ${p2}</p>`;
     });
 
     // 3. Insert Testimonial & FAQ before the bg-blue-50 block
@@ -146,7 +146,7 @@ files.forEach(file => {
                             <div class="flex text-yellow-400 mb-3">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <p class="text-gray-600 italic mb-4">"VitableTech delivered outstanding ${data.urlName}. The team in Gwalior was highly professional and deeply understood our requirements."</p>
+                            <p class="text-gray-600 italic mb-4">"VitableTech delivered outstanding ${data.urlName}. The team in India was highly professional and deeply understood our requirements."</p>
                             <p class="font-semibold text-gray-800">— Verified Client</p>
                         </div>
                     </div>

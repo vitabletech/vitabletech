@@ -89,7 +89,7 @@ function getTopSection(dirType, activeKey) {
             <span class="mx-8 flex items-center gap-2.5">
                 <span
                     class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold">🌐</span>
-                <span class="text-white font-semibold">Global Engineering Partner:</span> Headquartered in Gwalior,
+                <span class="text-white font-semibold">Global Engineering Partner:</span> Headquartered in India,
                 delivering cutting-edge software & AI architectures across USA, Japan, India & worldwide.
                 <a href="../contact.html"
                     class="underline decoration-cyan-400 underline-offset-4 text-cyan-300 font-semibold hover:text-white transition-colors ml-1">Book
@@ -243,7 +243,7 @@ ${mobileLinks}
                     </svg>
                 </a>
                 <div class="text-center">
-                    <span class="text-[10px] text-gray-500 font-medium">Headquartered in Gwalior, India</span>
+                    <span class="text-[10px] text-gray-500 font-medium">Headquartered in India, India</span>
                 </div>
             </div>
         </aside>
@@ -338,7 +338,7 @@ function getFooterSection(dirType) {
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
                 <div>
-                    &copy; 2026 VitableTech. All rights reserved. Headquartered in Gwalior, India — Delivering Global
+                    &copy; 2026 VitableTech. All rights reserved. Headquartered in India, India — Delivering Global
                     Engineering Excellence.
                 </div>
                 <div class="flex items-center gap-6">
