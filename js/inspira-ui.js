@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initStickyNavbar();
     initTestimonialCarousel();
     initTechCloudParallax();
-    // Aceternity UI & Magic UI Award-Winning Interactions
+    // Aceternity UI & Magic UI  Interactions
     initContainerScroll();
     initMagicDock();
     initHoverLens();
