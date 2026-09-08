@@ -102,7 +102,7 @@ def generate_pages():
             content = subtitle_pattern.sub(r'\1' + new_subtitle + r'\3', content)
             
             # Update Hero Announcement Bar
-            content = content.replace("Award-Winning Global Engineering — HQ in India", f"Award-Winning {srv_title} — {loc}")
+            content = content.replace(" Global Engineering — HQ in India", f" {srv_title} — {loc}")
 
             with open(page_path, 'w', encoding='utf-8') as f:
                 f.write(content)

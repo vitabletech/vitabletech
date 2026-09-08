@@ -7,6 +7,65 @@ html {
     color-scheme: dark;
 }
 
+/* Homepage conversion and accessibility refinements */
+.case-study-card,
+.solution-card {
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.case-study-card:hover,
+.solution-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(103, 232, 249, 0.35);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
+}
+
+.solution-card:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #67e8f9;
+    outline-offset: 4px;
+}
+
+@media (max-width: 1023px) {
+    .workflow-steps {
+        border-left: 1px solid rgba(103, 232, 249, 0.28);
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .workflow-steps > div {
+        position: relative;
+    }
+
+    .workflow-steps > div::after {
+        content: '';
+        position: absolute;
+        left: -2.05rem;
+        top: 1.45rem;
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: 999px;
+        background: #67e8f9;
+        box-shadow: 0 0 0 5px #020617;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @layer base {
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight text-white;
