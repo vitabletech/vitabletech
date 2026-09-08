@@ -360,7 +360,7 @@ function initLinkPreviews() {
     }
 
     const previewData = {
-        "about": { title: "About VitableTech", desc: "Global AI & software engineering company headquartered in Gwalior, India.", icon: "fa-info-circle", color: "text-blue-400" },
+        "about": { title: "About VitableTech", desc: "Global AI & software engineering company Headquartered in India, India.", icon: "fa-info-circle", color: "text-blue-400" },
         "services": { title: "Enterprise Services", desc: "Custom software, AI/ML, DevOps, UI/UX, and cloud architecture engineering.", icon: "fa-layer-group", color: "text-cyan-400" },
         "products": { title: "Latest Products", desc: "Explore our proprietary SaaS platforms, developer SDKs, and automation tools.", icon: "fa-cube", color: "text-purple-400" },
         "projects": { title: "Featured Projects", desc: "Award-winning enterprise deployments and digital transformation case studies.", icon: "fa-briefcase", color: "text-emerald-400" },

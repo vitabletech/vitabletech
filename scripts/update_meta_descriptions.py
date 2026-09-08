@@ -5,9 +5,9 @@ base_dir = "/Users/mayanksinghkushwah/Documents/gitProjectes/vitabletech"
 
 # Mapping of file paths relative to base_dir to their unique descriptions
 meta_descriptions = {
-    "about.html": "Learn about VitableTech's mission, team, and history. We are an innovative IT company based in Gwalior providing enterprise and open source solutions.",
+    "about.html": "Learn about VitableTech's mission, team, and history. We are an innovative IT company based in India providing enterprise and open source solutions.",
     "clients.html": "See the diverse range of clients and businesses that trust VitableTech for their digital transformation, custom software, and app development needs.",
-    "contact.html": "Get in touch with VitableTech. Contact our team in Gwalior, India for custom software development, IT consulting, and expert technical support services.",
+    "contact.html": "Get in touch with VitableTech. Contact our team in India, India for custom software development, IT consulting, and expert technical support services.",
     "insights.html": "Explore the latest insights, infographics, and tech trends curated by VitableTech. Stay updated with our expert analyses and case studies.",
     "pricing.html": "Review the flexible pricing plans and tailored enterprise packages offered by VitableTech for our premium digital and software development services.",
     "products.html": "Discover VitableTech's innovative products and open-source software tools designed to optimize enterprise operations and improve productivity.",
@@ -17,7 +17,7 @@ meta_descriptions = {
     # Services
     "services/index.html": "Explore VitableTech's comprehensive IT services, including web and mobile app development, UI/UX design, DevOps, and custom enterprise software.",
     "services/ai-machine-learning.html": "Leverage advanced AI and Machine Learning solutions with VitableTech to automate processes, build custom LLMs, and gain predictive insights.",
-    "services/custom-software.html": "VitableTech delivers tailored custom software development services in Gwalior, building scalable desktop, web, and mobile solutions for your business.",
+    "services/custom-software.html": "VitableTech delivers tailored custom software development services in India, building scalable desktop, web, and mobile solutions for your business.",
     "services/devops-cloud.html": "Streamline your IT infrastructure with VitableTech's DevOps and Cloud computing services. We specialize in CI/CD, cloud migration, and optimization.",
     "services/ecommerce.html": "Launch high-converting online stores with VitableTech's expert E-Commerce development services, specializing in Shopify and custom platform integrations.",
     "services/edi-supply-chain.html": "Optimize your supply chain and B2B operations with VitableTech's enterprise Electronic Data Interchange (EDI) and logistics integration services.",
@@ -30,7 +30,7 @@ meta_descriptions = {
     "blog/index.html": "Read the VitableTech blog for the latest tech news, programming tutorials, SEO strategies, and expert advice on modern software development.",
     "blog/custom-software-development-benefits.html": "Discover the key benefits of custom software development for your business and how tailored solutions outperform off-the-shelf software packages.",
     "blog/ecommerce-seo-strategies-2026.html": "Learn the top E-Commerce SEO strategies for 2026. Increase your online store's visibility and drive organic traffic with our expert guide.",
-    "blog/website-development-cost-in-gwalior.html": "Find out the real cost of website development in Gwalior, India. A comprehensive guide to budgeting for your digital presence and IT needs.",
+    "blog/website-development-cost-in-gwalior.html": "Find out the real cost of website development in India, India. A comprehensive guide to budgeting for your digital presence and IT needs.",
     
     # Policies
     "policies/privacy-policy.html": "Read VitableTech's privacy policy to understand how we collect, use, and protect your personal information and sensitive data.",

@@ -31,7 +31,7 @@ const authorBioHtml = `
                 </div>
                 <div>
                     <h4 class="text-xl font-bold text-gray-900 mb-1">About the Author</h4>
-                    <p class="text-gray-600 text-base mb-2">Written by the <strong>VitableTech Engineering Team</strong>. We specialize in building robust, scalable digital solutions for enterprises in Gwalior and beyond.</p>
+                    <p class="text-gray-600 text-base mb-2">Written by the <strong>VitableTech Engineering Team</strong>. We specialize in building robust, scalable digital solutions for enterprises in India and beyond.</p>
                     <a href="../about.html" class="text-primary text-sm font-semibold hover:underline">Learn more about our expertise &rarr;</a>
                 </div>
             </div>`;

@@ -19,10 +19,10 @@ if (!headerMatch || !footerMatch) {
 const blogs = [
     {
         id: "website-development-cost-in-gwalior",
-        title: "Website Development Cost in Gwalior (2026 Guide)",
+        title: "Website Development Cost in India (2026 Guide)",
         category: "Web Development",
         icon: "fa-laptop-code",
-        excerpt: "A comprehensive guide on what you should expect to pay for website development in Gwalior, factors that affect the cost, and why it's a crucial investment.",
+        excerpt: "A comprehensive guide on what you should expect to pay for website development in India, factors that affect the cost, and why it's a crucial investment.",
         date: "June 2026",
         readTime: "10 min read"
         // content is already generated in the previous script, so we skip it here.

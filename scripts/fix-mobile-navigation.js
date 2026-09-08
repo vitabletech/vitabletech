@@ -147,7 +147,7 @@ ${mobileLinksHtml}
                 </svg>
             </a>
             <div class="text-center">
-                <span class="text-[10px] text-gray-500 font-medium">Headquartered in Gwalior, India</span>
+                <span class="text-[10px] text-gray-500 font-medium">Headquartered in India, India</span>
             </div>
         </div>
     </aside>

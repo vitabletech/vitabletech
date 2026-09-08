@@ -37,8 +37,8 @@ const blogListContent = headerMatch[1] + `
                         <i class="fas fa-laptop-code text-primary text-5xl group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
                     <div class="text-sm text-primary font-semibold mb-2 tracking-wide uppercase">Web Development</div>
-                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">Website Development Cost in Gwalior (2026 Guide)</h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3 text-sm">A comprehensive guide on what you should expect to pay for website development in Gwalior, factors that affect the cost, and why it's a crucial investment.</p>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors text-gray-900 leading-snug">Website Development Cost in India (2026 Guide)</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3 text-sm">A comprehensive guide on what you should expect to pay for website development in India, factors that affect the cost, and why it's a crucial investment.</p>
                     <span class="text-primary font-medium group-hover:underline flex items-center gap-2">Read Article <i class="fas fa-arrow-right text-sm"></i></span>
                 </a>
 
@@ -59,7 +59,7 @@ const blogPostHTML = headerMatch[1] + `
     <section class="gradient-bg py-20 text-white text-center">
         <div class="container mx-auto px-4">
             <div class="text-sm text-blue-200 font-semibold mb-3 tracking-widest uppercase">Web Development</div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Website Development Cost in Gwalior: A Comprehensive 2026 Guide</h1>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Website Development Cost in India: A Comprehensive 2026 Guide</h1>
             <div class="flex items-center justify-center gap-6 text-blue-100 text-sm font-medium">
                 <span class="flex items-center"><i class="far fa-calendar-alt mr-2 text-lg"></i> June 2026</span>
                 <span class="flex items-center"><i class="far fa-clock mr-2 text-lg"></i> 10 min read</span>
@@ -72,11 +72,11 @@ const blogPostHTML = headerMatch[1] + `
         <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
             <div class="mx-auto text-gray-700 leading-relaxed space-y-6 text-lg">
                 
-                <p>If you are a business owner in Gwalior looking to establish or revamp your digital presence, the first question that probably crosses your mind is: <em class="text-gray-900 font-medium">"How much does website development cost in Gwalior?"</em></p>
+                <p>If you are a business owner in India looking to establish or revamp your digital presence, the first question that probably crosses your mind is: <em class="text-gray-900 font-medium">"How much does website development cost in India?"</em></p>
 
                 <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-10 shadow-sm">
                     <p class="font-bold text-gray-900 m-0 text-xl">The short answer:</p>
-                    <p class="m-0 mt-3">The average website development cost in Gwalior ranges from <strong class="text-primary">₹15,000 to ₹1,50,000+</strong>, depending on the type of website, the complexity of features, design requirements, and the development agency you choose. A simple informational site will be on the lower end (₹15,000 - ₹25,000), while a full-fledged e-commerce platform or custom web application will require a larger investment (₹50,000+).</p>
+                    <p class="m-0 mt-3">The average website development cost in India ranges from <strong class="text-primary">₹15,000 to ₹1,50,000+</strong>, depending on the type of website, the complexity of features, design requirements, and the development agency you choose. A simple informational site will be on the lower end (₹15,000 - ₹25,000), while a full-fledged e-commerce platform or custom web application will require a larger investment (₹50,000+).</p>
                 </div>
 
                 <p>In this comprehensive, data-driven guide, we will break down the pricing in absolute detail, explore the myriad factors that influence costs, and help you make an informed decision for your business. We will also share why investing in a quality, high-performing website is the most crucial step for your business growth in 2026 and beyond.</p>
@@ -95,11 +95,11 @@ const blogPostHTML = headerMatch[1] + `
                     <li class="flex items-start"><i class="fas fa-check-circle text-primary mt-1.5 mr-3"></i> <span>E-commerce sales in Tier-2 Indian cities (like Gwalior) are projected to continue growing at over <strong class="text-gray-900">25% year-over-year</strong>.</span></li>
                 </ul>
 
-                <p class="mt-8">The reality is simple: Without a professional, fast, and SEO-optimized website, your business is virtually invisible to thousands of potential customers searching for your exact products or services in Gwalior every single day.</p>
+                <p class="mt-8">The reality is simple: Without a professional, fast, and SEO-optimized website, your business is virtually invisible to thousands of potential customers searching for your exact products or services in India every single day.</p>
 
                 <hr class="my-12 border-gray-200">
 
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Detailed Pricing Breakdown: What Does a Website Cost in Gwalior?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Detailed Pricing Breakdown: What Does a Website Cost in India?</h2>
                 
                 <p>To help you budget effectively, we have categorized website development into four main tiers. Here is a detailed breakdown of what you can expect to pay, what features are included, and who each type is best for.</p>
 
@@ -227,7 +227,7 @@ const blogPostHTML = headerMatch[1] + `
 
                 <hr class="my-12 border-gray-200">
 
-                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Why Choose VitableTech for Website Development in Gwalior?</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6 tracking-tight">Why Choose VitableTech for Website Development in India?</h2>
                 
                 <p>At <strong class="text-primary text-xl">VitableTech</strong>, we don't just build websites; we engineer powerful digital growth engines. We combine stunning aesthetics, robust technology, and data-driven marketing to deliver websites that convert visitors into loyal customers.</p>
 
@@ -277,7 +277,7 @@ const blogPostHTML = headerMatch[1] + `
 
                 <div class="space-y-6">
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> How much time does it take to design and build a website in Gwalior?</h4>
+                        <h4 class="text-xl font-bold text-gray-900 flex items-start"><i class="fas fa-question-circle text-primary mt-1 mr-3"></i> How much time does it take to design and build a website in India?</h4>
                         <p class="text-gray-600 mt-3 ml-8">A standard 5-to-7-page informational website usually takes 2 to 4 weeks. Complex e-commerce sites require 6 to 10 weeks.</p>
                     </div>
                     <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
@@ -298,7 +298,7 @@ const blogPostHTML = headerMatch[1] + `
 
                 <div class="bg-white p-8 md:p-12 border-2 border-dashed border-primary/30 rounded-3xl text-center">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Making the Right Digital Investment</h2>
-                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">Understanding the true <strong>website development cost in Gwalior</strong> is the critical first step toward digitizing your business and future-proofing your revenue. A professional website is an investment that yields extraordinarily high returns by establishing brand trust, expanding your geographic reach, and automating sales 24/7.</p>
+                    <p class="text-gray-600 mb-6 max-w-3xl mx-auto">Understanding the true <strong>website development cost in India</strong> is the critical first step toward digitizing your business and future-proofing your revenue. A professional website is an investment that yields extraordinarily high returns by establishing brand trust, expanding your geographic reach, and automating sales 24/7.</p>
                     <p class="text-gray-600 mb-8 max-w-3xl mx-auto">Do not settle for a subpar digital presence. Partner with a trusted, experienced technical team.</p>
                     <a href="contact.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"><i class="fas fa-paper-plane"></i> Contact VitableTech Today</a>
                 </div>
@@ -308,9 +308,9 @@ const blogPostHTML = headerMatch[1] + `
     </section>
 ` + footerMatch[1];
 
-let finalBlogPostContent = blogPostHTML.replace(/<title>.*?<\/title>/, '<title>Website Development Cost in Gwalior | VitableTech Blog</title>');
-finalBlogPostContent = finalBlogPostContent.replace(/<meta name="title" content=".*?">/, '<meta name="title" content="Website Development Cost in Gwalior | VitableTech Blog">');
-finalBlogPostContent = finalBlogPostContent.replace(/<meta name="description" content=".*?">/, '<meta name="description" content="A comprehensive guide on website development costs in Gwalior, MP. Learn about pricing, factors, and why hiring a professional agency like VitableTech is key.">');
+let finalBlogPostContent = blogPostHTML.replace(/<title>.*?<\/title>/, '<title>Website Development Cost in India | VitableTech Blog</title>');
+finalBlogPostContent = finalBlogPostContent.replace(/<meta name="title" content=".*?">/, '<meta name="title" content="Website Development Cost in India | VitableTech Blog">');
+finalBlogPostContent = finalBlogPostContent.replace(/<meta name="description" content=".*?">/, '<meta name="description" content="A comprehensive guide on website development costs in India, MP. Learn about pricing, factors, and why hiring a professional agency like VitableTech is key.">');
 
 fs.writeFileSync(path.join(dir, 'blog-website-development-cost-in-gwalior.html'), finalBlogPostContent);
 console.log('Created blog-website-development-cost-in-gwalior.html');
