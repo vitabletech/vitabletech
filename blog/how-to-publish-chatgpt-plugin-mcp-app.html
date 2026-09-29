@@ -256,12 +256,12 @@
         </div>
     </section>
 
-    <!-- Main Content Section: Left 74% / Right 26% -->
-    <section class="py-12 md:py-20 bg-slate-900/40 border-y border-white/5">
+    <!-- Main Content Section: Left 2/3 / Right 1/3 -->
+    <section class="py-12 md:py-20 bg-slate-900/40 border-y border-white/5 overflow-x-hidden">
         <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl flex flex-col lg:flex-row gap-8 lg:gap-10">
 
-            <!-- Left Container: 70% to 80% (74% Desktop Width) -->
-            <div class="w-full lg:w-[74%] space-y-10">
+            <!-- Left Container: 2/3 Desktop Width with min-w-0 -->
+            <div class="w-full lg:w-2/3 min-w-0 space-y-10">
 
                 <!-- Featured Image -->
                 <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative group aspect-video">
@@ -269,9 +269,9 @@
                         alt="How to Publish a ChatGPT Plugin in 2026: Complete MCP App Release Guide"
                         class="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-500" />
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
-                    <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white/80 backdrop-blur-md bg-slate-950/50 p-3 rounded-xl border border-white/10">
-                        <span class="font-semibold text-cyan-300">Live Case Study: VitableTech Social Hub MCP Release</span>
-                        <span class="hidden sm:inline text-gray-400">Architecture • Submission • Approval</span>
+                    <div class="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 flex items-center justify-between text-[11px] sm:text-xs text-white/80 backdrop-blur-md bg-slate-950/70 p-2 sm:p-3 rounded-xl border border-white/10 gap-2">
+                        <span class="font-semibold text-cyan-300 truncate">Live Case Study: VitableTech Social Hub MCP Release</span>
+                        <span class="hidden md:inline text-gray-400 flex-shrink-0">Architecture • Submission • Approval</span>
                     </div>
                 </div>
 
@@ -302,7 +302,7 @@
                 </div>
 
                 <!-- Blog Article Body -->
-                <article class="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed text-base sm:text-lg">
+                <article class="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed text-base sm:text-lg min-w-0 w-full max-w-full overflow-hidden break-words">
 
                     <!-- Introduction Quote Box -->
                     <div class="relative p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-950/60 to-purple-950/40 border-l-4 border-cyan-400 shadow-xl border-y border-r border-white/5">
@@ -383,6 +383,9 @@
                             <div class="text-cyan-400 text-lg hidden md:block">
                                 <i class="fas fa-arrow-right"></i>
                             </div>
+                            <div class="text-cyan-400 text-sm md:hidden py-1">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
                             <div class="p-4 rounded-xl bg-purple-950/60 border border-purple-500/30">
                                 <i class="fas fa-brain text-xl text-purple-400 mb-2"></i>
                                 <div class="font-bold text-white text-sm">MCP Skill</div>
@@ -390,6 +393,9 @@
                             </div>
                             <div class="text-cyan-400 text-lg hidden md:block">
                                 <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="text-cyan-400 text-sm md:hidden py-1">
+                                <i class="fas fa-arrow-down"></i>
                             </div>
                             <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/30">
                                 <i class="fas fa-server text-xl text-emerald-400 mb-2"></i>
@@ -444,7 +450,7 @@
                             <p class="text-sm text-gray-400 mt-2 mb-2">
                                 You must provide live, publicly accessible, HTTPS-secured links for:
                             </p>
-                            <ul class="text-xs sm:text-sm text-gray-300 space-y-1 list-disc list-inside">
+                            <ul class="text-xs sm:text-sm text-gray-300 space-y-2 list-disc list-inside break-all">
                                 <li><strong>Official Website:</strong> <a href="https://vitabletech.in/" class="text-cyan-400 hover:underline">https://vitabletech.in/</a></li>
                                 <li><strong>Support Portal / Email:</strong> <a href="https://vitabletech.in/contact.html" class="text-cyan-400 hover:underline">https://vitabletech.in/contact.html</a></li>
                                 <li><strong>Privacy Policy:</strong> <a href="https://vitabletech.in/policies/privacy-policy.html" class="text-cyan-400 hover:underline">https://vitabletech.in/policies/privacy-policy.html</a></li>
@@ -460,7 +466,7 @@
                             <p class="text-sm text-gray-400 mt-2 mb-3">
                                 OpenAI verifies domain ownership via an HTTP GET challenge. When initiating submission, OpenAI issues a challenge token. Your server must serve this token at:
                             </p>
-                            <div class="p-3 bg-slate-950 rounded-xl font-mono text-xs text-emerald-400 border border-white/10 overflow-x-auto">
+                            <div class="p-3 bg-slate-950 rounded-xl font-mono text-xs text-emerald-400 border border-white/10 overflow-x-auto break-all">
                                 https://your-domain.com/.well-known/openai-apps-challenge
                             </div>
                             <p class="text-xs text-yellow-300/90 mt-2 mb-0">
@@ -480,13 +486,13 @@
                     </div>
 
                     <!-- Code Block: Express Challenge Token -->
-                    <div class="my-8">
-                        <div class="flex items-center justify-between px-4 py-2 bg-slate-950 rounded-t-xl border border-b-0 border-white/10 text-xs font-mono text-gray-400">
-                            <span>server.ts — Implementing OpenAI Domain Verification</span>
-                            <span>Node.js / Express</span>
+                    <div class="my-8 w-full max-w-full overflow-hidden rounded-xl border border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 px-4 py-2.5 bg-slate-950 border-b border-white/10 text-xs font-mono text-gray-400">
+                            <span class="truncate text-cyan-300 font-semibold">server.ts — OpenAI Verification</span>
+                            <span class="text-[11px] text-gray-500">Node.js / Express</span>
                         </div>
-                        <div class="p-4 bg-slate-950 rounded-b-xl border border-white/10 font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto">
-<pre><code class="language-typescript">import express from 'express';
+                        <div class="p-4 bg-slate-950 font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto w-full max-w-full">
+<pre class="w-full max-w-full"><code class="language-typescript">import express from 'express';
 
 const app = express();
 
@@ -535,13 +541,13 @@ app.get('/.well-known/openai-apps-challenge', (req, res) => {
                     </div>
 
                     <!-- Code Block: SKILL.md Example -->
-                    <div class="my-8">
-                        <div class="flex items-center justify-between px-4 py-2 bg-slate-950 rounded-t-xl border border-b-0 border-white/10 text-xs font-mono text-gray-400">
-                            <span>skills/social-create-and-schedule/SKILL.md</span>
-                            <span>Skill Workflow Definition</span>
+                    <div class="my-8 w-full max-w-full overflow-hidden rounded-xl border border-white/10">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 px-4 py-2.5 bg-slate-950 border-b border-white/10 text-xs font-mono text-gray-400">
+                            <span class="truncate text-cyan-300 font-semibold">skills/social-create-and-schedule/SKILL.md</span>
+                            <span class="text-[11px] text-gray-500">Skill Workflow Definition</span>
                         </div>
-                        <div class="p-4 bg-slate-950 rounded-b-xl border border-white/10 font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto">
-<pre><code class="language-markdown">---
+                        <div class="p-4 bg-slate-950 font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto w-full max-w-full">
+<pre class="w-full max-w-full"><code class="language-markdown">---
 name: social-create-and-schedule
 description: Guides ChatGPT in drafting, validating, and scheduling social posts safely.
 tools:
@@ -633,8 +639,11 @@ tools:
                     </p>
 
                     <!-- Test Cases Table -->
-                    <div class="overflow-x-auto my-6 rounded-2xl border border-white/10">
-                        <table class="w-full text-left text-xs sm:text-sm">
+                    <div class="flex items-center justify-between text-xs text-cyan-400/80 mb-2 md:hidden">
+                        <span><i class="fas fa-arrows-left-right mr-1"></i> Swipe horizontally to view full table</span>
+                    </div>
+                    <div class="overflow-x-auto w-full max-w-full my-6 rounded-2xl border border-white/10 shadow-lg">
+                        <table class="w-full text-left text-xs sm:text-sm min-w-[580px]">
                             <thead class="bg-slate-950 text-cyan-400 font-bold border-b border-white/10 uppercase tracking-wider">
                                 <tr>
                                     <th class="p-4">Type</th>
@@ -899,9 +908,9 @@ tools:
                 </article>
             </div>
 
-            <!-- Right Sidebar Column: 20% to 30% (26% Desktop Width) -->
-            <aside class="w-full lg:w-[26%] space-y-8 mt-12 lg:mt-0">
-                <div class="sticky top-28 space-y-8">
+            <!-- Right Sidebar Column: 1/3 Desktop Width -->
+            <aside class="w-full lg:w-1/3 min-w-0 space-y-8 mt-12 lg:mt-0">
+                <div class="lg:sticky lg:top-28 space-y-8">
 
                     <!-- Suggested & Popular Posts Widget -->
                     <div class="liquid-glass-card rounded-2xl p-6 border border-white/10 shadow-xl">
