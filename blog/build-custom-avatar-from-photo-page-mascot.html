@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Custom Website Avatar From Your Photo With Page Mascot</title>
+    <meta name="title" content="Build a Custom Website Avatar From Your Photo With Page Mascot">
+    <meta name="description" content="Turn your portrait into a cursor-tracking website mascot with Page Mascot. Learn the 3x3 sprite workflow, AI prompts, alignment validation, React integration, and production checks.">
+    <meta name="keywords" content="page mascot tutorial, custom website avatar from photo, AI chibi avatar, cursor tracking mascot React, animated avatar sprite sheet, personal portfolio mascot, page-mascot skill, custom React mascot, website character animation">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://vitabletech.in/blog/build-custom-avatar-from-photo-page-mascot.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vitabletech.in/blog/build-custom-avatar-from-photo-page-mascot.html">
+    <meta property="og:title" content="Build a Custom Website Avatar From Your Photo With Page Mascot">
+    <meta property="og:description" content="The practical workflow we used to turn a real portrait into an aligned, cursor-tracking, click-reactive website mascot.">
+    <meta property="og:image" content="https://vitabletech.in/images/logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Build a Custom Website Avatar From Your Photo With Page Mascot">
+    <meta property="twitter:description" content="Includes copy-ready sprite prompts, validation commands, React code, and troubleshooting.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
+    <link rel="icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="theme-color" content="#020617">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["BlogPosting", "TechArticle"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://vitabletech.in/blog/build-custom-avatar-from-photo-page-mascot.html"},
+      "headline": "Build a Custom Website Avatar From Your Photo With Page Mascot",
+      "description": "A production tutorial for generating, validating and integrating a custom cursor-tracking mascot from a real portrait.",
+      "author": {"@type": "Organization", "name": "VitableTech", "url": "https://vitabletech.in"},
+      "publisher": {"@type": "Organization", "name": "VitableTech", "logo": {"@type": "ImageObject", "url": "https://vitabletech.in/images/logo.svg"}},
+      "datePublished": "2026-10-25",
+      "dateModified": "2026-10-25",
+      "proficiencyLevel": "Intermediate",
+      "dependencies": "React, page-mascot, an image generation tool, Python Pillow/NumPy/SciPy for validation"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to create a custom website mascot from a photo",
+      "step": [
+        {"@type": "HowToStep", "name": "Prepare a clear portrait", "text": "Choose a front-facing reference with visible hair, facial features and clothing colours."},
+        {"@type": "HowToStep", "name": "Generate nine head directions", "text": "Create a transparent 3x3 sprite sheet with a fixed body and nine head directions."},
+        {"@type": "HowToStep", "name": "Generate nine reactions", "text": "Use the direction sheet as reference and produce a matching 3x3 expression sheet."},
+        {"@type": "HowToStep", "name": "Build and validate atlases", "text": "Verify alpha, body alignment, palette and rendered movement before shipping."},
+        {"@type": "HowToStep", "name": "Integrate the React component", "text": "Install page-mascot and supply the directions and reactions WebP paths."}
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-300 bg-dark overflow-x-hidden selection:bg-violet-500/30 selection:text-white">
+    <div class="bg-gradient-to-r from-violet-900 via-fuchsia-900 to-blue-900 text-white py-2.5 text-center text-xs md:text-sm border-b border-white/10"><span class="font-semibold">VitableTech Build Log:</span> from one portrait to eighteen usable character states.</div>
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3 p-2.5 liquid-glass-dark rounded-r-2xl border border-l-0 border-white/10 shadow-2xl">
+        <a href="https://github.com/vitabletech" target="_blank" aria-label="Visit VitableTech on GitHub" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-cyan-300"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank" aria-label="Visit VitableTech on Facebook" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank" aria-label="Visit VitableTech on YouTube" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-red-400"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/916280671085" target="_blank" aria-label="Contact VitableTech on WhatsApp" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank" aria-label="Visit VitableTech on Instagram" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+    </div>
+    <header id="main-navbar" class="sticky top-0 z-50 py-5 bg-slate-950/80 backdrop-blur-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="../index.html#home" class="flex items-center gap-3.5 group"><div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-accent p-0.5"><div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center"><img src="../images/logo.svg" alt="VitableTech Logo" class="h-6 w-6" width="24" height="24"></div></div><div><div class="font-extrabold text-xl leading-none text-white">Vitable<span class="text-violet-400">Tech</span></div><span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Global Enterprise SaaS</span></div></a>
+            <nav class="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10">
+                <a href="../about.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">About</a><a href="../services/index.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Services</a><a href="../projects.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Projects &amp; Work</a><a href="../portfolio.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Live Portfolio</a><a href="../insights.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-violet-300 bg-white/10 border border-white/15">Insights &amp; Blog</a><a href="../pricing.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Pricing</a>
+            </nav>
+            <a href="../contact.html" class="hidden sm:inline-flex shiny-btn px-6 py-2.5 rounded-full font-semibold text-xs text-white border border-white/20">Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="../insights.html" aria-label="Open blog navigation" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center"><i class="fas fa-bars"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-slate-950 via-violet-950/60 to-fuchsia-950/40">
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_25%_30%,rgba(168,85,247,.3),transparent_42%)]"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
+                <a href="../insights.html#articles" class="text-xs font-bold uppercase tracking-[.2em] text-violet-300">← AI Character Engineering</a>
+                <h1 class="mt-6 text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tight">How We Turned One Real Photo Into a <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300">Living Website Mascot</span></h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">A hands-on guide to generating a recognizable chibi avatar, making it look in nine directions, giving it nine reactions, measuring sprite drift, and integrating it into React with Page Mascot.</p>
+                <div class="mt-8 flex flex-wrap gap-3 text-xs font-semibold">
+                    <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10"><i class="far fa-calendar-alt text-violet-400 mr-2"></i>October 25, 2026</span>
+                    <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10"><i class="far fa-clock text-fuchsia-400 mr-2"></i>16 min read</span>
+                    <span class="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300">0.00 px verified sprite shift</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-slate-900/40 border-y border-white/5">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl flex flex-col lg:flex-row gap-12">
+            <div class="w-full lg:w-2/3 min-w-0">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-8 border-b border-white/10">
+                    <span class="text-sm font-semibold text-gray-400 flex items-center gap-2"><i class="fas fa-share-alt text-violet-400"></i> Share this tutorial:</span>
+                    <div class="flex items-center gap-3">
+                        <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent('Build a custom website avatar from your photo'),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-black" aria-label="Share on X"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-blue-700/20 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent('Build a custom website avatar from your photo: '+location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-green-600/20 text-green-400 flex items-center justify-center hover:bg-green-600 hover:text-white" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <article class="space-y-8 text-base md:text-lg leading-relaxed text-slate-300">
+                    <div class="p-6 md:p-8 rounded-3xl bg-violet-500/10 border border-violet-400/25 shadow-[0_0_45px_rgba(139,92,246,.08)]">
+                        <p class="text-xl md:text-2xl text-white font-bold leading-snug">Generating one cute portrait is easy. Generating eighteen versions that do not jump, resize, or change clothes is the actual engineering problem.</p>
+                    </div>
+
+                    <p>We already had a useful assistant: it floated, reacted to project cards, moved beside focused form fields, and displayed contextual messages. But its face was a generic yellow SVG. The next goal was personal: make the guide look like the portfolio owner.</p>
+                    <p>For this stage we used <a class="text-violet-300 underline underline-offset-4" href="https://koboyo.com/page-mascot#characters" target="_blank" rel="noopener noreferrer">Page Mascot’s character system</a>. It uses two 3×3 sprite sheets—nine gaze directions and nine expressions—and swaps cells with CSS background positioning. That gives you cursor attention and click reactions without running a frame-by-frame animation loop.</p>
+
+                    <h2 id="sprite-system" class="text-3xl font-black text-white pt-6">Why two sprite sheets?</h2>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="p-6 rounded-2xl bg-cyan-500/10 border border-cyan-400/20">
+                            <div class="text-cyan-300 text-sm font-black uppercase tracking-widest">Directions sheet</div>
+                            <p class="mt-3 text-sm">Up-left, up, up-right, left, center, right, down-left, down, down-right. The expression stays calm; only the head direction changes.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-400/20">
+                            <div class="text-fuchsia-300 text-sm font-black uppercase tracking-widest">Reactions sheet</div>
+                            <p class="mt-3 text-sm">Blink, heart, sparkle, surprise, starstruck, bashful, sleepy, dizzy, and delighted. Every frame faces forward.</p>
+                        </div>
+                    </div>
+                    <p>The component calculates the pointer angle, selects a direction cell, and briefly swaps to reaction cells after a click. The browser only changes background position and opacity; the images do the visual work.</p>
+
+                    <div id="video-walkthrough" class="my-10 p-6 rounded-3xl bg-slate-950/80 border border-violet-400/25 shadow-2xl space-y-5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div><span class="text-xs uppercase tracking-widest text-violet-300 font-bold"><i class="fab fa-youtube text-red-500 mr-2"></i>Video Walkthrough</span><h2 class="text-2xl font-black text-white mt-2">Watch the Custom Avatar Build</h2></div><a href="https://youtu.be/urWv61mnky0" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-red-600/20 text-red-300 border border-red-500/30 hover:bg-red-600 hover:text-white text-xs font-bold">Watch on YouTube <i class="fas fa-external-link-alt ml-1"></i></a></div>
+                        <p class="text-sm text-gray-400">See the interactive avatar result and follow the workflow visually before reproducing it in your own project.</p>
+                        <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/urWv61mnky0" title="How to build a custom interactive website avatar with Page Mascot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 1: install the tool and skill</h2>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-violet-100"><code>npm install page-mascot
+
+# Optional: install the agent skill that generates and validates characters
+npx skills add nilbuild/page-mascot --skill page-mascot --global --yes</code></pre>
+                    <p>You can download an existing character from the gallery, or create a new one from a photo. A custom likeness needs an image-capable agent or an image API.</p>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 2: choose a useful portrait</h2>
+                    <p>A full-body cutout can work, but the face must still be large and clear enough to inspect. The best reference has visible hair shape, facial hair, skin tone, and upper clothing. Avoid busy backgrounds, sunglasses, dramatic side lighting, and hands covering the face.</p>
+                    <div class="p-6 rounded-2xl bg-amber-500/10 border border-amber-400/20">
+                        <strong class="text-amber-300">Describe only durable identity cues.</strong>
+                        <p class="mt-2 text-sm">Our useful cues were: medium-brown South Asian skin, thick swept-up black quiff, neat moustache and short beard, thick eyebrows, friendly smile, and a navy top. We deliberately simplified the original blazer after it caused inconsistent shoulder shapes.</p>
+                    </div>
+
+                    <h2 id="directions-sheet" class="text-3xl font-black text-white pt-6">Step 3: generate the direction sheet</h2>
+                    <p>This prompt is designed for an image generator that supports a genuine transparent-background option. Set transparency in the tool itself—prompt text alone cannot guarantee an alpha channel.</p>
+                    <div class="p-6 rounded-3xl bg-gradient-to-br from-violet-950/70 to-slate-950 border border-violet-400/30">
+                        <pre class="whitespace-pre-wrap text-sm text-violet-100 overflow-x-auto"><code>Use the attached portrait only as an identity reference. Redraw the person as a polished big-head chibi website mascot. Do not copy the photograph’s realism, lighting, body proportions, or background.
+
+Preserve these identifying details: [skin tone], [hair shape and colour], [facial hair], [glasses if any], [eye colour], and [top colour]. Use clean storybook sticker art, expressive eyes with catchlights, confident dark outlines, warm colours, light cel shading, and a friendly professional expression.
+
+Create one square 3x3 sprite sheet containing exactly nine head directions:
+row 1: up-left, up, up-right
+row 2: left, straight ahead, right
+row 3: down-left, down, down-right
+
+Every cell must use the same character scale and placement. The body must face forward in all nine cells. Draw one compact head-and-shoulders body and reuse that identical body shape in every cell; only the head rotates. Use a simple top with a narrow shoulder silhouette. Keep wide empty margins on all sides. Nothing may touch or cross a cell boundary.
+
+Head and upper shoulders only—no arms, hands, legs, held objects, text, labels, borders, shadows, symbols, or background. Keep the same calm expression in every cell. Square PNG, at least 1024x1024, with real alpha transparency.</code></pre>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white pt-6">The first failure—and the fix</h2>
+                    <p>Our first beautiful sheet failed validation. The blazer lapels and shoulder width changed whenever the head turned. On a static grid that is easy to miss. In the browser it makes the character “breathe sideways” every time the cursor crosses a direction boundary.</p>
+                    <p>We tried a stricter prompt, but the blazer still produced too much variation. The successful fix was not another adjective—it was a design change. We replaced the blazer with a simple navy crew-neck top and a compact rounded shoulder capsule. The direction-sheet shoulder spread dropped to a usable range.</p>
+
+                    <h2 id="reactions-sheet" class="text-3xl font-black text-white pt-6">Step 4: generate the reaction sheet</h2>
+                    <p>Attach the accepted direction sheet—not the original photograph—as the reference for the second generation.</p>
+                    <div class="p-6 rounded-3xl bg-gradient-to-br from-fuchsia-950/70 to-slate-950 border border-fuchsia-400/30">
+                        <pre class="whitespace-pre-wrap text-sm text-fuchsia-100 overflow-x-auto"><code>The attached image is the approved 3x3 direction sheet. Create a matching 3x3 reaction sheet for exactly the same character.
+
+Copy the same palette, outline weight, hair shape, facial hair, proportions, head size, clothing, shoulder silhouette, and placement. Every cell faces straight toward the viewer. Only the facial expression changes.
+
+Expressions from left to right, top to bottom:
+1. gentle blink
+2. blink with one small red heart above
+3. blink with three small yellow sparkles above
+4. wide surprised eyes and small round mouth
+5. star-shaped eyes and happy smile
+6. closed eyes with strong cheek blush
+7. sleeping eyes with small blue zzz
+8. spiral eyes with a wavy dizzy mouth
+9. closed eyes with a broad joyful grin
+
+Reuse one identical body in all nine cells. Match the direction sheet’s exact scale and cell position. Preserve wide empty margins. No extra characters, text, labels, borders, shadows, or background. Square PNG, at least 1024x1024, with real alpha transparency.</code></pre>
+                    </div>
+
+                    <h2 id="validation" class="text-3xl font-black text-white pt-6">Step 5: validate before integration</h2>
+                    <p>Place the source files at <code class="text-violet-300">characters/your-name/directions.png</code> and <code class="text-violet-300">characters/your-name/reactions.png</code>, then let the skill build WebP atlases and measure alignment:</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-violet-100"><code>python3 ~/.codex/skills/page-mascot/scripts/mascot.py \
+  your-name --skip-generate</code></pre>
+                    <p>The validator checks genuine alpha transparency, shoulder consistency, cross-sheet scale, body overlap, palette similarity, width change, and rendered vertical shift. Our final build reported <strong class="text-emerald-300">0.00 rendered pixels of reaction movement</strong>, 93% cross-sheet overlap during fitting, and only 0.6% width change.</p>
+                    <div class="p-6 rounded-2xl bg-cyan-500/10 border border-cyan-400/20">
+                        <strong class="text-cyan-300">One manual check remains:</strong>
+                        <p class="mt-2 text-sm">Look at the middle-left and middle-right cells. Left must face the viewer’s left, and right must face the viewer’s right. Numerical alignment tests cannot detect a mirrored direction order.</p>
+                    </div>
+
+                    <h2 id="react-integration" class="text-3xl font-black text-white pt-6">Step 6: render it in React</h2>
+                    <p>The build writes two optimized files to <code class="text-violet-300">public/mascots</code>. Integration is intentionally small:</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-violet-100"><code>import { Mascot } from 'page-mascot'
+
+export function PortfolioMascot() {
+  return (
+    &lt;Mascot
+      directions="/mascots/your-name-directions.webp"
+      reactions="/mascots/your-name-reactions.webp"
+      size={118}
+      label="Your name, the website guide"
+      className="portfolio-mascot"
+    /&gt;
+  )
+}</code></pre>
+                    <p>On fine-pointer devices, the component follows pointer direction. Touch devices avoid unnecessary cursor tracking. Clicking the mascot cycles through friendly reactions and applies a squash animation while respecting <code class="text-violet-300">prefers-reduced-motion</code>.</p>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 7: combine the mascot with contextual UI</h2>
+                    <p>Page Mascot owns the face direction and click reactions. Our assistant provider still owns messages, floating position, field docking, priority, minimization, and form events. Keeping those layers separate made the character personal without rewriting the already-working interaction system.</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-violet-100"><code>&lt;div
+  className={`assistant ${dock ? 'is-anchored' : ''}`}
+  style={dock ? { left: dock.left, top: dock.top } : undefined}
+&gt;
+  &lt;MessageBubble mood={event.mood}&gt;{event.message}&lt;/MessageBubble&gt;
+  &lt;Mascot
+    directions="/mascots/abhay-directions.webp"
+    reactions="/mascots/abhay-reactions.webp"
+    size={dock ? 96 : 118}
+    label={`Abhay guide, currently ${event.mood}`}
+  /&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h2 id="master-prompt" class="text-3xl font-black text-white pt-6">Master AI prompt: do the entire implementation</h2>
+                    <div class="p-6 rounded-3xl bg-gradient-to-br from-cyan-950/60 via-slate-950 to-violet-950/60 border border-cyan-400/25">
+                        <pre class="whitespace-pre-wrap text-sm text-cyan-100 overflow-x-auto"><code>Use the page-mascot workflow to create and integrate a custom cursor-tracking mascot from my attached portrait.
+
+First inspect the existing React/Next.js site and identify its current avatar or assistant component. Preserve its messages, form logic, positioning behaviour, event handlers, accessibility, and visual hierarchy.
+
+Create a recognizable big-head chibi character using only durable identity features visible in my photo: hair, facial hair, skin tone, glasses if present, and top colour. Generate two genuine-transparent 3x3 PNG sprite sheets:
+- directions: nine head directions with one calm expression
+- reactions: nine front-facing expressions (blink, heart, sparkle, surprise, starstruck, blush, sleep, dizzy, delight)
+
+The body must be a simple head-and-shoulders design, identical in every cell. Keep the same scale, x/y placement, margins, clothing, palette, and outline weight across both sheets. Do not use arms, props, long loose hair, wide accessories, text, labels, borders, shadows, or backgrounds.
+
+Run the page-mascot build and verification pipeline. Reject sheets with missing alpha, painted checkerboards, inconsistent shoulders, wrong direction order, visible cross-sheet movement, or large palette drift. If clothing causes body variation, simplify it before regenerating.
+
+Install page-mascot using the project’s package manager. Integrate the generated WebP atlases into the existing assistant instead of creating a second floating widget. The mascot must track cursor direction on desktop, react on click, remain keyboard accessible, respect prefers-reduced-motion, and retain the site’s mobile behaviour.
+
+Verify the final character visually at rest, while tracking left/right, after clicking, and beside a focused form field. Run type checking, lint, tests, and production build. Report the generated assets, changed files, verification metrics, and test results.</code></pre>
+                    </div>
+
+                    <h2 id="troubleshooting" class="text-3xl font-black text-white pt-6">Common failures you should expect</h2>
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-rose-300">Painted checkerboard instead of transparency</strong><p class="text-sm mt-2">Enable transparent background in the image tool. If unavailable, generate on a pure chroma-key green or magenta background and remove it. Do not ask an opaque-only model to “draw transparency.”</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-amber-300">Character jumps when clicked</strong><p class="text-sm mt-2">The direction and reaction sheets disagree on body position, scale, or clothing. Regenerate the failing sheet using the accepted sheet as the visual reference.</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-cyan-300">Shoulders change when the head turns</strong><p class="text-sm mt-2">Simplify the outfit. Complex jackets, lapels, long hair, held objects, and wide accessories are alignment traps.</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-violet-300">Mascot looks tiny</strong><p class="text-sm mt-2">Large source-sheet margins are necessary, so tune the rendered component size and wrapper carefully instead of cropping the source cells differently.</p></div>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Reference and credit</h2>
+                    <p>Explore the live character gallery and documentation at <a class="text-violet-300 underline underline-offset-4" href="https://koboyo.com/page-mascot#characters" target="_blank" rel="noopener noreferrer">koboyo.com/page-mascot</a>. The underlying open-source package is available at <a class="text-violet-300 underline underline-offset-4" href="https://github.com/nilbuild/page-mascot" target="_blank" rel="noopener noreferrer">nilbuild/page-mascot on GitHub</a>.</p>
+
+                    <div class="mt-12 p-8 rounded-3xl bg-gradient-to-r from-violet-950/80 to-fuchsia-950/70 border border-violet-400/25 text-center">
+                        <h2 class="text-2xl md:text-3xl font-black text-white">A personal mascot is half illustration, half test suite.</h2>
+                        <p class="mt-3">The art creates recognition. Alignment validation makes the illusion believable.</p>
+                        <a href="./build-context-aware-interactive-avatar-nextjs.html" class="mt-6 inline-flex px-6 py-3 rounded-full bg-violet-500 text-white font-bold hover:bg-violet-400">Read Part 1: Interaction architecture →</a>
+                    </div>
+                </article>
+            </div>
+            <aside class="w-full lg:w-1/3 space-y-8 mt-12 lg:mt-0">
+                <div class="liquid-glass-card rounded-2xl p-6 border border-white/10 sticky top-28">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-list-ul text-violet-400"></i> Guide Navigation</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#sprite-system" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Sprite System</a></li>
+                        <li><a href="#video-walkthrough" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Video Walkthrough</a></li>
+                        <li><a href="#directions-sheet" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Direction Sheet Prompt</a></li>
+                        <li><a href="#reactions-sheet" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Reaction Sheet Prompt</a></li>
+                        <li><a href="#validation" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Alignment Validation</a></li>
+                        <li><a href="#react-integration" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> React Integration</a></li>
+                        <li><a href="#master-prompt" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Master AI Prompt</a></li>
+                        <li><a href="#troubleshooting" class="hover:text-violet-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-violet-500"></i> Troubleshooting</a></li>
+                    </ul>
+                    <hr class="my-6 border-white/10">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-fire text-orange-500"></i> Recommended Articles</h3>
+                    <div class="space-y-4 text-sm"><a href="./build-context-aware-interactive-avatar-nextjs.html" class="block p-3 rounded-xl bg-white/[.03] border border-white/10 hover:border-cyan-400/40"><strong class="text-white">Context-aware Avatar Architecture</strong><span class="block text-xs text-gray-500 mt-1">Next.js Interactive UI</span></a><a href="./how-to-publish-chatgpt-plugin-mcp-app.html" class="block p-3 rounded-xl bg-white/[.03] border border-white/10 hover:border-violet-400/40"><strong class="text-white">Publish a ChatGPT MCP App</strong><span class="block text-xs text-gray-500 mt-1">AI &amp; MCP</span></a></div>
+                    <div class="mt-8 p-5 rounded-2xl bg-gradient-to-br from-violet-950/60 to-fuchsia-950/60 border border-violet-500/30 text-center"><i class="fas fa-wand-magic-sparkles text-violet-300 text-xl"></i><h4 class="text-sm font-bold text-white mt-3">Build Your Character</h4><p class="text-xs text-violet-100/70 my-3">Create a branded interactive guide for your product.</p><a href="../contact.html" class="block py-2.5 rounded-xl bg-violet-500 text-white font-bold text-xs">Start a Project</a></div>
+                </div>
+            </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="liquid-glass-dark border-t border-white/10 pt-20 pb-24 md:pb-12 relative overflow-hidden mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
+                <div class="lg:col-span-2 space-y-6"><a href="../index.html#home" class="flex items-center gap-3"><img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" width="40" height="40"><div><span class="text-2xl font-bold tracking-tight text-white">Vitable<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">Tech</span></span><span class="block text-xs text-gray-400 font-medium">Global Enterprise SaaS Architecture</span></div></a><p class="text-gray-400 text-sm leading-relaxed max-w-sm">Empowering businesses with custom software, web applications, and cutting-edge AI digital solutions globally.</p><div class="flex items-center gap-3 pt-2"><a href="https://github.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-cyan-400/50"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/company/vitabletech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-blue-400/50"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-violet-400/50"><i class="fab fa-twitter"></i></a><a href="https://www.youtube.com/@vitabletech" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-red-400/50"><i class="fab fa-youtube"></i></a></div></div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Services</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../services/custom-software.html" class="hover:text-cyan-400">Custom Software Dev</a></li><li><a href="../services/ai-machine-learning.html" class="hover:text-cyan-400">AI &amp; Machine Learning</a></li><li><a href="../services/web-development.html" class="hover:text-cyan-400">Website Development</a></li><li><a href="../services/mobile-app.html" class="hover:text-cyan-400">Mobile App Dev</a></li><li><a href="../services/ui-ux.html" class="hover:text-cyan-400">UI/UX Design</a></li></ul></div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Ecosystem</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../products.html" class="hover:text-cyan-400">Products</a></li><li><a href="../projects.html" class="hover:text-cyan-400">Open Source Repos</a></li><li><a href="../insights.html" class="hover:text-cyan-400">Knowledge Base</a></li><li><a href="../pricing.html" class="hover:text-cyan-400">Pricing Matrix</a></li></ul></div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Company</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../about.html" class="hover:text-cyan-400">About Us</a></li><li><a href="../portfolio.html" class="hover:text-cyan-400">Case Studies</a></li><li><a href="../faq.html" class="hover:text-cyan-400">Common FAQ</a></li><li><a href="../policies/privacy-policy.html" class="hover:text-cyan-400">Privacy Policy</a></li><li><a href="../contact.html" class="hover:text-cyan-400">Contact Support</a></li></ul></div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500"><p>&copy; 2026 VitableTech. All rights reserved.</p><div class="flex items-center gap-6"><a href="../policies/privacy-policy.html" class="hover:text-gray-400">Privacy Policy</a><a href="../policies/terms-and-conditions.html" class="hover:text-gray-400">Terms of Service</a><a href="../sitemap.xml" class="hover:text-gray-400">Sitemap</a></div></div>
+        </div>
+    </footer>
+    <button id="back-to-top-btn" aria-label="Scroll back to top" class="fixed bottom-8 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 border border-white/20 text-white shadow-lg transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center justify-center"><i class="fas fa-arrow-up"></i></button>
+    <script>document.addEventListener('DOMContentLoaded',()=>{const b=document.getElementById('back-to-top-btn');if(!b)return;const sync=()=>{const show=window.scrollY>300;b.classList.toggle('opacity-0',!show);b.classList.toggle('translate-y-10',!show);b.classList.toggle('pointer-events-none',!show)};window.addEventListener('scroll',sync,{passive:true});sync();b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));});</script>
+</body>
+</html>

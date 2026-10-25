@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Context-Aware Interactive Avatar in Next.js | Complete Tutorial</title>
+    <meta name="title" content="Build a Context-Aware Interactive Avatar in Next.js | Complete Tutorial">
+    <meta name="description" content="Build a floating SVG avatar assistant in Next.js that follows cursor attention, reacts to project cards, moves beside form fields, handles validation, and respects reduced motion.">
+    <meta name="keywords" content="interactive avatar Next.js, floating website assistant, SVG avatar animation, context aware UI, React avatar component, cursor tracking avatar, form assistant UI, Bible Strong Avatar Lab, animated website mascot, Next.js tutorial">
+    <meta name="author" content="VitableTech">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://vitabletech.in/blog/build-context-aware-interactive-avatar-nextjs.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vitabletech.in/blog/build-context-aware-interactive-avatar-nextjs.html">
+    <meta property="og:title" content="Build a Context-Aware Interactive Avatar in Next.js">
+    <meta property="og:description" content="A production-focused guide to making a website avatar float, look, lean, react to forms, and stay out of the user's way.">
+    <meta property="og:image" content="https://vitabletech.in/images/logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Build a Context-Aware Interactive Avatar in Next.js">
+    <meta property="twitter:description" content="The complete architecture, interaction model, CSS, validation hooks, and reusable AI prompt.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
+    <link rel="icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="theme-color" content="#020617">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["BlogPosting", "TechArticle"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://vitabletech.in/blog/build-context-aware-interactive-avatar-nextjs.html"},
+      "headline": "Build a Context-Aware Interactive Avatar in Next.js",
+      "description": "A step-by-step tutorial for building a floating SVG avatar assistant that reacts to cursor attention, project cards, form focus, validation and successful submission.",
+      "author": {"@type": "Organization", "name": "VitableTech", "url": "https://vitabletech.in"},
+      "publisher": {"@type": "Organization", "name": "VitableTech", "logo": {"@type": "ImageObject", "url": "https://vitabletech.in/images/logo.svg"}},
+      "datePublished": "2026-10-25",
+      "dateModified": "2026-10-25",
+      "proficiencyLevel": "Intermediate",
+      "dependencies": "Next.js, React, CSS transforms"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to build a context-aware interactive avatar in Next.js",
+      "step": [
+        {"@type": "HowToStep", "name": "Audit the existing UI", "text": "Identify project cards, form fields, validation events and the current avatar renderer."},
+        {"@type": "HowToStep", "name": "Create a semantic event layer", "text": "Expose showHint and returnToIdle from a React context provider."},
+        {"@type": "HowToStep", "name": "Calculate directional movement", "text": "Use target bounding rectangles and viewport coordinates to calculate lean, gaze and safe docking."},
+        {"@type": "HowToStep", "name": "Wire page interactions", "text": "Connect project hover, field focus, invalid input and successful submission to avatar states."},
+        {"@type": "HowToStep", "name": "Verify accessibility and performance", "text": "Respect reduced motion, throttle pointer work, preserve keyboard access and test production builds."}
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-300 bg-dark overflow-x-hidden selection:bg-cyan-500/30 selection:text-white">
+    <div class="bg-gradient-to-r from-blue-900 via-primary to-violet-900 text-white py-2.5 text-center text-xs md:text-sm border-b border-white/10"><span class="font-semibold">VitableTech Engineering Notes:</span> practical builds, honest mistakes, reusable prompts.</div>
+    <div class="fixed left-0 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3 p-2.5 liquid-glass-dark rounded-r-2xl border border-l-0 border-white/10 shadow-2xl">
+        <a href="https://github.com/vitabletech" target="_blank" aria-label="Visit VitableTech on GitHub" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-cyan-300"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/vitabletech" target="_blank" aria-label="Visit VitableTech on Facebook" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@vitabletech" target="_blank" aria-label="Visit VitableTech on YouTube" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-red-400"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/916280671085" target="_blank" aria-label="Contact VitableTech on WhatsApp" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/vitabletech" target="_blank" aria-label="Visit VitableTech on Instagram" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+    </div>
+    <header id="main-navbar" class="sticky top-0 z-50 py-5 bg-slate-950/80 backdrop-blur-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="../index.html#home" class="flex items-center gap-3.5 group"><div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-accent p-0.5"><div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center"><img src="../images/logo.svg" alt="VitableTech Logo" class="h-6 w-6" width="24" height="24"></div></div><div><div class="font-extrabold text-xl leading-none text-white">Vitable<span class="text-cyan-400">Tech</span></div><span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Global Enterprise SaaS</span></div></a>
+            <nav class="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10">
+                <a href="../about.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">About</a><a href="../services/index.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Services</a><a href="../projects.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Projects &amp; Work</a><a href="../portfolio.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Live Portfolio</a><a href="../insights.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-300 bg-white/10 border border-white/15">Insights &amp; Blog</a><a href="../pricing.html" class="px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-white/10">Pricing</a>
+            </nav>
+            <a href="../contact.html" class="hidden sm:inline-flex shiny-btn px-6 py-2.5 rounded-full font-semibold text-xs text-white border border-white/20">Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="../insights.html" aria-label="Open blog navigation" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center"><i class="fas fa-bars"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-slate-950 via-blue-950/60 to-violet-950/50">
+            <div class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_70%_25%,rgba(34,211,238,.28),transparent_40%)]"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-28 relative">
+                <a href="../insights.html#articles" class="text-xs font-bold uppercase tracking-[.2em] text-cyan-300">← AI &amp; Frontend Engineering</a>
+                <h1 class="mt-6 text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-tight">We Made a Website Avatar Feel <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400">Alive—Without Letting It Become Annoying</span></h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">A complete Next.js tutorial for turning a static bottom-right widget into a context-aware guide that floats, watches, leans toward projects, moves beside form fields, and knows when to quietly go home.</p>
+                <div class="mt-8 flex flex-wrap gap-3 text-xs font-semibold">
+                    <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10"><i class="far fa-calendar-alt text-cyan-400 mr-2"></i>October 25, 2026</span>
+                    <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10"><i class="far fa-clock text-violet-400 mr-2"></i>14 min read</span>
+                    <span class="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300">Production-tested pattern</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-slate-900/40 border-y border-white/5">
+            <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl flex flex-col lg:flex-row gap-12">
+            <div class="w-full lg:w-2/3 min-w-0">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-8 border-b border-white/10">
+                    <span class="text-sm font-semibold text-gray-400 flex items-center gap-2"><i class="fas fa-share-alt text-cyan-400"></i> Share this tutorial:</span>
+                    <div class="flex items-center gap-3">
+                        <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent('Build a context-aware interactive avatar in Next.js'),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-black" aria-label="Share on X"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-blue-700/20 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent('Build a context-aware interactive avatar: '+location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-green-600/20 text-green-400 flex items-center justify-center hover:bg-green-600 hover:text-white" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'share','width=800,height=600');return false" class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <article class="space-y-8 text-base md:text-lg leading-relaxed text-slate-300">
+                    <div class="p-6 md:p-8 rounded-3xl bg-cyan-500/10 border border-cyan-400/20 shadow-[0_0_45px_rgba(6,182,212,.08)]">
+                        <p class="text-xl md:text-2xl text-white font-bold leading-snug">The avatar was technically working. It greeted visitors. It displayed messages. It sat faithfully in the bottom-right corner.</p>
+                        <p class="mt-3 text-cyan-200">And it still felt like a sticker.</p>
+                    </div>
+
+                    <p>The problem was not a lack of animation. The problem was a lack of <strong class="text-white">attention</strong>. Real characters react to what people are doing. When someone looks at a project, the guide should become curious. When they focus an email field, it should become attentive. When validation fails, it should point attention toward the problem without covering the control.</p>
+                    <p>Our visual reference was the open-source <a class="text-cyan-300 underline underline-offset-4" href="https://github.com/smontlouis/bible-strong-avatar-lab" target="_blank" rel="noopener noreferrer">Bible Strong Avatar Lab</a>. Its editor demonstrates a useful separation: avatar geometry, expressions, animations, and playback are different concerns. We translated that idea into a lightweight website-assistant architecture instead of copying its editor or assets.</p>
+
+                    <h2 id="behavior-model" class="text-3xl font-black text-white pt-6">The behavior model: react to attention, not raw movement</h2>
+                    <p>A mascot that chases every cursor coordinate quickly becomes exhausting. We used five interaction layers, each with a clear reason to exist:</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-cyan-300">Idle</strong><p class="text-sm mt-2">Slow vertical float, tiny rotation, breathing, and occasional blink.</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-violet-300">Nearby pointer</strong><p class="text-sm mt-2">Small head or eye movement only. The whole widget does not chase the cursor.</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-amber-300">Project interest</strong><p class="text-sm mt-2">Directional lean plus a curious message when a card or CTA is hovered.</p></div>
+                        <div class="p-5 rounded-2xl bg-white/[.03] border border-white/10"><strong class="text-emerald-300">Form assistance</strong><p class="text-sm mt-2">Dock near the focused field, then react differently to invalid and successful states.</p></div>
+                    </div>
+
+                    <h2 id="semantic-events" class="text-3xl font-black text-white pt-6">Step 1: build a semantic event layer</h2>
+                    <p>Page components should not know how the character is drawn. They should announce intent: “the user is curious about this project” or “this email is invalid.” A provider translates that intent into message, mood, direction, duration, and position.</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-cyan-100"><code>type AvatarMood =
+  | 'idle' | 'curious' | 'attentive'
+  | 'concerned' | 'thinking' | 'celebrating'
+
+type AvatarEvent = {
+  mood: AvatarMood
+  message: string
+  duration?: number
+}
+
+type AvatarAssistantAPI = {
+  showHint: (event: AvatarEvent, target?: HTMLElement | null) =&gt; void
+  returnToIdle: (delay?: number) =&gt; void
+}</code></pre>
+                    <p>This keeps form validation state separate from animation state. Validation remains the form’s responsibility; the assistant simply responds to the result.</p>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 2: calculate where the user’s attention is</h2>
+                    <p>Never hardcode “first card means left” or “email field means down.” Read the target’s bounding rectangle and compare its center with the viewport center.</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-cyan-100"><code>function directionFor(target: HTMLElement) {
+  const rect = target.getBoundingClientRect()
+  const x = rect.left + rect.width / 2
+  const y = rect.top + rect.height / 2
+
+  return {
+    x: clamp((x - innerWidth / 2) / (innerWidth / 2), -1, 1),
+    y: clamp((y - innerHeight / 2) / (innerHeight / 2), -1, 1)
+  }
+}</code></pre>
+                    <p>Those normalized values can drive a tiny body lean, eye translation, or sprite direction. They also survive responsive layouts because the calculation uses the element’s real position.</p>
+
+                    <h2 id="field-docking" class="text-3xl font-black text-white pt-6">Step 3: safely dock beside a focused field</h2>
+                    <p>The avatar should feel “available on the input,” but never sit on top of the text box. We estimated the assistant footprint, aligned it with the field’s right edge, clamped it to the viewport, and selected above or below based on available space.</p>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-cyan-100"><code>function dockFor(target: HTMLElement) {
+  const rect = target.getBoundingClientRect()
+  const width = matchMedia('(max-width: 640px)').matches ? 205 : 220
+  const height = matchMedia('(max-width: 640px)').matches ? 170 : 185
+  const gap = 12
+
+  const left = clamp(rect.right - width, gap, innerWidth - width - gap)
+  const above = rect.top &gt;= height + gap
+  const top = above ? rect.top - height + 40 : rect.bottom + gap
+
+  return { left, top: Math.max(gap, top), below: !above }
+}</code></pre>
+                    <p>The assistant remains <code class="text-cyan-300">position: fixed</code>, so page layout never shifts. On scroll and resize, the target is measured again. When focus leaves, a short delay returns the assistant home instead of snapping immediately.</p>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 4: wire real interactions</h2>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-cyan-100"><code>&lt;input
+  onFocus={(event) =&gt; showHint({
+    mood: 'attentive',
+    message: 'What should I call you?'
+  }, event.currentTarget)}
+  onBlur={() =&gt; returnToIdle(900)}
+/&gt;
+
+&lt;ProjectCard
+  onPointerEnter={(event) =&gt; showHint({
+    mood: 'curious',
+    message: 'Want to see how this project works?'
+  }, event.currentTarget)}
+/&gt;</code></pre>
+                    <div class="p-6 rounded-2xl bg-amber-500/10 border border-amber-400/20">
+                        <strong class="text-amber-300">Priority matters.</strong>
+                        <p class="mt-2 text-sm">A casual hover must not overwrite an invalid-email warning or celebration. Give high-value states a short lock window, cancel older timers, and keep only one active target.</p>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Step 5: animate transforms, not layout</h2>
+                    <pre class="p-5 rounded-2xl bg-slate-950 border border-white/10 overflow-x-auto text-sm text-cyan-100"><code>.avatar {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  will-change: transform;
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1),
+              left 420ms cubic-bezier(.2,.8,.2,1),
+              top 420ms cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes avatar-idle {
+  0%, 100% { transform: translate3d(0,2px,0) rotate(-2deg); }
+  50% { transform: translate3d(4px,-10px,0) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar, .avatar * { animation: none !important; transition: none !important; }
+}</code></pre>
+
+                    <h2 id="ai-prompt" class="text-3xl font-black text-white pt-6">The copy-ready AI implementation prompt</h2>
+                    <p>Paste this into Codex, Claude Code, Cursor, or another coding agent while your existing project is open:</p>
+                    <div class="p-6 rounded-3xl bg-gradient-to-br from-violet-950/70 to-slate-950 border border-violet-400/30">
+                        <pre class="whitespace-pre-wrap text-sm text-violet-100 overflow-x-auto"><code>Inspect the existing website avatar implementation before editing. Preserve its current design, event handlers, form validation, and accessibility.
+
+Upgrade it into a context-aware floating assistant:
+1. Add a subtle idle float, small rotation, breathing, and blinking.
+2. On desktop, track nearby pointer attention with a small head/eye/body turn. Do not chase the cursor.
+3. When a project card or View Project CTA is hovered, calculate the element center from getBoundingClientRect(), lean toward it, show a curious supported expression, and display: “Want to see how this project works?”
+4. When an input or textarea receives focus, move the assistant beside that exact field. Calculate a safe fixed position above or below the field, clamp it inside the viewport, and never cover the control.
+5. For invalid email or required fields, show a concerned supported state and a helpful field-specific message. Keep validation logic separate from animation state.
+6. On successful submission, play a small celebration and success message.
+7. Return smoothly to the default bottom-right pose after interaction ends.
+8. Recalculate the active target position on scroll and resize without causing layout shifts.
+9. Use CSS transforms/transitions and requestAnimationFrame only for throttled pointer work. Clean up timers, listeners, and animation frames.
+10. Disable excessive pointer tracking on touch devices and honor prefers-reduced-motion.
+
+Use semantic states such as idle, curious, attentive, concerned, thinking, and celebrating. Add priority handling so validation and success cannot be overwritten by hover events. Keep the assistant keyboard accessible. Run lint, type checking, existing tests, and the production build. Report every changed file and test result.</code></pre>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white pt-6">The hydration warning that was not our bug</h2>
+                    <p>During testing, Next.js reported a server/client attribute mismatch on <code class="text-cyan-300">&lt;body&gt;</code>. The unexpected attribute was injected by a browser extension before React hydrated. That distinction matters: suppressing every warning hides real problems. First compare the exact server/client diff, reproduce in a clean browser profile, and only use <code class="text-cyan-300">suppressHydrationWarning</code> at the narrowest trustworthy boundary.</p>
+
+                    <h2 id="production-checklist" class="text-3xl font-black text-white pt-6">Production checklist</h2>
+                    <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Idle motion is subtle and continuous</li>
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Project hover reacts directionally</li>
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Focused fields receive safe docking</li>
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Invalid and success states have priority</li>
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Touch and keyboard flows still work</li>
+                        <li class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/20">✓ Reduced-motion users get a calm UI</li>
+                    </ul>
+
+                    <h2 class="text-3xl font-black text-white pt-6">Reference and credit</h2>
+                    <p>Explore the original project that inspired the expression/playback separation: <a class="text-cyan-300 underline underline-offset-4" href="https://github.com/smontlouis/bible-strong-avatar-lab" target="_blank" rel="noopener noreferrer">smontlouis/bible-strong-avatar-lab on GitHub</a>. Its repository documents a browser-based avatar studio with reusable expressions, animation sequences, SVG rendering, portable avatar definitions, and React/web packages.</p>
+
+                    <div class="mt-12 p-8 rounded-3xl bg-gradient-to-r from-cyan-950/70 to-violet-950/70 border border-cyan-400/25 text-center">
+                        <h2 class="text-2xl md:text-3xl font-black text-white">The best avatar is not the one that moves most.</h2>
+                        <p class="mt-3">It is the one that notices the same moment the user does.</p>
+                        <a href="./build-custom-avatar-from-photo-page-mascot.html" class="mt-6 inline-flex px-6 py-3 rounded-full bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-300">Next: Build the custom face →</a>
+                    </div>
+                </article>
+            </div>
+            <aside class="w-full lg:w-1/3 space-y-8 mt-12 lg:mt-0">
+                <div class="liquid-glass-card rounded-2xl p-6 border border-white/10 sticky top-28">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-list-ul text-cyan-400"></i> Guide Navigation</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#behavior-model" class="hover:text-cyan-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-cyan-500"></i> Behavior Model</a></li>
+                        <li><a href="#semantic-events" class="hover:text-cyan-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-cyan-500"></i> Semantic Event Layer</a></li>
+                        <li><a href="#field-docking" class="hover:text-cyan-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-cyan-500"></i> Field Docking</a></li>
+                        <li><a href="#ai-prompt" class="hover:text-cyan-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-cyan-500"></i> Copy-ready AI Prompt</a></li>
+                        <li><a href="#production-checklist" class="hover:text-cyan-300 flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-cyan-500"></i> Production Checklist</a></li>
+                    </ul>
+                    <hr class="my-6 border-white/10">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><i class="fas fa-fire text-orange-500"></i> Recommended Articles</h3>
+                    <div class="space-y-4 text-sm"><a href="./build-custom-avatar-from-photo-page-mascot.html" class="block p-3 rounded-xl bg-white/[.03] border border-white/10 hover:border-violet-400/40"><strong class="text-white">Build Your Custom Page Mascot</strong><span class="block text-xs text-gray-500 mt-1">AI Character Engineering</span></a><a href="./how-to-publish-chatgpt-plugin-mcp-app.html" class="block p-3 rounded-xl bg-white/[.03] border border-white/10 hover:border-cyan-400/40"><strong class="text-white">Publish a ChatGPT MCP App</strong><span class="block text-xs text-gray-500 mt-1">AI &amp; MCP</span></a></div>
+                    <div class="mt-8 p-5 rounded-2xl bg-gradient-to-br from-cyan-950/60 to-blue-950/60 border border-cyan-500/30 text-center"><i class="fas fa-rocket text-cyan-400 text-xl"></i><h4 class="text-sm font-bold text-white mt-3">Launch with VitableTech</h4><p class="text-xs text-cyan-100/70 my-3">Turn your interactive idea into a production experience.</p><a href="../contact.html" class="block py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs">Start a Project</a></div>
+                </div>
+            </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="liquid-glass-dark border-t border-white/10 pt-20 pb-24 md:pb-12 relative overflow-hidden mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
+                <div class="lg:col-span-2 space-y-6">
+                    <a href="../index.html#home" class="flex items-center gap-3"><img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" width="40" height="40"><div><span class="text-2xl font-bold tracking-tight text-white">Vitable<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">Tech</span></span><span class="block text-xs text-gray-400 font-medium">Global Enterprise SaaS Architecture</span></div></a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">Empowering businesses with custom software, web applications, and cutting-edge AI digital solutions globally.</p>
+                    <div class="flex items-center gap-3 pt-2"><a href="https://github.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-cyan-400/50"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/company/vitabletech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-blue-400/50"><i class="fab fa-linkedin-in"></i></a><a href="https://x.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-violet-400/50"><i class="fab fa-twitter"></i></a><a href="https://www.youtube.com/@vitabletech" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-red-400/50"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Services</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../services/custom-software.html" class="hover:text-cyan-400">Custom Software Dev</a></li><li><a href="../services/ai-machine-learning.html" class="hover:text-cyan-400">AI &amp; Machine Learning</a></li><li><a href="../services/web-development.html" class="hover:text-cyan-400">Website Development</a></li><li><a href="../services/mobile-app.html" class="hover:text-cyan-400">Mobile App Dev</a></li><li><a href="../services/ui-ux.html" class="hover:text-cyan-400">UI/UX Design</a></li></ul></div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Ecosystem</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../products.html" class="hover:text-cyan-400">Products</a></li><li><a href="../projects.html" class="hover:text-cyan-400">Open Source Repos</a></li><li><a href="../insights.html" class="hover:text-cyan-400">Knowledge Base</a></li><li><a href="../pricing.html" class="hover:text-cyan-400">Pricing Matrix</a></li></ul></div>
+                <div class="space-y-4"><h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Company</h4><ul class="space-y-2.5 text-xs font-medium text-gray-400"><li><a href="../about.html" class="hover:text-cyan-400">About Us</a></li><li><a href="../portfolio.html" class="hover:text-cyan-400">Case Studies</a></li><li><a href="../faq.html" class="hover:text-cyan-400">Common FAQ</a></li><li><a href="../policies/privacy-policy.html" class="hover:text-cyan-400">Privacy Policy</a></li><li><a href="../contact.html" class="hover:text-cyan-400">Contact Support</a></li></ul></div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500"><p>&copy; 2026 VitableTech. All rights reserved.</p><div class="flex items-center gap-6"><a href="../policies/privacy-policy.html" class="hover:text-gray-400">Privacy Policy</a><a href="../policies/terms-and-conditions.html" class="hover:text-gray-400">Terms of Service</a><a href="../sitemap.xml" class="hover:text-gray-400">Sitemap</a></div></div>
+        </div>
+    </footer>
+    <button id="back-to-top-btn" aria-label="Scroll back to top" class="fixed bottom-8 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 border border-white/20 text-white shadow-lg transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center justify-center"><i class="fas fa-arrow-up"></i></button>
+    <script>document.addEventListener('DOMContentLoaded',()=>{const b=document.getElementById('back-to-top-btn');if(!b)return;const sync=()=>{const show=window.scrollY>300;b.classList.toggle('opacity-0',!show);b.classList.toggle('translate-y-10',!show);b.classList.toggle('pointer-events-none',!show)};window.addEventListener('scroll',sync,{passive:true});sync();b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));});</script>
+</body>
+</html>
