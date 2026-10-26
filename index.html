@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- Main stylesheet & FontAwesome -->
     <link rel="stylesheet" href="./css/main.css" fetchpriority="high">
-    <link rel="stylesheet" href="./css/viya-assistant.css">
+    <link rel="stylesheet" href="./css/viya-assistant.css?v=4">
     <link rel="preload" href="./css/fa-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="./css/fa-purged.css">
@@ -1154,177 +1154,6 @@
             </div>
         </div>
     </section>
-
-    <!-- PRODUCTS SHOWCASE (VS Code & Software Products) -->
-    <section id="products" class="py-24 bg-slate-950 relative border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-up">
-                <div>
-                    <span
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">
-                        <span>Engineering culture</span>
-                    </span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                        Built by Engineers. Shared With Engineers.
-                    </h2>
-                </div>
-                <p class="text-gray-400 text-sm sm:text-base max-w-md mt-4 md:mt-0">
-                    Alongside client work, our team builds developer tools and experiments in public. It is a small
-                    window into how we think, make, and keep learning.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-                <!-- Product 1: Ludo Player -->
-                <div class="liquid-glass-card rounded-3xl overflow-hidden group flex flex-col justify-between"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="relative h-56 bg-gradient-to-br from-green-500/20 via-blue-600/20 to-slate-900 flex items-center justify-center p-6 overflow-hidden border-b border-white/10">
-                        <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
-                        <div
-                            class="relative z-10 w-28 h-28 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                            <img src="./images/lodo.png" alt="Ludo Player Logo" loading="lazy" width="96" height="96"
-                                class="w-full h-full object-contain drop-shadow-lg" onerror="this.style.display='none'">
-                            <i class="fas fa-gamepad text-white text-5xl" style="display:none;"></i>
-                        </div>
-                        <span
-                            class="absolute top-4 right-4 bg-green-500/20 text-green-300 border border-green-500/30 text-xs font-extrabold px-3 py-1 rounded-full backdrop-blur-md">
-                            Available on VS Code
-                        </span>
-                    </div>
-                    <div class="p-8 flex flex-col justify-between flex-grow">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Game
-                                    Extension</span>
-                                <span class="text-gray-600">•</span>
-                                <span class="text-xs text-gray-400">v1.2.0</span>
-                            </div>
-                            <h3
-                                class="text-2xl font-extrabold text-white mb-3 group-hover:text-cyan-300 transition-colors">
-                                Ludo Player</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                A fun and interactive multiplayer Ludo game extension built directly for Visual Studio
-                                Code. Take a quick gaming break without leaving your IDE workflow!
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-gray-400"><i
-                                    class="fab fa-windows text-blue-400 mr-1.5"></i> Marketplace</span>
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ludo-player"
-                                target="_blank"
-                                class="shiny-btn px-5 py-2 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2">
-                                <span>Visit Product</span> <span>→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2: Fake Developer Mode -->
-                <div class="liquid-glass-card rounded-3xl overflow-hidden group flex flex-col justify-between"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="relative h-56 bg-gradient-to-br from-slate-700/30 via-slate-900 to-black flex items-center justify-center p-6 overflow-hidden border-b border-white/10">
-                        <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
-                        <div
-                            class="relative z-10 w-28 h-28 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500">
-                            <img src="./images/fakeDeveloperMode.png" alt="Fake Developer Mode Logo" loading="lazy"
-                                width="96" height="96" class="w-full h-full object-contain drop-shadow-lg"
-                                onerror="this.style.display='none'">
-                            <i class="fas fa-user-secret text-white text-5xl" style="display:none;"></i>
-                        </div>
-                        <span
-                            class="absolute top-4 right-4 bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-extrabold px-3 py-1 rounded-full backdrop-blur-md">
-                            VS Code Utility
-                        </span>
-                    </div>
-                    <div class="p-8 flex flex-col justify-between flex-grow">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Prank
-                                    Utility</span>
-                                <span class="text-gray-600">•</span>
-                                <span class="text-xs text-gray-400">v1.0.5</span>
-                            </div>
-                            <h3
-                                class="text-2xl font-extrabold text-white mb-3 group-hover:text-amber-300 transition-colors">
-                                Fake Developer Mode</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                Simulate high-speed automated developer coding streams in VS Code for fun and pranks.
-                                Trick your colleagues with impressive, Hollywood-style terminal hacking!
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-gray-400"><i
-                                    class="fab fa-windows text-blue-400 mr-1.5"></i> Marketplace</span>
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.fake-developer-mode"
-                                target="_blank"
-                                class="shiny-btn px-5 py-2 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2">
-                                <span>Visit Product</span> <span>→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3: ANSI Spectrum -->
-                <div class="liquid-glass-card rounded-3xl overflow-hidden group flex flex-col justify-between"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="relative h-56 bg-gradient-to-br from-violet-600/20 via-pink-600/20 to-slate-900 flex items-center justify-center p-6 overflow-hidden border-b border-white/10">
-                        <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
-                        <div
-                            class="relative z-10 w-28 h-28 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                            <img src="./images/AnsiSpectrum.png" alt="ANSI Spectrum Logo" loading="lazy" width="96"
-                                height="96" class="w-full h-full object-contain drop-shadow-lg"
-                                onerror="this.style.display='none'">
-                            <i class="fas fa-palette text-white text-5xl" style="display:none;"></i>
-                        </div>
-                        <span
-                            class="absolute top-4 right-4 bg-violet-500/20 text-violet-300 border border-violet-500/30 text-xs font-extrabold px-3 py-1 rounded-full backdrop-blur-md">
-                            Developer Tool
-                        </span>
-                    </div>
-                    <div class="p-8 flex flex-col justify-between flex-grow">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="text-xs font-bold text-violet-400 uppercase tracking-wider">Color
-                                    Inspector</span>
-                                <span class="text-gray-600">•</span>
-                                <span class="text-xs text-gray-400">v2.1.0</span>
-                            </div>
-                            <h3
-                                class="text-2xl font-extrabold text-white mb-3 group-hover:text-violet-300 transition-colors">
-                                ANSI Spectrum</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                Visualize and preview ANSI color codes, escapes, and spectrum palettes directly within
-                                your editor. Built specifically for backend engineers and CLI developers.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-gray-400"><i
-                                    class="fab fa-windows text-blue-400 mr-1.5"></i> Marketplace</span>
-                            <a href="https://marketplace.visualstudio.com/items?itemName=vitabletech.ansi-spectrum"
-                                target="_blank"
-                                class="shiny-btn px-5 py-2 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2">
-                                <span>Visit Product</span> <span>→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="./products.html"
-                    class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-gray-200 bg-slate-900 border border-white/15 hover:bg-slate-800 hover:text-white transition-all shadow-xl">
-                    <span>Explore the developer toolkit</span> <span>→</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- OPEN SOURCE SECTION (GitHub-Inspired Showcase without Fake Numbers) -->
     <section id="open-source" class="py-24 bg-dark relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -2663,7 +2492,7 @@
         </div>
     </section>
 
-    <script src="./js/viya-assistant.js"></script>
+    <script src="./js/viya-assistant.js?v=4"></script>
 
 </body>
 

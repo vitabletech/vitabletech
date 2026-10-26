@@ -62,6 +62,7 @@
 
     <!-- Main stylesheet & FontAwesome -->
     <link rel="stylesheet" href="./css/main.css" fetchpriority="high">
+    <link rel="stylesheet" href="./css/viya-assistant.css?v=4">
     <link rel="preload" href="./css/fa-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="./css/fa-purged.css">
@@ -899,6 +900,48 @@
         </div>
     </nav>
 
+    <!-- VIYA: STATIC INTERACTIVE SITE GUIDE -->
+    <section id="viya-assistant" class="viya-assistant" aria-label="Viya, VitableTech site guide">
+        <div class="viya-panel" role="dialog" aria-label="Chat with Viya">
+            <div class="viya-panel-header">
+                <div>
+                    <p class="viya-name">Viya · VitableTech Guide</p>
+                    <p class="viya-status">● Online with quick answers</p>
+                </div>
+                <button class="viya-close" type="button" aria-label="Close Viya guide">×</button>
+            </div>
+            <div class="viya-panel-body">
+                <p class="viya-message viya-intro">
+                    Hi, I’m Viya. I can help you prepare a clearer project enquiry.
+                    <span class="viya-disclosure">I’m an interactive guide with predefined answers—not a live AI or human chat.</span>
+                </p>
+                <div class="viya-questions-wrap">
+                    <p class="viya-question-label">Choose a question</p>
+                    <div class="viya-questions">
+                        <button class="viya-question" type="button" data-answer="services">What can you build?</button>
+                        <button class="viya-question" type="button" data-answer="work">Show me client work</button>
+                        <button class="viya-question" type="button" data-answer="products">Explore your products</button>
+                        <button class="viya-question" type="button" data-answer="process">How does it work?</button>
+                        <button class="viya-question" type="button" data-answer="budget">What will it cost?</button>
+                        <button class="viya-question" type="button" data-answer="human">Can I talk to a person?</button>
+                    </div>
+                </div>
+                <div class="viya-answer" aria-live="polite">
+                    <p class="viya-answer-text"></p>
+                    <div class="viya-answer-actions">
+                        <a class="viya-action" href="./contact.html">Continue →</a>
+                        <button class="viya-back" type="button">Ask something else</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="viya-invite" aria-hidden="true">Need help before you send your enquiry?</div>
+        <div class="viya-avatar-wrap" role="button" tabindex="0" aria-label="Open Viya guide" aria-expanded="false">
+            <div class="viya-avatar" aria-hidden="true"></div>
+            <span class="viya-online" aria-hidden="true"></span>
+        </div>
+    </section>
+
     <!-- FLOATING BACK TO TOP BUTTON -->
     <button id="back-to-top-btn" aria-label="Scroll Back to Top"
         class="fixed bottom-20 md:bottom-8 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 border border-white/20 text-white shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:shadow-[0_0_35px_rgba(37,99,235,0.7)] hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center justify-center group">
@@ -927,6 +970,7 @@
             }
         });
     </script>
+    <script src="./js/viya-assistant.js?v=4"></script>
 
 </body>
 

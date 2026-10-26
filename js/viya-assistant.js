@@ -63,13 +63,13 @@
     function react(frame) {
         clearTimeout(reactionTimer);
         isReacting = true;
-        avatar.style.backgroundImage = 'url("./images/mascots/viya-reactions.webp?v=3")';
+        avatar.style.backgroundImage = 'url("./images/mascots/viya-real-reactions.webp?v=1")';
         setFrame(frame);
         avatar.classList.remove('is-reacting');
         void avatar.offsetWidth;
         avatar.classList.add('is-reacting');
         reactionTimer = window.setTimeout(() => {
-            avatar.style.backgroundImage = 'url("./images/mascots/viya-directions.webp?v=3")';
+            avatar.style.backgroundImage = 'url("./images/mascots/viya-real-directions.webp?v=1")';
             setFrame(4);
             avatar.classList.remove('is-reacting');
             isReacting = false;
@@ -88,6 +88,9 @@
         const section = element.closest('section');
         const sectionId = section ? section.id : '';
 
+        if (element.matches('#contact-form button[type="submit"]')) {
+            return 'Ready to get started? This prepares your project message for our team on WhatsApp.';
+        }
         if (text.includes('book a free consultation') || href.includes('contact.html')) {
             return 'Have a project in mind? This takes you to a real person on our team.';
         }
@@ -109,8 +112,9 @@
 
         const current = root.getBoundingClientRect();
         const target = element.getBoundingClientRect();
-        const avatarWidth = 205;
-        const avatarHeight = 280;
+        const avatarBounds = avatarWrap.getBoundingClientRect();
+        const avatarWidth = avatarBounds.width;
+        const avatarHeight = avatarBounds.height;
         const roomOnLeft = target.left > avatarWidth + 24;
         const left = roomOnLeft
             ? target.left - avatarWidth - 14
@@ -122,7 +126,7 @@
         root.classList.add('is-contextual');
         root.classList.toggle('context-right', !roomOnLeft);
         root.querySelector('.viya-invite').textContent = contextualMessage(element);
-        avatar.style.backgroundImage = 'url("./images/mascots/viya-reactions.webp?v=3")';
+        avatar.style.backgroundImage = 'url("./images/mascots/viya-real-reactions.webp?v=1")';
         setFrame(roomOnLeft ? 2 : 0);
         isReacting = true;
 
@@ -143,7 +147,7 @@
             const homeTop = window.innerHeight - bounds.height - 20;
             root.style.left = `${Math.max(5, homeLeft)}px`;
             root.style.top = `${Math.max(5, homeTop)}px`;
-            avatar.style.backgroundImage = 'url("./images/mascots/viya-directions.webp?v=3")';
+            avatar.style.backgroundImage = 'url("./images/mascots/viya-real-directions.webp?v=1")';
             setFrame(4);
             isReacting = false;
             window.setTimeout(() => {
@@ -204,7 +208,8 @@
     const contextSelector = [
         '#home a', '#top-clients a', '#top-products a', '#what-we-build a',
         '#services a', '#products a', '#open-source a', '#blog a', '#cta a',
-        'header a[href*="contact.html"]', 'header a[href*="pricing.html"]'
+        'header a[href*="contact.html"]', 'header a[href*="pricing.html"]',
+        '#contact-form button[type="submit"]', '#contact-form a', 'a[href^="mailto:"]', 'a[href*="wa.me"]'
     ].join(',');
 
     document.querySelectorAll(contextSelector).forEach((element) => {
