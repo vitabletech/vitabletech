@@ -61,6 +61,7 @@
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- Main stylesheet & FontAwesome -->
     <link rel="stylesheet" href="./css/main.css" fetchpriority="high">
+    <link rel="stylesheet" href="./css/viya-assistant.css">
     <link rel="preload" href="./css/fa-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="./css/fa-purged.css">
@@ -142,7 +143,7 @@
 
     <!-- Announcement Bar (Featured Blogs & News Ticker) -->
     <div
-        class="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-2.5 overflow-hidden relative z-[100] border-b border-cyan-500/20 shadow-lg">
+        class="hidden md:block bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 text-white py-2.5 overflow-hidden relative z-[100] border-b border-cyan-500/20 shadow-lg">
         <div class="whitespace-nowrap animate-marquee flex items-center text-xs md:text-sm font-medium tracking-wide">
             
             <!-- Set 1 -->
@@ -335,7 +336,7 @@
                 <div class="hidden sm:flex items-center gap-4">
                     <a href="./contact.html"
                         class="shiny-btn magnetic-btn px-6 py-2.5 rounded-full font-semibold text-xs text-white shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] flex items-center gap-2 border border-white/20 bg-white/10">
-                        <span>Start Your Project</span>
+                        <span>Book a Free Consultation</span>
                         <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -362,7 +363,7 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="home" class="aurora-bg min-h-[90vh] flex items-center relative py-20 lg:py-28 overflow-hidden">
+    <section id="home" class="aurora-bg min-h-[78vh] lg:min-h-[90vh] flex items-center relative py-14 sm:py-20 lg:py-28 overflow-hidden">
         <!-- Noise & Grid Pattern Overlay -->
         <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
         <div
@@ -383,29 +384,27 @@
 
                     <h1
                         class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-                        We Build Software That <br class="hidden sm:inline" />
+                        Custom ERP, CRM &amp; AI Automation <br class="hidden sm:inline" />
                         <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400">Moves
-                            Your Business Forward.</span>
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400">Built Around Your Business.</span>
                     </h1>
 
                     <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        VitableTech is an India-based software engineering partner helping businesses build custom
-                        ERP, CRM, SaaS, AI-powered applications, automation platforms, and high-performance digital
-                        products.
+                        Replace spreadsheets, disconnected tools, and repetitive work with secure software designed
+                        around your operations. India-based engineering for businesses in India and worldwide.
                     </p>
 
                     <!-- Dual CTAs -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                         <a href="./contact.html"
                             class="w-full sm:w-auto text-center shiny-btn magnetic-btn px-8 py-4 rounded-full font-bold text-sm text-white shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:shadow-[0_0_45px_rgba(6,182,212,0.7)] border border-white/20 flex items-center justify-center gap-3">
-                            <span>Start a Project</span>
+                            <span>Book a Free Consultation</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </a>
-                        <a href="#work"
+                        <a href="#top-clients"
                             class="w-full sm:w-auto text-center px-8 py-4 rounded-full font-bold text-sm text-gray-200 bg-slate-900/80 hover:bg-slate-800 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-xl shadow-lg flex items-center justify-center gap-2">
                             <span>View Our Work</span>
                             <span class="text-cyan-400">→</span>
@@ -413,22 +412,24 @@
                     </div>
 
                     <!-- Trust Metrics Ribbon -->
+                    <p class="-mt-3 text-xs text-gray-400">No sales pressure · NDA available · Response within one business day</p>
+
                     <div
-                        class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-8 text-gray-400 text-xs font-semibold uppercase tracking-wider">
+                        class="pt-5 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-8 text-gray-400 text-xs font-semibold uppercase tracking-wider">
                         <div class="flex items-center gap-2">
-                            <span class="text-cyan-400 text-base">●</span> India-based
+                            <span class="text-cyan-400 text-base">●</span> Real client work
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-violet-400 text-base">●</span> Global delivery
+                            <span class="text-violet-400 text-base">●</span> Business-first engineering
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-blue-400 text-base">●</span> Engineering-led
+                            <span class="text-blue-400 text-base">●</span> Post-launch support
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Content: Floating Glass Technology Cards -->
-                <div class="lg:col-span-5 relative min-h-[450px] sm:min-h-[520px] flex items-center justify-center"
+                <div class="hidden lg:flex lg:col-span-5 relative min-h-[450px] sm:min-h-[520px] items-center justify-center"
                     data-aos="fade-left">
                     <!-- Connected business systems architecture -->
                     <div
@@ -526,8 +527,43 @@
         </div>
     </section>
 
-    <!-- TRUST SECTION: existing client and product names only -->
-    <section id="clients" class="py-16 bg-slate-950/80 border-y border-white/10 relative overflow-hidden">
+    <!-- TOP CLIENT PROJECTS -->
+    <section id="top-clients" class="py-20 bg-slate-950/80 border-y border-white/10 relative overflow-hidden" style="scroll-margin-top: 6rem;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-12">
+                <div class="max-w-3xl">
+                    <span class="text-xs uppercase tracking-widest font-extrabold text-cyan-400 block mb-3">Top client projects</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Live software built for real businesses.</h2>
+                </div>
+                <div class="lg:text-right"><p class="text-sm text-gray-400 max-w-md mb-4">Explore selected client platforms across marketing, medical equipment, diamonds, professional networking, logistics, and luxury travel.</p><a href="./portfolio.html" class="text-sm font-bold text-cyan-300 hover:text-white">View complete live portfolio →</a></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-white/10 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-cyan-300">Digital Marketing</span><span class="w-10 h-10 rounded-xl border border-cyan-400/30 bg-cyan-500/10 flex items-center justify-center text-cyan-300"><i class="fas fa-bullhorn"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">Welcome Home Social</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A focused agency website presenting digital marketing, SEO, advertising, and web-development services for Austin businesses.</p><a href="https://welcomehomesocial.com" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-cyan-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-emerald-400/20 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-emerald-300">Medical Commerce · New</span><span class="w-10 h-10 rounded-xl border border-emerald-400/30 bg-emerald-500/10 flex items-center justify-center text-emerald-300"><i class="fas fa-hospital"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">Ventech Trading</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A medical-equipment platform combining manufacturer information, product catalogue, institutional quotations, and online commerce.</p><a href="https://ventechtrading.com" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-emerald-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-white/10 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-blue-300">Diamond Catalogue</span><span class="w-10 h-10 rounded-xl border border-blue-400/30 bg-blue-500/10 flex items-center justify-center text-blue-300"><i class="fas fa-gem"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">Calibrated Diamonds</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A public catalogue for a Surat manufacturer and exporter of rough, polished, industrial, and precision-cut diamonds.</p><a href="https://www.calibrateddiamonds.in" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-blue-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-white/10 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-violet-300">Professional Network</span><span class="w-10 h-10 rounded-xl border border-violet-400/30 bg-violet-500/10 flex items-center justify-center text-violet-300"><i class="fas fa-location-dot"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">MappCall</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A geolocation-based networking and lead-generation platform connecting users with nearby professionals and businesses.</p><a href="https://www.mappcall.com" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-violet-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-white/10 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-amber-300">Logistics</span><span class="w-10 h-10 rounded-xl border border-amber-400/30 bg-amber-500/10 flex items-center justify-center text-amber-300"><i class="fas fa-truck-moving"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">Swiftal Logistics</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A purpose-built digital platform supporting connected supply-chain and logistics-management workflows.</p><a href="https://www.swiftallogistics.com" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-amber-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+                <article class="case-study-card spotlight-card p-7 sm:p-8 rounded-3xl bg-slate-900/70 border border-white/10 flex flex-col"><div class="flex items-center justify-between gap-4 mb-8"><span class="text-xs uppercase tracking-[0.18em] font-bold text-pink-300">Luxury Travel</span><span class="w-10 h-10 rounded-xl border border-pink-400/30 bg-pink-500/10 flex items-center justify-center text-pink-300"><i class="fas fa-sailboat"></i></span></div><h3 class="text-2xl font-extrabold text-white mb-4">Champions Club</h3><p class="text-sm text-gray-400 leading-relaxed flex-grow">A luxury marketplace for stays, yacht and air charters, curated experiences, events, concierge, and membership.</p><a href="https://www.champions.club" target="_blank" rel="noopener noreferrer" class="mt-8 pt-5 border-t border-white/10 inline-flex items-center gap-2 text-sm font-bold text-pink-300 hover:text-white">Visit Live Project <span>→</span></a></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOP VITABLETECH PRODUCTS -->
+    <section id="top-products" class="py-20 bg-dark border-b border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12"><span class="text-xs uppercase tracking-widest font-extrabold text-violet-400 block mb-3">Top VitableTech products</span><h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Products we build and operate.</h2><p class="mt-4 text-gray-400">Public tools for social publishing, Google Business Profile development, career workflows, and developer productivity.</p></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                <a href="https://socialhub.vitabletech.in" target="_blank" rel="noopener noreferrer" class="group p-6 rounded-2xl bg-gradient-to-br from-blue-950/70 to-slate-900 border border-blue-400/20 hover:border-blue-300/50 transition-all"><span class="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-300"><i class="fas fa-share-nodes"></i></span><h3 class="mt-6 text-xl font-bold text-white">SocialHub</h3><p class="mt-2 text-sm text-gray-400">Manage and publish content across multiple social platforms from one workspace.</p><span class="mt-6 inline-flex text-xs font-bold text-blue-300">Open product →</span></a>
+                <a href="https://gbp.vitabletech.in" target="_blank" rel="noopener noreferrer" class="group p-6 rounded-2xl bg-gradient-to-br from-emerald-950/70 to-slate-900 border border-emerald-400/20 hover:border-emerald-300/50 transition-all"><span class="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-300"><i class="fas fa-store"></i></span><h3 class="mt-6 text-xl font-bold text-white">GBP Node.js SDK</h3><p class="mt-2 text-sm text-gray-400">Typed automation for Google Business Profile locations, posts, reviews, media, and more.</p><span class="mt-6 inline-flex text-xs font-bold text-emerald-300">View SDK →</span></a>
+                <a href="https://careerbuddy.vitabletech.in" target="_blank" rel="noopener noreferrer" class="group p-6 rounded-2xl bg-gradient-to-br from-violet-950/70 to-slate-900 border border-violet-400/20 hover:border-violet-300/50 transition-all"><span class="w-12 h-12 rounded-xl bg-violet-500/15 flex items-center justify-center text-violet-300"><i class="fas fa-user-graduate"></i></span><h3 class="mt-6 text-xl font-bold text-white">CareerBuddy</h3><p class="mt-2 text-sm text-gray-400">AI career companion for professional profiles, resumes, applications, and coaching.</p><span class="mt-6 inline-flex text-xs font-bold text-violet-300">Launch product →</span></a>
+                <a href="https://snippetmaster.vitabletech.in" target="_blank" rel="noopener noreferrer" class="group p-6 rounded-2xl bg-gradient-to-br from-amber-950/60 to-slate-900 border border-amber-400/20 hover:border-amber-300/50 transition-all"><span class="w-12 h-12 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-300"><i class="fas fa-code"></i></span><h3 class="mt-6 text-xl font-bold text-white">SnippetMaster</h3><p class="mt-2 text-sm text-gray-400">Reusable VS Code snippets and commands across development and DevOps workflows.</p><span class="mt-6 inline-flex text-xs font-bold text-amber-300">Explore product →</span></a>
+            </div>
+            <div class="text-center mt-10"><a href="./projects.html#products" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-white bg-violet-600 hover:bg-violet-500 border border-violet-400/40 transition-all shadow-[0_0_25px_rgba(139,92,246,.25)]"><span>View All Products</span><span aria-hidden="true">→</span></a></div>
+        </div>
+    </section>
+
+    <!-- LEGACY CLIENT MARQUEE (kept in source for future use) -->
+    <section id="clients" class="hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
             <span class="text-xs uppercase tracking-widest font-extrabold text-cyan-400 mb-2 block">Selected work</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Software Built for Real Businesses
@@ -681,7 +717,7 @@
     </section>
 
     <!-- FEATURED CASE STUDIES -->
-    <section id="work" class="py-24 bg-dark relative overflow-hidden">
+    <section id="work" class="hidden" aria-hidden="true">
         <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-aos="fade-up">
@@ -2121,6 +2157,23 @@
         </div>
     </section>
 
+    <!-- LEAD-CONVERSION FAQ -->
+    <section id="project-faq" class="py-20 bg-slate-950 relative border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-widest mb-4">Before we start</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Clear answers before the first call</h2>
+                <p class="mt-4 text-gray-400">A practical first conversation about scope, risk, timeline, and the right way to build.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="p-6 rounded-2xl bg-slate-900/70 border border-white/10"><h3 class="text-lg font-bold text-white">What happens during the free consultation?</h3><p class="mt-2 text-sm leading-relaxed text-gray-400">We discuss the business problem, users, current workflow, integrations, constraints, and the next useful step. You do not need a finished technical specification.</p></div>
+                <div class="p-6 rounded-2xl bg-slate-900/70 border border-white/10"><h3 class="text-lg font-bold text-white">Can you improve an existing product?</h3><p class="mt-2 text-sm leading-relaxed text-gray-400">Yes. We can review an existing application, stabilise critical areas, add workflows or integrations, and plan modernisation without automatically rebuilding everything.</p></div>
+                <div class="p-6 rounded-2xl bg-slate-900/70 border border-white/10"><h3 class="text-lg font-bold text-white">How are cost and timeline decided?</h3><p class="mt-2 text-sm leading-relaxed text-gray-400">They depend on scope, integrations, risk, design readiness, and delivery stages. After discovery, we explain the assumptions and recommend an engagement approach.</p></div>
+                <div class="p-6 rounded-2xl bg-slate-900/70 border border-white/10"><h3 class="text-lg font-bold text-white">Do you support the software after launch?</h3><p class="mt-2 text-sm leading-relaxed text-gray-400">Support, maintenance, monitoring, and continued improvements can be included based on the product’s operational needs.</p></div>
+            </div>
+        </div>
+    </section>
+
     <!-- FULL-WIDTH CTA SECTION (Liquid Glass + Border Beam) -->
     <section id="cta" class="py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -2141,20 +2194,20 @@
                         <span>Start a conversation</span>
                     </span>
                     <h2 class="text-3xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                        Have a Software Idea? <br class="hidden sm:inline" />
+                        Have a Workflow to Improve? <br class="hidden sm:inline" />
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-300">Let's
                             Talk.</span>
                     </h2>
                     <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        Tell us what you're trying to build, improve, automate, or scale. We'll help you identify the
-                        right architecture, technology, and development approach.
+                        Tell us where work is slow, disconnected, or difficult to scale. We’ll help you identify a
+                        practical software approach and the clearest next step.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="./contact.html"
                             class="w-full sm:w-auto shiny-btn magnetic-btn px-10 py-4 rounded-full font-extrabold text-sm text-white shadow-[0_0_35px_rgba(37,99,235,0.6)] hover:shadow-[0_0_50px_rgba(6,182,212,0.8)] border border-white/30 flex items-center justify-center gap-3">
-                            <span>Start a Project</span>
+                            <span>Book a Free Consultation</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -2166,7 +2219,7 @@
                             <span>Chat on WhatsApp</span>
                         </a>
                     </div>
-                    <p class="mt-6 text-sm text-gray-400">No commitment. Just an engineering conversation.</p>
+                    <p class="mt-6 text-sm text-gray-400">No sales pressure · NDA available · Response within one business day</p>
                 </div>
             </div>
 
@@ -2555,10 +2608,10 @@
                 <i class="fas fa-briefcase text-lg "></i>
                 <span class="text-[10px] mt-1 tracking-tight">Projects</span>
             </a>
-            <a href="./blog/index.html"
-                class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-gray-400 hover:text-white glass-nav-item">
-                <i class="fas fa-newspaper text-lg "></i>
-                <span class="text-[10px] mt-1 tracking-tight">Blog</span>
+            <a href="./contact.html"
+                class="flex flex-col items-center py-1.5 px-3 rounded-xl transition-all text-emerald-300 hover:text-white glass-nav-item">
+                <i class="fas fa-comments text-lg"></i>
+                <span class="text-[10px] mt-1 tracking-tight font-semibold">Consult</span>
             </a>
             <button id="bottom-nav-menu-btn" aria-label="Open Menu"
                 class="flex flex-col items-center py-1.5 px-3 rounded-xl text-gray-400 hover:text-white transition-all active:scale-95 focus:outline-none glass-nav-item">
@@ -2568,34 +2621,49 @@
         </div>
     </nav>
 
-    <!-- FLOATING BACK TO TOP BUTTON -->
-    <button id="back-to-top-btn" aria-label="Scroll Back to Top"
-        class="fixed bottom-20 md:bottom-8 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 border border-white/20 text-white shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:shadow-[0_0_35px_rgba(37,99,235,0.7)] hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center justify-center group">
-        <svg class="w-5 h-5 transform group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-    </button>
+    <!-- VIYA: STATIC INTERACTIVE SITE GUIDE -->
+    <section id="viya-assistant" class="viya-assistant" aria-label="Viya, VitableTech site guide">
+        <div class="viya-panel" role="dialog" aria-label="Chat with Viya">
+            <div class="viya-panel-header">
+                <div>
+                    <p class="viya-name">Viya · VitableTech Guide</p>
+                    <p class="viya-status">● Online with quick answers</p>
+                </div>
+                <button class="viya-close" type="button" aria-label="Close Viya guide">×</button>
+            </div>
+            <div class="viya-panel-body">
+                <p class="viya-message viya-intro">
+                    Hi, I’m Viya. What would you like to know about building with VitableTech?
+                    <span class="viya-disclosure">I’m an interactive guide with predefined answers—not a live AI or human chat.</span>
+                </p>
+                <div class="viya-questions-wrap">
+                    <p class="viya-question-label">Choose a question</p>
+                    <div class="viya-questions">
+                        <button class="viya-question" type="button" data-answer="services">What can you build?</button>
+                        <button class="viya-question" type="button" data-answer="work">Show me client work</button>
+                        <button class="viya-question" type="button" data-answer="products">Explore your products</button>
+                        <button class="viya-question" type="button" data-answer="process">How does it work?</button>
+                        <button class="viya-question" type="button" data-answer="budget">What will it cost?</button>
+                        <button class="viya-question" type="button" data-answer="human">Can I talk to a person?</button>
+                    </div>
+                </div>
+                <div class="viya-answer" aria-live="polite">
+                    <p class="viya-answer-text"></p>
+                    <div class="viya-answer-actions">
+                        <a class="viya-action" href="./contact.html">Continue →</a>
+                        <button class="viya-back" type="button">Ask something else</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="viya-invite" aria-hidden="true">Hi! Need help choosing a service?</div>
+        <div class="viya-avatar-wrap" role="button" tabindex="0" aria-label="Open Viya guide" aria-expanded="false">
+            <div class="viya-avatar" aria-hidden="true"></div>
+            <span class="viya-online" aria-hidden="true"></span>
+        </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const backToTopBtn = document.getElementById('back-to-top-btn');
-            if (backToTopBtn) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) {
-                        backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                        backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-                    } else {
-                        backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-                        backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-                    }
-                });
-                backToTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-        });
-    </script>
+    <script src="./js/viya-assistant.js"></script>
 
 </body>
 

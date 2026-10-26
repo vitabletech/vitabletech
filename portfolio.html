@@ -393,7 +393,8 @@
         const projects = [
             // Client Sites
             { id: 'lazyshopper', category: 'clients', name: 'Lazy Shopper', url: 'https://www.lazyshopper.in/', tag: 'Client', desc: 'E-commerce and shopping portal' },
-            { id: 'welcomehome', category: 'clients', name: 'Welcome Home Social', url: 'https://welcomehomesocial.com', tag: 'Client', desc: 'Real estate social platform' },
+            { id: 'welcomehome', category: 'clients', name: 'Welcome Home Social', url: 'https://welcomehomesocial.com', tag: 'Client', desc: 'Digital marketing agency website' },
+            { id: 'ventech', category: 'clients', name: 'Ventech Trading', url: 'https://ventechtrading.com', tag: 'Client', desc: 'Medical equipment manufacturing and commerce platform' },
             { id: 'aa1stchoice', category: 'clients', name: 'AA 1st Choice', url: 'https://aa1stchoice.com', tag: 'Client', desc: 'Home services provider' },
             { id: 'corewellness', category: 'clients', name: 'Core Wellness LBK', url: 'https://corewellnesslbk.com', tag: 'Client', desc: 'Health and wellness clinic' },
             { id: 'modernday', category: 'clients', name: 'Modern Day Concrete', url: 'https://moderndayconcrete.com', tag: 'Client', desc: 'Contracting and concrete services' },
@@ -417,6 +418,7 @@
             { id: 'ourkarigar', category: 'featured', name: 'Our Karigar', url: 'https://ourkarigar.in/', tag: 'App', desc: 'On-demand home services' },
 
             // Internal Products & Tools
+            { id: 'socialhub', category: 'internal', name: 'SocialHub', url: 'https://socialhub.vitabletech.in', tag: 'Product', desc: 'Multi-platform social media publishing and scheduling' },
             { id: 'apna-design', category: 'internal', name: 'Apna Design', url: 'https://apna.design', tag: 'Tool', desc: 'Design resources and templates' },
             { id: 'legalresearch', category: 'internal', name: 'Legal Research Desk', url: 'https://legalresearchdesk.vitabletech.in', tag: 'App', desc: 'Tools for legal documentation' },
             { id: 'plannerbuddy', category: 'internal', name: 'PlannerBuddy', url: 'https://plannerbuddy.vitabletech.in', tag: 'App', desc: 'AI productivity and task engine' },
@@ -557,6 +559,7 @@
 
         function setupSearch() {
             const input = document.getElementById('project-search');
+            if (!input) return;
             input.addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 renderGrid();

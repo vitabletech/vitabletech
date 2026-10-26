@@ -374,8 +374,8 @@
                         <div class="mb-8">
                             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Book Your Free Consultation
                             </h2>
-                            <p class="text-xs sm:text-sm text-gray-400">Fill out your project specifications below. Our
-                                senior engineering architects respond within 4 hours.</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Share the problem you want to solve. We normally
+                                respond within one business day.</p>
                         </div>
 
                         <form id="contact-form" onsubmit="handleConsultationSubmit(event)" class="space-y-6">
@@ -400,6 +400,19 @@
                                         <option value="DevOps">DevOps & AWS Cloud Migration</option>
                                         <option value="Other">Other Consultation / Support</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="cons-email" class="text-xs font-bold uppercase tracking-wider text-gray-300">Work Email *</label>
+                                    <input type="email" id="cons-email" required autocomplete="email" placeholder="you@company.com"
+                                        class="w-full bg-slate-900/90 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="cons-phone" class="text-xs font-bold uppercase tracking-wider text-gray-300">Phone / WhatsApp <span class="normal-case text-gray-500">(optional)</span></label>
+                                    <input type="tel" id="cons-phone" autocomplete="tel" placeholder="+91 98765 43210"
+                                        class="w-full bg-slate-900/90 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all" />
                                 </div>
                             </div>
 
@@ -465,14 +478,21 @@
                                     class="w-full bg-slate-900/90 border border-white/15 rounded-xl p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"></textarea>
                             </div>
 
+                            <label class="flex items-start gap-3 text-xs text-gray-400 leading-relaxed">
+                                <input type="checkbox" id="cons-privacy" required class="mt-1 accent-cyan-500" />
+                                <span>I agree that VitableTech may use these details to respond to my enquiry. See the <a href="./policies/privacy-policy.html" class="text-cyan-300 underline underline-offset-2">Privacy Policy</a>.</span>
+                            </label>
+
                             <button type="submit"
                                 class="w-full shiny-btn magnetic-btn py-4 rounded-xl font-extrabold text-sm text-white shadow-[0_0_35px_rgba(37,99,235,0.5)] hover:shadow-[0_0_45px_rgba(6,182,212,0.8)] flex items-center justify-center gap-2 border border-white/20">
-                                <span>Send Consultation Request</span>
+                                <i class="fab fa-whatsapp text-lg"></i>
+                                <span>Continue to WhatsApp</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </button>
+                            <p id="consultation-status" class="text-xs text-center text-gray-400" aria-live="polite">Your message will be prepared in WhatsApp. Review it there and tap Send to contact us.</p>
                         </form>
 
                     </div>
@@ -730,8 +750,11 @@
                 window.location.href = waUrl;
             }
 
-            // Reset form after triggering WhatsApp
-            event.target.reset();
+            const statusEl = document.getElementById('consultation-status');
+            if (statusEl) {
+                statusEl.textContent = 'WhatsApp opened with your message. Please review it and tap Send. Your form has been kept here until you finish.';
+                statusEl.className = 'text-xs text-center text-emerald-300';
+            }
         }
     </script>
 
