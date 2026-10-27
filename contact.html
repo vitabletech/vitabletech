@@ -49,6 +49,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://calendar.google.com">
 
     <!-- Google Fonts: Geist, Inter, Outfit -->
     <link rel="preload"
@@ -131,7 +132,7 @@
                     class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold">🌐</span>
                 <span class="text-white font-semibold">Global Engineering Partner:</span> Headquartered in India,
                 delivering cutting-edge software & AI architectures across USA, Japan, India & worldwide.
-                <a href="./contact.html"
+                <a href="#book-consultation"
                     class="underline decoration-cyan-400 underline-offset-4 text-cyan-300 font-semibold hover:text-white transition-colors ml-1">Book
                     Global Consultation →</a>
             </span>
@@ -230,9 +231,9 @@
 
                 <!-- Right Action / Primary CTA -->
                 <div class="hidden sm:flex items-center gap-4">
-                    <a href="./contact.html"
+                    <a href="#book-consultation"
                         class="shiny-btn magnetic-btn px-6 py-2.5 rounded-full font-semibold text-xs text-white shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] flex items-center gap-2 border border-white/20 bg-white/10">
-                        <span>Start Your Project</span>
+                        <span>Book a Free Call</span>
                         <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -276,6 +277,70 @@
                 Whether you need a full-scale enterprise software architecture, an AI-driven SaaS platform, or a
                 high-performance web application, our team in India is ready to deploy globally.
             </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#book-consultation" class="w-full sm:w-auto shiny-btn px-8 py-4 rounded-full font-bold text-sm text-white border border-white/20 shadow-[0_0_30px_rgba(37,99,235,0.45)]">
+                    Book a Free 15-Minute Call
+                </a>
+                <a href="#contact-form" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm text-gray-200 bg-slate-900/70 hover:bg-slate-800 border border-white/10 hover:border-cyan-400/40 transition-all">
+                    Send Project Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE CALENDAR APPOINTMENT SCHEDULER -->
+    <section id="book-consultation" class="py-20 bg-slate-950 relative overflow-hidden border-b border-white/10" aria-labelledby="booking-heading">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.14),transparent_48%)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-widest mb-4">
+                        <i class="far fa-calendar-check" aria-hidden="true"></i>
+                        Schedule online
+                    </span>
+                    <h2 id="booking-heading" class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">Book a free 15-minute consultation</h2>
+                    <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Choose an available time to discuss your business goals, website or app requirements, automation, cloud infrastructure, or digital growth needs with VitableTech.</p>
+                </div>
+                <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2M0LpxhPPzIfoUnwSH6pbU7c9giagPpd8u_IkSWRAg4TvjWCNdW-c1nk9qiI7aGkXG-JESecpE?gv=true"
+                    target="_blank" rel="noopener noreferrer" data-track="calendar_fallback"
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold text-white bg-white/5 hover:bg-white/10 border border-white/15 hover:border-cyan-400/50 transition-all whitespace-nowrap">
+                    Open calendar in a new tab <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="mb-6 grid sm:grid-cols-3 gap-3" aria-label="Consultation benefits">
+                <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300"><i class="far fa-clock" aria-hidden="true"></i></span>
+                    <span><strong class="block text-sm text-white">Just 15 minutes</strong><span class="text-xs text-gray-500">Focused and practical</span></span>
+                </div>
+                <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-400/10 text-blue-300"><i class="fas fa-video" aria-hidden="true"></i></span>
+                    <span><strong class="block text-sm text-white">Google Meet</strong><span class="text-xs text-gray-500">Link sent automatically</span></span>
+                </div>
+                <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300"><i class="fas fa-globe" aria-hidden="true"></i></span>
+                    <span><strong class="block text-sm text-white">Your local time</strong><span class="text-xs text-gray-500">Timezone adjusted for you</span></span>
+                </div>
+            </div>
+
+            <div class="relative rounded-[2rem] border border-cyan-400/20 bg-slate-900/80 p-1.5 sm:p-2 overflow-hidden shadow-[0_30px_90px_rgba(2,6,23,0.65),0_0_45px_rgba(37,99,235,0.10)]">
+                <div class="flex items-center justify-between gap-4 px-4 sm:px-5 py-3 text-xs border-b border-white/10">
+                    <div class="flex items-center gap-2.5 text-gray-300 font-semibold">
+                        <span class="relative flex h-2.5 w-2.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span></span>
+                        Live availability
+                    </div>
+                    <span class="hidden sm:inline-flex items-center gap-2 text-gray-500"><i class="fas fa-lock text-[10px]" aria-hidden="true"></i> Secure scheduling by Google Calendar</span>
+                </div>
+                <iframe
+                    src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2M0LpxhPPzIfoUnwSH6pbU7c9giagPpd8u_IkSWRAg4TvjWCNdW-c1nk9qiI7aGkXG-JESecpE?gv=true"
+                    title="Book a free consultation with VitableTech"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    class="block w-full h-[720px] sm:h-[780px] lg:h-[820px] bg-white rounded-b-[1.55rem]"
+                    data-track="calendar_embed">
+                </iframe>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 text-center">Appointment availability and time-zone conversion are provided by Google Calendar. A Google Meet link is added after booking.</p>
         </div>
     </section>
 
@@ -836,9 +901,9 @@
 
         <!-- Drawer Footer CTA -->
         <div class="p-5 border-t border-white/10 bg-white/[0.02] space-y-3">
-            <a href="./contact.html"
+            <a href="#book-consultation"
                 class="w-full shiny-btn py-3.5 rounded-xl font-bold text-sm text-white shadow-[0_0_25px_rgba(6,182,212,0.4)] flex items-center justify-center gap-2 border border-white/20 active:scale-[0.98] transition-transform">
-                <span>Start Your Project</span>
+                <span>Book a Free Call</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                         d="M14 5l7 7m0 0l-7 7m7-7H3" />
