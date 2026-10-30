@@ -1,4 +1,4 @@
-const CACHE_VERSION = '1.0.89';
+const CACHE_VERSION = '1.0.91';
 const CACHE_NAME = `vitabletech-cache-v${CACHE_VERSION}`;
 
 const urlsToCache = [
