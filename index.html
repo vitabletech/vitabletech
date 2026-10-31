@@ -9,7 +9,7 @@
     <title>Custom Software & AI Engineering Company in India | VitableTech</title>
     <meta name="title" content="Custom Software & AI Engineering Company in India | VitableTech">
     <meta name="description"
-        content="VitableTech is a Gwalior, India-based software engineering partner building custom ERP, CRM, SaaS, AI-powered applications, automation platforms, web and mobile products for businesses worldwide.">
+        content="VitableTech builds custom ERP and CRM software, websites, SaaS products, and AI automation for businesses in India and worldwide. Explore our services and real product work.">
     <meta name="keywords"
         content="custom software development India, software development company India, AI development company, ERP development, CRM development, SaaS development, web application development, AI automation, software engineering Gwalior">
     <meta name="author" content="VitableTech">
@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://vitabletech.in/">
     <meta property="og:title" content="Custom Software & AI Engineering Company in India | VitableTech">
     <meta property="og:description"
-        content="India-based engineering for custom software, AI systems, ERP, CRM, SaaS, web and mobile applications—delivered for businesses worldwide.">
+        content="VitableTech builds custom ERP and CRM software, websites, SaaS products, and AI automation for businesses in India and worldwide. Explore our services and real product work.">
     <meta property="og:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Twitter -->
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://vitabletech.in/">
     <meta property="twitter:title" content="Custom Software & AI Engineering Company in India | VitableTech">
     <meta property="twitter:description"
-        content="India-based engineering for custom software, AI systems, ERP, CRM, SaaS, web and mobile applications—delivered for businesses worldwide.">
+        content="VitableTech builds custom ERP and CRM software, websites, SaaS products, and AI automation for businesses in India and worldwide. Explore our services and real product work.">
     <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Favicon & Manifest Tags -->
@@ -58,7 +58,6 @@
             href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
             rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- Main stylesheet & FontAwesome -->
     <link rel="stylesheet" href="./css/main.css" fetchpriority="high">
     <link rel="stylesheet" href="./css/viya-assistant.css?v=4">
@@ -85,7 +84,7 @@
           "url": "https://vitabletech.in/",
           "logo": "https://vitabletech.in/images/logo.svg",
           "email": "info@vitabletech.in",
-          "telephone": "+91-9009410973",
+          "telephone": "+916280671085",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Gwalior",
@@ -121,21 +120,21 @@
     }
     </script>
 
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
 </head>
 
@@ -314,7 +313,7 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav
-                    class="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10 shadow-inner backdrop-blur-md">
+                    class="hidden xl:flex items-center gap-0.5 xl:gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10 shadow-inner backdrop-blur-md">
                     <a href="./about.html"
                         class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">About</a>
                     <a href="./services/index.html"
@@ -330,6 +329,8 @@
                         & Blog</a>
                     <a href="./pricing.html"
                         class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Pricing</a>
+                    <a href="#campaign-videos"
+                        class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Videos</a>
                 </nav>
 
                 <!-- Right Action / Primary CTA -->
@@ -346,7 +347,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
+                <div class="xl:hidden flex items-center">
                     <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu"
                         class="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-gray-300 hover:text-white hover:border-cyan-400/40 focus:outline-none transition-colors active:scale-95">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -379,19 +380,18 @@
                     <div
                         class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-white/10 text-cyan-300 text-xs font-semibold backdrop-blur-xl shadow-lg">
                         <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                        <span>CUSTOM SOFTWARE&nbsp; • &nbsp;AI&nbsp; • &nbsp;SAAS</span>
+                        <span>TECHNOLOGY THAT WORKS FOR BUSINESS</span>
                     </div>
 
                     <h1
                         class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-                        Custom ERP, CRM &amp; AI Automation <br class="hidden sm:inline" />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400">Built Around Your Business.</span>
+                        Technology That <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400">Moves Your Business Forward.</span>
                     </h1>
 
+                    <h2 class="text-xl sm:text-2xl font-bold text-white max-w-2xl mx-auto lg:mx-0">Custom ERP, CRM, Websites &amp; AI Automation.</h2>
                     <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        Replace spreadsheets, disconnected tools, and repetitive work with secure software designed
-                        around your operations. India-based engineering for businesses in India and worldwide.
+                        We design, develop and integrate digital solutions that simplify operations, improve customer experiences and help businesses grow.
                     </p>
 
                     <!-- Dual CTAs -->
@@ -404,9 +404,9 @@
                                     d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </a>
-                        <a href="#top-clients"
+                        <a href="#what-we-build"
                             class="w-full sm:w-auto text-center px-8 py-4 rounded-full font-bold text-sm text-gray-200 bg-slate-900/80 hover:bg-slate-800 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-xl shadow-lg flex items-center justify-center gap-2">
-                            <span>View Our Work</span>
+                            <span>Explore Our Solutions</span>
                             <span class="text-cyan-400">→</span>
                         </a>
                     </div>
@@ -428,104 +428,152 @@
                     </div>
                 </div>
 
-                <!-- Right Content: Floating Glass Technology Cards -->
-                <div class="hidden lg:flex lg:col-span-5 relative min-h-[450px] sm:min-h-[520px] items-center justify-center"
-                    data-aos="fade-left">
-                    <!-- Connected business systems architecture -->
-                    <div
-                        class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-blue-600 via-violet-600 to-cyan-500 blur-3xl opacity-30">
-                    </div>
-
-                    <svg class="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] text-cyan-300/30 pointer-events-none"
-                        viewBox="0 0 400 400" fill="none" aria-hidden="true">
-                        <path d="M90 92L202 199L308 98M92 300L202 199L308 302" stroke="currentColor" stroke-width="1.5"
-                            stroke-dasharray="5 7" />
-                        <circle cx="202" cy="199" r="47" stroke="currentColor" stroke-width="1.5" />
-                        <circle cx="202" cy="199" r="6" fill="currentColor" />
-                    </svg>
-
-                    <!-- Floating Card Grid / Ecosystem -->
-                    <div class="relative w-full h-full max-w-md grid grid-cols-2 gap-4 p-4">
-
-                        <!-- Card 1: React / Next.js -->
-                        <div
-                            class="spotlight-card liquid-glass p-5 rounded-2xl flex flex-col justify-between border border-white/15 animate-float shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                            <div class="flex items-center justify-between mb-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl font-bold">
-                                    <i class="fab fa-react animate-spin-slow"></i>
-                                </div>
-                                <span
-                                    class="text-[10px] uppercase font-bold text-cyan-300 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20">Customer</span>
+                <!-- Viya: VitableTech AI brand ambassador -->
+                <div class="lg:col-span-5 relative flex items-center justify-center min-h-[360px] sm:min-h-[500px]" data-aos="fade-left">
+                    <div class="viya-hero-glow" aria-hidden="true"></div>
+                    <div class="viya-hero-carousel" role="region" aria-roledescription="carousel" aria-label="Meet Viya, VitableTech AI brand ambassador" tabindex="0">
+                        <figure class="viya-hero-card">
+                            <img class="viya-hero-slide-image is-product" src="./images/product-images/gbp-sdk.webp"
+                                alt="VitableTech GBP SDK product showcase for Google Business Profile integrations"
+                                width="1024" height="1536" fetchpriority="high" decoding="async">
+                            <div class="viya-hero-slide-scrim" aria-hidden="true"></div>
+                            <figcaption class="viya-hero-caption">
+                                <span class="viya-hero-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m12 2 1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7L12 2Zm7 13 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z" fill="currentColor"/></svg></span>
+                                <span><strong class="viya-hero-slide-title">Software for real workflows</strong><small class="viya-hero-slide-copy">See a VitableTech developer product</small></span>
+                            </figcaption>
+                            <span class="viya-hero-live"><span></span> <span class="viya-hero-slide-kicker">GBP SDK • Product showcase</span></span>
+                        </figure>
+                        <div class="viya-hero-controls" aria-label="Viya hero slider controls">
+                            <button class="viya-hero-control viya-hero-prev" type="button" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+                            <div class="viya-hero-dots" role="group" aria-label="Choose a slide">
+                                <button type="button" aria-label="Show slide 1" aria-current="true"></button>
+                                <button type="button" aria-label="Show slide 2" aria-current="false"></button>
+                                <button type="button" aria-label="Show slide 3" aria-current="false"></button>
                             </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white mb-1">CRM & Portals</h3>
-                                <p class="text-xs text-gray-400 leading-relaxed">Customer workflows, self-service,
-                                    and connected digital experiences.</p>
-                            </div>
+                            <button class="viya-hero-control viya-hero-next" type="button" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                            <button class="viya-hero-control viya-hero-toggle" type="button" aria-label="Pause automatic slides" aria-pressed="false"><i class="fas fa-pause" aria-hidden="true"></i></button>
                         </div>
-
-                        <!-- Card 2: AI & Machine Learning -->
-                        <div
-                            class="spotlight-card liquid-glass p-5 rounded-2xl flex flex-col justify-between border border-white/15 animate-float-slow shadow-2xl transform hover:scale-105 transition-transform duration-300 translate-y-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 text-xl font-bold">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <span
-                                    class="text-[10px] uppercase font-bold text-violet-300 px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/20">AI
-                                    / LLM</span>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white mb-1">AI Layer</h3>
-                                <p class="text-xs text-gray-400 leading-relaxed">AI agents, RAG, and useful automation
-                                    integrated into business systems.</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 3: Node.js & Laravel -->
-                        <div
-                            class="spotlight-card liquid-glass p-5 rounded-2xl flex flex-col justify-between border border-white/15 animate-float-fast shadow-2xl transform hover:scale-105 transition-transform duration-300 -translate-y-4">
-                            <div class="flex items-center justify-between mb-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xl font-bold">
-                                    <i class="fab fa-node-js"></i>
-                                </div>
-                                <span
-                                    class="text-[10px] uppercase font-bold text-green-300 px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20">Operations</span>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white mb-1">ERP & Workflows</h3>
-                                <p class="text-xs text-gray-400 leading-relaxed">Operations, inventory, and data flows
-                                    designed around how teams work.</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 4: AWS & Docker Cloud -->
-                        <div
-                            class="spotlight-card liquid-glass p-5 rounded-2xl flex flex-col justify-between border border-white/15 animate-float shadow-2xl transform hover:scale-105 transition-transform duration-300 translate-y-2">
-                            <div class="flex items-center justify-between mb-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl font-bold">
-                                    <i class="fab fa-aws"></i>
-                                </div>
-                                <span
-                                    class="text-[10px] uppercase font-bold text-amber-300 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Platform</span>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-bold text-white mb-1">Cloud & Data</h3>
-                                <p class="text-xs text-gray-400 leading-relaxed">Reliable infrastructure, integrations,
-                                    analytics, and mobile access.</p>
-                            </div>
-                        </div>
-
+                        <a href="./contact.html?campaign=viya-brand-ambassador" class="viya-hero-float">
+                            <span class="viya-hero-float-icon"><i class="fas fa-comments" aria-hidden="true"></i></span>
+                            <span><strong class="viya-hero-cta-title">Plan a project with us</strong><small class="viya-hero-cta-copy">Talk with the VitableTech team</small></span>
+                            <span class="viya-hero-arrow" aria-hidden="true">→</span>
+                        </a>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <style>
+        .viya-hero-glow{position:absolute;width:78%;height:75%;border-radius:50%;background:radial-gradient(ellipse,rgba(37,99,235,.38),rgba(124,58,237,.16) 44%,transparent 72%);filter:blur(18px);pointer-events:none}
+        .viya-hero-carousel{position:relative;z-index:1;width:min(100%,500px);outline:none}
+        .viya-hero-carousel:focus-visible{border-radius:2rem;outline:2px solid #67e8f9;outline-offset:6px}
+        .viya-hero-card{position:relative;width:100%;height:clamp(300px,33vw,430px);margin:0;overflow:hidden;border-radius:2rem;border:1px solid rgba(125,211,252,.32);background:linear-gradient(145deg,#172554,#020617 70%);box-shadow:0 28px 90px rgba(2,6,23,.6),0 0 50px rgba(6,182,212,.12)}
+        .viya-hero-card:has(.viya-hero-slide-image.is-portrait)::before{content:"";position:absolute;inset:-1rem;background:url('./images/campaigns/vitabletech-ambassador.webp') center 30%/cover no-repeat;filter:blur(18px);transform:scale(1.06);opacity:.42}
+        .viya-hero-slide-image{width:100%;height:100%;display:block;object-fit:cover;object-position:center 25%;transition:opacity .32s ease,transform 6s ease;animation:viya-slide-enter .6s ease both}
+        .viya-hero-slide-image.is-changing{opacity:.2;transform:scale(1.035)}
+        .viya-hero-slide-image.is-product{object-fit:contain;padding:.35rem;background:#020617}
+        .viya-hero-slide-image.is-portrait{position:relative;z-index:0;object-fit:contain;object-position:center center;padding:0;background:linear-gradient(90deg,rgba(2,6,23,.55),transparent 30%,transparent 70%,rgba(2,6,23,.55))}
+        @keyframes viya-slide-enter{from{transform:scale(1.045);filter:brightness(.82)}to{transform:scale(1);filter:brightness(1)}}
+        .viya-hero-slide-scrim{position:absolute;inset:30% 0 0;background:linear-gradient(180deg,transparent 20%,rgba(2,6,23,.85));pointer-events:none}
+        .viya-hero-caption{position:absolute;z-index:1;left:1rem;right:1rem;bottom:1rem;display:flex;align-items:center;gap:.8rem;color:#fff}
+        .viya-hero-mark{display:grid;place-items:center;width:2.7rem;height:2.7rem;flex:none;border-radius:.9rem;background:rgba(8,145,178,.95);color:white;box-shadow:0 8px 24px rgba(8,145,178,.3)}
+        .viya-hero-mark svg{display:block;width:1.35rem;height:1.35rem}
+        .viya-hero-caption strong,.viya-hero-caption small,.viya-hero-float strong,.viya-hero-float small{display:block}
+        .viya-hero-caption strong{font-size:1rem}.viya-hero-caption small{margin-top:.15rem;color:#cbd5e1;font-size:.75rem}
+        .viya-hero-live{position:absolute;top:1rem;left:1rem;z-index:1;display:inline-flex;align-items:center;gap:.45rem;padding:.48rem .72rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(2,6,23,.62);color:#e2e8f0;font-size:.63rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;backdrop-filter:blur(12px)}
+        .viya-hero-live>span:first-child{width:.45rem;height:.45rem;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399;animation:viya-live-pulse 1.8s ease-in-out infinite}
+        @keyframes viya-live-pulse{50%{opacity:.45;transform:scale(.78)}}
+        .viya-hero-controls{display:flex;align-items:center;justify-content:center;gap:.85rem;margin:.85rem auto 0}
+        .viya-hero-control{display:grid;place-items:center;width:2.25rem;height:2.25rem;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(15,23,42,.8);color:#e2e8f0;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+        .viya-hero-control:hover{background:#0e7490;border-color:#67e8f9;transform:translateY(-1px)}
+        .viya-hero-control:focus-visible,.viya-hero-dots button:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+        .viya-hero-dots{display:flex;align-items:center;gap:.45rem}
+        .viya-hero-dots button{width:.48rem;height:.48rem;padding:0;border:0;border-radius:999px;background:#64748b;cursor:pointer;transition:width .25s,background .25s}
+        .viya-hero-dots button[aria-current="true"]{width:1.35rem;background:#22d3ee}
+        .viya-hero-float{position:relative;z-index:2;display:flex;align-items:center;gap:.75rem;width:min(100%,19rem);margin:.7rem auto 0;padding:.85rem 1rem;border:1px solid rgba(255,255,255,.18);border-radius:1.1rem;background:rgba(15,23,42,.94);box-shadow:0 18px 55px rgba(0,0,0,.3);color:#fff;text-decoration:none;backdrop-filter:blur(14px);transition:transform .2s,border-color .2s}
+        .viya-hero-float:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.65)}
+        .viya-hero-float-icon{display:grid;place-items:center;width:2.5rem;height:2.5rem;flex:none;border-radius:50%;background:#0891b2;font-size:.8rem}
+        .viya-hero-float strong{font-size:.8rem}.viya-hero-float small{margin-top:.2rem;color:#94a3b8;font-size:.68rem}.viya-hero-arrow{margin-left:auto;color:#67e8f9;font-size:1.3rem}
+        @media(max-width:1023px){.viya-hero-carousel{width:min(100%,500px)}.viya-hero-card{height:clamp(260px,62vw,390px)}}
+        @media(max-width:420px){.viya-hero-card{height:clamp(250px,68vw,300px)}.viya-hero-float{max-width:17rem;padding:.7rem}.viya-hero-float small{font-size:.62rem}}
+        @media(prefers-reduced-motion:reduce){.viya-hero-slide-image,.viya-hero-control,.viya-hero-dots button,.viya-hero-float{transition:none}.viya-hero-slide-image,.viya-hero-live>span:first-child{animation:none}.viya-hero-slide-image.is-changing{transform:none}.viya-hero-float:hover,.viya-hero-control:hover{transform:none}}
+    </style>
+
+    <script>
+        (() => {
+            const carousel = document.querySelector('.viya-hero-carousel');
+            if (!carousel) return;
+            const image = carousel.querySelector('.viya-hero-slide-image');
+            const title = carousel.querySelector('.viya-hero-slide-title');
+            const copy = carousel.querySelector('.viya-hero-slide-copy');
+            const kicker = carousel.querySelector('.viya-hero-slide-kicker');
+            const ctaTitle = document.querySelector('.viya-hero-cta-title');
+            const ctaCopy = document.querySelector('.viya-hero-cta-copy');
+            const ctaLink = document.querySelector('.viya-hero-float');
+            const dots = [...carousel.querySelectorAll('.viya-hero-dots button')];
+            const toggle = carousel.querySelector('.viya-hero-toggle');
+            const slides = [
+                { image: './images/product-images/gbp-sdk.webp', alt: 'VitableTech GBP SDK product showcase for Google Business Profile integrations', title: 'Software for real workflows', copy: 'See a VitableTech developer product', kicker: 'GBP SDK • Product showcase', action: 'Explore our products', actionCopy: 'See software we build and operate', href: './projects.html#products', product: true },
+                { image: './images/product-images/meta-sdk.webp', alt: 'Meta SDK product graphic created by VitableTech', title: 'Connect the systems you use', copy: 'Build dependable integrations for your business', kicker: 'Meta SDK • API integrations', action: 'Discuss an integration', actionCopy: 'Talk with our engineering team', href: './contact.html?campaign=hero-integration', product: true },
+                { image: './images/campaigns/vitabletech-ambassador.webp', alt: 'Viya, VitableTech’s AI brand ambassador, introducing custom software and AI services', title: 'Meet Viya', copy: 'Your guide to useful technology', kicker: 'VitableTech AI brand ambassador', action: 'Plan a project with us', actionCopy: 'Talk with the VitableTech team', href: './contact.html?campaign=viya-brand-ambassador', portrait: true }
+            ];
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let active = 0;
+            let timer = null;
+            let paused = false;
+            if (reducedMotion) toggle.hidden = true;
+
+            function showSlide(index) {
+                active = (index + slides.length) % slides.length;
+                const slide = slides[active];
+                image.classList.add('is-changing');
+                const nextImage = new Image();
+                nextImage.onload = () => {
+                    image.src = slide.image;
+                    image.alt = slide.alt;
+                    image.classList.toggle('is-product', Boolean(slide.product));
+                    image.classList.toggle('is-portrait', Boolean(slide.portrait));
+                    title.textContent = slide.title;
+                    copy.textContent = slide.copy;
+                    kicker.textContent = slide.kicker;
+                    ctaTitle.textContent = slide.action;
+                    ctaCopy.textContent = slide.actionCopy;
+                    ctaLink.href = slide.href;
+                    dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+                    window.setTimeout(() => image.classList.remove('is-changing'), 80);
+                };
+                nextImage.src = slide.image;
+            }
+
+            function stopTimer() { window.clearInterval(timer); timer = null; }
+            function startTimer() {
+                stopTimer();
+                if (!paused && !document.hidden && !reducedMotion && !carousel.matches(':hover') && !carousel.contains(document.activeElement)) timer = window.setInterval(() => showSlide(active + 1), 6000);
+            }
+            carousel.querySelector('.viya-hero-prev').addEventListener('click', () => { showSlide(active - 1); startTimer(); });
+            carousel.querySelector('.viya-hero-next').addEventListener('click', () => { showSlide(active + 1); startTimer(); });
+            dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); startTimer(); }));
+            toggle.addEventListener('click', () => {
+                paused = !paused;
+                toggle.setAttribute('aria-pressed', String(paused));
+                toggle.setAttribute('aria-label', paused ? 'Play automatic slides' : 'Pause automatic slides');
+                toggle.innerHTML = `<i class="fas fa-${paused ? 'play' : 'pause'}" aria-hidden="true"></i>`;
+                startTimer();
+            });
+            carousel.addEventListener('mouseenter', stopTimer);
+            carousel.addEventListener('mouseleave', startTimer);
+            carousel.addEventListener('focusin', stopTimer);
+            carousel.addEventListener('focusout', (event) => { if (!carousel.contains(event.relatedTarget)) startTimer(); });
+            carousel.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') { showSlide(active - 1); startTimer(); }
+                if (event.key === 'ArrowRight') { showSlide(active + 1); startTimer(); }
+            });
+            document.addEventListener('visibilitychange', startTimer);
+            startTimer();
+        })();
+    </script>
 
     <!-- TOP CLIENT PROJECTS -->
     <section id="top-clients" class="py-20 bg-slate-950/80 border-y border-white/10 relative overflow-hidden" style="scroll-margin-top: 6rem;">
@@ -561,6 +609,124 @@
             <div class="text-center mt-10"><a href="./projects.html#products" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-white bg-violet-600 hover:bg-violet-500 border border-violet-400/40 transition-all shadow-[0_0_25px_rgba(139,92,246,.25)]"><span>View All Products</span><span aria-hidden="true">→</span></a></div>
         </div>
     </section>
+
+    <!-- VITABLETECH VIDEO SHOWCASE -->
+    <section id="campaign-videos" class="campaign-videos-section py-20 sm:py-24 bg-slate-950 border-b border-white/10 relative overflow-hidden" style="scroll-margin-top: 6rem;">
+        <div class="campaign-videos-glow" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+                <span class="text-xs uppercase tracking-[0.2em] font-extrabold text-cyan-300 block mb-3">VitableTech in action</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Ideas, products &amp; services in motion.</h2>
+                <p class="mt-4 text-gray-400 leading-relaxed">Explore short videos from VitableTech. Find a service or product that fits your next project, then talk with our team.</p>
+            </div>
+            <div class="campaign-video-grid">
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="5UST2IoUOkY" aria-label="Play VitableTech video 1"><img src="https://img.youtube.com/vi/5UST2IoUOkY/hqdefault.jpg" alt="VitableTech video 1 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 01</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 01</span><a href="https://youtube.com/shorts/5UST2IoUOkY" target="_blank" rel="noopener noreferrer" aria-label="Open video 1 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="rqLkzr3Nj_4" aria-label="Play VitableTech video 2"><img src="https://img.youtube.com/vi/rqLkzr3Nj_4/hqdefault.jpg" alt="VitableTech video 2 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 02</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 02</span><a href="https://youtube.com/shorts/rqLkzr3Nj_4" target="_blank" rel="noopener noreferrer" aria-label="Open video 2 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="G9FhKGHx1GU" aria-label="Play VitableTech video 3"><img src="https://img.youtube.com/vi/G9FhKGHx1GU/hqdefault.jpg" alt="VitableTech video 3 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 03</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 03</span><a href="https://youtube.com/shorts/G9FhKGHx1GU" target="_blank" rel="noopener noreferrer" aria-label="Open video 3 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="qwca7Arv6y8" aria-label="Play VitableTech video 4"><img src="https://img.youtube.com/vi/qwca7Arv6y8/hqdefault.jpg" alt="VitableTech video 4 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 04</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 04</span><a href="https://youtube.com/shorts/qwca7Arv6y8" target="_blank" rel="noopener noreferrer" aria-label="Open video 4 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="KCBt9YcMir0" aria-label="Play VitableTech video 5"><img src="https://img.youtube.com/vi/KCBt9YcMir0/hqdefault.jpg" alt="VitableTech video 5 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 05</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 05</span><a href="https://youtube.com/shorts/KCBt9YcMir0" target="_blank" rel="noopener noreferrer" aria-label="Open video 5 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+                <article class="campaign-video-card">
+                    <div class="campaign-video-media"><button class="campaign-video-poster" type="button" data-youtube-id="sieLelX8NjM" aria-label="Play VitableTech video 6"><img src="https://img.youtube.com/vi/sieLelX8NjM/hqdefault.jpg" alt="VitableTech video 6 thumbnail" loading="lazy"><span class="campaign-video-fallback" hidden aria-hidden="true"><small>VITABLETECH VIDEO 06</small><strong>Preview unavailable</strong><span>Open on YouTube to watch</span></span><span class="campaign-video-play" aria-hidden="true"><i class="fas fa-play"></i></span></button></div>
+                    <div class="campaign-video-caption"><span>VitableTech • Video 06</span><a href="https://youtube.com/shorts/sieLelX8NjM" target="_blank" rel="noopener noreferrer" aria-label="Open video 6 on YouTube">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+                </article>
+            </div>
+            <div class="campaign-video-actions">
+                <a href="./contact.html?campaign=video-showcase" class="campaign-video-cta">Discuss your project <span aria-hidden="true">→</span></a>
+                <a href="https://www.youtube.com/@vitabletech" target="_blank" rel="noopener noreferrer" class="campaign-video-channel">More from VitableTech on YouTube <span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .campaign-videos-section{isolation:isolate}.campaign-videos-glow{position:absolute;z-index:-1;left:50%;top:4rem;width:min(70rem,100%);height:32rem;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(8,145,178,.12),transparent 68%);pointer-events:none}
+        .campaign-video-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1.25rem}
+        .campaign-video-card{overflow:hidden;border:1px solid rgba(148,163,184,.18);border-radius:1rem;background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(8,13,28,.96));box-shadow:0 16px 45px rgba(0,0,0,.2);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+        .campaign-video-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.48);box-shadow:0 20px 50px rgba(8,145,178,.12)}
+        .campaign-video-media{aspect-ratio:9/16;position:relative;background:#020617;overflow:hidden}
+        .campaign-video-poster,.campaign-video-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+        .campaign-video-poster{display:block;padding:0;background:#0f172a;cursor:pointer}
+        .campaign-video-poster img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease,opacity .2s ease}
+        .campaign-video-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;padding:1.5rem;background:radial-gradient(ellipse at 50% 35%,rgba(34,211,238,.2),transparent 52%),linear-gradient(145deg,#111b34,#050914 78%);color:#fff;text-align:center}
+        .campaign-video-fallback[hidden]{display:none}
+        .campaign-video-fallback:before{content:"";position:absolute;inset:12% 10%;border:1px solid rgba(103,232,249,.2);border-radius:1.5rem;transform:rotate(-7deg);pointer-events:none}
+        .campaign-video-fallback small,.campaign-video-fallback strong,.campaign-video-fallback>span{position:relative;z-index:1}
+        .campaign-video-fallback small{color:#67e8f9;font-size:.65rem;font-weight:800;letter-spacing:.16em}
+        .campaign-video-fallback strong{font-size:clamp(1rem,2vw,1.4rem)}
+        .campaign-video-fallback>span{color:#cbd5e1;font-size:.82rem}
+        .campaign-video-poster.has-fallback img{display:none}
+        .campaign-video-poster:hover img{transform:scale(1.035);opacity:.78}
+        .campaign-video-play{position:absolute;left:50%;top:50%;width:3.75rem;height:3.75rem;display:grid;place-items:center;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(8,145,178,.9);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.4);transition:transform .2s ease,background .2s ease}
+        .campaign-video-poster:hover .campaign-video-play{transform:translate(-50%,-50%) scale(1.08);background:#06b6d4}
+        .campaign-video-play i{margin-left:3px}
+        .campaign-video-caption{min-height:4.4rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.9rem 1rem;color:#cbd5e1;font-size:.76rem}
+        .campaign-video-caption>span{font-weight:700;letter-spacing:.02em;color:#e2e8f0}
+        .campaign-video-caption a,.campaign-video-channel{color:#67e8f9;text-decoration:none;font-weight:700;white-space:nowrap}
+        .campaign-video-caption a:hover,.campaign-video-channel:hover{color:#fff}
+        .campaign-video-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.25rem;margin-top:2.25rem}
+        .campaign-video-cta{display:inline-flex;align-items:center;gap:.65rem;padding:.9rem 1.4rem;border-radius:999px;background:#0891b2;color:#fff;text-decoration:none;font-weight:800;box-shadow:0 8px 28px rgba(8,145,178,.25);transition:background .2s ease,transform .2s ease}
+        .campaign-video-cta:hover{background:#06b6d4;transform:translateY(-2px)}
+        .campaign-video-channel{font-size:.9rem}
+        @media(min-width:640px){.campaign-video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}}
+        @media(min-width:1024px){.campaign-video-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.75rem}}
+        @media(prefers-reduced-motion:reduce){.campaign-video-card,.campaign-video-poster img,.campaign-video-play,.campaign-video-cta{transition:none}.campaign-video-card:hover,.campaign-video-cta:hover{transform:none}}
+    </style>
+    <script>
+        document.querySelectorAll('.campaign-video-poster').forEach((poster) => {
+            const image = poster.querySelector('img');
+            const fallback = poster.querySelector('.campaign-video-fallback');
+            const videoId = poster.dataset.youtubeId;
+            if (!image || !/^[\w-]{11}$/.test(videoId || '')) return;
+            const qualities = ['maxresdefault', 'sddefault', 'hqdefault'];
+            let qualityIndex = 0;
+            function showFallback() {
+                image.hidden = true;
+                poster.classList.add('has-fallback');
+                if (fallback) fallback.hidden = false;
+            }
+            function tryNextQuality() {
+                qualityIndex += 1;
+                if (qualityIndex < qualities.length) image.src = `https://img.youtube.com/vi/${videoId}/${qualities[qualityIndex]}.jpg`;
+                else showFallback();
+            }
+            image.addEventListener('error', tryNextQuality);
+            image.addEventListener('load', () => {
+                // YouTube can return a tiny generic “video unavailable” image with HTTP 200.
+                if (image.naturalWidth < 240 || image.naturalHeight < 135) tryNextQuality();
+            });
+            image.src = `https://img.youtube.com/vi/${videoId}/${qualities[qualityIndex]}.jpg`;
+        });
+
+        document.addEventListener('click', function (event) {
+            const poster = event.target.closest('.campaign-video-poster');
+            if (!poster) return;
+            const videoId = poster.dataset.youtubeId;
+            if (!/^[\w-]{11}$/.test(videoId || '')) return;
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&playsinline=1&rel=0';
+            iframe.title = poster.getAttribute('aria-label') || 'VitableTech YouTube video';
+            iframe.loading = 'lazy';
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            poster.replaceWith(iframe);
+            if (typeof gtag === 'function') gtag('event', 'video_play', { video_id: videoId, video_provider: 'youtube' });
+        });
+    </script>
 
     <!-- LEGACY CLIENT MARQUEE (kept in source for future use) -->
     <section id="clients" class="hidden">
@@ -925,7 +1091,7 @@
                     Software engineering for the work that matters
                 </h2>
                 <p class="text-base sm:text-lg text-gray-400 leading-relaxed">
-                    Six focused capabilities for teams building new products, replacing disconnected processes, or
+                    Eight focused capabilities for teams building new products, replacing disconnected processes, or
                     making an existing platform more useful.
                 </p>
             </div>
@@ -1052,7 +1218,7 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">UI/UX
                             Design</h3>
                         <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
-                            User journey mapping, wireframing, high-fidelity Figma prototyping, and award-winning design
+                            User journey mapping, wireframing, high-fidelity Figma prototyping, and scalable design
                             systems.
                         </p>
                     </div>
@@ -1129,7 +1295,7 @@
                             class="text-2xl font-extrabold text-white mb-3 group-hover:text-purple-300 transition-colors">
                             IT Outsourcing & Hire Developers</h3>
                         <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
-                            Scale your capabilities instantly. We provide full project outsourcing, freelance
+                            Scale your team capacity. We provide full project outsourcing, freelance
                             developers, support teams, and individual engineers/designers to augment your staff. Pricing
                             starts from $10/hr depending on project complexity.
                         </p>
@@ -1829,8 +1995,7 @@
                                 Every ChatGPT Slash Command: Complete 2026 Master List
                             </h3>
                             <p class="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3">
-                                Discover every native / command built into ChatGPT. 10x your prompt workflow with
-                                developer shortcuts, canvas triggers, and writing tools.
+                                Explore native ChatGPT slash commands, developer shortcuts, Canvas triggers, and writing tools.
                             </p>
                         </div>
                     </div>
@@ -2382,6 +2547,11 @@
                 <i class="fas fa-tags text-cyan-400 w-5 text-center"></i>
                 <span>Pricing</span>
             </a>
+            <a href="./index.html#campaign-videos"
+                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold text-gray-200 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/15 hover:to-blue-500/15 hover:border-cyan-400/30 transition-all group">
+                <i class="fas fa-circle-play text-cyan-400 w-5 text-center"></i>
+                <span>Videos</span>
+            </a>
         </nav>
 
         <!-- Drawer Footer CTA -->
@@ -2507,6 +2677,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="js/vitable-campaigns.js"></script>
 </body>
 
 </html>

@@ -4,19 +4,19 @@
 <head>
     <!-- Google tag (gtag.js) - Delayed for Performance -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
-            }, 3000);
-        });
+            }, 3500);
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -932,7 +932,7 @@ export async function handleDataErasureRequest(userId, db) {
                                 <span>Book an Architectural Privacy Consultation</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
-                            <a href="../services.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.05] border border-white/10 text-gray-300 font-semibold text-sm hover:bg-white/10 hover:text-white transition-colors">
+                            <a href="../services/index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.05] border border-white/10 text-gray-300 font-semibold text-sm hover:bg-white/10 hover:text-white transition-colors">
                                 <span>Explore Engineering Services</span>
                             </a>
                         </div>
@@ -1041,7 +1041,7 @@ export async function handleDataErasureRequest(userId, db) {
                 <ul class="space-y-2 text-xs">
                     <li><a href="../services/devops-cloud.html" class="hover:text-cyan-400 transition-colors">DevOps & Cloud Engineering</a></li>
                     <li><a href="../services/ai-machine-learning.html" class="hover:text-cyan-400 transition-colors">AI & Machine Learning</a></li>
-                    <li><a href="../services.html" class="hover:text-cyan-400 transition-colors">Custom Software Development</a></li>
+                    <li><a href="../services/index.html" class="hover:text-cyan-400 transition-colors">Custom Software Development</a></li>
                     <li><a href="../services/it-outsourcing.html" class="hover:text-cyan-400 transition-colors">IT Outsourcing & Teams</a></li>
                 </ul>
             </div>
@@ -1067,8 +1067,8 @@ export async function handleDataErasureRequest(userId, db) {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
             <p>© 2026 VitableTech. All rights reserved.</p>
             <div class="flex items-center gap-6">
-                <a href="../privacy-policy.html" class="hover:text-gray-300">Privacy Policy</a>
-                <a href="../terms-of-service.html" class="hover:text-gray-300">Terms of Service</a>
+                <a href="../policies/privacy-policy.html" class="hover:text-gray-300">Privacy Policy</a>
+                <a href="../policies/terms-and-conditions.html" class="hover:text-gray-300">Terms of Service</a>
                 <a href="../contact.html" class="hover:text-gray-300">Contact</a>
             </div>
         </div>
@@ -1096,6 +1096,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

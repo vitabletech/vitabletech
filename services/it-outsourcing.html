@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "IT Outsourcing & Staff Augmentation",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/it-outsourcing.html",
           "description": "Premium IT outsourcing, freelance developers, and staff augmentation services starting at $10/hr."
@@ -315,8 +310,7 @@
                             Product Development</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Fixed Price &
                             Time & Material Models</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> 100% IP Transfer
-                            & NDA Protection</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> IP ownership terms and NDA available by agreement</li>
                     </ul>
                 </div>
 
@@ -359,14 +353,11 @@
                             class="text-2xl font-extrabold text-white mb-3 group-hover:text-emerald-300 transition-colors">
                             Support Developer Teams</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            Need a dedicated team to maintain, bug-fix, and scale your existing application? Our support
-                            developer squads seamlessly integrate with your processes to provide continuous 24/7
-                            technical support and maintenance operations.
+                            Need a dedicated team to maintain, bug-fix, and scale your existing application? Our support developer teams can work with your processes on technical support and maintenance, with service hours defined for each engagement.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 24/7
-                            SLA-backed Support</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Support hours and response targets by agreement</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Legacy App
                             Maintenance</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> CI/CD & Cloud
@@ -852,6 +843,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

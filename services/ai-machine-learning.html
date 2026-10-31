@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "AI & Machine Learning Services",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/ai-machine-learning.html",
           "description": "Custom RAG pipelines, OpenAI fine-tuning, vector databases, and autonomous AI customer agents built at Gwalior HQ."
@@ -283,11 +278,10 @@
 
             <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    Enterprise AI Without the Security Risks
+                    Enterprise AI with Privacy Controls
                 </h2>
                 <p class="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    We deploy generative AI models inside private virtual private clouds (VPCs), guaranteeing zero data
-                    leakage to public model training sets.
+                    We can design AI deployments around your data-handling requirements, model-provider policies, access controls, and infrastructure choices.
                 </p>
             </div>
 
@@ -307,13 +301,11 @@
                             Custom RAG Knowledge Knowledgebases</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Connect your company's proprietary PDF manuals, SQL databases, and internal documentation to
-                            AI assistants using vector databases (Pinecone, Milvus, pgvector) with instant semantic
-                            search.
+                            AI assistants using vector databases such as Pinecone, Milvus, or pgvector for semantic retrieval.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Zero
-                            Hallucination Factual Grounding</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Grounded responses with source context</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Private Vector
                             Database Embeddings</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Multi-Format
@@ -359,9 +351,7 @@
                             class="text-2xl font-extrabold text-white mb-3 group-hover:text-emerald-300 transition-colors">
                             Autonomous Customer Support Agents</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            Deploy 24/7 intelligent conversational agents across WhatsApp, website chat, and email. Our
-                            agents resolve 80%+ of Tier-1 support tickets autonomously and escalate complex queries to
-                            human staff.
+                            Deploy conversational agents across WhatsApp, website chat, and email, with availability and escalation workflows configured for your service needs.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
@@ -827,6 +817,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "EDI Integration & Supply Chain Software",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/edi-supply-chain.html",
           "description": "Enterprise EDI ANSI X12/EDIFACT integration, WMS inventory automation, and logistics fleet software services delivered from Gwalior HQ."
@@ -272,7 +267,7 @@
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-normal">
                 From ANSI X12/EDIFACT document exchange to fleet tracking automation for industry leaders like
-                <strong>Swiftal Logistics (Pune)</strong>, we build logistics ecosystems that never fail.
+                <strong>Swiftal Logistics (Pune)</strong>, we build logistics systems around your operational needs.
             </p>
         </div>
     </section>
@@ -827,6 +822,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

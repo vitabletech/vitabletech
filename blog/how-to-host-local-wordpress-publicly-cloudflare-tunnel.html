@@ -4,19 +4,19 @@
 <head>
     <!-- Google tag (gtag.js) - Delayed for Performance -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
-            }, 3000);
-        });
+            }, 3500);
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -989,11 +989,11 @@ ingress:
                 <div>
                     <h4 class="text-white text-sm font-semibold mb-6 tracking-wider uppercase">Services</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="../services/ai-solutions.html" class="text-gray-400 hover:text-cyan-300 transition-colors">AI & LLM Solutions</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="text-gray-400 hover:text-cyan-300 transition-colors">AI & LLM Solutions</a></li>
                         <li><a href="../services/custom-software.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Custom Software</a></li>
                         <li><a href="../services/web-development.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Web Development</a></li>
-                        <li><a href="../services/mobile-apps.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Mobile App Development</a></li>
-                        <li><a href="../services/cloud-devops.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Cloud & DevOps</a></li>
+                        <li><a href="../services/mobile-app.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Mobile App Development</a></li>
+                        <li><a href="../services/devops-cloud.html" class="text-gray-400 hover:text-cyan-300 transition-colors">Cloud & DevOps</a></li>
                     </ul>
                 </div>
 
@@ -1206,5 +1206,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 </html>

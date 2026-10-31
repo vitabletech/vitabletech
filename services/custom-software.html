@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "Custom Software Development",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/custom-software.html",
           "description": "Enterprise-grade custom software, SaaS architectures, and legacy modernization services delivered globally from Gwalior HQ."
@@ -272,7 +267,7 @@
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-normal">
                 From complex ERP architectures and multi-tenant SaaS platforms to high-throughput microservices, our
-                engineering team in India delivers secure, 60fps applications to partners worldwide.
+                engineering team in India delivers secure, responsive applications to partners worldwide.
             </p>
         </div>
     </section>
@@ -286,8 +281,7 @@
                     Architectural Excellence Across the Stack
                 </h2>
                 <p class="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    We do not build generic templates. Every line of code is custom-engineered for security, sub-second
-                    latency, and long-term maintainability.
+                    We do not build generic templates. Every solution is designed around project requirements, security practices, and maintainability.
                 </p>
             </div>
 
@@ -332,14 +326,13 @@
                             class="text-2xl font-extrabold text-white mb-3 group-hover:text-violet-300 transition-colors">
                             Microservices & API Gateways</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            Architected for millions of daily requests. We build decoupled microservices using Node.js,
+                            We build decoupled microservices using Node.js,
                             Express, Python FastAPI, and PHP Laravel, connected via high-speed REST and GraphQL API
                             gateways with Redis caching.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Sub-100ms API
-                            Response Time Guarantee</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> API Performance Targets Defined by Workload</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> WebSocket
                             Real-Time Bi-Directional Streaming</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Automated
@@ -368,7 +361,7 @@
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Zero-Downtime
                             Database Migration</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Cloud Cost
-                            Optimization (Up to 40% Savings)</li>
+                            Optimization based on measured workloads</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Containerized
                             Docker & Kubernetes Setup</li>
                     </ul>
@@ -385,16 +378,13 @@
                         <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-blue-300 transition-colors">
                             Zero-Trust Security & IP Transfer</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            When partnering with VitableTech, your intellectual property is 100% protected. We execute
-                            mutual international NDAs, enforce OWASP Top-10 cybersecurity standards, and transfer
-                            complete code ownership upon milestone completion.
+                            Project confidentiality, security practices, and intellectual property ownership can be documented in the project agreement. We can discuss NDAs, code access, and ownership terms before work begins.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Strict
                             International Legal NDA Coverage</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> 100% Proprietary
-                            Source Code Ownership</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Source-code ownership terms agreed in writing</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Automated
                             Vulnerability Scanning & Audits</li>
                     </ul>
@@ -852,6 +842,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

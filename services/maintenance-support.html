@@ -2,30 +2,30 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Maintenance & Support Services - VitableTech | 24/7 IT SLA</title>
-    <meta name="title" content="Maintenance & Support Services - VitableTech | 24/7 IT SLA">
+    <title>Maintenance & Support Services - VitableTech | Maintenance & Support</title>
+    <meta name="title" content="Maintenance & Support Services - VitableTech | Maintenance & Support">
     <meta name="description"
-        content="Ensure uninterrupted software performance with VitableTech in India. Providing 24/7 proactive monitoring, security vulnerability patching, and dedicated L2/L3 SLA engineering support.">
+        content="Plan software maintenance, monitoring, vulnerability updates, and technical support with coverage and response targets defined for each engagement.">
     <meta name="keywords"
         content="IT maintenance support Gwalior, 24 7 software SLA India, vulnerability security patching, database query optimization, server uptime monitoring, dedicated L3 support engineers, software company Bangalore, AI agency USA, web development London, custom software Australia, app development Delhi NCR">
     <meta name="author" content="VitableTech">
@@ -37,7 +37,7 @@
     <meta property="og:url" content="https://vitabletech.in/services/maintenance-support.html">
     <meta property="og:title" content="Maintenance & Support Services - VitableTech">
     <meta property="og:description"
-        content="Ensure uninterrupted software performance with VitableTech's 24/7 proactive monitoring, security vulnerability patching, and dedicated SLA support.">
+        content="Arrange software maintenance, monitoring, security updates, and support around your product's operational requirements.">
     <meta property="og:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Twitter -->
@@ -45,7 +45,7 @@
     <meta property="twitter:url" content="https://vitabletech.in/services/maintenance-support.html">
     <meta property="twitter:title" content="Maintenance & Support Services - VitableTech">
     <meta property="twitter:description"
-        content="Ensure uninterrupted software performance with VitableTech's 24/7 proactive monitoring, security vulnerability patching, and dedicated SLA support.">
+        content="Arrange software maintenance, monitoring, security updates, and support around your product's operational requirements.">
     <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Favicon & Manifest Tags -->
@@ -98,20 +98,15 @@
           "@type": "Service",
           "name": "Maintenance & Support Services",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/maintenance-support.html",
-          "description": "24/7 IT software maintenance, zero-day security patching, database optimization, and dedicated L2/L3 SLA engineering support delivered from Gwalior HQ."
+          "description": "Software maintenance, security updates, database optimization, and technical support scoped to your operational needs."
         }
       ]
     }
@@ -265,14 +260,12 @@
                 <span>Enterprise SLA & L3 Support</span>
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                24/7 IT Maintenance & <br class="hidden sm:inline" />
+                Software Maintenance & <br class="hidden sm:inline" />
                 <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400">Proactive
-                    SLA Support.</span>
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400">Support Plans.</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-normal">
-                Never worry about unexpected downtime or unpatched vulnerabilities again. Our Gwalior engineering HQ
-                provides 24/7 telemetry monitoring, zero-day CVE patching, and continuous performance tuning.
+                We help maintain production systems through scoped monitoring, security updates, backups, and performance work. Coverage and response targets are agreed before support begins.
             </p>
         </div>
     </section>
@@ -304,15 +297,13 @@
                         </div>
                         <h3
                             class="text-2xl font-extrabold text-white mb-3 group-hover:text-emerald-300 transition-colors">
-                            24/7 Proactive Telemetry Monitoring</h3>
+                            Telemetry Monitoring Options</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            We deploy real-time Prometheus and Grafana alerting systems that continuously check server
-                            health, API latency, CPU load, and database connection pools, catching anomalies instantly.
+                            We can configure Prometheus and Grafana dashboards to track server health, API latency, CPU load, and database connection pools, with alert routing matched to the support plan.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Real-Time
-                            Uptime Monitoring & Instant PagerAlerts</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Uptime monitoring and alert routing</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Automated SSL
                             Certificate & Domain Renewal Tracking</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Daily
@@ -358,8 +349,7 @@
                             Performance Optimization & Refactoring</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Over time, databases grow sluggish and frontend bundles bloat. We continuously optimize SQL
-                            queries, configure Redis caching, and compress image assets to maintain 100/100 Core Web
-                            Vitals.
+                            queries, configure caching, and optimize image assets based on measured performance.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
@@ -383,18 +373,13 @@
                         <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-blue-300 transition-colors">
                             Dedicated L2/L3 Engineering SLA</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            Gain direct access to our senior Gwalior software architects via shared Slack or Microsoft
-                            Teams channels. We guarantee 15-minute emergency response times for P1 critical system
-                            outages.
+                            Work with our engineering team through an agreed support channel. Priority incident response targets can be defined in the support plan.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> 15-Minute
-                            Guaranteed Response Time for P1 Outages</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Dedicated Slack /
-                            Teams Communication Channel</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Monthly Executive
-                            Health & SLA Compliance Reports</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Critical-incident response targets agreed in the support plan</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Shared Slack or Teams communication, if selected</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Health and service reports at an agreed cadence</li>
                     </ul>
                 </div>
 
@@ -405,12 +390,12 @@
                 data-aos="fade-up">
                 <span
                     class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4">
-                    <span>SLA Guarantee</span>
+                    <span>Support Terms by Agreement</span>
                 </span>
                 <h3 class="text-3xl font-extrabold text-white mb-4">Focus On Your Business Growth — We Manage The Tech
                 </h3>
                 <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mb-8">Whether you need lightweight monthly
-                    updates or full-scale 24/7 enterprise DevOps management, our support packages are tailored to your
+                    maintenance updates or managed DevOps support, our packages are tailored to your
                     exact operational requirements.</p>
                 <a href="../contact.html"
                     class="shiny-btn magnetic-btn inline-flex items-center gap-3 px-10 py-4 rounded-full font-extrabold text-sm text-white shadow-lg border border-white/20">
@@ -818,6 +803,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "DevOps & Cloud Computing Services",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/devops-cloud.html",
           "description": "Enterprise Kubernetes orchestration, Docker containerization, AWS/GCP cloud migration, and automated CI/CD services delivered from Gwalior HQ."
@@ -272,7 +267,7 @@
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-normal">
                 Eliminate downtime and accelerate release cycles. Our Gwalior cloud engineering team containerizes
-                microservices, automates CI/CD pipelines, and cuts cloud hosting bills by up to 40%.
+                microservices, automates CI/CD pipelines, and can help identify opportunities to manage cloud hosting costs.
             </p>
         </div>
     </section>
@@ -283,11 +278,10 @@
 
             <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    Zero-Downtime Scaling For Global Applications
+                    Reliable Scaling for Production Applications
                 </h2>
                 <p class="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    We replace manual server deployments with automated Infrastructure as Code (IaC), guaranteeing
-                    99.99% uptime and bulletproof network security.
+                    We replace manual server deployments with automated Infrastructure as Code (IaC), monitoring, and security practices designed to improve reliability.
                 </p>
             </div>
 
@@ -358,13 +352,12 @@
                             AWS, GCP & Azure Cloud Migration</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Migrate on-premise servers and legacy virtual machines to modern cloud infrastructure
-                            without data loss or business disruption. We architect VPC subnets, RDS databases, and
+                            with a scoped cutover and rollback plan. We architect VPC subnets, RDS databases, and
                             Cloudflare CDN caching.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Seamless
-                            Zero-Downtime Database Migration</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Planned Database Migration with Downtime Considerations</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Private VPC
                             Subnets & Firewall Rules</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-violet-400"></i> Enterprise
@@ -406,12 +399,11 @@
                 data-aos="fade-up">
                 <span
                     class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">
-                    <span>24/7 SLA Guarantee</span>
+                    <span>Monitoring & Support Options</span>
                 </span>
                 <h3 class="text-3xl font-extrabold text-white mb-4">Enterprise Monitoring & Rapid Incident Response</h3>
                 <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mb-8">We deploy automated Prometheus and
-                    Grafana dashboards that monitor CPU load, RAM utilization, and network latency 24/7, alerting our
-                    engineering team before your customers ever notice an issue.</p>
+                    Grafana dashboards can monitor CPU, memory, and network signals; alerting coverage and response expectations are agreed for each engagement.</p>
                 <a href="../contact.html"
                     class="shiny-btn magnetic-btn inline-flex items-center gap-3 px-10 py-4 rounded-full font-extrabold text-sm text-white shadow-lg border border-white/20">
                     <span>Consult a Cloud Architect</span> <span>→</span>
@@ -818,6 +810,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

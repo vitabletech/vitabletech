@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "Mobile App Development Services",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/mobile-app.html",
           "description": "High-performance native iOS (Swift), Android (Kotlin), and cross-platform React Native / Flutter mobile app development services delivered from Gwalior HQ."
@@ -274,7 +269,7 @@
                 From high-security fintech apps like
                 <strong>Mappcall</strong>,<strong>PlannerBuddy</strong>,<strong>Ourkarigar</strong> and
                 <strong>Rakshak App
-                    (Gwalior)</strong> to enterprise iOS/Android ecosystems, we deliver native 60fps performance
+                    (Gwalior)</strong> to enterprise iOS/Android ecosystems, we build responsive native experiences
                 globally.
             </p>
         </div>
@@ -309,16 +304,14 @@
                             React Native & Flutter Cross-Platform</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Deploy to both iOS and Android simultaneously from a single, robust codebase. Achieve native
-                            60fps UI animations, direct hardware access, and cut development costs by up to 40%.
+                            responsive UI animations and access to device capabilities, with delivery approach selected for project scope.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Single Codebase
                             for iOS & Android</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Over-The-Air
-                            (OTA) Instant Bug Fix Updates</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Native UI
-                            Performance Guarantee</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Over-the-air updates where supported</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Native UI Performance Tuning</li>
                     </ul>
                 </div>
 
@@ -393,8 +386,7 @@
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> 100% Approval
-                            Guidance & Review Handling</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> App Store Review Guidance & Submission Support</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> App Store
                             Optimization (ASO) Metadata</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Post-Launch
@@ -829,6 +821,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

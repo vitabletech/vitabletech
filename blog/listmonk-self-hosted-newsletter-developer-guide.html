@@ -4,19 +4,19 @@
 <head>
     <!-- Google tag (gtag.js) - Delayed for Performance -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
-            }, 3000);
-        });
+            }, 3500);
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -607,10 +607,10 @@ ON CONFLICT DO NOTHING;</code></pre>
                     <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-5">Core Services</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li><a href="../services/web-development.html" class="hover:text-cyan-400 transition-colors">Web Development</a></li>
-                        <li><a href="../services/custom-software-development.html" class="hover:text-cyan-400 transition-colors">Custom Software</a></li>
-                        <li><a href="../services/cloud-devops.html" class="hover:text-cyan-400 transition-colors">Cloud & DevOps</a></li>
-                        <li><a href="../services/mobile-apps.html" class="hover:text-cyan-400 transition-colors">Mobile Applications</a></li>
-                        <li><a href="../services/ai-solutions.html" class="hover:text-cyan-400 transition-colors">AI & Automation</a></li>
+                        <li><a href="../services/custom-software.html" class="hover:text-cyan-400 transition-colors">Custom Software</a></li>
+                        <li><a href="../services/devops-cloud.html" class="hover:text-cyan-400 transition-colors">Cloud & DevOps</a></li>
+                        <li><a href="../services/mobile-app.html" class="hover:text-cyan-400 transition-colors">Mobile Applications</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="hover:text-cyan-400 transition-colors">AI & Automation</a></li>
                     </ul>
                 </div>
 
@@ -628,8 +628,8 @@ ON CONFLICT DO NOTHING;</code></pre>
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
                 <p>&copy; 2026 VitableTech. All rights reserved.</p>
                 <div class="flex items-center gap-6">
-                    <a href="../privacy-policy.html" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
-                    <a href="../terms-of-service.html" class="hover:text-gray-300 transition-colors">Terms of Service</a>
+                    <a href="../policies/privacy-policy.html" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                    <a href="../policies/terms-and-conditions.html" class="hover:text-gray-300 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -752,5 +752,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 </html>

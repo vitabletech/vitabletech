@@ -2,32 +2,32 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Web Development Services - VitableTech | Next.js & SaaS Architectures</title>
-    <meta name="title" content="Web Development Services - VitableTech | Next.js & SaaS Architectures">
+    <title>Web Developer & Website Development in India | VitableTech</title>
+    <meta name="title" content="Web Developer & Website Development in India | VitableTech">
     <meta name="description"
-        content="Build high-performance, responsive websites and enterprise SaaS web applications with VitableTech in India. We specialize in Next.js, React, Node.js, and 100/100 Core Web Vitals.">
+        content="VitableTech builds responsive websites and SaaS web applications with Next.js, React, and Node.js. Performance and search fundamentals are considered throughout delivery.">
     <meta name="keywords"
-        content="web development company Gwalior, Next.js development India, enterprise web app development, React developers for hire, SaaS web architecture, progressive web apps PWA, software company Bangalore, AI agency USA, web development London, custom software Australia, app development Delhi NCR">
+        content="website development India, web developer Gwalior, web design and development, Next.js developer, business websites, web application development, React development">
     <meta name="author" content="VitableTech">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -37,7 +37,7 @@
     <meta property="og:url" content="https://vitabletech.in/services/web-development.html">
     <meta property="og:title" content="Web Development Services - VitableTech">
     <meta property="og:description"
-        content="Build high-performance, responsive websites and enterprise SaaS web applications. We specialize in Next.js, React, Node.js, and 100/100 Core Web Vitals.">
+        content="Build responsive websites and SaaS web applications with VitableTech using Next.js, React, and Node.js, with performance and search fundamentals considered throughout delivery.">
     <meta property="og:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Twitter -->
@@ -45,7 +45,7 @@
     <meta property="twitter:url" content="https://vitabletech.in/services/web-development.html">
     <meta property="twitter:title" content="Web Development Services - VitableTech">
     <meta property="twitter:description"
-        content="Build high-performance, responsive websites and enterprise SaaS web applications. We specialize in Next.js, React, Node.js, and 100/100 Core Web Vitals.">
+        content="Build responsive websites and SaaS web applications with VitableTech using Next.js, React, and Node.js, with performance and search fundamentals considered throughout delivery.">
     <meta property="twitter:image" content="https://vitabletech.in/images/logo.png">
 
     <!-- Favicon & Manifest Tags -->
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "Web Development Services",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/web-development.html",
           "description": "High-performance enterprise website development, Next.js web applications, and PWA engineering services delivered from Gwalior HQ."
@@ -268,11 +263,10 @@
                 Website & Web App Development <br class="hidden sm:inline" />
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400">Engineered
-                    For 60fps Speed.</span>
+                    for Real Users.</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-normal">
-                From sub-second Next.js web apps and progressive web apps (PWAs) to enterprise dashboard UI, our Gwalior
-                engineering team delivers 100/100 Core Web Vitals to global brands.
+                From Next.js websites and progressive web apps (PWAs) to enterprise dashboards, our Gwalior engineering team builds responsive web experiences for businesses worldwide.
             </p>
         </div>
     </section>
@@ -306,8 +300,7 @@
                             Next.js & React Full-Stack Apps</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Harness server-side rendering (SSR), static site generation (SSG), and edge API functions.
-                            We build lightning-fast web apps that load instantly on mobile networks and dominate search
-                            engine rankings.
+                            We build responsive web applications with performance and technical SEO considered throughout implementation.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
@@ -382,11 +375,9 @@
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                            100/100 Core Web Vitals Guarantee</h3>
+                            Performance-Focused Web Delivery</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
-                            We optimize Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction
-                            to Next Paint (INP) to score 100 on Google Lighthouse, boosting your organic conversion
-                            rates.
+                            We consider Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP) during implementation, then tune pages against the needs of the project.
                         </p>
                     </div>
                     <ul class="space-y-2.5 text-xs text-gray-300 border-t border-white/10 pt-6 font-semibold">
@@ -394,8 +385,7 @@
                             Font Preloading</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Clean Semantic
                             HTML5 & Schema.org Markup</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Sub-Second Page
-                            Load Speeds</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Page-load Performance Tuning</li>
                     </ul>
                 </div>
 
@@ -836,6 +826,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>

@@ -111,10 +111,10 @@ async function generateFontAwesome() {
     },
 
     /*
-     * Keep @font-face declarations.
+     * Keep required @font-face declarations; PurgeCSS fontFace=true removes unused faces.
      */
     keyframes: true,
-    fontFace: true,
+    fontFace: false,
     variables: true
   });
 

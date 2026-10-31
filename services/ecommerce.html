@@ -2,21 +2,21 @@
 <html lang="en" class="dark scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <!-- Existing GA4 tag; queue events immediately and defer its network request. -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
                 const script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F";
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
                 script.async = true;
                 document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-60TFS60E2F');
             }, 3500);
-        });
+        }, { once: true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,17 +98,12 @@
           "@type": "Service",
           "name": "E-Commerce Development Solutions",
           "provider": {
-            "@type": "LocalBusiness",
+            "@type": "Organization",
+            "@id": "https://vitabletech.in/#organization",
             "name": "VitableTech",
-            "image": "https://vitabletech.in/images/logo.svg",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "India",
-              "addressRegion": "Madhya Pradesh",
-              "addressCountry": "India",
-              "addressLine1": "VitableTech, Gwalior, Madhya Pradesh, India",
-              "postalCode": "474001"
-            }
+            "url": "https://vitabletech.in/",
+            "telephone": "+916280671085",
+            "email": "info@vitabletech.in"
           },
           "url": "https://vitabletech.in/services/ecommerce.html",
           "description": "High-converting headless Shopify, custom B2B storefronts, and multi-currency checkout solutions engineered at Gwalior HQ."
@@ -383,7 +378,7 @@
                             <i class="fas fa-credit-card"></i>
                         </div>
                         <h3 class="text-2xl font-extrabold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                            Multi-Currency Payment & PCI-DSS SLA</h3>
+                            Multi-Currency Payments & Secure Checkout</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-6">
                             Convert international customers effortlessly. We integrate Stripe, Razorpay, PayPal, Apple
                             Pay, and Google Pay with automatic currency conversion, localized tax calculation, and
@@ -395,8 +390,7 @@
                             Checkout (USD, EUR, JPY, INR)</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Automated GST,
                             VAT & Customs Calculation</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> 100% PCI-DSS
-                            Security & SSL Encryption</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Payment-provider security integrations & SSL encryption</li>
                     </ul>
                 </div>
 
@@ -409,7 +403,7 @@
                     <div class="lg:col-span-8 space-y-4">
                         <span
                             class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
-                            <span>Proven Retail Architectures</span>
+                            <span>Commerce Integrations</span>
                         </span>
                         <h3 class="text-3xl font-extrabold text-white">Trusted By High-Growth Indian & Global Merchants
                         </h3>
@@ -828,6 +822,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<script defer src="../js/vitable-campaigns.js"></script>
 </body>
 
 </html>
