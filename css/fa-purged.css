@@ -973,6 +973,10 @@
   --fa: "\f007";
 }
 
+.fa-film {
+  --fa: "\f008";
+}
+
 .fa-check {
   --fa: "\f00c";
 }
@@ -1159,6 +1163,10 @@
 
 .fa-cloud {
   --fa: "\f0c2";
+}
+
+.fa-flask {
+  --fa: "\f0c3";
 }
 
 .fa-bars {

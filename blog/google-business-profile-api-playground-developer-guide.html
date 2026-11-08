@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) - Delayed for Performance -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-60TFS60E2F');
+        document.addEventListener('DOMContentLoaded', () => {
+            window.setTimeout(() => {
+                if (document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F"]')) return;
+                const script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60TFS60E2F';
+                script.async = true;
+                document.head.appendChild(script);
+            }, 3500);
+        }, { once: true });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Google Business Profile API Playground: Test, Authenticate & Scale Local SEO Without Backend Code | VitableTech</title>
+    <meta name="title" content="Google Business Profile API Playground: Test, Authenticate & Scale Local SEO Without Backend Code | VitableTech">
+    <meta name="description"
+        content="Explore the free Google Business Profile (GBP) API Playground by VitableTech. Test OAuth 2.0 authentication, explore Swagger docs, query Performance API v1 metrics, and automate locations with @vitabletech/gbp-sdk.">
+    <meta name="keywords"
+        content="Google Business Profile API playground, GBP API explorer, Google My Business API sandbox, @vitabletech/gbp-sdk, GBP Performance API v1, Google Business OAuth 2.0 testing, local SEO API, Google reviews API automation, multi-location GBP management">
+    <meta name="author" content="VitableTech Engineering Team">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="English">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vitabletech.in/blog/google-business-profile-api-playground-developer-guide.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vitabletech.in/blog/google-business-profile-api-playground-developer-guide.html">
+    <meta property="og:title" content="Google Business Profile API Playground: Test, Authenticate & Scale Local SEO Without Backend Code">
+    <meta property="og:description"
+        content="Test Google Business Profile APIs in real time with Bring-Your-Own-Credentials (BYOC) OAuth, interactive Swagger docs, and production-ready TypeScript code snippets.">
+    <meta property="og:image" content="https://vitabletech.in/images/blog-images/gbp-api-playground-explorer.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vitabletech.in/blog/google-business-profile-api-playground-developer-guide.html">
+    <meta property="twitter:title" content="Google Business Profile API Playground: Test, Authenticate & Scale Local SEO Without Backend Code">
+    <meta property="twitter:description"
+        content="Test Google Business Profile APIs in real time with Bring-Your-Own-Credentials (BYOC) OAuth, interactive Swagger docs, and production-ready TypeScript code snippets.">
+    <meta property="twitter:image" content="https://vitabletech.in/images/blog-images/gbp-api-playground-explorer.jpg">
+
+    <!-- Favicon & Manifest Tags -->
+    <link rel="icon" type="image/x-icon" href="../icons-vitabletech/favicon.ico">
+    <link rel="shortcut icon" href="../icons-vitabletech/favicon.ico" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../icons-vitabletech/favicon-96x96.png" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="../icons-vitabletech/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons-vitabletech/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="VitableTech" />
+    <link rel="manifest" href="../icons-vitabletech/site.webmanifest" />
+    <meta name="theme-color" content="#020617">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/fa-purged.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Schema.org Rich Snippets JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["BlogPosting", "TechArticle"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vitabletech.in/blog/google-business-profile-api-playground-developer-guide.html"
+      },
+      "headline": "Google Business Profile API Playground: Test, Authenticate & Scale Local SEO Without Backend Code",
+      "description": "A comprehensive developer guide to testing Google Business Profile APIs using VitableTech's interactive sandbox playground, Swagger explorer, and the production-tested @vitabletech/gbp-sdk Node.js/TypeScript library.",
+      "image": "https://vitabletech.in/images/blog-images/gbp-api-playground-explorer.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "VitableTech Engineering Team",
+        "url": "https://vitabletech.in"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VitableTech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitabletech.in/images/logo.svg"
+        }
+      },
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "about": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Google Business Profile API Playground",
+          "url": "https://gbp-playground.vitabletech.in/",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web, All Platforms"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "@vitabletech/gbp-sdk",
+          "programmingLanguage": "TypeScript, JavaScript",
+          "codeRepository": "https://github.com/vitabletech/gbp-sdk"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the VitableTech Google Business Profile API Playground?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The GBP API Playground is a free, web-based sandbox built by VitableTech that allows developers and agencies to test Google Business Profile APIs instantly. It supports Bring-Your-Own-Credentials (BYOC) OAuth 2.0 authentication, live Swagger API documentation, and real-time response exploration without writing a single line of backend server code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my Google OAuth credentials safe when using the GBP Playground?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. The GBP Playground enforces a zero-storage security policy. Your Google Client ID, Client Secret, and OAuth tokens are stored purely in your browser's local session storage and ephemeral cookie states. They are never written to any persistent database, shared with third parties, or logged by VitableTech servers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Google Cloud APIs must be enabled to test in the playground?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In your Google Cloud Console, you should enable: 1) Google Business Profile Business Information API, 2) Business Profile Performance API (for insights and metrics), 3) My Business Account Management API, and 4) My Business Verifications API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the playground solve Google OAuth token refresh issues?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google OAuth access tokens expire after exactly 60 minutes. The playground is powered by @vitabletech/gbp-sdk, which features built-in thread-safe token manager that automatically detects expired access tokens, requests fresh tokens via the refresh token, and replays pending API calls transparently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use @vitabletech/gbp-sdk in my own production backend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! @vitabletech/gbp-sdk is an enterprise-grade, open-source npm package (npm i @vitabletech/gbp-sdk) designed for Node.js 18+ and TypeScript. It includes full static typings, auto-pagination helpers, exponential backoff retries, and native support for Performance API v1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between legacy GMB Insights and Performance API v1?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google deprecated the legacy My Business Insights API v4. The new Business Profile Performance API v1 uses a restructured data schema with daily metric time-series (calls, directions, website clicks, booking actions) and monthly search keyword impressions breakdowns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VitableTech help build custom multi-location GBP integrations for our company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! VitableTech specializes in custom enterprise software, AI-driven review reply automation, automated multi-location sync pipelines, and bespoke client portals. You can book a free architecture consultation directly through https://vitabletech.in/#contact."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="font-sans text-gray-300 bg-dark overflow-x-hidden selection:bg-primary/30 selection:text-white">
+
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-blue-900 via-primary to-violet-900 text-white py-2.5 overflow-hidden relative z-[100] border-b border-white/10 shadow-lg">
+        <div class="whitespace-nowrap animate-marquee flex items-center text-xs md:text-sm font-medium tracking-wide">
+            <span class="mx-8 flex items-center gap-2.5">
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold">⚡</span>
+                <span class="text-white font-semibold">Live Launch:</span> Try our free interactive Google Business Profile API Explorer.
+                <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer"
+                    class="underline decoration-cyan-400 underline-offset-4 text-cyan-300 font-semibold hover:text-white transition-colors ml-1">Launch Playground →</a>
+            </span>
+            <span class="mx-8 flex items-center gap-2.5">
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-violet-400/20 text-violet-300 text-xs font-bold">🚀</span>
+                <span class="text-white font-semibold">Open Source SDK:</span> Check out <code class="text-xs bg-black/30 px-1.5 py-0.5 rounded text-violet-200">@vitabletech/gbp-sdk</code> on npm with TypeScript support.
+                <a href="https://gbp.vitabletech.in" target="_blank" rel="noopener noreferrer"
+                    class="underline decoration-violet-400 underline-offset-4 text-violet-300 font-semibold hover:text-white transition-colors ml-1">Read SDK Docs →</a>
+            </span>
+            <span class="mx-8 flex items-center gap-2.5">
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold">🌐</span>
+                <span class="text-white font-semibold">Enterprise Engineering:</span> Scale your multi-location GBP workflows with VitableTech.
+                <a href="../contact.html"
+                    class="underline decoration-cyan-400 underline-offset-4 text-cyan-300 font-semibold hover:text-white transition-colors ml-1">Schedule Consultation →</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Floating Social Media Bar (Desktop Left) -->
+    <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3 p-2.5 liquid-glass-dark rounded-r-2xl border-l-0 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        <a href="https://github.com/vitabletech" target="_blank" aria-label="Visit our GitHub"
+            class="w-10 h-10 bg-slate-900/80 text-gray-300 hover:text-white rounded-xl flex items-center justify-center border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:scale-110 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300 group">
+            <i class="fab fa-github text-lg group-hover:rotate-6 transition-transform"></i>
+            <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/company/vitabletech" target="_blank" aria-label="Visit our LinkedIn"
+            class="w-10 h-10 bg-slate-900/80 text-gray-300 hover:text-white rounded-xl flex items-center justify-center border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/10 hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 group">
+            <i class="fab fa-linkedin-in text-lg group-hover:rotate-6 transition-transform"></i>
+            <span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="https://x.com/vitabletech" target="_blank" aria-label="Visit our X"
+            class="w-10 h-10 bg-slate-900/80 text-gray-300 hover:text-white rounded-xl flex items-center justify-center border border-white/10 hover:border-violet-500/50 hover:bg-violet-600/10 hover:scale-110 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300 group">
+            <i class="fab fa-twitter text-lg group-hover:rotate-6 transition-transform"></i>
+            <span class="sr-only">Twitter</span>
+        </a>
+        <a href="https://wa.me/916280671085" target="_blank" aria-label="Contact us on WhatsApp"
+            class="w-10 h-10 bg-slate-900/80 text-gray-300 hover:text-white rounded-xl flex items-center justify-center border border-white/10 hover:border-green-500/50 hover:bg-green-600/10 hover:scale-110 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 group">
+            <i class="fab fa-whatsapp text-lg group-hover:rotate-6 transition-transform"></i>
+            <span class="sr-only">WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- HEADER / LIQUID GLASS NAVBAR -->
+    <header id="main-navbar" class="sticky top-0 z-50 transition-all duration-300 py-5 bg-slate-950/50 backdrop-blur-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Liquid Logo -->
+                <a href="../index.html#home"
+                    class="flex items-center gap-3.5 group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl p-1">
+                    <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary via-secondary to-accent p-0.5 shadow-[0_0_25px_rgba(37,99,235,0.4)] group-hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] transition-all duration-500 flex items-center justify-center overflow-hidden liquid-shine">
+                        <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
+                            <img loading="eager" fetchpriority="high" src="../images/logo.svg" alt="VitableTech Logo"
+                                class="h-6 w-6 transform group-hover:scale-110 transition-transform duration-300"
+                                width="24" height="24" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="text-xl font-black tracking-tight text-white flex items-center">
+                            <span class="text-white group-hover:text-cyan-400 transition-colors">Vitable</span><span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">Tech</span>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold group-hover:text-gray-300 transition-colors mt-0.5">Global Enterprise SaaS</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-slate-900/60 p-1.5 rounded-full border border-white/10 shadow-inner backdrop-blur-md">
+                    <a href="../about.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">About</a>
+                    <a href="../services/index.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Services</a>
+                    <a href="../projects.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Projects & Work</a>
+                    <a href="../portfolio.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Live Portfolio</a>
+                    <a href="../insights.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Insights & Blog</a>
+                    <a href="../pricing.html" class="px-3 py-1.5 rounded-full text-xs font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200">Pricing</a>
+                </nav>
+
+                <!-- Right Action / Primary CTA -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer"
+                        class="px-4 py-2 rounded-full font-semibold text-xs text-cyan-300 hover:text-white border border-cyan-500/30 hover:border-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 transition-all flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>GBP Playground</span>
+                    </a>
+                    <a href="../contact.html"
+                        class="shiny-btn magnetic-btn px-5 py-2.5 rounded-full font-semibold text-xs text-white shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] flex items-center gap-2 border border-white/20 bg-white/10">
+                        <span>Talk to an Expert</span>
+                        <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu"
+                        class="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-gray-300 hover:text-white hover:border-cyan-400/40 focus:outline-none transition-colors active:scale-95">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Header -->
+    <section class="gradient-bg py-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center justify-center gap-2 text-xs font-semibold text-cyan-300 uppercase tracking-widest mb-4">
+                <a href="../insights.html" class="hover:underline">Insights</a>
+                <span>/</span>
+                <span class="text-gray-400">Developer Tools</span>
+                <span>/</span>
+                <span class="text-cyan-400">Google Business Profile</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 max-w-5xl mx-auto leading-tight tracking-tight">
+                Google Business Profile API Playground: Test, Authenticate, and Scale Local SEO APIs Without Backend Headaches
+            </h1>
+            <p class="text-lg md:text-xl text-cyan-100/90 max-w-3xl mx-auto mb-8 font-normal leading-relaxed">
+                Say goodbye to broken OAuth tokens, confusing pagination loops, and fragmented endpoints. Discover how VitableTech's live playground and TypeScript SDK turn weeks of API wrestling into minutes of clean execution.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-gray-300 text-sm font-medium">
+                <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+                    <i class="far fa-calendar-alt text-cyan-400"></i> November 2026
+                </span>
+                <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+                    <i class="far fa-clock text-cyan-400"></i> 12 min read
+                </span>
+                <span class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+                    <i class="fas fa-code text-cyan-400"></i> Tested on @vitabletech/gbp-sdk v1.3.0
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="py-16 md:py-24 bg-slate-900/40 border-y border-white/5">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl flex flex-col lg:flex-row gap-12">
+            
+            <!-- Left: Article Content -->
+            <article class="w-full lg:w-2/3">
+
+                <!-- Featured Hero Graphic -->
+                <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative group">
+                    <img src="../images/blog-images/gbp-api-playground-explorer.jpg"
+                        alt="Google Business Profile API Explorer and Playground UI Mockup by VitableTech"
+                        class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500"
+                        loading="eager" fetchpriority="high" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                        <div class="text-xs text-gray-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                            <span>Live at <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:underline font-mono">https://gbp-playground.vitabletech.in</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-slate-950/70 border border-white/10 mb-10 shadow-lg">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Quick Links:</span>
+                        <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer"
+                            class="px-3 py-1.5 rounded-xl bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 text-xs font-semibold border border-cyan-500/40 transition-colors flex items-center gap-1.5">
+                            <i class="fas fa-play text-[10px]"></i> Launch Playground
+                        </a>
+                        <a href="https://gbp.vitabletech.in" target="_blank" rel="noopener noreferrer"
+                            class="px-3 py-1.5 rounded-xl bg-violet-500/20 text-violet-300 hover:bg-violet-500/30 text-xs font-semibold border border-violet-500/40 transition-colors flex items-center gap-1.5">
+                            <i class="fas fa-book text-[10px]"></i> SDK Docs
+                        </a>
+                        <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" rel="noopener noreferrer"
+                            class="px-3 py-1.5 rounded-xl bg-red-500/20 text-red-300 hover:bg-red-500/30 text-xs font-semibold border border-red-500/40 transition-colors flex items-center gap-1.5">
+                            <i class="fab fa-npm text-[10px]"></i> NPM v1.3.0
+                        </a>
+                    </div>
+                    <!-- Social Share -->
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400">Share:</span>
+                        <a href="javascript:void(0)"
+                            onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Test Google Business Profile APIs without backend code using VitableTech Playground!') + '&url=' + encodeURIComponent(window.location.href), 'twitter-share', 'width=800,height=600');"
+                            class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-xs text-gray-300 hover:text-white transition-colors"
+                            title="Share on X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="javascript:void(0)"
+                            onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(window.location.href), 'linkedin-share', 'width=800,height=600');"
+                            class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-xs text-gray-300 hover:text-white transition-colors"
+                            title="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article Body Content -->
+                <div class="prose prose-invert max-w-none text-gray-300 space-y-8 text-base md:text-lg leading-relaxed">
+
+                    <p class="text-xl md:text-2xl text-white font-medium leading-relaxed">
+                        If you have ever attempted to integrate the <strong>Google Business Profile (GBP) API</strong> (formerly Google My Business) into a production application, you know firsthand that it can feel like navigating an obstacle course in the dark.
+                    </p>
+
+                    <p>
+                        Between multi-part OAuth 2.0 consent screens, access tokens expiring after a strict 60 minutes, pagination requiring manual <code>nextPageToken</code> cursor handshakes, and an ecosystem fragmented across four completely separate Google Cloud APIs, what should be an afternoon feature frequently devolves into weeks of debugging.
+                    </p>
+
+                    <p>
+                        At <a href="../index.html" class="text-cyan-400 hover:underline font-semibold">VitableTech</a>, our engineering team manages massive multi-location local SEO infrastructures, review management pipelines, and automated business analytics for enterprise clients and digital marketing agencies across the globe. We grew frustrated with setting up boilerplate backend servers just to verify an OAuth redirect or test a single metric endpoint.
+                    </p>
+
+                    <p>
+                        That is why we built and published the <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 underline font-semibold">VitableTech Google Business Profile API Playground</a> and open-sourced our battle-hardened <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" rel="noopener noreferrer" class="text-violet-300 font-mono text-base font-semibold">@vitabletech/gbp-sdk</a>.
+                    </p>
+
+                    <!-- Problem Breakdown Callout Box -->
+                    <div class="liquid-glass-card rounded-3xl p-8 border border-red-500/20 bg-gradient-to-br from-red-950/20 via-slate-900/60 to-slate-950 shadow-xl my-8">
+                        <div class="flex items-center gap-3 text-red-400 font-bold text-lg mb-4">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Why Google Business Profile API Development is Unforgiving</span>
+                        </div>
+                        <ul class="space-y-4 text-base text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold mt-1">1.</span>
+                                <div><strong class="text-white">Fragmented Cloud Endpoints:</strong> Business Information, Reviews, Performance Metrics, and Verifications live under distinct hostnames (<code class="text-xs bg-black/40 px-1.5 py-0.5 rounded text-cyan-200">mybusinessbusinessinformation.googleapis.com</code>, <code class="text-xs bg-black/40 px-1.5 py-0.5 rounded text-cyan-200">businessprofileperformance.googleapis.com</code>, etc.) with incompatible request structures.</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold mt-1">2.</span>
+                                <div><strong class="text-white">The 60-Minute Token Cliff:</strong> Google access tokens expire on the hour. Without strict concurrency-safe refresh token management, high-volume production jobs throw cascading <code class="text-xs bg-black/40 px-1.5 py-0.5 rounded text-red-300">401 Unauthorized</code> errors.</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold mt-1">3.</span>
+                                <div><strong class="text-white">Deprecation of Legacy Insights:</strong> Google sunset the legacy GMB Insights API. The modern Performance API v1 uses entirely new daily time-series metrics and monthly search keyword impression schemas that lack thorough documentation.</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold mt-1">4.</span>
+                                <div><strong class="text-white">Cryptic Pagination Loops:</strong> Multi-location enterprises with 1,000+ branch locations must handle recursive cursor requests without hitting Google's sensitive rate limits.</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 2: What is the Playground -->
+                    <h2 id="playground-overview" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        Meet the Solution: VitableTech GBP API Playground
+                    </h2>
+
+                    <p>
+                        The <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">GBP API Playground</a> is a zero-setup, web-based developer environment hosted at <code class="text-cyan-200 bg-slate-900 px-2 py-0.5 rounded text-sm font-mono">https://gbp-playground.vitabletech.in/</code>. It allows any engineer or technical marketer to test Google Business Profile integrations in seconds using their own Google Cloud Console credentials.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-400/40 transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center mb-4 text-lg">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Bring Your Own Credentials (BYOC)</h3>
+                            <p class="text-sm text-gray-400">
+                                Paste your Google Client ID &amp; Secret to authenticate directly against your company's Google Cloud project. No pre-seeded demo data locks you in.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-violet-400/40 transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-violet-500/20 text-violet-300 flex items-center justify-center mb-4 text-lg">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Zero-Storage Security Policy</h3>
+                            <p class="text-sm text-gray-400">
+                                Your Client Secret, access tokens, and refresh tokens reside exclusively in client-side memory and ephemeral browser session storage. Nothing is stored on our database.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-blue-400/40 transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-300 flex items-center justify-center mb-4 text-lg">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Interactive Swagger UI Docs</h3>
+                            <p class="text-sm text-gray-400">
+                                Jump into <code class="text-xs bg-slate-950 px-1.5 py-0.5 rounded text-cyan-200">/api-docs/</code> to inspect full OpenAPI 3.0 schemas, test parameters, and examine actual raw JSON payloads.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-emerald-400/40 transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-4 text-lg">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Performance API v1 Ready</h3>
+                            <p class="text-sm text-gray-400">
+                                Query daily impressions, direction requests, phone calls, and monthly search keyword breakdowns without guessing JSON request envelopes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 3: Step by Step Guide -->
+                    <h2 id="step-by-step" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        Step-by-Step: How to Test GBP APIs in 3 Minutes
+                    </h2>
+
+                    <p>
+                        Here is the exact step-by-step flow to authenticate and execute your first Google Business Profile API call using the playground:
+                    </p>
+
+                    <!-- Step 1 -->
+                    <div class="space-y-4 border-l-2 border-cyan-400 pl-6 py-2">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Step 1</span>
+                        <h3 class="text-xl font-bold text-white">Create an OAuth 2.0 Web Application in Google Cloud</h3>
+                        <p class="text-gray-300 text-base">
+                            Navigate to the <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:underline">Google Cloud Console &rarr; APIs &amp; Services &rarr; Credentials</a>. Create an <strong>OAuth 2.0 Client ID</strong> and choose <strong>Web application</strong> as the application type.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="space-y-4 border-l-2 border-cyan-400 pl-6 py-2">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Step 2</span>
+                        <h3 class="text-xl font-bold text-white">Whitelist the Mandatory Authorized Redirect URI</h3>
+                        <p class="text-gray-300 text-base">
+                            Under <strong>Authorized redirect URIs</strong> in Google Cloud Console, add the following exact URL:
+                        </p>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-slate-950 border border-white/10 font-mono text-sm text-cyan-300 overflow-x-auto">
+                            <code>https://gbp-playground.vitabletech.in/auth/google/callback</code>
+                        </div>
+                        <p class="text-xs text-gray-400">
+                            <i class="fas fa-info-circle text-cyan-400 mr-1"></i> Tip: The playground provides a 1-click "Copy URI" button right at the top of the interface for convenience.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="space-y-4 border-l-2 border-cyan-400 pl-6 py-2">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Step 3</span>
+                        <h3 class="text-xl font-bold text-white">Authenticate with Google</h3>
+                        <p class="text-gray-300 text-base">
+                            Return to <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:underline">gbp-playground.vitabletech.in</a>, enter your <strong>Client ID</strong> and <strong>Client Secret</strong>, click <strong>Save Credentials</strong>, and hit <strong>Login with Google Business Profile</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="space-y-4 border-l-2 border-cyan-400 pl-6 py-2">
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Step 4</span>
+                        <h3 class="text-xl font-bold text-white">Execute Real Endpoints via Swagger UI</h3>
+                        <p class="text-gray-300 text-base">
+                            Once authenticated, click <strong>Open Swagger API Docs</strong>. You can immediately call:
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-300">
+                            <li><code class="text-cyan-200">GET /accounts</code> – List all managed merchant business accounts.</li>
+                            <li><code class="text-cyan-200">GET /locations</code> – Paginate through all active store locations.</li>
+                            <li><code class="text-cyan-200">GET /reviews</code> – Read customer reviews, ratings, and comment replies.</li>
+                            <li><code class="text-cyan-200">POST /performance/daily-metrics</code> – Query daily impressions and customer interaction time series.</li>
+                            <li><code class="text-cyan-200">POST /performance/search-keywords</code> – Inspect local search query impressions for organic ranking audits.</li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 4: The SDK Engine -->
+                    <h2 id="sdk-deep-dive" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        The Engine Under the Hood: @vitabletech/gbp-sdk
+                    </h2>
+
+                    <p>
+                        The playground is built on top of our official open-source package, <strong class="text-white">@vitabletech/gbp-sdk (v1.3.0)</strong>. While the playground lets you experiment visually in the browser, the SDK powers your actual backend microservices, cron jobs, and webhooks.
+                    </p>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">
+                        1. Installing the SDK
+                    </h3>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border border-white/10 font-mono text-sm text-cyan-100 overflow-x-auto">
+                        <pre><code>npm install @vitabletech/gbp-sdk
+# or using pnpm
+pnpm add @vitabletech/gbp-sdk</code></pre>
+                    </div>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">
+                        2. Fetching Multi-Location Accounts with Auto-Pagination
+                    </h3>
+
+                    <p>
+                        Instead of manually tracking <code class="text-cyan-200">pageToken</code> query parameters and chaining promises, call <code class="text-cyan-200">listAll()</code>:
+                    </p>
+
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-white/10 font-mono text-xs md:text-sm text-gray-200 overflow-x-auto shadow-inner">
+<pre><code class="language-typescript">import { GBPClient } from '@vitabletech/gbp-sdk';
+
+const client = new GBPClient({
+  clientId: process.env.GOOGLE_CLIENT_ID!,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+  redirectUri: 'https://your-domain.com/auth/callback',
+});
+
+// Pass the refresh token retrieved during OAuth
+client.setRefreshToken(process.env.STORED_REFRESH_TOKEN!);
+
+async function syncBusinessLocations() {
+  // 1. Fetch all accounts attached to the authenticated profile
+  const accounts = await client.accounts.list();
+  const primaryAccount = accounts[0];
+
+  // 2. Fetch EVERY location with automatic recursive pagination
+  const allLocations = await client.locations.listAll({
+    parent: primaryAccount.name,
+    readMask: 'name,title,storeCode,storefrontAddress,phoneNumbers,websiteUri',
+  });
+
+  console.log(`Successfully fetched ${allLocations.length} locations across your organization!`);
+  return allLocations;
+}
+</code></pre>
+                    </div>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">
+                        3. Querying Performance API v1 Metrics (Daily Time-Series &amp; Search Keywords)
+                    </h3>
+
+                    <p>
+                        The modern Performance API v1 is notorious for its strict date formats and multi-layered request objects. Here is how easy it is with <code class="text-cyan-200">@vitabletech/gbp-sdk</code>:
+                    </p>
+
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-white/10 font-mono text-xs md:text-sm text-gray-200 overflow-x-auto shadow-inner">
+<pre><code class="language-typescript">// Query Daily Metrics (Website clicks, Call button clicks, Directions)
+const dailyMetrics = await client.performance.getDailyMetricsTimeSeries({
+  name: 'locations/1234567890123456789',
+  dailyMetric: 'BUSINESS_IMPRESSIONS_DESKTOP_MAPS',
+  dailyRange: {
+    startDate: { year: 2026, month: 10, day: 1 },
+    endDate: { year: 2026, month: 10, day: 31 },
+  },
+});
+
+// Query Top Search Keywords driving local discovery
+const topKeywords = await client.performance.listSearchKeywordsImpressionsMonthly({
+  parent: 'locations/1234567890123456789',
+  monthRange: {
+    startMonth: { year: 2026, month: 8 },
+    endMonth: { year: 2026, month: 10 },
+  },
+  pageSize: 50,
+});
+
+for (const keyword of topKeywords.searchKeywordsCounts || []) {
+  console.log(`Keyword: "${keyword.searchKeyword}" -> Impressions: ${keyword.insightsValue?.value}`);
+}
+</code></pre>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 5: Architecture Comparison Table -->
+                    <h2 id="comparison" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        Comparison: Raw HTTP vs. Standard Library vs. VitableTech
+                    </h2>
+
+                    <div class="overflow-x-auto my-8">
+                        <table class="w-full text-left text-sm border-collapse rounded-2xl overflow-hidden shadow-xl border border-white/10">
+                            <thead>
+                                <tr class="bg-slate-950 text-white font-bold border-b border-white/10">
+                                    <th class="p-4">Feature</th>
+                                    <th class="p-4 text-gray-400">Raw Axios / Fetch</th>
+                                    <th class="p-4 text-gray-400">Google APIs Official Node</th>
+                                    <th class="p-4 text-cyan-400 bg-cyan-950/30">VitableTech Ecosystem</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5 bg-slate-900/60 text-gray-300">
+                                <tr>
+                                    <td class="p-4 font-semibold text-white">Browser Testing Playground</td>
+                                    <td class="p-4 text-red-400">❌ None (Must build local server)</td>
+                                    <td class="p-4 text-red-400">❌ Basic OAuth Playground only</td>
+                                    <td class="p-4 text-emerald-400 bg-cyan-950/20 font-semibold">✅ Full BYOC Swagger Sandbox</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-white">Token Refresh Logic</td>
+                                    <td class="p-4 text-red-400">❌ Manual implementation</td>
+                                    <td class="p-4 text-yellow-400">⚠️ Basic OAuth2 client</td>
+                                    <td class="p-4 text-emerald-400 bg-cyan-950/20 font-semibold">✅ Concurrency-safe automatic refresh</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-white">Auto-Pagination (`listAll`)</td>
+                                    <td class="p-4 text-red-400">❌ Manual cursor tracking</td>
+                                    <td class="p-4 text-red-400">❌ Not built-in for GBP</td>
+                                    <td class="p-4 text-emerald-400 bg-cyan-950/20 font-semibold">✅ Native `listAll` on all collections</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-white">Performance API v1 Typing</td>
+                                    <td class="p-4 text-red-400">❌ Generic `any`</td>
+                                    <td class="p-4 text-yellow-400">⚠️ Outdated GMB v4 artifacts</td>
+                                    <td class="p-4 text-emerald-400 bg-cyan-950/20 font-semibold">✅ Strict TypeScript definitions</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-white">Retry &amp; Exponential Backoff</td>
+                                    <td class="p-4 text-red-400">❌ Manual</td>
+                                    <td class="p-4 text-yellow-400">⚠️ Optional configuration</td>
+                                    <td class="p-4 text-emerald-400 bg-cyan-950/20 font-semibold">✅ Built-in jittered backoff</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 6: Enterprise Services & How VitableTech Helps -->
+                    <h2 id="enterprise-services" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        How VitableTech Helps Companies Scale Beyond the Playground
+                    </h2>
+
+                    <p>
+                        Building a prototype in a playground is step one. Taking a Google Business Profile integration into mission-critical production across hundreds or thousands of merchant locations requires robust architectural planning.
+                    </p>
+
+                    <p>
+                        Here is how the <strong class="text-white">VitableTech Engineering Team</strong> partners with agencies, franchises, and SaaS providers:
+                    </p>
+
+                    <div class="space-y-6 my-8">
+                        <div class="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-cyan-500/30 flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Automated AI Review Agents</h3>
+                                <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                                    We engineer custom LLM pipelines that listen to Google review webhooks, analyze customer sentiment, craft brand-compliant, context-aware responses, and automatically post replies through verified GBP endpoints.
+                                </p>
+                                <a href="../contact.html" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
+                                    Explore Review AI Architecture &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-violet-500/30 flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-300 flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Multi-Location Sync &amp; Hours Management</h3>
+                                <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                                    Managing holiday hours, special attributes, and emergency closures across 500+ franchise branches? We develop bi-directional synchronization engines linking internal ERPs, CRMs, or POS systems directly to Google's Business Information API.
+                                </p>
+                                <a href="../contact.html" class="text-xs font-bold text-violet-400 hover:text-violet-300 inline-flex items-center gap-1">
+                                    Consult on Enterprise Sync &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-blue-500/30 flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-300 flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">White-Label Reporting Portals</h3>
+                                <p class="text-sm text-gray-300 leading-relaxed mb-3">
+                                    Transform raw Performance API metrics into branded client dashboards. We construct high-speed analytics portals with automated PDF exports, executive KPI summaries, and automated rank tracking alerts.
+                                </p>
+                                <a href="../contact.html" class="text-xs font-bold text-blue-400 hover:text-blue-300 inline-flex items-center gap-1">
+                                    Build Custom Client Dashboards &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- High-Converting Mid-Article CTA Banner -->
+                    <div class="bg-gradient-to-br from-primary-dark via-primary to-accent p-10 rounded-3xl text-center text-white my-12 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-violet-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <h3 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 relative z-10 leading-tight">
+                            Need an Enterprise Google Business Profile Integration?
+                        </h3>
+                        <p class="mb-8 text-base md:text-lg opacity-90 relative z-10 max-w-2xl mx-auto leading-relaxed">
+                            Stop spending engineering quarters wrestling with Google's API nuances. Partner with VitableTech to deploy scalable, secure, and production-ready local SEO engines.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                            <a href="../contact.html"
+                                class="inline-flex items-center justify-center gap-2 bg-white text-slate-950 font-bold py-3.5 px-8 rounded-full hover:bg-cyan-100 transition-all shadow-xl hover:-translate-y-0.5">
+                                <span>Book Free Engineering Strategy Session</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center gap-2 bg-slate-900/80 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full hover:bg-slate-900 transition-all shadow-xl">
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                                <span>Try Playground Live</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <hr class="my-10 border-white/10" />
+
+                    <!-- Section 7: FAQs -->
+                    <h2 id="faq" class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight pt-4">
+                        Frequently Asked Questions (Developer &amp; Agency FAQs)
+                    </h2>
+
+                    <div class="space-y-6 my-8">
+                        <!-- FAQ 1 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>What is the VitableTech GBP Playground and do I have to pay for it?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                The VitableTech GBP Playground is <strong>100% free</strong> and open to all developers, technical marketers, and product managers. You bring your own Google Cloud OAuth credentials and execute calls directly against your own accounts with zero fees or tier limits.
+                            </p>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>Are my Google OAuth credentials or tokens saved on your servers?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                <strong>No.</strong> We maintain a strict zero-retention security policy. Your Client ID, Client Secret, access tokens, and refresh tokens exist purely inside your browser's local session memory. Nothing is ever written to any database, file system, or analytical tracking tool on our servers.
+                            </p>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>Which Google Cloud APIs must be enabled for full playground functionality?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                To unlock all Swagger endpoints, enable the following in your Google Cloud Console:
+                            </p>
+                            <ul class="list-disc list-inside mt-2 ml-10 text-sm text-gray-300 space-y-1">
+                                <li><code>Google Business Profile Business Information API</code></li>
+                                <li><code>Business Profile Performance API</code> (for daily time-series &amp; keyword impressions)</li>
+                                <li><code>My Business Account Management API</code></li>
+                                <li><code>My Business Verifications API</code></li>
+                            </ul>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>How does the playground and SDK handle Google's 60-minute token expiration?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                Google access tokens expire after exactly 3600 seconds (1 hour). The underlying <code class="text-cyan-300">@vitabletech/gbp-sdk</code> includes an internal thread-safe token manager that automatically exchanges your refresh token for a brand new access token right before expiration, eliminating interrupted jobs.
+                            </p>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>Can I deploy @vitabletech/gbp-sdk to serverless platforms (Netlify, AWS Lambda, Cloudflare)?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                Yes. The SDK was purposefully built with lightweight, zero-bloat dependencies. It runs smoothly on Node.js 18+, Netlify Serverless Functions, AWS Lambda, Google Cloud Run, and containerized Docker environments.
+                            </p>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>What is the difference between legacy GMB Insights and Performance API v1?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                Google completely deprecated the old <code>reportLocationInsights</code> endpoint. The modern <strong>Business Profile Performance API v1</strong> separates engagement metrics into daily time-series counts (calls, website clicks, message conversations, booking clicks) and aggregates search keywords into monthly impression rankings. Our SDK and playground fully support this modern v1 format.
+                            </p>
+                        </div>
+
+                        <!-- FAQ 7 -->
+                        <div class="bg-slate-950/70 rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white flex items-start gap-3">
+                                <i class="fas fa-question-circle text-cyan-400 mt-1"></i>
+                                <span>Can VitableTech build a custom multi-location GBP solution for our enterprise?</span>
+                            </h3>
+                            <p class="text-gray-300 mt-3 ml-7 text-sm md:text-base leading-relaxed">
+                                Yes! That is our core specialty. Whether you need an automated AI review responder, a central multi-brand location sync engine, or a white-label client portal, our team can deliver custom, enterprise-grade software. <a href="../contact.html" class="text-cyan-400 hover:underline font-semibold">Contact our engineering team today &rarr;</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Author Bio Section -->
+                    <div class="mt-16 bg-slate-950/80 p-8 rounded-3xl border border-white/10 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-3xl flex-shrink-0 shadow-lg">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Written by the VitableTech Engineering Team</h4>
+                            <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-3">
+                                We are full-stack software engineers, cloud architects, and API specialists. We architect, build, and maintain mission-critical enterprise applications, SaaS platforms, and developer tooling for global clients across the USA, UK, India, and beyond.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs font-semibold">
+                                <a href="../about.html" class="text-cyan-400 hover:underline">About VitableTech &rarr;</a>
+                                <a href="../projects.html" class="text-violet-400 hover:underline">Explore Open Source &rarr;</a>
+                                <a href="../contact.html" class="text-emerald-400 hover:underline">Hire Our Team &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Right Sidebar -->
+            <aside class="w-full lg:w-1/3 space-y-8 mt-12 lg:mt-0">
+
+                <!-- Table of Contents Sticky Widget -->
+                <div class="liquid-glass-card rounded-2xl p-6 border border-white/10 sticky top-28">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-list-ul text-cyan-400"></i> In This Article
+                    </h3>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-gray-400">
+                        <li><a href="#playground-overview" class="hover:text-cyan-300 transition-colors">› What is GBP Playground?</a></li>
+                        <li><a href="#step-by-step" class="hover:text-cyan-300 transition-colors">› 3-Minute Quickstart Walkthrough</a></li>
+                        <li><a href="#sdk-deep-dive" class="hover:text-cyan-300 transition-colors">› @vitabletech/gbp-sdk Code Walkthrough</a></li>
+                        <li><a href="#comparison" class="hover:text-cyan-300 transition-colors">› Architecture Comparison Matrix</a></li>
+                        <li><a href="#enterprise-services" class="hover:text-cyan-300 transition-colors">› Enterprise GBP Scaling Services</a></li>
+                        <li><a href="#faq" class="hover:text-cyan-300 transition-colors">› Developer &amp; Agency FAQs</a></li>
+                    </ul>
+
+                    <hr class="my-6 border-white/10" />
+
+                    <!-- Live Playground Widget -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-br from-blue-950/70 to-cyan-950/70 border border-cyan-500/30 text-center">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-400/20 text-cyan-300 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mb-1">Try It In Your Browser</h4>
+                        <p class="text-xs text-cyan-100/70 mb-4 leading-relaxed">
+                            No installation needed. Connect your Google Cloud credentials and inspect live endpoints right now.
+                        </p>
+                        <a href="https://gbp-playground.vitabletech.in/" target="_blank" rel="noopener noreferrer"
+                            class="block py-2.5 px-4 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs transition-colors shadow-md">
+                            Open GBP Playground <i class="fas fa-external-link-alt ml-1 text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <hr class="my-6 border-white/10" />
+
+                    <!-- Contact Agency Widget -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-br from-violet-950/70 to-slate-950 border border-violet-500/30 text-center">
+                        <div class="w-10 h-10 rounded-xl bg-violet-400/20 text-violet-300 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mb-1">Custom Software Partner</h4>
+                        <p class="text-xs text-violet-200/70 mb-4 leading-relaxed">
+                            Looking to build an automated local SEO SaaS, review dashboard, or enterprise sync pipeline?
+                        </p>
+                        <a href="../contact.html"
+                            class="block py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-bold text-xs transition-colors shadow-md">
+                            Get in Touch With Us
+                        </a>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Related Engineering Reads</h4>
+                        <div class="space-y-4">
+                            <a href="../blog/automate-google-business-profile-node-sdk.html" class="group flex gap-3 items-start">
+                                <div class="w-16 h-12 rounded-lg bg-slate-900 border border-white/10 overflow-hidden flex-shrink-0">
+                                    <img src="../images/blog-images/gbp-npm-pacakge.webp" alt="GBP SDK" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-gray-200 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                                        Automate Google Business Profile with Node.js SDK
+                                    </h5>
+                                    <span class="text-[10px] text-gray-500">Open Source Guide</span>
+                                </div>
+                            </a>
+                            <a href="../blog/meta-graph-api-permanent-access-token.html" class="group flex gap-3 items-start">
+                                <div class="w-16 h-12 rounded-lg bg-slate-900 border border-white/10 overflow-hidden flex-shrink-0">
+                                    <img src="../images/blog-images/meta-sdk-thumbnail.png" alt="Meta Graph API" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-gray-200 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                                        How to Generate a Never-Expiring Meta Graph API Token
+                                    </h5>
+                                    <span class="text-[10px] text-gray-500">API Architecture</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- FOOTER (Dark Premium Glass) -->
+    <footer class="liquid-glass-dark border-t border-white/10 pt-20 pb-24 md:pb-12 relative overflow-hidden mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
+                <div class="lg:col-span-2 space-y-6">
+                    <a href="../index.html#home" class="flex items-center gap-3">
+                        <img loading="lazy" src="../images/logo.svg" alt="VitableTech Logo" class="h-10 w-10" width="40" height="40" />
+                        <div>
+                            <span class="text-2xl font-bold tracking-tight text-white">Vitable<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">Tech</span></span>
+                            <span class="block text-xs text-gray-400 font-medium">Global Enterprise SaaS Architecture</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        High-performance custom software, AI integrations, and developer tooling for growth-focused organizations globally. Headquartered in India, serving companies worldwide.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://github.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-cyan-400/50"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/vitabletech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-blue-400/50"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/vitabletech" target="_blank" rel="noopener noreferrer" aria-label="Twitter X" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-violet-400/50"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@vitabletech" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-red-400/50"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                        <li><a href="../services/custom-software.html" class="hover:text-cyan-400">Custom Software Dev</a></li>
+                        <li><a href="../services/ai-machine-learning.html" class="hover:text-cyan-400">AI &amp; Machine Learning</a></li>
+                        <li><a href="../services/web-development.html" class="hover:text-cyan-400">Website Development</a></li>
+                        <li><a href="../services/mobile-app.html" class="hover:text-cyan-400">Mobile App Dev</a></li>
+                        <li><a href="../services/ui-ux.html" class="hover:text-cyan-400">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Ecosystem</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                        <li><a href="https://gbp-playground.vitabletech.in/" target="_blank" class="hover:text-cyan-400">GBP API Playground</a></li>
+                        <li><a href="https://gbp.vitabletech.in" target="_blank" class="hover:text-cyan-400">@vitabletech/gbp-sdk Docs</a></li>
+                        <li><a href="../projects.html" class="hover:text-cyan-400">Open Source Repos</a></li>
+                        <li><a href="../insights.html" class="hover:text-cyan-400">Knowledge Base &amp; Blog</a></li>
+                        <li><a href="../pricing.html" class="hover:text-cyan-400">Pricing Matrix</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-sm font-extrabold text-white uppercase tracking-wider">Company</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                        <li><a href="../about.html" class="hover:text-cyan-400">About Us</a></li>
+                        <li><a href="../portfolio.html" class="hover:text-cyan-400">Case Studies &amp; Work</a></li>
+                        <li><a href="../faq.html" class="hover:text-cyan-400">Common FAQ</a></li>
+                        <li><a href="../policies/privacy-policy.html" class="hover:text-cyan-400">Privacy Policy</a></li>
+                        <li><a href="../contact.html" class="hover:text-cyan-400">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 VitableTech. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="../policies/privacy-policy.html" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="../policies/terms-and-conditions.html" class="hover:text-gray-400">Terms of Service</a>
+                    <a href="../sitemap.xml" class="hover:text-gray-400">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top-btn" aria-label="Scroll back to top" class="fixed bottom-8 right-6 z-50 w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 border border-white/20 text-white shadow-lg transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const b = document.getElementById('back-to-top-btn');
+            if (!b) return;
+            const sync = () => {
+                const show = window.scrollY > 300;
+                b.classList.toggle('opacity-0', !show);
+                b.classList.toggle('translate-y-10', !show);
+                b.classList.toggle('pointer-events-none', !show);
+            };
+            window.addEventListener('scroll', sync, { passive: true });
+            sync();
+            b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        });
+    </script>
+
+    <!-- Start of Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6ae4af08dc4b23347380c3b5/1k66knejq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
+    <script defer src="../js/vitable-campaigns.js"></script>
+</body>
+
+</html>
