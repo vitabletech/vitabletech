@@ -1113,6 +1113,15 @@
   --fa: "\f07a";
 }
 
+.fa-shopping-bag,
+.fa-bag-shopping {
+  --fa: "\f290";
+}
+
+.fa-box-open {
+  --fa: "\f49e";
+}
+
 .fa-arrows-left-right {
   --fa: "\f07e";
 }
